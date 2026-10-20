@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   publish-image:
@@ -18,12 +19,30 @@ jobs:
     permissions:
       contents: read
       packages: write
+      actions: read
 
     steps:
       - name: Checkout successful CI commit
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Download training artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: heart-disease-training-${{ github.event.workflow_run.run_number }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ github.event.workflow_run.id }}
+          path: .
+
+      - name: Verify trained model exists
+        run: |
+          test -s models/model.joblib || {
+            echo "ERROR: models/model.joblib was not found in the CI artifact."
+            find models -maxdepth 2 -type f 2>/dev/null || true
+            exit 1
+          }
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

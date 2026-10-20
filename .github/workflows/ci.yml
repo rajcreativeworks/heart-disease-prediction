@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -e . --no-deps
+          python -m pip install -r requirements.txt
+          python -m pip install -e . --no-deps
 
       - name: Lint
         run: ruff check .
@@ -46,8 +46,7 @@ jobs:
             --cov-report=xml:coverage.xml
 
       - name: Download and prepare dataset
-        run: |
-          python -m heart_ml.data
+        run: python -m heart_ml.data
 
       - name: Train models and track experiments
         run: |
@@ -56,6 +55,13 @@ jobs:
             --output models/model.joblib \
             --mlflow \
             --quick
+
+      - name: Verify trained model
+        run: |
+          test -s models/model.joblib || {
+            echo "ERROR: models/model.joblib was not generated."
+            exit 1
+          }
 
       - name: Upload training artifacts
         if: always()
@@ -77,7 +83,7 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t heart-disease-mlops:test .
-      
+
       - name: Start Docker container
         run: |
           docker run -d \

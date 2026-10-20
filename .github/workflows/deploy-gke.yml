@@ -1,0 +1,76 @@
+
+name: Deploy to GKE
+
+on:
+  workflow_run:
+    workflows: ["Publish Docker Image to GHCR"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    env:
+      PROJECT_ID: heart-risk-mlops
+      GKE_CLUSTER: heart-disease-cluster
+      GKE_LOCATION: asia-south1
+      IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+
+    steps:
+      - name: Checkout published commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Set up Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Get GKE credentials
+        uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_LOCATION }}
+          project_id: ${{ env.PROJECT_ID }}
+
+      - name: Validate Kubernetes manifests
+        run: |
+          kubectl apply --dry-run=client -f k8/deployment.yaml
+          kubectl apply --dry-run=client -f k8/service.yaml
+
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f k8/deployment.yaml
+          kubectl apply -f k8/service.yaml
+
+      - name: Deploy the exact published image
+        env:
+          IMAGE_TAG: sha-${{ github.event.workflow_run.head_sha }}
+        run: |
+          kubectl set image deployment/heart-disease-api \
+            api="${IMAGE}:${IMAGE_TAG}"
+
+      - name: Wait for deployment rollout
+        run: |
+          kubectl rollout status deployment/heart-disease-api \
+            --timeout=5m
+
+      - name: Verify deployment
+        run: |
+          kubectl get deployment heart-disease-api
+          kubectl get pods -o wide
+          kubectl get service heart-disease-api
