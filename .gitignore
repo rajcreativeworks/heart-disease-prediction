@@ -25,3 +25,9 @@ reports/training/*.json
 .DS_Store
 .idea/
 .vscode/
+
+# Local MLflow tracking database
+mlflow.db
+
+# Python package build metadata
+*.egg-info/
