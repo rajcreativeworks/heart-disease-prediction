@@ -8,6 +8,8 @@ from pathlib import Path
 import pandas as pd
 from ucimlrepo import fetch_ucirepo
 
+from heart_ml.path_utils import validate_output_path
+
 logger = logging.getLogger(__name__)
 FEATURES = [
     "age", "sex", "cp", "trestbps", "chol", "fbs", "restecg",
@@ -70,7 +72,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="data/raw/heart_disease.csv")
     args = parser.parse_args()
-    output = Path(args.output)
+    output = validate_output_path(args.output, Path.cwd())
     output.parent.mkdir(parents=True, exist_ok=True)
     logger.info("event=data_acquisition_entry output=%s", output)
     try:
