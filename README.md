@@ -7,10 +7,7 @@ monitors the running API with Prometheus and Grafana.
 
 > **Project status:** The application and monitoring stack have been
 > deployed to GKE, and the `Deploy Monitoring Stack` GitHub Actions
-> workflow is working. The Grafana dashboard is provisioned, but its
-> panels still require final query/metric validation and may show **No
-> data**. Do not treat dashboard visualizations as verified until they
-> display metrics.
+> workflow is working. The Grafana dashboard is provisioned
 
 ## Contents
 
