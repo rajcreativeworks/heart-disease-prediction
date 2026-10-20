@@ -39,4 +39,4 @@ omit = ["src/heart_ml/__main__.py"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 75
+fail_under = 90
