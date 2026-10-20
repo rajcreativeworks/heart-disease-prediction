@@ -1,7 +1,10 @@
+
 apiVersion: v1
 kind: Service
 metadata:
   name: heart-disease-api
+  labels:
+    app: heart-disease-api
 spec:
   type: ClusterIP
   selector:
@@ -9,4 +12,7 @@ spec:
   ports:
     - name: http
       port: 80
+      targetPort: 8000
+    - name: metrics
+      port: 8000
       targetPort: 8000
