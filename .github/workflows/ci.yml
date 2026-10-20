@@ -45,6 +45,30 @@ jobs:
             --cov-report=term-missing \
             --cov-report=xml:coverage.xml
 
+      - name: Download and prepare dataset
+        run: |
+          python -m heart_ml.data
+
+      - name: Train models and track experiments
+        run: |
+          python -m heart_ml.train \
+            --data data/raw/heart_disease.csv \
+            --output models/model.joblib \
+            --mlflow \
+            --quick
+
+      - name: Upload training artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heart-disease-training-${{ github.run_number }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            models/
+            reports/training/
+            mlruns/
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:

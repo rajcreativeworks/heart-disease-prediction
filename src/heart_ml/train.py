@@ -173,6 +173,7 @@ def train(data: str | Path, output: str | Path, tracking: bool = True,
                 mlflow.log_artifact(str(output_path.with_suffix(".metadata.json")))
                 mlflow.log_artifact(str(report_dir / "confusion_matrix.png"))
                 mlflow.log_artifact(str(report_dir / "roc_curve.png"))
+                mlflow.log_artifact(str(output_path))
         logger.info("event=training_exit selected_model=%s test_roc_auc=%.4f output=%s",
                     best_name, test_metrics["roc_auc"], output_path)
         return metadata
