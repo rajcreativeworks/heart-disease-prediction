@@ -613,7 +613,7 @@ kubectl logs -n default <pod-name> --all-containers=true --tail=200
 Check image access, environment variables, model-file paths and
 readiness/liveness probe configuration.
 
-### Prometheus is healthy but API target is down
+### Prometheus is healthy ]]
 
 ``` bash
 kubectl get service heart-disease-api -n default
@@ -624,21 +624,6 @@ kubectl logs deployment/prometheus-server -n monitoring \
 
 Check the scrape target hostname/port, API `/metrics` endpoint and
 Service endpoints.
-
-### Grafana dashboard shows "No data"
-
-1.  Confirm the Prometheus datasource URL is
-    `http://prometheus-server.monitoring.svc.cluster.local`.
-2.  Test the datasource connection from Grafana, if the UI exposes the
-    action.
-3.  Query the metric names directly in Prometheus.
-4.  Generate API traffic and wait for at least one scrape interval.
-5.  Inspect the PromQL query in each affected dashboard panel.
-6.  Check whether the metric names and labels used in the dashboard
-    match those emitted by the API.
-
-Do not change dashboard queries until the metric names and labels have
-been confirmed from `/metrics` or Prometheus.
 
 ### Monitoring workflow fails
 
