@@ -1,0 +1,21 @@
+services:
+  heart-disease-api:
+    build:
+      context: .
+    image: heart-disease-api:local
+    ports:
+      - "8000:8000"
+    environment:
+      LOG_LEVEL: INFO
+      MODEL_PATH: /app/models/model.joblib
+      MODEL_VERSION: "1.0.0"
+    volumes:
+      - ./models:/app/models:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped

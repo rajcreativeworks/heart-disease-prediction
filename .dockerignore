@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+venv
+__pycache__
+.pytest_cache
+.ruff_cache
+.env
+*.log
+mlruns
+data/raw/*.csv
+reports/eda
+reports/training
+tests
