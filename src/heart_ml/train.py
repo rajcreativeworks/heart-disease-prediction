@@ -110,7 +110,6 @@ def train(data: str | Path, output: str | Path, tracking: bool = True,
                         "cv_folds": cv.get_n_splits(), "dataset_rows": len(frame),
                     })
                     mlflow.log_metrics(cv_metrics)
-                    # Do not log executable model artifacts unless artifact trust/access is controlled.
                 comparisons[name] = cv_metrics
                 logger.info("event=candidate_evaluated model=%s cv_roc_auc=%.4f",
                             name, cv_metrics["cv_roc_auc"])
