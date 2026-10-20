@@ -1,8 +1,19 @@
 
+alertmanager:
+  enabled: false
+
+kube-state-metrics:
+  enabled: false
+
+prometheus-node-exporter:
+  enabled: false
+
+prometheus-pushgateway:
+  enabled: false
+
 server:
   persistentVolume:
     enabled: false
-
   resources:
     requests:
       cpu: 100m
@@ -16,7 +27,6 @@ serverFiles:
     global:
       scrape_interval: 15s
       evaluation_interval: 15s
-
     scrape_configs:
       - job_name: prometheus
         static_configs:

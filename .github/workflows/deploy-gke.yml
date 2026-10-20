@@ -11,9 +11,20 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: production-gke-deployment
+  cancel-in-progress: false
+
 jobs:
   deploy:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    if: >-
+      ${{
+        github.event_name == 'workflow_dispatch' ||
+        (
+          github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.head_branch == 'main'
+        )
+      }}
     runs-on: ubuntu-latest
 
     permissions:
@@ -27,10 +38,10 @@ jobs:
       IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
 
     steps:
-      - name: Checkout published commit
+      - name: Checkout deployment configuration
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
@@ -50,28 +61,47 @@ jobs:
 
       - name: Validate Kubernetes manifests
         run: |
+          set -euo pipefail
           kubectl apply --dry-run=client -f k8s/deployment.yaml
           kubectl apply --dry-run=client -f k8s/service.yaml
 
       - name: Apply Kubernetes manifests
         run: |
+          set -euo pipefail
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
 
-      - name: Deploy the exact published image
+      - name: Select published image tag
+        id: image
         env:
-          IMAGE_TAG: sha-${{ github.event.workflow_run.head_sha }}
+          PUBLISHED_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "workflow_run" ]; then
+            test -n "$PUBLISHED_SHA"
+            echo "tag=sha-${PUBLISHED_SHA}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy application image
+        env:
+          IMAGE_TAG: ${{ steps.image.outputs.tag }}
+        run: |
+          set -euo pipefail
           kubectl set image deployment/heart-disease-api \
             api="${IMAGE}:${IMAGE_TAG}"
 
       - name: Wait for deployment rollout
         run: |
+          set -euo pipefail
           kubectl rollout status deployment/heart-disease-api \
             --timeout=5m
 
       - name: Verify deployment
         run: |
+          set -euo pipefail
           kubectl get deployment heart-disease-api
           kubectl get pods -o wide
           kubectl get service heart-disease-api
