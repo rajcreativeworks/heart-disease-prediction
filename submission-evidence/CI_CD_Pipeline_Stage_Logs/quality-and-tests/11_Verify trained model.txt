@@ -1,0 +1,14 @@
+﻿2026-10-20T15:07:15.6376467Z ##[group]Run test -s models/model.joblib || {
+2026-10-20T15:07:15.6376912Z [36;1mtest -s models/model.joblib || {[0m
+2026-10-20T15:07:15.6377294Z [36;1m  echo "ERROR: models/model.joblib was not generated."[0m
+2026-10-20T15:07:15.6377634Z [36;1m  exit 1[0m
+2026-10-20T15:07:15.6377842Z [36;1m}[0m
+2026-10-20T15:07:15.6429271Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:07:15.6429533Z env:
+2026-10-20T15:07:15.6429810Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6430271Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:15.6430736Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6431139Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6431529Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6431925Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:15.6432278Z ##[endgroup]

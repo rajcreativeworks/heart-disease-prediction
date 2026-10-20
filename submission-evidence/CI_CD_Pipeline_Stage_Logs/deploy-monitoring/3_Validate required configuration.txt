@@ -1,0 +1,32 @@
+﻿2026-10-20T15:39:20.8871221Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:20.8871853Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:20.8872161Z [36;1m[0m
+2026-10-20T15:39:20.8872433Z [36;1mtest -n "$GCP_PROVIDER" || {[0m
+2026-10-20T15:39:20.8872897Z [36;1m  echo "Missing repository variable GCP_WORKLOAD_IDENTITY_PROVIDER"[0m
+2026-10-20T15:39:20.8873339Z [36;1m  exit 1[0m
+2026-10-20T15:39:20.8873592Z [36;1m}[0m
+2026-10-20T15:39:20.8873827Z [36;1m[0m
+2026-10-20T15:39:20.8874102Z [36;1mtest -n "$GCP_SERVICE_ACCOUNT" || {[0m
+2026-10-20T15:39:20.8874540Z [36;1m  echo "Missing repository variable GCP_SERVICE_ACCOUNT"[0m
+2026-10-20T15:39:20.8874933Z [36;1m  exit 1[0m
+2026-10-20T15:39:20.8875181Z [36;1m}[0m
+2026-10-20T15:39:20.8875415Z [36;1m[0m
+2026-10-20T15:39:20.8875696Z [36;1mtest -n "$GRAFANA_ADMIN_PASSWORD" || {[0m
+2026-10-20T15:39:20.8876134Z [36;1m  echo "Missing GRAFANA_ADMIN_PASSWORD repository secret"[0m
+2026-10-20T15:39:20.8876544Z [36;1m  exit 1[0m
+2026-10-20T15:39:20.8876803Z [36;1m}[0m
+2026-10-20T15:39:20.8877081Z [36;1m[0m
+2026-10-20T15:39:20.8877378Z [36;1mtest -f monitoring/prometheus/values.yaml[0m
+2026-10-20T15:39:20.8877786Z [36;1mtest -f monitoring/grafana/values.yaml[0m
+2026-10-20T15:39:20.8878153Z [36;1mpython -m json.tool \[0m
+2026-10-20T15:39:20.8878566Z [36;1m  monitoring/grafana/dashboards/heart-disease-api.json \[0m
+2026-10-20T15:39:20.8878996Z [36;1m  > /dev/null[0m
+2026-10-20T15:39:20.9176744Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:20.9177202Z env:
+2026-10-20T15:39:20.9177573Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:20.9178034Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:20.9178502Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:20.9179336Z   GCP_PROVIDER: projects/119234187259/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+2026-10-20T15:39:20.9180408Z   GCP_SERVICE_ACCOUNT: github-gke-deployer@heart-risk-mlops.iam.gserviceaccount.com
+2026-10-20T15:39:20.9181235Z   GRAFANA_ADMIN_PASSWORD: ***
+2026-10-20T15:39:20.9181866Z ##[endgroup]

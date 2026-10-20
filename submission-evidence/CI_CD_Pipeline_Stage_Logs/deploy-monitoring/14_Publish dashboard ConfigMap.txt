@@ -1,0 +1,27 @@
+﻿2026-10-20T15:40:15.8001776Z ##[group]Run set -euo pipefail
+2026-10-20T15:40:15.8002161Z [36;1mset -euo pipefail[0m
+2026-10-20T15:40:15.8002529Z [36;1mkubectl create configmap heart-disease-api-dashboard \[0m
+2026-10-20T15:40:15.8002925Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:40:15.8003448Z [36;1m  --from-file=heart-disease-api.json=monitoring/grafana/dashboards/heart-disease-api.json \[0m
+2026-10-20T15:40:15.8003998Z [36;1m  --dry-run=client -o yaml \[0m
+2026-10-20T15:40:15.8004379Z [36;1m| kubectl label --local -f - grafana_dashboard=1 -o yaml \[0m
+2026-10-20T15:40:15.8004775Z [36;1m| kubectl apply -f -[0m
+2026-10-20T15:40:15.8066910Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:40:15.8067173Z env:
+2026-10-20T15:40:15.8067398Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:40:15.8067684Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:40:15.8067969Z   GKE_LOCATION: asia-south1
+2026-10-20T15:40:15.8068624Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:15.8069719Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:15.8070753Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:15.8071418Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072033Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072348Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072662Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072964Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8073358Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:40:15.8073768Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:40:15.8074395Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:15.8075325Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:15.8076119Z ##[endgroup]
+2026-10-20T15:40:17.5585872Z configmap/heart-disease-api-dashboard unchanged

@@ -1,0 +1,1201 @@
+﻿2026-10-20T15:08:54.9307656Z ##[group]Run docker/build-push-action@v6
+2026-10-20T15:08:54.9307982Z with:
+2026-10-20T15:08:54.9308182Z   context: .
+2026-10-20T15:08:54.9308392Z   file: ./Dockerfile
+2026-10-20T15:08:54.9308606Z   push: true
+2026-10-20T15:08:54.9309244Z   tags: ghcr.io/rajcreativeworks/heart-disease-prediction:latest
+ghcr.io/rajcreativeworks/heart-disease-prediction:sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+
+2026-10-20T15:08:54.9310422Z   labels: org.opencontainers.image.source=https://github.com/rajcreativeworks/heart-disease-prediction
+
+2026-10-20T15:08:54.9310953Z   load: false
+2026-10-20T15:08:54.9311171Z   no-cache: false
+2026-10-20T15:08:54.9311383Z   pull: false
+2026-10-20T15:08:54.9313936Z   github-token: ***
+2026-10-20T15:08:54.9314168Z ##[endgroup]
+2026-10-20T15:08:55.1837829Z (node:2858) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T15:08:55.1838974Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T15:08:55.1857168Z ##[group]GitHub Actions runtime token ACs
+2026-10-20T15:08:55.1864985Z refs/heads/main: read/write
+2026-10-20T15:08:55.1865973Z ##[endgroup]
+2026-10-20T15:08:55.1866494Z ##[group]Docker info
+2026-10-20T15:08:55.1905654Z [command]/usr/bin/docker version
+2026-10-20T15:08:55.2171460Z Client: Docker Engine - Community
+2026-10-20T15:08:55.2172895Z  Version:           28.0.4
+2026-10-20T15:08:55.2173523Z  API version:       1.48
+2026-10-20T15:08:55.2174074Z  Go version:        go1.23.7
+2026-10-20T15:08:55.2174625Z  Git commit:        b8034c0
+2026-10-20T15:08:55.2175180Z  Built:             Tue Mar 25 15:07:16 2025
+2026-10-20T15:08:55.2175806Z  OS/Arch:           linux/amd64
+2026-10-20T15:08:55.2176353Z  Context:           default
+2026-10-20T15:08:55.2176768Z 
+2026-10-20T15:08:55.2177110Z Server: Docker Engine - Community
+2026-10-20T15:08:55.2177719Z  Engine:
+2026-10-20T15:08:55.2178194Z   Version:          28.0.4
+2026-10-20T15:08:55.2178773Z   API version:      1.48 (minimum version 1.24)
+2026-10-20T15:08:55.2179449Z   Go version:       go1.23.7
+2026-10-20T15:08:55.2180185Z   Git commit:       6430e49
+2026-10-20T15:08:55.2180758Z   Built:            Tue Mar 25 15:07:16 2025
+2026-10-20T15:08:55.2181507Z   OS/Arch:          linux/amd64
+2026-10-20T15:08:55.2182089Z   Experimental:     false
+2026-10-20T15:08:55.2182625Z  containerd:
+2026-10-20T15:08:55.2183102Z   Version:          v2.4.2
+2026-10-20T15:08:55.2183717Z   GitCommit:        b7a25261e029d68978bbf290df0a62fc819b3c51
+2026-10-20T15:08:55.2184386Z  runc:
+2026-10-20T15:08:55.2184857Z   Version:          1.5.2
+2026-10-20T15:08:55.2185391Z   GitCommit:        v1.5.2-0-g29dd3dc2
+2026-10-20T15:08:55.2186005Z  docker-init:
+2026-10-20T15:08:55.2186491Z   Version:          0.19.0
+2026-10-20T15:08:55.2187018Z   GitCommit:        de40ad0
+2026-10-20T15:08:55.2221722Z [command]/usr/bin/docker info
+2026-10-20T15:08:55.3021464Z Client: Docker Engine - Community
+2026-10-20T15:08:55.3045733Z  Version:    28.0.4
+2026-10-20T15:08:55.3046392Z  Context:    default
+2026-10-20T15:08:55.3046808Z  Debug Mode: false
+2026-10-20T15:08:55.3047144Z  Plugins:
+2026-10-20T15:08:55.3047452Z   buildx: Docker Buildx (Docker Inc.)
+2026-10-20T15:08:55.3047866Z     Version:  v0.38.0
+2026-10-20T15:08:55.3048301Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-10-20T15:08:55.3048848Z   compose: Docker Compose (Docker Inc.)
+2026-10-20T15:08:55.3049257Z     Version:  v2.38.2
+2026-10-20T15:08:55.3049700Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-10-20T15:08:55.3050330Z 
+2026-10-20T15:08:55.3050460Z Server:
+2026-10-20T15:08:55.3050791Z  Containers: 1
+2026-10-20T15:08:55.3051106Z   Running: 1
+2026-10-20T15:08:55.3051424Z   Paused: 0
+2026-10-20T15:08:55.3051723Z   Stopped: 0
+2026-10-20T15:08:55.3052019Z  Images: 7
+2026-10-20T15:08:55.3052330Z  Server Version: 28.0.4
+2026-10-20T15:08:55.3052738Z  Storage Driver: overlay2
+2026-10-20T15:08:55.3053108Z   Backing Filesystem: extfs
+2026-10-20T15:08:55.3053461Z   Supports d_type: true
+2026-10-20T15:08:55.3053807Z   Using metacopy: false
+2026-10-20T15:08:55.3054739Z   Native Overlay Diff: false
+2026-10-20T15:08:55.3055117Z   userxattr: false
+2026-10-20T15:08:55.3055460Z  Logging Driver: json-file
+2026-10-20T15:08:55.3055841Z  Cgroup Driver: systemd
+2026-10-20T15:08:55.3056197Z  Cgroup Version: 2
+2026-10-20T15:08:55.3056533Z  Plugins:
+2026-10-20T15:08:55.3056884Z   Volume: local
+2026-10-20T15:08:55.3057281Z   Network: bridge host ipvlan macvlan null overlay
+2026-10-20T15:08:55.3057967Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-10-20T15:08:55.3058573Z  Swarm: inactive
+2026-10-20T15:08:55.3058927Z  Runtimes: io.containerd.runc.v2 runc
+2026-10-20T15:08:55.3059365Z  Default Runtime: runc
+2026-10-20T15:08:55.3059751Z  Init Binary: docker-init
+2026-10-20T15:08:55.3060403Z  containerd version: b7a25261e029d68978bbf290df0a62fc819b3c51
+2026-10-20T15:08:55.3061298Z  runc version: v1.5.2-0-g29dd3dc2
+2026-10-20T15:08:55.3061719Z  init version: de40ad0
+2026-10-20T15:08:55.3062234Z  Security Options:
+2026-10-20T15:08:55.3071247Z   apparmor
+2026-10-20T15:08:55.3071818Z   seccomp
+2026-10-20T15:08:55.3072465Z    Profile: builtin
+2026-10-20T15:08:55.3073046Z   cgroupns
+2026-10-20T15:08:55.3073588Z  Kernel Version: 7.0.0-1017-azure
+2026-10-20T15:08:55.3074234Z  Operating System: Ubuntu 24.04.5 LTS
+2026-10-20T15:08:55.3074862Z  OSType: linux
+2026-10-20T15:08:55.3075388Z  Architecture: x86_64
+2026-10-20T15:08:55.3075943Z  CPUs: 4
+2026-10-20T15:08:55.3076455Z  Total Memory: 15.61GiB
+2026-10-20T15:08:55.3077009Z  Name: runnervmxehtw
+2026-10-20T15:08:55.3077605Z  ID: bd42df5e-395f-4aee-a5a1-74c922b586f3
+2026-10-20T15:08:55.3078270Z  Docker Root Dir: /var/lib/docker
+2026-10-20T15:08:55.3078879Z  Debug Mode: false
+2026-10-20T15:08:55.3079410Z  Username: githubactions
+2026-10-20T15:08:55.3080201Z  Experimental: false
+2026-10-20T15:08:55.3080790Z  Insecure Registries:
+2026-10-20T15:08:55.3081391Z   ::1/128
+2026-10-20T15:08:55.3081865Z   127.0.0.0/8
+2026-10-20T15:08:55.3082408Z  Live Restore Enabled: false
+2026-10-20T15:08:55.3082904Z 
+2026-10-20T15:08:55.3083756Z ##[endgroup]
+2026-10-20T15:08:55.3084609Z ##[group]Proxy configuration
+2026-10-20T15:08:55.3085254Z No proxy configuration found
+2026-10-20T15:08:55.3086076Z ##[endgroup]
+2026-10-20T15:08:55.3901722Z ##[group]Buildx version
+2026-10-20T15:08:55.3923970Z [command]/usr/bin/docker buildx version
+2026-10-20T15:08:55.4561527Z github.com/docker/buildx v0.38.0 0dbe87f36ed472fe36b6796c3f70b4210a731fc5
+2026-10-20T15:08:55.4610621Z ##[endgroup]
+2026-10-20T15:08:55.4611267Z ##[group]Builder info
+2026-10-20T15:08:55.5728036Z {
+2026-10-20T15:08:55.5730933Z   "nodes": [
+2026-10-20T15:08:55.5732251Z     {
+2026-10-20T15:08:55.5733324Z       "name": "builder-eebf1b34-5871-47c9-aa9c-ea168c6d87550",
+2026-10-20T15:08:55.5735805Z       "endpoint": "unix:///var/run/docker.sock",
+2026-10-20T15:08:55.5736817Z       "status": "running",
+2026-10-20T15:08:55.5740045Z       "buildkitd-flags": "--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host",
+2026-10-20T15:08:55.5741145Z       "buildkit": "v0.33.1",
+2026-10-20T15:08:55.5741968Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386",
+2026-10-20T15:08:55.5742534Z       "features": {
+2026-10-20T15:08:55.5743091Z         "Automatically load images to the Docker Engine image store": true,
+2026-10-20T15:08:55.5743697Z         "Cache export": true,
+2026-10-20T15:08:55.5744069Z         "Direct push": true,
+2026-10-20T15:08:55.5744456Z         "Docker exporter": true,
+2026-10-20T15:08:55.5744892Z         "Multi-platform build": true,
+2026-10-20T15:08:55.5745293Z         "OCI exporter": true
+2026-10-20T15:08:55.5745637Z       },
+2026-10-20T15:08:55.5745918Z       "labels": {
+2026-10-20T15:08:55.5746350Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2026-10-20T15:08:55.5747006Z         "org.mobyproject.buildkit.worker.hostname": "e5031272a316",
+2026-10-20T15:08:55.5747697Z         "org.mobyproject.buildkit.worker.network": "host",
+2026-10-20T15:08:55.5748406Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2026-10-20T15:08:55.5749369Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2026-10-20T15:08:55.5750252Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2026-10-20T15:08:55.5750659Z       },
+2026-10-20T15:08:55.5750859Z       "gcPolicy": [
+2026-10-20T15:08:55.5751101Z         {
+2026-10-20T15:08:55.5751325Z           "all": false,
+2026-10-20T15:08:55.5751553Z           "filter": [
+2026-10-20T15:08:55.5751898Z             "type==source.local type==exec.cachemount type==source.git.checkout"
+2026-10-20T15:08:55.5752295Z           ],
+2026-10-20T15:08:55.5752516Z           "keepDuration": "48h0m0s",
+2026-10-20T15:08:55.5752790Z           "maxUsedSpace": "488.3MiB"
+2026-10-20T15:08:55.5753030Z         },
+2026-10-20T15:08:55.5753436Z         {
+2026-10-20T15:08:55.5753625Z           "all": false,
+2026-10-20T15:08:55.5753858Z           "keepDuration": "1440h0m0s",
+2026-10-20T15:08:55.5754160Z           "reservedSpace": "9.313GiB",
+2026-10-20T15:08:55.5754432Z           "maxUsedSpace": "93.13GiB",
+2026-10-20T15:08:55.5754688Z           "minFreeSpace": "27.01GiB"
+2026-10-20T15:08:55.5754931Z         },
+2026-10-20T15:08:55.5755112Z         {
+2026-10-20T15:08:55.5755297Z           "all": false,
+2026-10-20T15:08:55.5755541Z           "reservedSpace": "9.313GiB",
+2026-10-20T15:08:55.5755805Z           "maxUsedSpace": "93.13GiB",
+2026-10-20T15:08:55.5756057Z           "minFreeSpace": "27.01GiB"
+2026-10-20T15:08:55.5756321Z         },
+2026-10-20T15:08:55.5756503Z         {
+2026-10-20T15:08:55.5756703Z           "all": true,
+2026-10-20T15:08:55.5756929Z           "reservedSpace": "9.313GiB",
+2026-10-20T15:08:55.5757195Z           "maxUsedSpace": "93.13GiB",
+2026-10-20T15:08:55.5757456Z           "minFreeSpace": "27.01GiB"
+2026-10-20T15:08:55.5757703Z         }
+2026-10-20T15:08:55.5757890Z       ]
+2026-10-20T15:08:55.5758076Z     }
+2026-10-20T15:08:55.5758256Z   ],
+2026-10-20T15:08:55.5758536Z   "name": "builder-eebf1b34-5871-47c9-aa9c-ea168c6d8755",
+2026-10-20T15:08:55.5758908Z   "driver": "docker-container",
+2026-10-20T15:08:55.5759201Z   "lastActivity": "2026-10-20T15:08:48.000Z"
+2026-10-20T15:08:55.5759473Z }
+2026-10-20T15:08:55.5760285Z ##[endgroup]
+2026-10-20T15:08:55.7693954Z [command]/usr/bin/docker buildx build --file ./Dockerfile --iidfile /home/runner/work/_temp/docker-actions-toolkit-BN0zPp/build-iidfile-d6545ec3eb.txt --label org.opencontainers.image.source=https://github.com/rajcreativeworks/heart-disease-prediction --attest type=provenance,mode=max,builder-id=https://github.com/rajcreativeworks/heart-disease-prediction/actions/runs/39445695001/attempts/1 --tag ghcr.io/rajcreativeworks/heart-disease-prediction:latest --tag ghcr.io/rajcreativeworks/heart-disease-prediction:sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4 --metadata-file /home/runner/work/_temp/docker-actions-toolkit-BN0zPp/build-metadata-a5c772d680.json --push .
+2026-10-20T15:08:56.0669616Z #0 building with "builder-eebf1b34-5871-47c9-aa9c-ea168c6d8755" instance using docker-container driver
+2026-10-20T15:08:56.0670455Z 
+2026-10-20T15:08:56.0670605Z #1 [internal] load build definition from Dockerfile
+2026-10-20T15:08:56.0670957Z #1 transferring dockerfile: 944B done
+2026-10-20T15:08:56.0671227Z #1 DONE 0.0s
+2026-10-20T15:08:56.0671348Z 
+2026-10-20T15:08:56.0671528Z #2 [internal] load metadata for docker.io/library/python:3.12-slim
+2026-10-20T15:08:56.2674293Z #2 ...
+2026-10-20T15:08:56.2674614Z 
+2026-10-20T15:08:56.2674914Z #3 [auth] library/python:pull token for registry-1.docker.io
+2026-10-20T15:08:56.2675445Z #3 DONE 0.0s
+2026-10-20T15:08:56.4176767Z 
+2026-10-20T15:08:56.4177625Z #2 [internal] load metadata for docker.io/library/python:3.12-slim
+2026-10-20T15:08:56.7355619Z #2 DONE 0.8s
+2026-10-20T15:08:56.8443110Z 
+2026-10-20T15:08:56.8443861Z #4 [internal] load .dockerignore
+2026-10-20T15:08:56.8444375Z #4 transferring context: 194B done
+2026-10-20T15:08:56.8444774Z #4 DONE 0.0s
+2026-10-20T15:08:56.8444910Z 
+2026-10-20T15:08:56.8445009Z #5 [internal] load build context
+2026-10-20T15:08:56.8445715Z #5 transferring context: 38.08kB done
+2026-10-20T15:08:56.8445985Z #5 DONE 0.0s
+2026-10-20T15:08:56.8446107Z 
+2026-10-20T15:08:56.8446606Z #6 [1/9] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+2026-10-20T15:08:56.8447627Z #6 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 done
+2026-10-20T15:08:56.8448362Z #6 sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813 249B / 249B 0.1s done
+2026-10-20T15:08:56.9484648Z #6 sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 0B / 1.29MB 0.2s
+2026-10-20T15:08:56.9485886Z #6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 0B / 29.84MB 0.2s
+2026-10-20T15:08:56.9487289Z #6 sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 12.12MB / 12.12MB 0.2s done
+2026-10-20T15:08:57.0746265Z #6 sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 1.29MB / 1.29MB 0.2s done
+2026-10-20T15:08:57.0747267Z #6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 27.26MB / 29.84MB 0.3s
+2026-10-20T15:08:57.2475294Z #6 sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 29.84MB / 29.84MB 0.3s done
+2026-10-20T15:08:57.2476452Z #6 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e
+2026-10-20T15:08:57.7621040Z #6 extracting sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e 0.7s done
+2026-10-20T15:08:57.7621803Z #6 DONE 1.0s
+2026-10-20T15:08:57.9809762Z 
+2026-10-20T15:08:57.9811606Z #6 [1/9] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+2026-10-20T15:08:57.9813461Z #6 extracting sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8 0.1s done
+2026-10-20T15:08:57.9814676Z #6 extracting sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4
+2026-10-20T15:08:58.1747812Z #6 extracting sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4 0.3s done
+2026-10-20T15:08:58.1748859Z #6 DONE 1.4s
+2026-10-20T15:08:58.2808247Z 
+2026-10-20T15:08:58.2811738Z #6 [1/9] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+2026-10-20T15:08:58.2813043Z #6 extracting sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813 done
+2026-10-20T15:08:58.2813782Z #6 DONE 1.4s
+2026-10-20T15:08:58.2813965Z 
+2026-10-20T15:08:58.2814105Z #7 [2/9] WORKDIR /app
+2026-10-20T15:08:58.2814447Z #7 DONE 0.1s
+2026-10-20T15:08:58.4387990Z 
+2026-10-20T15:08:58.4388788Z #8 [3/9] COPY requirements.txt .
+2026-10-20T15:08:58.4389260Z #8 DONE 0.0s
+2026-10-20T15:08:58.4389448Z 
+2026-10-20T15:08:58.4390127Z #9 [4/9] RUN python -m pip install --upgrade pip setuptools wheel     && python -m pip install --no-compile -r requirements.txt
+2026-10-20T15:08:59.5576951Z #9 1.269 Requirement already satisfied: pip in /usr/local/lib/python3.12/site-packages (25.0.1)
+2026-10-20T15:08:59.7188114Z #9 1.316 Collecting pip
+2026-10-20T15:08:59.7188805Z #9 1.334   Downloading pip-26.2.1-py3-none-any.whl.metadata (4.6 kB)
+2026-10-20T15:08:59.7189384Z #9 1.430 Collecting setuptools
+2026-10-20T15:08:59.9692214Z #9 1.433   Downloading setuptools-84.2.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-20T15:08:59.9693025Z #9 1.456 Collecting wheel
+2026-10-20T15:08:59.9693583Z #9 1.458   Downloading wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+2026-10-20T15:08:59.9694251Z #9 1.473 Collecting packaging>=24.0 (from wheel)
+2026-10-20T15:08:59.9694930Z #9 1.477   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-10-20T15:08:59.9695660Z #9 1.482 Downloading pip-26.2.1-py3-none-any.whl (1.8 MB)
+2026-10-20T15:08:59.9697217Z #9 1.493    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 362.6 MB/s eta 0:00:00
+2026-10-20T15:08:59.9698021Z #9 1.496 Downloading setuptools-84.2.0-py3-none-any.whl (875 kB)
+2026-10-20T15:08:59.9698905Z #9 1.499    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 875.8/875.8 kB 642.4 MB/s eta 0:00:00
+2026-10-20T15:08:59.9700534Z #9 1.502 Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+2026-10-20T15:08:59.9701203Z #9 1.504 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-10-20T15:08:59.9701937Z #9 1.530 Installing collected packages: setuptools, pip, packaging, wheel
+2026-10-20T15:09:00.3064193Z #9 2.018   Attempting uninstall: pip
+2026-10-20T15:09:00.4416240Z #9 2.021     Found existing installation: pip 25.0.1
+2026-10-20T15:09:00.4416956Z #9 2.055     Uninstalling pip-25.0.1:
+2026-10-20T15:09:00.4417500Z #9 2.153       Successfully uninstalled pip-25.0.1
+2026-10-20T15:09:01.4025480Z #9 3.114 Successfully installed packaging-26.3 pip-26.2.1 setuptools-84.2.0 wheel-0.48.0
+2026-10-20T15:09:01.5534055Z #9 3.114 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-10-20T15:09:02.2691919Z #9 3.981 Collecting fastapi==0.150.0 (from -r requirements.txt (line 3))
+2026-10-20T15:09:02.4126559Z #9 4.008   Downloading fastapi-0.150.0-py3-none-any.whl.metadata (26 kB)
+2026-10-20T15:09:02.4127794Z #9 4.031 Collecting starlette==1.3.1 (from -r requirements.txt (line 4))
+2026-10-20T15:09:02.4129056Z #9 4.034   Downloading starlette-1.3.1-py3-none-any.whl.metadata (6.4 kB)
+2026-10-20T15:09:02.4142440Z #9 4.051 Collecting uvicorn==0.34.0 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:02.4143163Z #9 4.055   Downloading uvicorn-0.34.0-py3-none-any.whl.metadata (6.5 kB)
+2026-10-20T15:09:02.4143701Z #9 4.124 Collecting scikit-learn==1.6.1 (from -r requirements.txt (line 6))
+2026-10-20T15:09:02.5363724Z #9 4.129   Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+2026-10-20T15:09:02.5365268Z #9 4.248 Collecting pandas==2.2.3 (from -r requirements.txt (line 7))
+2026-10-20T15:09:02.6916880Z #9 4.253   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+2026-10-20T15:09:02.7389298Z #9 4.450 Collecting numpy==2.1.3 (from -r requirements.txt (line 8))
+2026-10-20T15:09:02.8689023Z #9 4.456   Downloading numpy-2.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+2026-10-20T15:09:02.8691211Z #9 4.580 Collecting matplotlib==3.10.1 (from -r requirements.txt (line 9))
+2026-10-20T15:09:03.0552634Z #9 4.585   Downloading matplotlib-3.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+2026-10-20T15:09:03.0553674Z #9 4.595 Collecting seaborn==0.13.2 (from -r requirements.txt (line 10))
+2026-10-20T15:09:03.0554527Z #9 4.598   Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+2026-10-20T15:09:03.0555401Z #9 4.613 Collecting joblib==1.4.2 (from -r requirements.txt (line 11))
+2026-10-20T15:09:03.0556281Z #9 4.618   Downloading joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+2026-10-20T15:09:03.0557077Z #9 4.627 Collecting ucimlrepo==0.0.7 (from -r requirements.txt (line 12))
+2026-10-20T15:09:03.0557899Z #9 4.632   Downloading ucimlrepo-0.0.7-py3-none-any.whl.metadata (5.5 kB)
+2026-10-20T15:09:03.0558694Z #9 4.655 Collecting mlflow==3.17.1 (from -r requirements.txt (line 13))
+2026-10-20T15:09:03.0560231Z #9 4.658   Downloading mlflow-3.17.1-py3-none-any.whl.metadata (50 kB)
+2026-10-20T15:09:03.0561101Z #9 4.675 Collecting prometheus-client==0.21.1 (from -r requirements.txt (line 14))
+2026-10-20T15:09:03.0562022Z #9 4.679   Downloading prometheus_client-0.21.1-py3-none-any.whl.metadata (1.8 kB)
+2026-10-20T15:09:03.0562864Z #9 4.766 Collecting pydantic==2.10.6 (from -r requirements.txt (line 15))
+2026-10-20T15:09:03.2641560Z #9 4.770   Downloading pydantic-2.10.6-py3-none-any.whl.metadata (30 kB)
+2026-10-20T15:09:03.2642225Z #9 4.783 Collecting httpx==0.28.1 (from -r requirements.txt (line 16))
+2026-10-20T15:09:03.2643225Z #9 4.787   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-10-20T15:09:03.2643681Z #9 4.807 Collecting pytest==9.1.1 (from -r requirements.txt (line 17))
+2026-10-20T15:09:03.2644128Z #9 4.811   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+2026-10-20T15:09:03.2644580Z #9 4.821 Collecting pytest-cov==6.0.0 (from -r requirements.txt (line 18))
+2026-10-20T15:09:03.2645077Z #9 4.825   Downloading pytest_cov-6.0.0-py3-none-any.whl.metadata (27 kB)
+2026-10-20T15:09:03.4365927Z #9 5.148 Collecting ruff==0.11.2 (from -r requirements.txt (line 19))
+2026-10-20T15:09:03.5396051Z #9 5.152   Downloading ruff-0.11.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2026-10-20T15:09:03.5397199Z #9 5.164 Collecting pip-audit==2.8.0 (from -r requirements.txt (line 20))
+2026-10-20T15:09:03.5398490Z #9 5.169   Downloading pip_audit-2.8.0-py3-none-any.whl.metadata (27 kB)
+2026-10-20T15:09:03.5399216Z #9 5.180 Collecting bandit==1.8.3 (from -r requirements.txt (line 21))
+2026-10-20T15:09:03.5400109Z #9 5.183   Downloading bandit-1.8.3-py3-none-any.whl.metadata (7.0 kB)
+2026-10-20T15:09:03.5401018Z #9 5.198 Collecting typing-extensions>=4.8.0 (from fastapi==0.150.0->-r requirements.txt (line 3))
+2026-10-20T15:09:03.5401965Z #9 5.202   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-20T15:09:03.5402876Z #9 5.209 Collecting typing-inspection>=0.4.2 (from fastapi==0.150.0->-r requirements.txt (line 3))
+2026-10-20T15:09:03.5403787Z #9 5.212   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-20T15:09:03.5404663Z #9 5.218 Collecting annotated-doc>=0.0.2 (from fastapi==0.150.0->-r requirements.txt (line 3))
+2026-10-20T15:09:03.5405383Z #9 5.221   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+2026-10-20T15:09:03.5405962Z #9 5.233 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.150.0->-r requirements.txt (line 3))
+2026-10-20T15:09:03.5406733Z #9 5.237   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-20T15:09:03.5407543Z #9 5.251 Collecting anyio<5,>=3.6.2 (from starlette==1.3.1->-r requirements.txt (line 4))
+2026-10-20T15:09:03.6774189Z #9 5.255   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-20T15:09:03.6775765Z #9 5.268 Collecting click>=7.0 (from uvicorn==0.34.0->uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:03.6776683Z #9 5.272   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-20T15:09:03.6777240Z #9 5.278 Collecting h11>=0.8 (from uvicorn==0.34.0->uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:03.6777770Z #9 5.281   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-20T15:09:03.6778254Z #9 5.389 Collecting scipy>=1.6.0 (from scikit-learn==1.6.1->-r requirements.txt (line 6))
+2026-10-20T15:09:03.8230677Z #9 5.394   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-10-20T15:09:03.8231951Z #9 5.415 Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.6.1->-r requirements.txt (line 6))
+2026-10-20T15:09:03.8232768Z #9 5.419   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+2026-10-20T15:09:03.8233580Z #9 5.430 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements.txt (line 7))
+2026-10-20T15:09:03.8234234Z #9 5.434   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2026-10-20T15:09:03.8234821Z #9 5.463 Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements.txt (line 7))
+2026-10-20T15:09:03.8235319Z #9 5.466   Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+2026-10-20T15:09:03.8235836Z #9 5.478 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements.txt (line 7))
+2026-10-20T15:09:03.8236368Z #9 5.481   Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-10-20T15:09:03.8236889Z #9 5.534 Collecting contourpy>=1.0.1 (from matplotlib==3.10.1->-r requirements.txt (line 9))
+2026-10-20T15:09:03.9886924Z #9 5.538   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-10-20T15:09:03.9888211Z #9 5.546 Collecting cycler>=0.10 (from matplotlib==3.10.1->-r requirements.txt (line 9))
+2026-10-20T15:09:03.9889119Z #9 5.549   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-10-20T15:09:04.0054318Z #9 5.717 Collecting fonttools>=4.22.0 (from matplotlib==3.10.1->-r requirements.txt (line 9))
+2026-10-20T15:09:04.2314096Z #9 5.721   Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)
+2026-10-20T15:09:04.2315246Z #9 5.787 Collecting kiwisolver>=1.3.1 (from matplotlib==3.10.1->-r requirements.txt (line 9))
+2026-10-20T15:09:04.2316282Z #9 5.791   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-10-20T15:09:04.2318073Z #9 5.795 Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/site-packages (from matplotlib==3.10.1->-r requirements.txt (line 9)) (26.3)
+2026-10-20T15:09:04.2319172Z #9 5.943 Collecting pillow>=8 (from matplotlib==3.10.1->-r requirements.txt (line 9))
+2026-10-20T15:09:04.3395150Z #9 5.947   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-10-20T15:09:04.3396351Z #9 5.966 Collecting pyparsing>=2.3.1 (from matplotlib==3.10.1->-r requirements.txt (line 9))
+2026-10-20T15:09:04.3397207Z #9 5.969   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-10-20T15:09:04.3398040Z #9 5.990 Collecting certifi>=2020.12.5 (from ucimlrepo==0.0.7->-r requirements.txt (line 12))
+2026-10-20T15:09:04.3398880Z #9 5.994   Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+2026-10-20T15:09:04.3399762Z #9 6.014 Collecting mlflow-skinny==3.17.1 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:04.3400815Z #9 6.017   Downloading mlflow_skinny-3.17.1-py3-none-any.whl.metadata (51 kB)
+2026-10-20T15:09:04.3401703Z #9 6.034 Collecting mlflow-tracing==3.17.1 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:04.3402368Z #9 6.037   Downloading mlflow_tracing-3.17.1-py3-none-any.whl.metadata (19 kB)
+2026-10-20T15:09:04.3402879Z #9 6.051 Collecting Flask-CORS<7 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:04.5092576Z #9 6.055   Downloading flask_cors-6.0.5-py3-none-any.whl.metadata (5.4 kB)
+2026-10-20T15:09:04.5093259Z #9 6.067 Collecting Flask<4 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:04.5093767Z #9 6.070   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+2026-10-20T15:09:04.8654880Z #9 6.577 Collecting aiohttp<4,>=3.7.0 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.0416401Z #9 6.581   Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+2026-10-20T15:09:05.0417391Z #9 6.599 Collecting alembic!=1.10.0,<2 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.0417987Z #9 6.602   Downloading alembic-1.20.0-py3-none-any.whl.metadata (7.3 kB)
+2026-10-20T15:09:05.0473259Z #9 6.758 Collecting cryptography<51,>=43.0.0 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.1927703Z #9 6.763   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-10-20T15:09:05.1928732Z #9 6.777 Collecting docker<8,>=4.0.0 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.1929535Z #9 6.781   Downloading docker-7.2.0-py3-none-any.whl.metadata (3.8 kB)
+2026-10-20T15:09:05.1930406Z #9 6.794 Collecting graphene<4 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.1931141Z #9 6.797   Downloading graphene-3.4.3-py2.py3-none-any.whl.metadata (6.9 kB)
+2026-10-20T15:09:05.1931916Z #9 6.812 Collecting gunicorn<27 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.1932659Z #9 6.815   Downloading gunicorn-26.2.0-py3-none-any.whl.metadata (5.5 kB)
+2026-10-20T15:09:05.1933597Z #9 6.826 Collecting huey<4,>=2.5.4 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.1934089Z #9 6.829   Downloading huey-3.4.0-py3-none-any.whl.metadata (5.7 kB)
+2026-10-20T15:09:05.1934575Z #9 6.904 Collecting pyarrow<26,>=4.0.0 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.3615624Z #9 6.908   Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-10-20T15:09:05.3616475Z #9 6.918 Collecting skops<1 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.3617120Z #9 6.923   Downloading skops-0.16.0-py3-none-any.whl.metadata (4.3 kB)
+2026-10-20T15:09:05.5342474Z #9 7.246 Collecting sqlalchemy<3,>=1.4.0 (from mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:05.7072526Z #9 7.250   Downloading sqlalchemy-2.1.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+2026-10-20T15:09:05.7074052Z #9 7.264 Collecting annotated-types>=0.6.0 (from pydantic==2.10.6->-r requirements.txt (line 15))
+2026-10-20T15:09:05.7075026Z #9 7.268   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-20T15:09:06.2259115Z #9 7.937 Collecting pydantic-core==2.27.2 (from pydantic==2.10.6->-r requirements.txt (line 15))
+2026-10-20T15:09:06.4481002Z #9 7.941   Downloading pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+2026-10-20T15:09:06.4482265Z #9 7.954 Collecting httpcore==1.* (from httpx==0.28.1->-r requirements.txt (line 16))
+2026-10-20T15:09:06.4483143Z #9 7.957   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-10-20T15:09:06.4483936Z #9 7.968 Collecting idna (from httpx==0.28.1->-r requirements.txt (line 16))
+2026-10-20T15:09:06.4484735Z #9 7.971   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-20T15:09:06.4485540Z #9 7.980 Collecting iniconfig>=1.0.1 (from pytest==9.1.1->-r requirements.txt (line 17))
+2026-10-20T15:09:06.4486473Z #9 7.983   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-10-20T15:09:06.4487312Z #9 7.991 Collecting pluggy<2,>=1.5 (from pytest==9.1.1->-r requirements.txt (line 17))
+2026-10-20T15:09:06.4488120Z #9 7.994   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-10-20T15:09:06.4488932Z #9 8.006 Collecting pygments>=2.7.2 (from pytest==9.1.1->-r requirements.txt (line 17))
+2026-10-20T15:09:06.4489762Z #9 8.010   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-10-20T15:09:06.6610895Z #9 8.373 Collecting coverage>=7.5 (from coverage[toml]>=7.5->pytest-cov==6.0.0->-r requirements.txt (line 18))
+2026-10-20T15:09:06.8301191Z #9 8.376   Downloading coverage-7.16.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.2 kB)
+2026-10-20T15:09:06.8304353Z #9 8.388 Collecting CacheControl>=0.13.0 (from CacheControl[filecache]>=0.13.0->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.8305779Z #9 8.391   Downloading cachecontrol-0.14.4-py3-none-any.whl.metadata (3.1 kB)
+2026-10-20T15:09:06.8307054Z #9 8.412 Collecting cyclonedx-python-lib<9,>=5 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.8308209Z #9 8.416   Downloading cyclonedx_python_lib-8.9.0-py3-none-any.whl.metadata (6.5 kB)
+2026-10-20T15:09:06.8309343Z #9 8.426 Collecting pip-api>=0.0.28 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.8310656Z #9 8.429   Downloading pip_api-0.0.35-py3-none-any.whl.metadata (17 kB)
+2026-10-20T15:09:06.8311612Z #9 8.438 Collecting pip-requirements-parser>=32.0.0 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.8312627Z #9 8.441   Downloading pip_requirements_parser-32.0.1-py3-none-any.whl.metadata (9.3 kB)
+2026-10-20T15:09:06.8313557Z #9 8.542 Collecting requests>=2.31.0 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.9434442Z #9 8.546   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-10-20T15:09:06.9435572Z #9 8.569 Collecting rich>=12.4 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.9436096Z #9 8.574   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-10-20T15:09:06.9436587Z #9 8.582 Collecting toml>=0.10 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.9437077Z #9 8.586   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+2026-10-20T15:09:06.9437622Z #9 8.600 Collecting platformdirs>=4.2.0 (from pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:06.9438182Z #9 8.604   Downloading platformdirs-4.13.5-py3-none-any.whl.metadata (5.5 kB)
+2026-10-20T15:09:06.9438694Z #9 8.637 Collecting PyYAML>=5.3.1 (from bandit==1.8.3->-r requirements.txt (line 21))
+2026-10-20T15:09:06.9439391Z #9 8.641   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-10-20T15:09:06.9440630Z #9 8.655 Collecting stevedore>=1.20.0 (from bandit==1.8.3->-r requirements.txt (line 21))
+2026-10-20T15:09:07.0595626Z #9 8.659   Downloading stevedore-5.9.1-py3-none-any.whl.metadata (2.3 kB)
+2026-10-20T15:09:07.0596765Z #9 8.677 Collecting cachetools<8,>=5.0.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.0597749Z #9 8.680   Downloading cachetools-7.2.4-py3-none-any.whl.metadata (5.5 kB)
+2026-10-20T15:09:07.0598672Z #9 8.694 Collecting cloudpickle<4 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.0599601Z #9 8.697   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+2026-10-20T15:09:07.0600913Z #9 8.722 Collecting databricks-sdk<1,>=0.20.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.0602057Z #9 8.726   Downloading databricks_sdk-0.154.0-py3-none-any.whl.metadata (44 kB)
+2026-10-20T15:09:07.0602670Z #9 8.747 Collecting gitpython<4,>=3.1.9 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.0603287Z #9 8.751   Downloading gitpython-3.2.1-py3-none-any.whl.metadata (13 kB)
+2026-10-20T15:09:07.0603911Z #9 8.771 Collecting importlib_metadata!=4.7.0,<10,>=3.7.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.2339663Z #9 8.775   Downloading importlib_metadata-9.0.1-py3-none-any.whl.metadata (4.5 kB)
+2026-10-20T15:09:07.2341134Z #9 8.792 Collecting opentelemetry-proto<3,>=1.9.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.2342070Z #9 8.795   Downloading opentelemetry_proto-1.45.1-py3-none-any.whl.metadata (2.3 kB)
+2026-10-20T15:09:07.2343037Z #9 8.809 Collecting opentelemetry-sdk<3,>=1.9.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.2343928Z #9 8.813   Downloading opentelemetry_sdk-1.45.1-py3-none-any.whl.metadata (1.6 kB)
+2026-10-20T15:09:07.2344539Z #9 8.945 Collecting protobuf<8,>=3.12.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.3462352Z #9 8.949   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-10-20T15:09:07.3465103Z #9 8.962 Collecting python-dotenv<2,>=0.19.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.3466187Z #9 8.965   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+2026-10-20T15:09:07.3467209Z #9 8.977 Collecting sqlparse<1,>=0.4.0 (from mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.3468336Z #9 8.983   Downloading sqlparse-0.6.0-py3-none-any.whl.metadata (6.0 kB)
+2026-10-20T15:09:07.3469219Z #9 9.021 Collecting httptools>=0.6.3 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:07.3470251Z #9 9.024   Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+2026-10-20T15:09:07.3471005Z #9 9.058 Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:07.5265518Z #9 9.062   Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+2026-10-20T15:09:07.5266692Z #9 9.127 Collecting watchfiles>=0.13 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:07.5267705Z #9 9.131   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2026-10-20T15:09:07.5268518Z #9 9.238 Collecting websockets>=10.4 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 5))
+2026-10-20T15:09:07.7764614Z #9 9.242   Downloading websockets-17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+2026-10-20T15:09:07.7766751Z #9 9.253 Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.7767841Z #9 9.256   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+2026-10-20T15:09:07.7768866Z #9 9.263 Collecting aiosignal>=1.4.0 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.7770046Z #9 9.266   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+2026-10-20T15:09:07.7770953Z #9 9.276 Collecting attrs>=17.3.0 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.7771856Z #9 9.279   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-20T15:09:07.7772782Z #9 9.334 Collecting frozenlist>=1.1.1 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:07.7774080Z #9 9.337   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+2026-10-20T15:09:07.9559332Z #9 9.668 Collecting multidict<8.0,>=4.5 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.1769056Z #9 9.671   Downloading multidict-7.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.2 kB)
+2026-10-20T15:09:08.1770557Z #9 9.734 Collecting propcache>=0.2.0 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.1771648Z #9 9.738   Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+2026-10-20T15:09:08.2500038Z #9 9.961 Collecting yarl<2.0,>=1.25.1 (from aiohttp<4,>=3.7.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.3801334Z #9 9.965   Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+2026-10-20T15:09:08.3805095Z #9 9.991 Collecting Mako (from alembic!=1.10.0,<2->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.3806014Z #9 9.994   Downloading mako-1.4.3-py3-none-any.whl.metadata (2.9 kB)
+2026-10-20T15:09:08.3806746Z #9 10.09 Collecting cffi>=2.0.0 (from cryptography<51,>=43.0.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.5317681Z #9 10.10   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-10-20T15:09:08.5319363Z #9 10.11 Collecting license-expression<31,>=30 (from cyclonedx-python-lib<9,>=5->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:08.5321080Z #9 10.11   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+2026-10-20T15:09:08.5321874Z #9 10.24 Collecting packageurl-python<2,>=0.11 (from cyclonedx-python-lib<9,>=5->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:08.6326387Z #9 10.25   Downloading packageurl_python-0.17.6-py3-none-any.whl.metadata (5.1 kB)
+2026-10-20T15:09:08.6327754Z #9 10.26 Collecting py-serializable<2.0.0,>=1.1.1 (from cyclonedx-python-lib<9,>=5->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:08.6328876Z #9 10.26   Downloading py_serializable-1.1.2-py3-none-any.whl.metadata (4.2 kB)
+2026-10-20T15:09:08.6330457Z #9 10.27 Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<9,>=5->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:08.6331171Z #9 10.28   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+2026-10-20T15:09:08.6331970Z #9 10.31 Collecting google-auth~=2.0 (from databricks-sdk<1,>=0.20.0->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.6332738Z #9 10.31   Downloading google_auth-2.62.0-py3-none-any.whl.metadata (6.0 kB)
+2026-10-20T15:09:08.6333397Z #9 10.34 Collecting urllib3<3,>=1.26 (from databricks-sdk<1,>=0.20.0->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.6334015Z #9 10.34   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-20T15:09:08.7327247Z #9 10.36 Collecting blinker>=1.9.0 (from Flask<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.7328236Z #9 10.36   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+2026-10-20T15:09:08.7329153Z #9 10.37 Collecting itsdangerous>=2.2.0 (from Flask<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.7330208Z #9 10.37   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-20T15:09:08.7331048Z #9 10.39 Collecting jinja2>=3.1.2 (from Flask<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.7331561Z #9 10.39   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-10-20T15:09:08.7332211Z #9 10.44 Collecting markupsafe>=2.1.1 (from Flask<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.7332954Z #9 10.44   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-10-20T15:09:08.8376968Z #9 10.46 Collecting werkzeug>=3.1.0 (from Flask<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.8378416Z #9 10.46   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+2026-10-20T15:09:08.8380106Z #9 10.48 Collecting gitdb<5,>=4.0.1 (from gitpython<4,>=3.1.9->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.8381336Z #9 10.48   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+2026-10-20T15:09:08.8382424Z #9 10.49 Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython<4,>=3.1.9->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.8383208Z #9 10.49   Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+2026-10-20T15:09:08.8383952Z #9 10.51 Collecting pyasn1-modules>=0.2.1 (from google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.8384751Z #9 10.51   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+2026-10-20T15:09:08.8385399Z #9 10.54 Collecting graphql-core<3.3,>=3.1 (from graphene<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.8385977Z #9 10.54   Downloading graphql_core-3.2.13-py3-none-any.whl.metadata (11 kB)
+2026-10-20T15:09:08.8386554Z #9 10.55 Collecting graphql-relay<3.3,>=3.1 (from graphene<4->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.9486048Z #9 10.55   Downloading graphql_relay-3.2.0-py3-none-any.whl.metadata (12 kB)
+2026-10-20T15:09:08.9489561Z #9 10.58 Collecting zipp>=3.20 (from importlib_metadata!=4.7.0,<10,>=3.7.0->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.9490783Z #9 10.58   Downloading zipp-4.1.1-py3-none-any.whl.metadata (3.6 kB)
+2026-10-20T15:09:08.9492000Z #9 10.59 Collecting boolean.py>=4.0 (from license-expression<31,>=30->cyclonedx-python-lib<9,>=5->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:08.9493027Z #9 10.59   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+2026-10-20T15:09:08.9494392Z #9 10.62 Collecting opentelemetry-semantic-conventions==0.66b1 (from opentelemetry-sdk<3,>=1.9.0->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:08.9496334Z #9 10.63   Downloading opentelemetry_semantic_conventions-0.66b1-py3-none-any.whl.metadata (2.4 kB)
+2026-10-20T15:09:08.9497806Z #9 10.64 Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<2.0.0,>=1.1.1->cyclonedx-python-lib<9,>=5->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:08.9499082Z #9 10.65   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+2026-10-20T15:09:08.9500370Z #9 10.66 Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.2.3->-r requirements.txt (line 7))
+2026-10-20T15:09:09.0691524Z #9 10.66   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-10-20T15:09:09.0692626Z #9 10.78 Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:09.1980585Z #9 10.78   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-10-20T15:09:09.1981941Z #9 10.81 Collecting prettytable>=3.9 (from skops<1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:09.1982782Z #9 10.81   Downloading prettytable-3.18.0-py3-none-any.whl.metadata (37 kB)
+2026-10-20T15:09:09.1983780Z #9 10.91 Collecting msgpack<2.0.0,>=0.5.2 (from CacheControl>=0.13.0->CacheControl[filecache]>=0.13.0->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:09.3027844Z #9 10.91   Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+2026-10-20T15:09:09.3029396Z #9 10.94 Collecting filelock>=3.8.0 (from CacheControl[filecache]>=0.13.0->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:09.3030607Z #9 10.94   Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+2026-10-20T15:09:09.3031640Z #9 10.95 Collecting pycparser (from cffi>=2.0.0->cryptography<51,>=43.0.0->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:09.3032601Z #9 10.95   Downloading pycparser-3.11-py3-none-any.whl.metadata (8.2 kB)
+2026-10-20T15:09:09.3033843Z #9 10.97 Requirement already satisfied: pip in /usr/local/lib/python3.12/site-packages (from pip-api>=0.0.28->pip-audit==2.8.0->-r requirements.txt (line 20)) (26.2.1)
+2026-10-20T15:09:09.3034814Z #9 10.99 Collecting wcwidth>=0.3.5 (from prettytable>=3.9->skops<1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:09.3035561Z #9 10.99   Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+2026-10-20T15:09:09.3036465Z #9 11.01 Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==3.17.1->mlflow==3.17.1->-r requirements.txt (line 13))
+2026-10-20T15:09:09.5307933Z #9 11.02   Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+2026-10-20T15:09:09.5308846Z #9 11.03 Collecting markdown-it-py>=2.2.0 (from rich>=12.4->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:09.5309466Z #9 11.04   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-10-20T15:09:09.5310385Z #9 11.05 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.4->pip-audit==2.8.0->-r requirements.txt (line 20))
+2026-10-20T15:09:09.5310996Z #9 11.05   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-10-20T15:09:09.5311435Z #9 11.08 Downloading fastapi-0.150.0-py3-none-any.whl (145 kB)
+2026-10-20T15:09:09.5311829Z #9 11.08 Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
+2026-10-20T15:09:09.5312207Z #9 11.09 Downloading uvicorn-0.34.0-py3-none-any.whl (62 kB)
+2026-10-20T15:09:09.5312749Z #9 11.09 Downloading scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+2026-10-20T15:09:09.8825533Z #9 11.59    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 25.8 MB/s  0:00:00
+2026-10-20T15:09:10.0747256Z #9 11.60 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+2026-10-20T15:09:10.0748508Z #9 11.67    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 181.5 MB/s  0:00:00
+2026-10-20T15:09:10.0749938Z #9 11.68 Downloading numpy-2.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.0 MB)
+2026-10-20T15:09:10.1920558Z #9 11.79    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.0/16.0 MB 151.3 MB/s  0:00:00
+2026-10-20T15:09:10.1921272Z #9 11.79 Downloading matplotlib-3.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.6 MB)
+2026-10-20T15:09:10.1921945Z #9 11.84    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 203.4 MB/s  0:00:00
+2026-10-20T15:09:10.1922376Z #9 11.84 Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+2026-10-20T15:09:10.1922765Z #9 11.84 Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+2026-10-20T15:09:10.1923147Z #9 11.85 Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
+2026-10-20T15:09:10.1923892Z #9 11.86 Downloading mlflow-3.17.1-py3-none-any.whl (12.0 MB)
+2026-10-20T15:09:10.2935408Z #9 11.90    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 269.9 MB/s  0:00:00
+2026-10-20T15:09:10.2936324Z #9 11.91 Downloading prometheus_client-0.21.1-py3-none-any.whl (54 kB)
+2026-10-20T15:09:10.2936796Z #9 11.91 Downloading pydantic-2.10.6-py3-none-any.whl (431 kB)
+2026-10-20T15:09:10.2937204Z #9 11.92 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-10-20T15:09:10.2937579Z #9 11.92 Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+2026-10-20T15:09:10.2937951Z #9 11.92 Downloading pytest_cov-6.0.0-py3-none-any.whl (22 kB)
+2026-10-20T15:09:10.2938447Z #9 11.93 Downloading ruff-0.11.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2026-10-20T15:09:10.2939069Z #9 11.97    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 285.1 MB/s  0:00:00
+2026-10-20T15:09:10.2939492Z #9 11.97 Downloading pip_audit-2.8.0-py3-none-any.whl (57 kB)
+2026-10-20T15:09:10.2940090Z #9 11.98 Downloading bandit-1.8.3-py3-none-any.whl (129 kB)
+2026-10-20T15:09:10.2940526Z #9 11.99 Downloading mlflow_skinny-3.17.1-py3-none-any.whl (4.1 MB)
+2026-10-20T15:09:10.2941031Z #9 12.00    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 335.9 MB/s  0:00:00
+2026-10-20T15:09:10.2941462Z #9 12.00 Downloading mlflow_tracing-3.17.1-py3-none-any.whl (2.0 MB)
+2026-10-20T15:09:10.3962288Z #9 12.01    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 546.9 MB/s  0:00:00
+2026-10-20T15:09:10.3963465Z #9 12.02 Downloading pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2026-10-20T15:09:10.3964569Z #9 12.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 52.0 MB/s  0:00:00
+2026-10-20T15:09:10.3965534Z #9 12.06 Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+2026-10-20T15:09:10.3966236Z #9 12.06    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 614.0 MB/s  0:00:00
+2026-10-20T15:09:10.3966699Z #9 12.07 Downloading alembic-1.20.0-py3-none-any.whl (268 kB)
+2026-10-20T15:09:10.3967109Z #9 12.07 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-20T15:09:10.3967507Z #9 12.07 Downloading cachetools-7.2.4-py3-none-any.whl (18 kB)
+2026-10-20T15:09:10.3967928Z #9 12.08 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-20T15:09:10.3968304Z #9 12.08 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+2026-10-20T15:09:10.3968778Z #9 12.08 Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-10-20T15:09:10.3969350Z #9 12.09    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 555.3 MB/s  0:00:00
+2026-10-20T15:09:10.3969971Z #9 12.10 Downloading cyclonedx_python_lib-8.9.0-py3-none-any.whl (375 kB)
+2026-10-20T15:09:10.3970562Z #9 12.10 Downloading databricks_sdk-0.154.0-py3-none-any.whl (1.1 MB)
+2026-10-20T15:09:10.5780821Z #9 12.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 694.4 MB/s  0:00:00
+2026-10-20T15:09:10.5781630Z #9 12.11 Downloading docker-7.2.0-py3-none-any.whl (148 kB)
+2026-10-20T15:09:10.5783045Z #9 12.11 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+2026-10-20T15:09:10.5783793Z #9 12.12 Downloading flask_cors-6.0.5-py3-none-any.whl (16 kB)
+2026-10-20T15:09:10.5784707Z #9 12.12 Downloading gitpython-3.2.1-py3-none-any.whl (231 kB)
+2026-10-20T15:09:10.5785286Z #9 12.12 Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+2026-10-20T15:09:10.5785679Z #9 12.13 Downloading google_auth-2.62.0-py3-none-any.whl (267 kB)
+2026-10-20T15:09:10.5786094Z #9 12.13 Downloading graphene-3.4.3-py2.py3-none-any.whl (114 kB)
+2026-10-20T15:09:10.5786504Z #9 12.14 Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+2026-10-20T15:09:10.5786902Z #9 12.14 Downloading graphql_relay-3.2.0-py3-none-any.whl (16 kB)
+2026-10-20T15:09:10.5787290Z #9 12.14 Downloading gunicorn-26.2.0-py3-none-any.whl (228 kB)
+2026-10-20T15:09:10.5787688Z #9 12.15 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-10-20T15:09:10.5788100Z #9 12.15 Downloading huey-3.4.0-py3-none-any.whl (136 kB)
+2026-10-20T15:09:10.5788536Z #9 12.15 Downloading importlib_metadata-9.0.1-py3-none-any.whl (27 kB)
+2026-10-20T15:09:10.5788996Z #9 12.16 Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+2026-10-20T15:09:10.5789640Z #9 12.16 Downloading multidict-7.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (483 kB)
+2026-10-20T15:09:10.5790677Z #9 12.16 Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-20T15:09:10.5791229Z #9 12.17 Downloading opentelemetry_proto-1.45.1-py3-none-any.whl (72 kB)
+2026-10-20T15:09:10.5791671Z #9 12.17 Downloading opentelemetry_sdk-1.45.1-py3-none-any.whl (140 kB)
+2026-10-20T15:09:10.5792174Z #9 12.17 Downloading opentelemetry_semantic_conventions-0.66b1-py3-none-any.whl (206 kB)
+2026-10-20T15:09:10.5792689Z #9 12.18 Downloading packageurl_python-0.17.6-py3-none-any.whl (36 kB)
+2026-10-20T15:09:10.5793083Z #9 12.18 Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-10-20T15:09:10.5793528Z #9 12.18 Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-10-20T15:09:10.5794011Z #9 12.19 Downloading py_serializable-1.1.2-py3-none-any.whl (22 kB)
+2026-10-20T15:09:10.5794431Z #9 12.19 Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+2026-10-20T15:09:10.5794906Z #9 12.19 Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (50.1 MB)
+2026-10-20T15:09:10.6818566Z #9 12.29    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.1/50.1 MB 528.9 MB/s  0:00:00
+2026-10-20T15:09:10.6819416Z #9 12.29 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-10-20T15:09:10.6820232Z #9 12.30 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+2026-10-20T15:09:10.6821167Z #9 12.30 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-10-20T15:09:10.6822274Z #9 12.30    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 744.4 MB/s  0:00:00
+2026-10-20T15:09:10.6822715Z #9 12.31 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-10-20T15:09:10.6823407Z #9 12.31 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-10-20T15:09:10.6824565Z #9 12.31 Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-20T15:09:10.6825076Z #9 12.32 Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-10-20T15:09:10.6825730Z #9 12.39    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 478.2 MB/s  0:00:00
+2026-10-20T15:09:10.7874001Z #9 12.40 Downloading skops-0.16.0-py3-none-any.whl (148 kB)
+2026-10-20T15:09:10.7875227Z #9 12.40 Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+2026-10-20T15:09:10.7875855Z #9 12.40 Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+2026-10-20T15:09:10.7876748Z #9 12.41 Downloading sqlalchemy-2.1.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.7 MB)
+2026-10-20T15:09:10.7878265Z #9 12.42    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 586.4 MB/s  0:00:00
+2026-10-20T15:09:10.7879147Z #9 12.42 Downloading sqlparse-0.6.0-py3-none-any.whl (50 kB)
+2026-10-20T15:09:10.7879615Z #9 12.42 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-20T15:09:10.7880361Z #9 12.43 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-10-20T15:09:10.7880960Z #9 12.43 Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+2026-10-20T15:09:10.7881578Z #9 12.43 Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+2026-10-20T15:09:10.7882011Z #9 12.44 Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2026-10-20T15:09:10.7882415Z #9 12.44 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+2026-10-20T15:09:10.7882833Z #9 12.44 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-20T15:09:10.7883232Z #9 12.45 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-20T15:09:10.7883604Z #9 12.45 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2026-10-20T15:09:10.7883993Z #9 12.45 Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+2026-10-20T15:09:10.7884403Z #9 12.46 Downloading cachecontrol-0.14.4-py3-none-any.whl (22 kB)
+2026-10-20T15:09:10.7885071Z #9 12.46 Downloading msgpack-1.2.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+2026-10-20T15:09:10.7885670Z #9 12.47 Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+2026-10-20T15:09:10.7886165Z #9 12.47 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-10-20T15:09:10.7886808Z #9 12.47 Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+2026-10-20T15:09:10.7887520Z #9 12.48 Downloading coverage-7.16.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (258 kB)
+2026-10-20T15:09:10.7888087Z #9 12.48 Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-10-20T15:09:10.7888467Z #9 12.48 Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+2026-10-20T15:09:10.7888984Z #9 12.49 Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+2026-10-20T15:09:10.8884121Z #9 12.50    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 566.0 MB/s  0:00:00
+2026-10-20T15:09:10.8884982Z #9 12.50 Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+2026-10-20T15:09:10.8886092Z #9 12.51 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-20T15:09:10.8886863Z #9 12.51 Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (552 kB)
+2026-10-20T15:09:10.8887816Z #9 12.51    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.8/552.8 kB 687.0 MB/s  0:00:00
+2026-10-20T15:09:10.8888428Z #9 12.52 Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-10-20T15:09:10.8888966Z #9 12.52 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2026-10-20T15:09:10.8889501Z #9 12.52 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-10-20T15:09:10.8890564Z #9 12.53 Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+2026-10-20T15:09:10.8891967Z #9 12.53    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 415.9 MB/s  0:00:00
+2026-10-20T15:09:10.8892705Z #9 12.54 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-10-20T15:09:10.8893434Z #9 12.54 Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-10-20T15:09:10.8894336Z #9 12.55    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 558.6 MB/s  0:00:00
+2026-10-20T15:09:10.8894736Z #9 12.56 Downloading pip_api-0.0.35-py3-none-any.whl (123 kB)
+2026-10-20T15:09:10.8895168Z #9 12.56 Downloading pip_requirements_parser-32.0.1-py3-none-any.whl (35 kB)
+2026-10-20T15:09:10.8895634Z #9 12.56 Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
+2026-10-20T15:09:10.8896048Z #9 12.57 Downloading prettytable-3.18.0-py3-none-any.whl (37 kB)
+2026-10-20T15:09:10.8896865Z #9 12.57 Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+2026-10-20T15:09:10.8897531Z #9 12.57 Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+2026-10-20T15:09:10.8897934Z #9 12.58 Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+2026-10-20T15:09:10.8898310Z #9 12.58 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-10-20T15:09:10.8898808Z #9 12.59    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 612.0 MB/s  0:00:00
+2026-10-20T15:09:10.8899207Z #9 12.59 Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-10-20T15:09:10.8899581Z #9 12.59 Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
+2026-10-20T15:09:10.8900176Z #9 12.60 Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-10-20T15:09:10.8900558Z #9 12.60 Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-10-20T15:09:11.1085527Z #9 12.61 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-10-20T15:09:11.1086120Z #9 12.61 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-10-20T15:09:11.1086531Z #9 12.61 Downloading stevedore-5.9.1-py3-none-any.whl (54 kB)
+2026-10-20T15:09:11.1086963Z #9 12.62 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+2026-10-20T15:09:11.1087366Z #9 12.62 Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+2026-10-20T15:09:11.1087767Z #9 12.62 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-20T15:09:11.1088193Z #9 12.63 Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+2026-10-20T15:09:11.1088789Z #9 12.63 Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.5 MB)
+2026-10-20T15:09:11.1089742Z #9 12.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 507.2 MB/s  0:00:00
+2026-10-20T15:09:11.1090633Z #9 12.65 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+2026-10-20T15:09:11.1091309Z #9 12.65 Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (769 kB)
+2026-10-20T15:09:11.1091939Z #9 12.65    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.8/769.8 kB 722.2 MB/s  0:00:00
+2026-10-20T15:09:11.1092582Z #9 12.66 Downloading websockets-17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (225 kB)
+2026-10-20T15:09:11.1093184Z #9 12.66 Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+2026-10-20T15:09:11.1093562Z #9 12.66 Downloading zipp-4.1.1-py3-none-any.whl (10 kB)
+2026-10-20T15:09:11.1093919Z #9 12.67 Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+2026-10-20T15:09:11.1094271Z #9 12.67 Downloading pycparser-3.11-py3-none-any.whl (51 kB)
+2026-10-20T15:09:11.8518068Z #9 13.56 Installing collected packages: sortedcontainers, pytz, huey, boolean.py, zipp, websockets, wcwidth, uvloop, urllib3, tzdata, typing-extensions, toml, threadpoolctl, stevedore, sqlparse, smmap, six, ruff, PyYAML, python-dotenv, pyparsing, pygments, pycparser, pyasn1, pyarrow, protobuf, propcache, prometheus-client, pluggy, platformdirs, pip-api, pillow, packageurl-python, numpy, multidict, msgpack, mdurl, markupsafe, license-expression, kiwisolver, joblib, itsdangerous, iniconfig, idna, httptools, h11, gunicorn, graphql-core, frozenlist, fonttools, filelock, defusedxml, cycler, coverage, cloudpickle, click, charset_normalizer, certifi, cachetools, blinker, attrs, annotated-types, annotated-doc, aiohappyeyeballs, yarl, werkzeug, uvicorn, typing-inspection, sqlalchemy, scipy, requests, python-dateutil, pytest, pydantic-core, pyasn1-modules, py-serializable, prettytable, pip-requirements-parser, opentelemetry-proto, opentelemetry-api, markdown-it-py, Mako, jinja2, importlib_metadata, httpcore, graphql-relay, gitdb, contourpy, cffi, anyio, aiosignal, watchfiles, starlette, scikit-learn, rich, pytest-cov, pydantic, pandas, opentelemetry-semantic-conventions, matplotlib, httpx, graphene, gitpython, Flask, docker, cyclonedx-python-lib, cryptography, CacheControl, alembic, aiohttp, ucimlrepo, skops, seaborn, opentelemetry-sdk, google-auth, Flask-CORS, fastapi, bandit, pip-audit, databricks-sdk, mlflow-tracing, mlflow-skinny, mlflow
+2026-10-20T15:09:17.2718702Z #9 18.98 
+2026-10-20T15:09:17.4329086Z #9 18.99 Successfully installed CacheControl-0.14.4 Flask-3.1.3 Flask-CORS-6.0.5 Mako-1.4.3 PyYAML-6.0.3 aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 alembic-1.20.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 bandit-1.8.3 blinker-1.9.0 boolean.py-5.0 cachetools-7.2.4 certifi-2026.10.19 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.0 cloudpickle-3.1.2 contourpy-1.4.0 coverage-7.16.2 cryptography-50.0.2 cycler-0.12.1 cyclonedx-python-lib-8.9.0 databricks-sdk-0.154.0 defusedxml-0.7.1 docker-7.2.0 fastapi-0.150.0 filelock-4.2.4 fonttools-4.67.0 frozenlist-1.8.0 gitdb-4.0.12 gitpython-3.2.1 google-auth-2.62.0 graphene-3.4.3 graphql-core-3.2.13 graphql-relay-3.2.0 gunicorn-26.2.0 h11-0.16.0 httpcore-1.0.9 httptools-0.9.0 httpx-0.28.1 huey-3.4.0 idna-3.20 importlib_metadata-9.0.1 iniconfig-2.3.1 itsdangerous-2.2.0 jinja2-3.1.6 joblib-1.4.2 kiwisolver-1.5.1 license-expression-30.4.4 markdown-it-py-4.2.0 markupsafe-3.0.4 matplotlib-3.10.1 mdurl-0.1.2 mlflow-3.17.1 mlflow-skinny-3.17.1 mlflow-tracing-3.17.1 msgpack-1.2.3 multidict-7.1.0 numpy-2.1.3 opentelemetry-api-1.45.1 opentelemetry-proto-1.45.1 opentelemetry-sdk-1.45.1 opentelemetry-semantic-conventions-0.66b1 packageurl-python-0.17.6 pandas-2.2.3 pillow-13.0.0 pip-api-0.0.35 pip-audit-2.8.0 pip-requirements-parser-32.0.1 platformdirs-4.13.5 pluggy-1.7.0 prettytable-3.18.0 prometheus-client-0.21.1 propcache-0.5.4 protobuf-7.36.2 py-serializable-1.1.2 pyarrow-25.0.1 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-3.11 pydantic-2.10.6 pydantic-core-2.27.2 pygments-2.21.0 pyparsing-3.3.3 pytest-9.1.1 pytest-cov-6.0.0 python-dateutil-2.9.0.post0 python-dotenv-1.2.4 pytz-2026.5 requests-2.34.2 rich-15.0.0 ruff-0.11.2 scikit-learn-1.6.1 scipy-1.18.1 seaborn-0.13.2 six-1.17.0 skops-0.16.0 smmap-5.0.3 sortedcontainers-2.4.0 sqlalchemy-2.1.5 sqlparse-0.6.0 starlette-1.3.1 stevedore-5.9.1 threadpoolctl-3.7.0 toml-0.10.2 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.5 ucimlrepo-0.0.7 urllib3-2.8.0 uvicorn-0.34.0 uvloop-0.23.0 watchfiles-1.3.0 wcwidth-0.9.2 websockets-17.3 werkzeug-3.1.9 yarl-1.25.1 zipp-4.1.1
+2026-10-20T15:09:17.4337512Z #9 18.99 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-10-20T15:09:19.4786828Z #9 DONE 21.2s
+2026-10-20T15:09:19.6118504Z 
+2026-10-20T15:09:19.6119742Z #10 [5/9] COPY pyproject.toml README.md ./
+2026-10-20T15:09:19.6121615Z #10 DONE 0.1s
+2026-10-20T15:09:19.7710211Z 
+2026-10-20T15:09:19.7710851Z #11 [6/9] COPY src ./src
+2026-10-20T15:09:19.7711168Z #11 DONE 0.0s
+2026-10-20T15:09:19.7711335Z 
+2026-10-20T15:09:19.7711500Z #12 [7/9] RUN python -m pip install --no-deps -e .
+2026-10-20T15:09:20.4687689Z #12 0.848 Obtaining file:///app
+2026-10-20T15:09:20.6220648Z #12 0.851   Installing build dependencies: started
+2026-10-20T15:09:21.7951172Z #12 2.174   Installing build dependencies: finished with status 'done'
+2026-10-20T15:09:21.9457560Z #12 2.175   Checking if build backend supports build_editable: started
+2026-10-20T15:09:22.4352481Z #12 2.815   Checking if build backend supports build_editable: finished with status 'done'
+2026-10-20T15:09:22.5867127Z #12 2.816   Getting requirements to build editable: started
+2026-10-20T15:09:23.2537834Z #12 3.633   Getting requirements to build editable: finished with status 'done'
+2026-10-20T15:09:23.4056215Z #12 3.635   Preparing editable metadata (pyproject.toml): started
+2026-10-20T15:09:24.0674231Z #12 4.447   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-10-20T15:09:24.2262662Z #12 4.454 Building wheels for collected packages: heart-disease-prediction
+2026-10-20T15:09:24.2264137Z #12 4.455   Building editable for heart-disease-prediction (pyproject.toml): started
+2026-10-20T15:09:24.9128058Z #12 5.292   Building editable for heart-disease-prediction (pyproject.toml): finished with status 'done'
+2026-10-20T15:09:25.0393281Z #12 5.292   Created wheel for heart-disease-prediction: filename=heart_disease_prediction-1.0.0-0.editable-py3-none-any.whl size=1621 sha256=4453ffa4c1ea4d78fab67159864e5c92ca438005680c3592d48a693475be3a31
+2026-10-20T15:09:25.0395807Z #12 5.293   Stored in directory: /tmp/pip-ephem-wheel-cache-2tilpwmd/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+2026-10-20T15:09:25.0397854Z #12 5.297 Successfully built heart-disease-prediction
+2026-10-20T15:09:25.0398744Z #12 5.329 Installing collected packages: heart-disease-prediction
+2026-10-20T15:09:25.0399615Z #12 5.342 Successfully installed heart-disease-prediction-1.0.0
+2026-10-20T15:09:25.0402453Z #12 5.342 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-10-20T15:09:25.0404937Z #12 DONE 5.4s
+2026-10-20T15:09:25.1562396Z 
+2026-10-20T15:09:25.1567847Z #13 [8/9] COPY --chown=10001:10001 models/ /app/models/
+2026-10-20T15:09:25.1568414Z #13 DONE 0.0s
+2026-10-20T15:09:25.1568599Z 
+2026-10-20T15:09:25.1569021Z #14 [9/9] RUN useradd --create-home --uid 10001 appuser     && chown -R appuser:appuser /app
+2026-10-20T15:09:25.1569722Z #14 DONE 0.1s
+2026-10-20T15:09:25.3088500Z 
+2026-10-20T15:09:25.3089170Z #15 exporting to image
+2026-10-20T15:09:25.3089634Z #15 exporting layers
+2026-10-20T15:09:50.9247021Z #15 exporting layers 25.8s done
+2026-10-20T15:09:51.0628147Z #15 exporting manifest sha256:5747e0a4f542a13f9ad827525cb606a58e553205a32d1a012997bfc9ccf36646 done
+2026-10-20T15:09:51.0629415Z #15 exporting config sha256:26fbe7e97cb51cb2d8b95f8ac5925af02a8e8128156acc3611c31705f0b5e143 done
+2026-10-20T15:09:51.0630796Z #15 exporting attestation manifest sha256:8a42fbb15aa7bd5936859382b31f91e94ce2e989ceabe61df0cce8d81befd8ab done
+2026-10-20T15:09:51.0631696Z #15 exporting manifest list sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205 done
+2026-10-20T15:09:51.0632267Z #15 pushing layers
+2026-10-20T15:09:51.0632526Z #15 ...
+2026-10-20T15:09:51.0632632Z 
+2026-10-20T15:09:51.0633111Z #16 [auth] rajcreativeworks/heart-disease-prediction:pull,push token for ghcr.io
+2026-10-20T15:09:51.2134379Z #16 DONE 0.0s
+2026-10-20T15:09:51.2134708Z 
+2026-10-20T15:09:51.2134845Z #15 exporting to image
+2026-10-20T15:10:00.3547797Z #15 pushing layers 9.4s done
+2026-10-20T15:10:00.3548696Z #15 pushing manifest for ghcr.io/rajcreativeworks/heart-disease-prediction:latest@sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205
+2026-10-20T15:10:02.3890191Z #15 pushing manifest for ghcr.io/rajcreativeworks/heart-disease-prediction:latest@sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205 2.0s done
+2026-10-20T15:10:02.8419428Z #15 pushing layers 0.5s done
+2026-10-20T15:10:02.8420709Z #15 pushing manifest for ghcr.io/rajcreativeworks/heart-disease-prediction:sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4@sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205
+2026-10-20T15:10:03.6881695Z #15 pushing manifest for ghcr.io/rajcreativeworks/heart-disease-prediction:sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4@sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205 0.8s done
+2026-10-20T15:10:03.6891921Z #15 DONE 38.5s
+2026-10-20T15:10:03.7185119Z 
+2026-10-20T15:10:03.7185941Z #17 resolving provenance for metadata file
+2026-10-20T15:10:03.7186574Z #17 DONE 0.0s
+2026-10-20T15:10:03.7294818Z ##[group]ImageID
+2026-10-20T15:10:03.7295289Z sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205
+2026-10-20T15:10:03.7296602Z ##[endgroup]
+2026-10-20T15:10:03.7297234Z ##[group]Digest
+2026-10-20T15:10:03.7297778Z sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205
+2026-10-20T15:10:03.7298493Z ##[endgroup]
+2026-10-20T15:10:03.7298913Z ##[group]Metadata
+2026-10-20T15:10:03.7299567Z {
+2026-10-20T15:10:03.7300403Z   "buildx.build.provenance": {
+2026-10-20T15:10:03.7300762Z     "builder": {
+2026-10-20T15:10:03.7301268Z       "id": "https://github.com/rajcreativeworks/heart-disease-prediction/actions/runs/39445695001/attempts/1"
+2026-10-20T15:10:03.7301944Z     },
+2026-10-20T15:10:03.7302303Z     "buildType": "https://mobyproject.org/buildkit@v1",
+2026-10-20T15:10:03.7302800Z     "materials": [
+2026-10-20T15:10:03.7303106Z       {
+2026-10-20T15:10:03.7303440Z         "uri": "pkg:docker/python@3.12-slim?platform=linux%2Famd64",
+2026-10-20T15:10:03.7303850Z         "digest": {
+2026-10-20T15:10:03.7304258Z           "sha256": "a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1"
+2026-10-20T15:10:03.7304724Z         }
+2026-10-20T15:10:03.7304944Z       }
+2026-10-20T15:10:03.7305140Z     ],
+2026-10-20T15:10:03.7305347Z     "invocation": {
+2026-10-20T15:10:03.7305581Z       "configSource": {
+2026-10-20T15:10:03.7306067Z         "entryPoint": "Dockerfile"
+2026-10-20T15:10:03.7306471Z       },
+2026-10-20T15:10:03.7306891Z       "parameters": {
+2026-10-20T15:10:03.7307323Z         "frontend": "dockerfile.v0",
+2026-10-20T15:10:03.7307647Z         "args": {
+2026-10-20T15:10:03.7308135Z           "label:org.opencontainers.image.source": "https://github.com/rajcreativeworks/heart-disease-prediction"
+2026-10-20T15:10:03.7308698Z         },
+2026-10-20T15:10:03.7308910Z         "locals": [
+2026-10-20T15:10:03.7309124Z           {
+2026-10-20T15:10:03.7309354Z             "name": "context"
+2026-10-20T15:10:03.7310064Z           },
+2026-10-20T15:10:03.7310382Z           {
+2026-10-20T15:10:03.7310590Z             "name": "dockerfile"
+2026-10-20T15:10:03.7310868Z           }
+2026-10-20T15:10:03.7311073Z         ],
+2026-10-20T15:10:03.7311291Z         "root": {
+2026-10-20T15:10:03.7311509Z           "configSource": {
+2026-10-20T15:10:03.7311863Z             "path": "Dockerfile"
+2026-10-20T15:10:03.7312105Z           },
+2026-10-20T15:10:03.7312307Z           "request": {
+2026-10-20T15:10:03.7312521Z             "args": {
+2026-10-20T15:10:03.7313183Z               "label:org.opencontainers.image.source": "https://github.com/rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7314061Z               "vcs:localdir:context": ".",
+2026-10-20T15:10:03.7314370Z               "vcs:localdir:dockerfile": ".",
+2026-10-20T15:10:03.7314779Z               "vcs:revision": "8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4",
+2026-10-20T15:10:03.7315331Z               "vcs:source": "https://github.com/rajcreativeworks/heart-disease-prediction"
+2026-10-20T15:10:03.7315782Z             }
+2026-10-20T15:10:03.7315985Z           }
+2026-10-20T15:10:03.7316179Z         },
+2026-10-20T15:10:03.7316410Z         "compatibilityVersion": 30
+2026-10-20T15:10:03.7316719Z       },
+2026-10-20T15:10:03.7316920Z       "environment": {
+2026-10-20T15:10:03.7317248Z         "dockerfileVersion": "1.27.0",
+2026-10-20T15:10:03.7317840Z         "github_actor": "rajashekar3509",
+2026-10-20T15:10:03.7318128Z         "github_actor_id": "68766134",
+2026-10-20T15:10:03.7318457Z         "github_event_name": "workflow_run",
+2026-10-20T15:10:03.7318817Z         "github_event_payload": {
+2026-10-20T15:10:03.7319155Z           "action": "completed",
+2026-10-20T15:10:03.7319415Z           "organization": {
+2026-10-20T15:10:03.7320057Z             "avatar_url": "https://avatars.githubusercontent.com/u/68766316?v=4",
+2026-10-20T15:10:03.7320847Z             "description": null,
+2026-10-20T15:10:03.7321431Z             "events_url": "https://api.github.com/orgs/rajcreativeworks/events",
+2026-10-20T15:10:03.7322156Z             "hooks_url": "https://api.github.com/orgs/rajcreativeworks/hooks",
+2026-10-20T15:10:03.7322686Z             "id": 68766316,
+2026-10-20T15:10:03.7323432Z             "issues_url": "https://api.github.com/orgs/rajcreativeworks/issues",
+2026-10-20T15:10:03.7323968Z             "login": "rajcreativeworks",
+2026-10-20T15:10:03.7324604Z             "members_url": "https://api.github.com/orgs/rajcreativeworks/members{/member}",
+2026-10-20T15:10:03.7325412Z             "node_id": "MDEyOk9yZ2FuaXphdGlvbjY4NzY2MzE2",
+2026-10-20T15:10:03.7326225Z             "public_members_url": "https://api.github.com/orgs/rajcreativeworks/public_members{/member}",
+2026-10-20T15:10:03.7327096Z             "repos_url": "https://api.github.com/orgs/rajcreativeworks/repos",
+2026-10-20T15:10:03.7327792Z             "url": "https://api.github.com/orgs/rajcreativeworks"
+2026-10-20T15:10:03.7328276Z           },
+2026-10-20T15:10:03.7328614Z           "repository": {
+2026-10-20T15:10:03.7328998Z             "allow_forking": true,
+2026-10-20T15:10:03.7330077Z             "archive_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/{archive_format}{/ref}",
+2026-10-20T15:10:03.7330964Z             "archived": false,
+2026-10-20T15:10:03.7331447Z             "assignees_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/assignees{/user}",
+2026-10-20T15:10:03.7332202Z             "blobs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/blobs{/sha}",
+2026-10-20T15:10:03.7332959Z             "branches_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/branches{/branch}",
+2026-10-20T15:10:03.7333648Z             "clone_url": "https://github.com/rajcreativeworks/heart-disease-prediction.git",
+2026-10-20T15:10:03.7334423Z             "collaborators_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/collaborators{/collaborator}",
+2026-10-20T15:10:03.7335276Z             "comments_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/comments{/number}",
+2026-10-20T15:10:03.7335982Z             "commits_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/commits{/sha}",
+2026-10-20T15:10:03.7336698Z             "compare_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/compare/{base}...{head}",
+2026-10-20T15:10:03.7337484Z             "contents_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/contents/{+path}",
+2026-10-20T15:10:03.7338226Z             "contributors_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/contributors",
+2026-10-20T15:10:03.7338772Z             "created_at": "2026-10-20T07:02:56Z",
+2026-10-20T15:10:03.7339072Z             "custom_properties": {},
+2026-10-20T15:10:03.7339348Z             "default_branch": "main",
+2026-10-20T15:10:03.7340045Z             "deployments_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/deployments",
+2026-10-20T15:10:03.7341128Z             "description": "End-to-end MLOps project for heart disease prediction, featuring MLflow experiment tracking, automated testing, CI/CD pipelines, Docker containerization, deployment, and model monitoring.",
+2026-10-20T15:10:03.7342031Z             "disabled": false,
+2026-10-20T15:10:03.7342708Z             "downloads_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/downloads",
+2026-10-20T15:10:03.7343516Z             "events_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/events",
+2026-10-20T15:10:03.7344100Z             "fork": false,
+2026-10-20T15:10:03.7344376Z             "forks": 0,
+2026-10-20T15:10:03.7344648Z             "forks_count": 0,
+2026-10-20T15:10:03.7345137Z             "forks_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/forks",
+2026-10-20T15:10:03.7345715Z             "full_name": "rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7346332Z             "git_commits_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/commits{/sha}",
+2026-10-20T15:10:03.7347314Z             "git_refs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/refs{/sha}",
+2026-10-20T15:10:03.7348068Z             "git_tags_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/tags{/sha}",
+2026-10-20T15:10:03.7348764Z             "git_url": "git://github.com/rajcreativeworks/heart-disease-prediction.git",
+2026-10-20T15:10:03.7349224Z             "has_discussions": false,
+2026-10-20T15:10:03.7349525Z             "has_downloads": false,
+2026-10-20T15:10:03.7350013Z             "has_issues": true,
+2026-10-20T15:10:03.7350289Z             "has_pages": false,
+2026-10-20T15:10:03.7350575Z             "has_projects": true,
+2026-10-20T15:10:03.7350894Z             "has_pull_requests": true,
+2026-10-20T15:10:03.7351187Z             "has_wiki": true,
+2026-10-20T15:10:03.7351462Z             "homepage": null,
+2026-10-20T15:10:03.7351935Z             "hooks_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/hooks",
+2026-10-20T15:10:03.7352579Z             "html_url": "https://github.com/rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7353020Z             "id": 1426631245,
+2026-10-20T15:10:03.7353275Z             "is_template": false,
+2026-10-20T15:10:03.7353859Z             "issue_comment_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues/comments{/number}",
+2026-10-20T15:10:03.7354747Z             "issue_events_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues/events{/number}",
+2026-10-20T15:10:03.7355587Z             "issues_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues{/number}",
+2026-10-20T15:10:03.7356331Z             "keys_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/keys{/key_id}",
+2026-10-20T15:10:03.7357048Z             "labels_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/labels{/name}",
+2026-10-20T15:10:03.7387440Z             "language": "Python",
+2026-10-20T15:10:03.7388080Z             "languages_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/languages",
+2026-10-20T15:10:03.7388643Z             "license": {
+2026-10-20T15:10:03.7388891Z               "key": "mit",
+2026-10-20T15:10:03.7389134Z               "name": "MIT License",
+2026-10-20T15:10:03.7389547Z               "node_id": "MDc6TGljZW5zZTEz",
+2026-10-20T15:10:03.7390020Z               "spdx_id": "MIT",
+2026-10-20T15:10:03.7390352Z               "url": "https://api.github.com/licenses/mit"
+2026-10-20T15:10:03.7390655Z             },
+2026-10-20T15:10:03.7391065Z             "merges_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/merges",
+2026-10-20T15:10:03.7391840Z             "milestones_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/milestones{/number}",
+2026-10-20T15:10:03.7392374Z             "mirror_url": null,
+2026-10-20T15:10:03.7392659Z             "name": "heart-disease-prediction",
+2026-10-20T15:10:03.7392968Z             "node_id": "R_kgDOVQiqTQ",
+2026-10-20T15:10:03.7393585Z             "notifications_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/notifications{?since,all,participating}",
+2026-10-20T15:10:03.7394461Z             "open_issues": 8,
+2026-10-20T15:10:03.7394714Z             "open_issues_count": 8,
+2026-10-20T15:10:03.7394968Z             "owner": {
+2026-10-20T15:10:03.7395311Z               "avatar_url": "https://avatars.githubusercontent.com/u/68766316?v=4",
+2026-10-20T15:10:03.7395835Z               "events_url": "https://api.github.com/users/rajcreativeworks/events{/privacy}",
+2026-10-20T15:10:03.7396364Z               "followers_url": "https://api.github.com/users/rajcreativeworks/followers",
+2026-10-20T15:10:03.7396918Z               "following_url": "https://api.github.com/users/rajcreativeworks/following{/other_user}",
+2026-10-20T15:10:03.7397484Z               "gists_url": "https://api.github.com/users/rajcreativeworks/gists{/gist_id}",
+2026-10-20T15:10:03.7398028Z               "gravatar_id": "",
+2026-10-20T15:10:03.7398370Z               "html_url": "https://github.com/rajcreativeworks",
+2026-10-20T15:10:03.7398704Z               "id": 68766316,
+2026-10-20T15:10:03.7398961Z               "login": "rajcreativeworks",
+2026-10-20T15:10:03.7399289Z               "node_id": "MDEyOk9yZ2FuaXphdGlvbjY4NzY2MzE2",
+2026-10-20T15:10:03.7399728Z               "organizations_url": "https://api.github.com/users/rajcreativeworks/orgs",
+2026-10-20T15:10:03.7400488Z               "received_events_url": "https://api.github.com/users/rajcreativeworks/received_events",
+2026-10-20T15:10:03.7401022Z               "repos_url": "https://api.github.com/users/rajcreativeworks/repos",
+2026-10-20T15:10:03.7401396Z               "site_admin": false,
+2026-10-20T15:10:03.7401817Z               "starred_url": "https://api.github.com/users/rajcreativeworks/starred{/owner}{/repo}",
+2026-10-20T15:10:03.7402396Z               "subscriptions_url": "https://api.github.com/users/rajcreativeworks/subscriptions",
+2026-10-20T15:10:03.7402838Z               "type": "Organization",
+2026-10-20T15:10:03.7403165Z               "url": "https://api.github.com/users/rajcreativeworks",
+2026-10-20T15:10:03.7403512Z               "user_view_type": "public"
+2026-10-20T15:10:03.7403774Z             },
+2026-10-20T15:10:03.7403982Z             "private": false,
+2026-10-20T15:10:03.7404248Z             "pull_request_creation_policy": "all",
+2026-10-20T15:10:03.7404758Z             "pulls_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/pulls{/number}",
+2026-10-20T15:10:03.7405254Z             "pushed_at": "2026-10-20T15:05:35Z",
+2026-10-20T15:10:03.7405747Z             "releases_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/releases{/id}",
+2026-10-20T15:10:03.7406228Z             "size": 93,
+2026-10-20T15:10:03.7406583Z             "ssh_url": "git@github.com:rajcreativeworks/heart-disease-prediction.git",
+2026-10-20T15:10:03.7407004Z             "stargazers_count": 0,
+2026-10-20T15:10:03.7407494Z             "stargazers_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/stargazers",
+2026-10-20T15:10:03.7408299Z             "statuses_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/statuses/{sha}",
+2026-10-20T15:10:03.7409518Z             "subscribers_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/subscribers",
+2026-10-20T15:10:03.7411047Z             "subscription_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/subscription",
+2026-10-20T15:10:03.7412002Z             "svn_url": "https://github.com/rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7412583Z             "tags_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/tags",
+2026-10-20T15:10:03.7413364Z             "teams_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/teams",
+2026-10-20T15:10:03.7413821Z             "topics": [],
+2026-10-20T15:10:03.7414269Z             "trees_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/trees{/sha}",
+2026-10-20T15:10:03.7414992Z             "updated_at": "2026-10-20T15:05:41Z",
+2026-10-20T15:10:03.7415426Z             "url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7415843Z             "visibility": "public",
+2026-10-20T15:10:03.7416103Z             "watchers": 0,
+2026-10-20T15:10:03.7416344Z             "watchers_count": 0,
+2026-10-20T15:10:03.7416620Z             "web_commit_signoff_required": false
+2026-10-20T15:10:03.7416896Z           },
+2026-10-20T15:10:03.7417096Z           "sender": {
+2026-10-20T15:10:03.7417425Z             "avatar_url": "https://avatars.githubusercontent.com/u/68766134?v=4",
+2026-10-20T15:10:03.7417917Z             "events_url": "https://api.github.com/users/rajashekar3509/events{/privacy}",
+2026-10-20T15:10:03.7418412Z             "followers_url": "https://api.github.com/users/rajashekar3509/followers",
+2026-10-20T15:10:03.7419123Z             "following_url": "https://api.github.com/users/rajashekar3509/following{/other_user}",
+2026-10-20T15:10:03.7419660Z             "gists_url": "https://api.github.com/users/rajashekar3509/gists{/gist_id}",
+2026-10-20T15:10:03.7420331Z             "gravatar_id": "",
+2026-10-20T15:10:03.7420623Z             "html_url": "https://github.com/rajashekar3509",
+2026-10-20T15:10:03.7420928Z             "id": 68766134,
+2026-10-20T15:10:03.7421170Z             "login": "rajashekar3509",
+2026-10-20T15:10:03.7421454Z             "node_id": "MDQ6VXNlcjY4NzY2MTM0",
+2026-10-20T15:10:03.7421844Z             "organizations_url": "https://api.github.com/users/rajashekar3509/orgs",
+2026-10-20T15:10:03.7422370Z             "received_events_url": "https://api.github.com/users/rajashekar3509/received_events",
+2026-10-20T15:10:03.7422872Z             "repos_url": "https://api.github.com/users/rajashekar3509/repos",
+2026-10-20T15:10:03.7423235Z             "site_admin": false,
+2026-10-20T15:10:03.7423622Z             "starred_url": "https://api.github.com/users/rajashekar3509/starred{/owner}{/repo}",
+2026-10-20T15:10:03.7424204Z             "subscriptions_url": "https://api.github.com/users/rajashekar3509/subscriptions",
+2026-10-20T15:10:03.7424626Z             "type": "User",
+2026-10-20T15:10:03.7424914Z             "url": "https://api.github.com/users/rajashekar3509",
+2026-10-20T15:10:03.7425242Z             "user_view_type": "public"
+2026-10-20T15:10:03.7425492Z           },
+2026-10-20T15:10:03.7425692Z           "workflow": {
+2026-10-20T15:10:03.7426140Z             "badge_url": "https://github.com/rajcreativeworks/heart-disease-prediction/workflows/CI/badge.svg",
+2026-10-20T15:10:03.7426642Z             "created_at": "2026-10-20T07:23:44.000Z",
+2026-10-20T15:10:03.7427170Z             "html_url": "https://github.com/rajcreativeworks/heart-disease-prediction/blob/main/.github/workflows/ci.yml",
+2026-10-20T15:10:03.7427698Z             "id": 390253178,
+2026-10-20T15:10:03.7427933Z             "name": "CI",
+2026-10-20T15:10:03.7428180Z             "node_id": "W_kwDOVQiqTc4XQsp6",
+2026-10-20T15:10:03.7428475Z             "path": ".github/workflows/ci.yml",
+2026-10-20T15:10:03.7428762Z             "state": "active",
+2026-10-20T15:10:03.7429020Z             "updated_at": "2026-10-20T11:16:54.000Z",
+2026-10-20T15:10:03.7429603Z             "url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/workflows/390253178"
+2026-10-20T15:10:03.7430331Z           },
+2026-10-20T15:10:03.7430530Z           "workflow_run": {
+2026-10-20T15:10:03.7430768Z             "actor": {
+2026-10-20T15:10:03.7431104Z               "avatar_url": "https://avatars.githubusercontent.com/u/68766134?v=4",
+2026-10-20T15:10:03.7431599Z               "events_url": "https://api.github.com/users/rajashekar3509/events{/privacy}",
+2026-10-20T15:10:03.7432104Z               "followers_url": "https://api.github.com/users/rajashekar3509/followers",
+2026-10-20T15:10:03.7432639Z               "following_url": "https://api.github.com/users/rajashekar3509/following{/other_user}",
+2026-10-20T15:10:03.7433169Z               "gists_url": "https://api.github.com/users/rajashekar3509/gists{/gist_id}",
+2026-10-20T15:10:03.7433733Z               "gravatar_id": "",
+2026-10-20T15:10:03.7434026Z               "html_url": "https://github.com/rajashekar3509",
+2026-10-20T15:10:03.7434350Z               "id": 68766134,
+2026-10-20T15:10:03.7434593Z               "login": "rajashekar3509",
+2026-10-20T15:10:03.7434878Z               "node_id": "MDQ6VXNlcjY4NzY2MTM0",
+2026-10-20T15:10:03.7435270Z               "organizations_url": "https://api.github.com/users/rajashekar3509/orgs",
+2026-10-20T15:10:03.7435802Z               "received_events_url": "https://api.github.com/users/rajashekar3509/received_events",
+2026-10-20T15:10:03.7436303Z               "repos_url": "https://api.github.com/users/rajashekar3509/repos",
+2026-10-20T15:10:03.7436668Z               "site_admin": false,
+2026-10-20T15:10:03.7437186Z               "starred_url": "https://api.github.com/users/rajashekar3509/starred{/owner}{/repo}",
+2026-10-20T15:10:03.7437742Z               "subscriptions_url": "https://api.github.com/users/rajashekar3509/subscriptions",
+2026-10-20T15:10:03.7438174Z               "type": "User",
+2026-10-20T15:10:03.7438464Z               "url": "https://api.github.com/users/rajashekar3509",
+2026-10-20T15:10:03.7438792Z               "user_view_type": "public"
+2026-10-20T15:10:03.7439057Z             },
+2026-10-20T15:10:03.7439562Z             "artifacts_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905/artifacts",
+2026-10-20T15:10:03.7440582Z             "cancel_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905/cancel",
+2026-10-20T15:10:03.7441136Z             "check_suite_id": 106890537878,
+2026-10-20T15:10:03.7441495Z             "check_suite_node_id": "CS_kwDOVQiqTc8AAAAY4ywrlg",
+2026-10-20T15:10:03.7442095Z             "check_suite_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/check-suites/106890537878",
+2026-10-20T15:10:03.7442633Z             "conclusion": "success",
+2026-10-20T15:10:03.7442911Z             "created_at": "2026-10-20T15:05:39Z",
+2026-10-20T15:10:03.7443198Z             "display_title": "Modified",
+2026-10-20T15:10:03.7443459Z             "event": "push",
+2026-10-20T15:10:03.7443701Z             "head_branch": "main",
+2026-10-20T15:10:03.7443942Z             "head_commit": {
+2026-10-20T15:10:03.7444172Z               "author": {
+2026-10-20T15:10:03.7444424Z                 "email": "rajashekar3509@gmail.com",
+2026-10-20T15:10:03.7444711Z                 "name": "Rajashekar D"
+2026-10-20T15:10:03.7444968Z               },
+2026-10-20T15:10:03.7445171Z               "committer": {
+2026-10-20T15:10:03.7445411Z                 "email": "rajashekar3509@gmail.com",
+2026-10-20T15:10:03.7445690Z                 "name": "Rajashekar D"
+2026-10-20T15:10:03.7445934Z               },
+2026-10-20T15:10:03.7446180Z               "id": "8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4",
+2026-10-20T15:10:03.7446480Z               "message": "Modified",
+2026-10-20T15:10:03.7446758Z               "timestamp": "2026-10-20T15:05:27Z",
+2026-10-20T15:10:03.7447081Z               "tree_id": "a36426aba35e7846d760c568e60e6aa099145794"
+2026-10-20T15:10:03.7447378Z             },
+2026-10-20T15:10:03.7447591Z             "head_repository": {
+2026-10-20T15:10:03.7448087Z               "archive_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/{archive_format}{/ref}",
+2026-10-20T15:10:03.7448842Z               "assignees_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/assignees{/user}",
+2026-10-20T15:10:03.7449550Z               "blobs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/blobs{/sha}",
+2026-10-20T15:10:03.7450491Z               "branches_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/branches{/branch}",
+2026-10-20T15:10:03.7451307Z               "collaborators_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/collaborators{/collaborator}",
+2026-10-20T15:10:03.7452386Z               "comments_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/comments{/number}",
+2026-10-20T15:10:03.7453575Z               "commits_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/commits{/sha}",
+2026-10-20T15:10:03.7454720Z               "compare_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/compare/{base}...{head}",
+2026-10-20T15:10:03.7455856Z               "contents_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/contents/{+path}",
+2026-10-20T15:10:03.7456583Z               "contributors_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/contributors",
+2026-10-20T15:10:03.7457295Z               "deployments_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/deployments",
+2026-10-20T15:10:03.7458514Z               "description": "End-to-end MLOps project for heart disease prediction, featuring MLflow experiment tracking, automated testing, CI/CD pipelines, Docker containerization, deployment, and model monitoring.",
+2026-10-20T15:10:03.7459558Z               "downloads_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/downloads",
+2026-10-20T15:10:03.7460455Z               "events_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/events",
+2026-10-20T15:10:03.7460922Z               "fork": false,
+2026-10-20T15:10:03.7461349Z               "forks_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/forks",
+2026-10-20T15:10:03.7461878Z               "full_name": "rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7462467Z               "git_commits_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/commits{/sha}",
+2026-10-20T15:10:03.7463209Z               "git_refs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/refs{/sha}",
+2026-10-20T15:10:03.7463912Z               "git_tags_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/tags{/sha}",
+2026-10-20T15:10:03.7464558Z               "hooks_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/hooks",
+2026-10-20T15:10:03.7465128Z               "html_url": "https://github.com/rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7465527Z               "id": 1426631245,
+2026-10-20T15:10:03.7466042Z               "issue_comment_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues/comments{/number}",
+2026-10-20T15:10:03.7466852Z               "issue_events_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues/events{/number}",
+2026-10-20T15:10:03.7467600Z               "issues_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues{/number}",
+2026-10-20T15:10:03.7468289Z               "keys_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/keys{/key_id}",
+2026-10-20T15:10:03.7468965Z               "labels_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/labels{/name}",
+2026-10-20T15:10:03.7469645Z               "languages_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/languages",
+2026-10-20T15:10:03.7470853Z               "merges_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/merges",
+2026-10-20T15:10:03.7471614Z               "milestones_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/milestones{/number}",
+2026-10-20T15:10:03.7472173Z               "name": "heart-disease-prediction",
+2026-10-20T15:10:03.7472478Z               "node_id": "R_kgDOVQiqTQ",
+2026-10-20T15:10:03.7473097Z               "notifications_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/notifications{?since,all,participating}",
+2026-10-20T15:10:03.7473720Z               "owner": {
+2026-10-20T15:10:03.7474292Z                 "avatar_url": "https://avatars.githubusercontent.com/u/68766316?v=4",
+2026-10-20T15:10:03.7474820Z                 "events_url": "https://api.github.com/users/rajcreativeworks/events{/privacy}",
+2026-10-20T15:10:03.7475350Z                 "followers_url": "https://api.github.com/users/rajcreativeworks/followers",
+2026-10-20T15:10:03.7475914Z                 "following_url": "https://api.github.com/users/rajcreativeworks/following{/other_user}",
+2026-10-20T15:10:03.7476469Z                 "gists_url": "https://api.github.com/users/rajcreativeworks/gists{/gist_id}",
+2026-10-20T15:10:03.7476875Z                 "gravatar_id": "",
+2026-10-20T15:10:03.7477183Z                 "html_url": "https://github.com/rajcreativeworks",
+2026-10-20T15:10:03.7477505Z                 "id": 68766316,
+2026-10-20T15:10:03.7477884Z                 "login": "rajcreativeworks",
+2026-10-20T15:10:03.7478222Z                 "node_id": "MDEyOk9yZ2FuaXphdGlvbjY4NzY2MzE2",
+2026-10-20T15:10:03.7478675Z                 "organizations_url": "https://api.github.com/users/rajcreativeworks/orgs",
+2026-10-20T15:10:03.7479242Z                 "received_events_url": "https://api.github.com/users/rajcreativeworks/received_events",
+2026-10-20T15:10:03.7479773Z                 "repos_url": "https://api.github.com/users/rajcreativeworks/repos",
+2026-10-20T15:10:03.7480492Z                 "site_admin": false,
+2026-10-20T15:10:03.7480928Z                 "starred_url": "https://api.github.com/users/rajcreativeworks/starred{/owner}{/repo}",
+2026-10-20T15:10:03.7481502Z                 "subscriptions_url": "https://api.github.com/users/rajcreativeworks/subscriptions",
+2026-10-20T15:10:03.7481930Z                 "type": "Organization",
+2026-10-20T15:10:03.7482254Z                 "url": "https://api.github.com/users/rajcreativeworks",
+2026-10-20T15:10:03.7482608Z                 "user_view_type": "public"
+2026-10-20T15:10:03.7482867Z               },
+2026-10-20T15:10:03.7483081Z               "private": false,
+2026-10-20T15:10:03.7483546Z               "pulls_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/pulls{/number}",
+2026-10-20T15:10:03.7484266Z               "releases_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/releases{/id}",
+2026-10-20T15:10:03.7484967Z               "stargazers_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/stargazers",
+2026-10-20T15:10:03.7485657Z               "statuses_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/statuses/{sha}",
+2026-10-20T15:10:03.7486354Z               "subscribers_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/subscribers",
+2026-10-20T15:10:03.7487068Z               "subscription_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/subscription",
+2026-10-20T15:10:03.7487741Z               "tags_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/tags",
+2026-10-20T15:10:03.7488366Z               "teams_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/teams",
+2026-10-20T15:10:03.7489027Z               "trees_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/trees{/sha}",
+2026-10-20T15:10:03.7489637Z               "url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction"
+2026-10-20T15:10:03.7490230Z             },
+2026-10-20T15:10:03.7490505Z             "head_sha": "8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4",
+2026-10-20T15:10:03.7491036Z             "html_url": "https://github.com/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905",
+2026-10-20T15:10:03.7491506Z             "id": 39445240905,
+2026-10-20T15:10:03.7491997Z             "jobs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905/jobs",
+2026-10-20T15:10:03.7492763Z             "logs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905/logs",
+2026-10-20T15:10:03.7493437Z             "name": "CI",
+2026-10-20T15:10:03.7493704Z             "node_id": "WFR_kwLOVQiqTc8AAAAJLx6cSQ",
+2026-10-20T15:10:03.7494016Z             "path": ".github/workflows/ci.yml",
+2026-10-20T15:10:03.7494317Z             "previous_attempt_url": null,
+2026-10-20T15:10:03.7494590Z             "pull_requests": [],
+2026-10-20T15:10:03.7494848Z             "referenced_workflows": [],
+2026-10-20T15:10:03.7495109Z             "repository": {
+2026-10-20T15:10:03.7495599Z               "archive_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/{archive_format}{/ref}",
+2026-10-20T15:10:03.7496366Z               "assignees_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/assignees{/user}",
+2026-10-20T15:10:03.7497239Z               "blobs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/blobs{/sha}",
+2026-10-20T15:10:03.7497951Z               "branches_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/branches{/branch}",
+2026-10-20T15:10:03.7498744Z               "collaborators_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/collaborators{/collaborator}",
+2026-10-20T15:10:03.7499533Z               "comments_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/comments{/number}",
+2026-10-20T15:10:03.7500515Z               "commits_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/commits{/sha}",
+2026-10-20T15:10:03.7501239Z               "compare_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/compare/{base}...{head}",
+2026-10-20T15:10:03.7501985Z               "contents_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/contents/{+path}",
+2026-10-20T15:10:03.7502709Z               "contributors_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/contributors",
+2026-10-20T15:10:03.7503418Z               "deployments_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/deployments",
+2026-10-20T15:10:03.7504466Z               "description": "End-to-end MLOps project for heart disease prediction, featuring MLflow experiment tracking, automated testing, CI/CD pipelines, Docker containerization, deployment, and model monitoring.",
+2026-10-20T15:10:03.7505494Z               "downloads_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/downloads",
+2026-10-20T15:10:03.7506171Z               "events_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/events",
+2026-10-20T15:10:03.7506632Z               "fork": false,
+2026-10-20T15:10:03.7507051Z               "forks_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/forks",
+2026-10-20T15:10:03.7507573Z               "full_name": "rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7508165Z               "git_commits_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/commits{/sha}",
+2026-10-20T15:10:03.7508885Z               "git_refs_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/refs{/sha}",
+2026-10-20T15:10:03.7509562Z               "git_tags_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/tags{/sha}",
+2026-10-20T15:10:03.7510408Z               "hooks_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/hooks",
+2026-10-20T15:10:03.7510985Z               "html_url": "https://github.com/rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7511376Z               "id": 1426631245,
+2026-10-20T15:10:03.7511887Z               "issue_comment_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues/comments{/number}",
+2026-10-20T15:10:03.7512694Z               "issue_events_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues/events{/number}",
+2026-10-20T15:10:03.7513590Z               "issues_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/issues{/number}",
+2026-10-20T15:10:03.7514263Z               "keys_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/keys{/key_id}",
+2026-10-20T15:10:03.7514929Z               "labels_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/labels{/name}",
+2026-10-20T15:10:03.7515615Z               "languages_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/languages",
+2026-10-20T15:10:03.7516263Z               "merges_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/merges",
+2026-10-20T15:10:03.7516960Z               "milestones_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/milestones{/number}",
+2026-10-20T15:10:03.7517627Z               "name": "heart-disease-prediction",
+2026-10-20T15:10:03.7517922Z               "node_id": "R_kgDOVQiqTQ",
+2026-10-20T15:10:03.7518527Z               "notifications_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/notifications{?since,all,participating}",
+2026-10-20T15:10:03.7519127Z               "owner": {
+2026-10-20T15:10:03.7519493Z                 "avatar_url": "https://avatars.githubusercontent.com/u/68766316?v=4",
+2026-10-20T15:10:03.7520197Z                 "events_url": "https://api.github.com/users/rajcreativeworks/events{/privacy}",
+2026-10-20T15:10:03.7520781Z                 "followers_url": "https://api.github.com/users/rajcreativeworks/followers",
+2026-10-20T15:10:03.7521350Z                 "following_url": "https://api.github.com/users/rajcreativeworks/following{/other_user}",
+2026-10-20T15:10:03.7521903Z                 "gists_url": "https://api.github.com/users/rajcreativeworks/gists{/gist_id}",
+2026-10-20T15:10:03.7522303Z                 "gravatar_id": "",
+2026-10-20T15:10:03.7522607Z                 "html_url": "https://github.com/rajcreativeworks",
+2026-10-20T15:10:03.7522928Z                 "id": 68766316,
+2026-10-20T15:10:03.7523188Z                 "login": "rajcreativeworks",
+2026-10-20T15:10:03.7523516Z                 "node_id": "MDEyOk9yZ2FuaXphdGlvbjY4NzY2MzE2",
+2026-10-20T15:10:03.7523956Z                 "organizations_url": "https://api.github.com/users/rajcreativeworks/orgs",
+2026-10-20T15:10:03.7524522Z                 "received_events_url": "https://api.github.com/users/rajcreativeworks/received_events",
+2026-10-20T15:10:03.7525047Z                 "repos_url": "https://api.github.com/users/rajcreativeworks/repos",
+2026-10-20T15:10:03.7525422Z                 "site_admin": false,
+2026-10-20T15:10:03.7525833Z                 "starred_url": "https://api.github.com/users/rajcreativeworks/starred{/owner}{/repo}",
+2026-10-20T15:10:03.7526404Z                 "subscriptions_url": "https://api.github.com/users/rajcreativeworks/subscriptions",
+2026-10-20T15:10:03.7526845Z                 "type": "Organization",
+2026-10-20T15:10:03.7527164Z                 "url": "https://api.github.com/users/rajcreativeworks",
+2026-10-20T15:10:03.7527520Z                 "user_view_type": "public"
+2026-10-20T15:10:03.7527777Z               },
+2026-10-20T15:10:03.7527995Z               "private": false,
+2026-10-20T15:10:03.7528446Z               "pulls_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/pulls{/number}",
+2026-10-20T15:10:03.7529145Z               "releases_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/releases{/id}",
+2026-10-20T15:10:03.7530272Z               "stargazers_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/stargazers",
+2026-10-20T15:10:03.7530981Z               "statuses_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/statuses/{sha}",
+2026-10-20T15:10:03.7531698Z               "subscribers_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/subscribers",
+2026-10-20T15:10:03.7532414Z               "subscription_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/subscription",
+2026-10-20T15:10:03.7533242Z               "tags_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/tags",
+2026-10-20T15:10:03.7533861Z               "teams_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/teams",
+2026-10-20T15:10:03.7534514Z               "trees_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/git/trees{/sha}",
+2026-10-20T15:10:03.7535117Z               "url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction"
+2026-10-20T15:10:03.7535521Z             },
+2026-10-20T15:10:03.7535984Z             "rerun_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905/rerun",
+2026-10-20T15:10:03.7536648Z             "run_attempt": 1,
+2026-10-20T15:10:03.7536890Z             "run_number": 51,
+2026-10-20T15:10:03.7537147Z             "run_started_at": "2026-10-20T15:05:39Z",
+2026-10-20T15:10:03.7537442Z             "status": "completed",
+2026-10-20T15:10:03.7537703Z             "triggering_actor": {
+2026-10-20T15:10:03.7538059Z               "avatar_url": "https://avatars.githubusercontent.com/u/68766134?v=4",
+2026-10-20T15:10:03.7538558Z               "events_url": "https://api.github.com/users/rajashekar3509/events{/privacy}",
+2026-10-20T15:10:03.7539069Z               "followers_url": "https://api.github.com/users/rajashekar3509/followers",
+2026-10-20T15:10:03.7539611Z               "following_url": "https://api.github.com/users/rajashekar3509/following{/other_user}",
+2026-10-20T15:10:03.7540369Z               "gists_url": "https://api.github.com/users/rajashekar3509/gists{/gist_id}",
+2026-10-20T15:10:03.7540770Z               "gravatar_id": "",
+2026-10-20T15:10:03.7541070Z               "html_url": "https://github.com/rajashekar3509",
+2026-10-20T15:10:03.7541399Z               "id": 68766134,
+2026-10-20T15:10:03.7541657Z               "login": "rajashekar3509",
+2026-10-20T15:10:03.7541962Z               "node_id": "MDQ6VXNlcjY4NzY2MTM0",
+2026-10-20T15:10:03.7542365Z               "organizations_url": "https://api.github.com/users/rajashekar3509/orgs",
+2026-10-20T15:10:03.7542912Z               "received_events_url": "https://api.github.com/users/rajashekar3509/received_events",
+2026-10-20T15:10:03.7543421Z               "repos_url": "https://api.github.com/users/rajashekar3509/repos",
+2026-10-20T15:10:03.7543787Z               "site_admin": false,
+2026-10-20T15:10:03.7544186Z               "starred_url": "https://api.github.com/users/rajashekar3509/starred{/owner}{/repo}",
+2026-10-20T15:10:03.7544739Z               "subscriptions_url": "https://api.github.com/users/rajashekar3509/subscriptions",
+2026-10-20T15:10:03.7545151Z               "type": "User",
+2026-10-20T15:10:03.7545450Z               "url": "https://api.github.com/users/rajashekar3509",
+2026-10-20T15:10:03.7545780Z               "user_view_type": "public"
+2026-10-20T15:10:03.7546044Z             },
+2026-10-20T15:10:03.7546269Z             "updated_at": "2026-10-20T15:08:36Z",
+2026-10-20T15:10:03.7546779Z             "url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905",
+2026-10-20T15:10:03.7547290Z             "workflow_id": 390253178,
+2026-10-20T15:10:03.7547812Z             "workflow_url": "https://api.github.com/repos/rajcreativeworks/heart-disease-prediction/actions/workflows/390253178"
+2026-10-20T15:10:03.7548340Z           }
+2026-10-20T15:10:03.7548527Z         },
+2026-10-20T15:10:03.7548736Z         "github_job": "publish-image",
+2026-10-20T15:10:03.7549015Z         "github_ref": "refs/heads/main",
+2026-10-20T15:10:03.7549296Z         "github_ref_name": "main",
+2026-10-20T15:10:03.7549553Z         "github_ref_protected": "false",
+2026-10-20T15:10:03.7550037Z         "github_ref_type": "branch",
+2026-10-20T15:10:03.7550420Z         "github_repository": "rajcreativeworks/heart-disease-prediction",
+2026-10-20T15:10:03.7550806Z         "github_repository_id": "1426631245",
+2026-10-20T15:10:03.7551277Z         "github_repository_owner": "rajcreativeworks",
+2026-10-20T15:10:03.7551605Z         "github_repository_owner_id": "68766316",
+2026-10-20T15:10:03.7551903Z         "github_run_attempt": "1",
+2026-10-20T15:10:03.7552162Z         "github_run_id": "39445695001",
+2026-10-20T15:10:03.7552426Z         "github_run_number": "9",
+2026-10-20T15:10:03.7552684Z         "github_runner_arch": "X64",
+2026-10-20T15:10:03.7552981Z         "github_runner_environment": "github-hosted",
+2026-10-20T15:10:03.7553300Z         "github_runner_image_os": "ubuntu24",
+2026-10-20T15:10:03.7553610Z         "github_runner_image_version": "20261018.339.1",
+2026-10-20T15:10:03.7553947Z         "github_runner_name": "GitHub Actions 1000000081",
+2026-10-20T15:10:03.7554256Z         "github_runner_os": "Linux",
+2026-10-20T15:10:03.7554744Z         "github_runner_tracking_id": "github_b41cb8cb-4f62-45bc-bcfc-8545240a7a57",
+2026-10-20T15:10:03.7555174Z         "github_server_url": "https://github.com",
+2026-10-20T15:10:03.7555501Z         "github_triggering_actor": "rajashekar3509",
+2026-10-20T15:10:03.7555836Z         "github_workflow": "Publish Docker Image to GHCR",
+2026-10-20T15:10:03.7556424Z         "github_workflow_ref": "rajcreativeworks/heart-disease-prediction/.github/workflows/publish-image.yml@refs/heads/main",
+2026-10-20T15:10:03.7557056Z         "github_workflow_sha": "8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4",
+2026-10-20T15:10:03.7557415Z         "platform": "linux/amd64"
+2026-10-20T15:10:03.7557653Z       }
+2026-10-20T15:10:03.7557835Z     }
+2026-10-20T15:10:03.7558012Z   },
+2026-10-20T15:10:03.7558569Z   "buildx.build.ref": "builder-eebf1b34-5871-47c9-aa9c-ea168c6d8755/builder-eebf1b34-5871-47c9-aa9c-ea168c6d87550/xlki5o3w888e2jxdd512xvbn6",
+2026-10-20T15:10:03.7559194Z   "containerimage.descriptor": {
+2026-10-20T15:10:03.7559530Z     "mediaType": "application/vnd.oci.image.index.v1+json",
+2026-10-20T15:10:03.7560218Z     "digest": "sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205",
+2026-10-20T15:10:03.7560628Z     "size": 856
+2026-10-20T15:10:03.7560830Z   },
+2026-10-20T15:10:03.7561213Z   "containerimage.digest": "sha256:696376a3c28517e1ed81920e7d3292837281f18cdbab2939ddd0736a32494205",
+2026-10-20T15:10:03.7562124Z   "image.name": "ghcr.io/rajcreativeworks/heart-disease-prediction:latest,ghcr.io/rajcreativeworks/heart-disease-prediction:sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4"
+2026-10-20T15:10:03.7562826Z }
+2026-10-20T15:10:03.7563523Z ##[endgroup]
+2026-10-20T15:10:03.7563909Z ##[group]Reference
+2026-10-20T15:10:03.7564412Z builder-eebf1b34-5871-47c9-aa9c-ea168c6d8755/builder-eebf1b34-5871-47c9-aa9c-ea168c6d87550/xlki5o3w888e2jxdd512xvbn6
+2026-10-20T15:10:03.7565079Z ##[endgroup]
+2026-10-20T15:10:03.7565424Z ##[group]Check build summary support
+2026-10-20T15:10:03.7565843Z Build summary supported!
+2026-10-20T15:10:03.7566209Z ##[endgroup]

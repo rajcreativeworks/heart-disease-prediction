@@ -1,0 +1,1312 @@
+﻿2026-10-20T15:39:53.0242188Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:53.0242564Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:53.0242993Z [36;1mhelm upgrade --install prometheus prometheus-community/prometheus \[0m
+2026-10-20T15:39:53.0243449Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:39:53.0243730Z [36;1m  --create-namespace \[0m
+2026-10-20T15:39:53.0244063Z [36;1m  --values monitoring/prometheus/values.yaml \[0m
+2026-10-20T15:39:53.0244378Z [36;1m  --debug \[0m
+2026-10-20T15:39:53.0244590Z [36;1m  --wait \[0m
+2026-10-20T15:39:53.0244805Z [36;1m  --timeout 10m[0m
+2026-10-20T15:39:53.0307354Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:53.0307641Z env:
+2026-10-20T15:39:53.0307881Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:53.0308188Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:53.0308503Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:53.0309210Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:53.0310371Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:53.0311819Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:53.0312494Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0312824Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0313147Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0313448Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0313749Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0314153Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:53.0314598Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:53.0315232Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:53.0316168Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:53.0316802Z ##[endgroup]
+2026-10-20T15:39:53.7817577Z level=DEBUG msg="getting history for release" release=prometheus
+2026-10-20T15:39:53.7818893Z level=DEBUG msg="getting release history" name=prometheus
+2026-10-20T15:39:54.9210439Z level=DEBUG msg="set up default downloader cache"
+2026-10-20T15:39:55.3753986Z level=DEBUG msg="attempting to download chart" ref=prometheus-community/prometheus version=""
+2026-10-20T15:39:55.3755645Z level=DEBUG msg=fetching url=https://github.com/prometheus-community/helm-charts/releases/download/prometheus-29.37.0/prometheus-29.37.0.tgz
+2026-10-20T15:39:55.5618334Z level=DEBUG msg="fetch complete" url=https://github.com/prometheus-community/helm-charts/releases/download/prometheus-29.37.0/prometheus-29.37.0.tgz status="200 OK" content-length=91978
+2026-10-20T15:39:55.5634687Z level=DEBUG msg="put downloaded chart in cache" id=df07dce99f49ea300c5bb8dadb167a09141bb7dbdc6609727157677434e4fbe5
+2026-10-20T15:39:55.7951975Z level=DEBUG msg="preparing upgrade" name=prometheus
+2026-10-20T15:39:55.7952830Z level=DEBUG msg="getting last revision" name=prometheus
+2026-10-20T15:39:55.7953382Z level=DEBUG msg="getting release history" name=prometheus
+2026-10-20T15:39:56.9886255Z level=DEBUG msg="chart name" chart-name=prometheus
+2026-10-20T15:39:56.9988404Z level=DEBUG msg="unmarshalled JSON schema" schema="{\n    \"$schema\": \"http://json-schema.org/schema#\",\n    \"type\": \"object\",\n    \"properties\": {\n        \"alertRelabelConfigs\": {\n            \"type\": \"object\"\n        },\n        \"alertmanager\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"persistence\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"size\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"podSecurityContext\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"fsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsNonRoot\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"runAsUser\": {\n                            \"type\": \"integer\"\n                        }\n                    }\n                }\n            }\n        },\n        \"configmapReload\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"env\": {\n                    \"type\": \"array\"\n                },\n                \"prometheus\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"containerSecurityContext\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"extraArgs\": {\n                            \"type\": \"object\"\n                        },\n                        \"extraConfigmapMounts\": {\n                            \"type\": \"array\"\n                        },\n                        \"extraVolumeDirs\": {\n                            \"type\": \"array\"\n                        },\n                        \"extraVolumeMounts\": {\n                            \"type\": \"array\"\n                        },\n                        \"image\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"digest\": {\n                                    \"type\": \"string\"\n                                },\n                                \"pullPolicy\": {\n                                    \"type\": \"string\"\n                                },\n                                \"repository\": {\n                                    \"type\": \"string\"\n                                },\n                                \"tag\": {\n                                    \"type\": \"string\"\n                                }\n                            }\n                        },\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"resources\": {\n                            \"type\": \"object\"\n                        }\n                    }\n                },\n                \"reloadUrl\": {\n                    \"type\": \"string\"\n                }\n            }\n        },\n        \"extraManifests\": {\n            \"type\": \"array\"\n        },\n        \"extraScrapeConfigs\": {\n            \"type\": \"string\"\n        },\n        \"forceNamespace\": {\n            \"type\": \"string\"\n        },\n        \"imagePullSecrets\": {\n            \"type\": \"array\"\n        },\n        \"kube-state-metrics\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                }\n            }\n        },\n        \"networkPolicy\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                }\n            }\n        },\n        \"prometheus-node-exporter\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"containerSecurityContext\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"allowPrivilegeEscalation\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                },\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"rbac\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"pspEnabled\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                }\n            }\n        },\n        \"prometheus-pushgateway\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"serviceAnnotations\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"prometheus.io/probe\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                }\n            }\n        },\n        \"rbac\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"create\": {\n                    \"type\": \"boolean\"\n                }\n            }\n        },\n        \"ruleFiles\": {\n            \"type\": \"object\"\n        },\n        \"server\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"affinity\": {\n                    \"type\": \"object\"\n                },\n                \"alertmanagers\": {\n                    \"type\": \"array\"\n                },\n                \"baseURL\": {\n                    \"type\": \"string\"\n                },\n                \"clusterRoleNameOverride\": {\n                    \"type\": \"string\"\n                },\n                \"command\": {\n                    \"type\": \"array\"\n                },\n                \"configMapAnnotations\": {\n                    \"type\": \"object\"\n                },\n                \"configMapOverrideName\": {\n                    \"type\": \"string\"\n                },\n                \"configPath\": {\n                    \"type\": \"string\"\n                },\n                \"containerSecurityContext\": {\n                    \"type\": \"object\"\n                },\n                \"defaultFlagsOverride\": {\n                    \"type\": \"array\"\n                },\n                \"deploymentAnnotations\": {\n                    \"type\": \"object\"\n                },\n                \"dnsConfig\": {\n                    \"type\": \"object\"\n                },\n                \"dnsPolicy\": {\n                    \"type\": \"string\"\n                },\n                \"emptyDir\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"sizeLimit\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"enableServiceLinks\": {\n                    \"type\": \"boolean\"\n                },\n                \"env\": {\n                    \"type\": \"array\"\n                },\n                \"exemplars\": {\n                    \"type\": \"object\"\n                },\n                \"extraArgs\": {\n                    \"type\": \"object\"\n                },\n                \"extraConfigmapLabels\": {\n                    \"type\": \"object\"\n                },\n                \"extraConfigmapMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraFlags\": {\n                    \"type\": \"array\",\n                    \"items\": {\n                        \"type\": \"string\"\n                    }\n                },\n                \"extraHostPathMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraInitContainers\": {\n                    \"type\": \"array\"\n                },\n                \"extraSecretMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraVolumeMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraVolumes\": {\n                    \"type\": \"array\"\n                },\n                \"fullnameOverride\": {\n                    \"type\": \"string\"\n                },\n                \"global\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"evaluation_interval\": {\n                            \"type\": \"string\"\n                        },\n                        \"scrape_interval\": {\n                            \"type\": \"string\"\n                        },\n                        \"scrape_timeout\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"hostAliases\": {\n                    \"type\": \"array\"\n                },\n                \"hostNetwork\": {\n                    \"type\": \"boolean\"\n                },\n                \"image\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"digest\": {\n                            \"type\": \"string\"\n                        },\n                      \"distroless\": {\n                        \"type\": \"boolean\"\n                      },\n                        \"pullPolicy\": {\n                            \"type\": \"string\"\n                        },\n                        \"repository\": {\n                            \"type\": \"string\"\n                        },\n                        \"tag\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"ingress\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"extraLabels\": {\n                            \"type\": \"object\"\n                        },\n                        \"extraPaths\": {\n                            \"type\": \"array\"\n                        },\n                        \"hosts\": {\n                            \"type\": \"array\"\n                        },\n                        \"path\": {\n                            \"type\": \"string\"\n                        },\n                        \"pathType\": {\n                            \"type\": \"string\"\n                        },\n                        \"tls\": {\n                            \"type\": \"array\"\n                        }\n                    }\n                },\n                \"livenessProbeFailureThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbeInitialDelay\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbePeriodSeconds\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbeSuccessThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbeTimeout\": {\n                    \"type\": \"integer\"\n                },\n                \"name\": {\n                    \"type\": \"string\"\n                },\n                \"nodeSelector\": {\n                    \"type\": \"object\"\n                },\n                \"persistentVolume\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"accessModes\": {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"string\"\n                            }\n                        },\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"existingClaim\": {\n                            \"type\": \"string\"\n                        },\n                        \"labels\": {\n                            \"type\": \"object\"\n                        },\n                        \"mountPath\": {\n                            \"type\": \"string\"\n                        },\n                        \"size\": {\n                            \"type\": \"string\"\n                        },\n                        \"statefulSetNameOverride\": {\n                            \"type\": \"string\"\n                        },\n                        \"subPath\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"podAnnotations\": {\n                    \"type\": \"object\"\n                },\n                \"podAntiAffinity\": {\n                    \"type\": \"string\",\n                    \"enum\": [\"\", \"soft\", \"hard\"],\n                    \"default\": \"\"\n                },\n                \"podAntiAffinityTopologyKey\": {\n                    \"type\": \"string\"\n                },\n                \"podDisruptionBudget\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"maxUnavailable\": {\n                            \"type\": [\n                                \"string\",\n                                \"integer\"\n                            ]\n                        }\n                    }\n                },\n                \"podLabels\": {\n                    \"type\": \"object\"\n                },\n                \"portName\": {\n                    \"type\": \"string\"\n                },\n                \"prefixURL\": {\n                    \"type\": \"string\"\n                },\n                \"priorityClassName\": {\n                    \"type\": \"string\"\n                },\n                \"runtimeClassName\": {\n                    \"type\": \"string\"\n                },\n                \"probeHeaders\": {\n                    \"type\": \"array\"\n                },\n                \"probeScheme\": {\n                    \"type\": \"string\"\n                },\n                \"readinessProbeFailureThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbeInitialDelay\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbePeriodSeconds\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbeSuccessThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbeTimeout\": {\n                    \"type\": \"integer\"\n                },\n                \"releaseNamespace\": {\n                    \"type\": \"boolean\"\n                },\n                \"remoteRead\": {\n                    \"type\": \"array\"\n                },\n                \"remoteWrite\": {\n                    \"type\": \"array\"\n                },\n                \"replicaCount\": {\n                    \"type\": \"integer\"\n                },\n                \"resources\": {\n                    \"type\": \"object\"\n                },\n                \"retention\": {\n                    \"type\": \"string\"\n                },\n                \"retentionSize\": {\n                    \"type\": \"string\"\n                },\n                \"revisionHistoryLimit\": {\n                    \"type\": \"integer\"\n                },\n                \"securityContext\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"fsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsNonRoot\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"runAsUser\": {\n                            \"type\": \"integer\"\n                        }\n                    }\n                },\n                \"service\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"additionalPorts\": {\n                            \"type\": \"array\"\n                        },\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"clusterIP\": {\n                            \"type\": \"string\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"externalIPs\": {\n                            \"type\": \"array\"\n                        },\n                        \"gRPC\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"enabled\": {\n                                    \"type\": \"boolean\"\n                                },\n                                \"servicePort\": {\n                                    \"type\": \"integer\"\n                                }\n                            }\n                        },\n                        \"labels\": {\n                            \"type\": \"object\"\n                        },\n                        \"loadBalancerIP\": {\n                            \"type\": \"string\"\n                        },\n                        \"loadBalancerSourceRanges\": {\n                            \"type\": \"array\"\n                        },\n                        \"servicePort\": {\n                            \"type\": \"integer\"\n                        },\n                        \"sessionAffinity\": {\n                            \"type\": \"string\"\n                        },\n                        \"statefulsetReplica\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"enabled\": {\n                                    \"type\": \"boolean\"\n                                },\n                                \"replica\": {\n                                    \"type\": \"integer\"\n                                }\n                            }\n                        },\n                        \"type\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"sidecarContainers\": {\n                    \"type\": \"object\"\n                },\n                \"sidecarTemplateValues\": {\n                    \"type\": \"object\"\n                },\n                \"startupProbe\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"failureThreshold\": {\n                            \"type\": \"integer\"\n                        },\n                        \"periodSeconds\": {\n                            \"type\": \"integer\"\n                        },\n                        \"timeoutSeconds\": {\n                            \"type\": \"integer\"\n                        }\n                    }\n                },\n                \"statefulSet\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"headless\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"annotations\": {\n                                    \"type\": \"object\"\n                                },\n                                \"gRPC\": {\n                                    \"type\": \"object\",\n                                    \"properties\": {\n                                        \"enabled\": {\n                                            \"type\": \"boolean\"\n                                        },\n                                        \"servicePort\": {\n                                            \"type\": \"integer\"\n                                        }\n                                    }\n                                },\n                                \"labels\": {\n                                    \"type\": \"object\"\n                                },\n                                \"servicePort\": {\n                                    \"type\": \"integer\"\n                                }\n                            }\n                        },\n                        \"labels\": {\n                            \"type\": \"object\"\n                        },\n                        \"podManagementPolicy\": {\n                            \"type\": \"string\"\n                        },\n                        \"pvcDeleteOnStsDelete\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"pvcDeleteOnStsScale\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                },\n                \"storagePath\": {\n                    \"type\": \"string\"\n                },\n                \"strategy\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"type\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"tcpSocketProbeEnabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"terminationGracePeriodSeconds\": {\n                    \"type\": \"integer\"\n                },\n                \"tolerations\": {\n                    \"type\": \"array\"\n                },\n                \"topologySpreadConstraints\": {\n                    \"type\": \"array\"\n                },\n                \"tsdb\": {\n                    \"type\": \"object\"\n                },\n                \"verticalAutoscaler\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                }\n            }\n        },\n        \"scrapeConfigFiles\": {\n            \"type\": \"array\"\n        },\n        \"scrapeConfigs\": {\n            \"type\": \"object\",\n            \"additionalProperties\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"pre_relabel_configs\": {\n                        \"description\": \"Templated YAML block-scalar relabel rules inserted before relabel_configs.\",\n                        \"type\": \"string\"\n                    },\n                    \"post_relabel_configs\": {\n                        \"description\": \"Templated YAML block-scalar relabel rules inserted after relabel_configs.\",\n                        \"type\": \"string\"\n                    }\n                }\n            }\n        },\n        \"serverFiles\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"alerting_rules.yml\": {\n                    \"type\": \"object\"\n                },\n                \"alerts\": {\n                    \"type\": \"object\"\n                },\n                \"prometheus.yml\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"rule_files\": {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"string\"\n                            }\n                        },\n                        \"scrape_configs\": {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"object\",\n                                \"properties\": {\n                                    \"job_name\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"static_configs\": {\n                                        \"type\": \"array\",\n                                        \"items\": {\n                                            \"type\": \"object\",\n                                            \"properties\": {\n                                                \"targets\": {\n                                                    \"type\": \"array\",\n                                                    \"items\": {\n                                                        \"type\": \"string\"\n                                                    }\n                                                }\n                                            }\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                },\n                \"recording_rules.yml\": {\n                    \"type\": \"object\"\n                },\n                \"rules\": {\n                    \"type\": \"object\"\n                }\n            }\n        },\n        \"serviceAccounts\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"server\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"create\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"automountServiceAccountToken\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\n"
+2026-10-20T15:39:57.0089036Z level=DEBUG msg="number of dependencies in the chart" chart=prometheus dependencies=0
+2026-10-20T15:39:57.0109080Z level=DEBUG msg="determined release apply method" server_side_apply=true previous_release_apply_method=ssa
+2026-10-20T15:39:58.2525332Z level=DEBUG msg="performing update" name=prometheus
+2026-10-20T15:39:58.6133196Z level=DEBUG msg="creating upgraded release" name=prometheus
+2026-10-20T15:39:58.6133894Z level=DEBUG msg="creating release" key=sh.helm.release.v1.prometheus.v6
+2026-10-20T15:39:58.6134394Z level=DEBUG msg="getting release history" name=prometheus
+2026-10-20T15:39:59.3118721Z level=DEBUG msg="using server-side apply for resource creation" forceConflicts=false dryRun=false fieldValidationDirective=Strict
+2026-10-20T15:39:59.3120518Z level=DEBUG msg="using server-side apply for resource update" forceConflicts=false dryRun=false fieldValidationDirective=Strict upgradeClientSideFieldManager=false
+2026-10-20T15:39:59.3121963Z level=DEBUG msg="checking resources for changes" resources=6
+2026-10-20T15:39:59.8089056Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="/v1, Kind=ServiceAccount"
+2026-10-20T15:40:00.3091294Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="/v1, Kind=ConfigMap"
+2026-10-20T15:40:00.8197387Z level=DEBUG msg="Patched resource" namespace="" name=prometheus-server gvk="rbac.authorization.k8s.io/v1, Kind=ClusterRole"
+2026-10-20T15:40:01.3145585Z level=DEBUG msg="Patched resource" namespace="" name=prometheus-server gvk="rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding"
+2026-10-20T15:40:01.8099649Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="/v1, Kind=Service"
+2026-10-20T15:40:02.3512482Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="apps/v1, Kind=Deployment"
+2026-10-20T15:40:02.3519075Z level=DEBUG msg="waiting for resources" count=6 timeout=10m0s
+2026-10-20T15:40:03.0593739Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=ServiceAccount expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.0686112Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.0743608Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.1025726Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=ServiceAccount expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.3132526Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.3628643Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.5745331Z level=DEBUG msg="all resources achieved desired status" desiredStatus=Current resourceCount=6
+2026-10-20T15:40:03.5747070Z level=DEBUG msg="updating release" key=sh.helm.release.v1.prometheus.v5
+2026-10-20T15:40:03.8522446Z level=DEBUG msg="updating status for upgraded release" name=prometheus
+2026-10-20T15:40:03.8523428Z level=DEBUG msg="updating release" key=sh.helm.release.v1.prometheus.v6
+2026-10-20T15:40:04.1251729Z Release "prometheus" has been upgraded. Happy Helming!
+2026-10-20T15:40:04.1253276Z NAME: prometheus
+2026-10-20T15:40:04.1253676Z LAST DEPLOYED: Tue Oct 20 15:39:57 2026
+2026-10-20T15:40:04.1254239Z NAMESPACE: monitoring
+2026-10-20T15:40:04.1254753Z STATUS: deployed
+2026-10-20T15:40:04.1255139Z REVISION: 6
+2026-10-20T15:40:04.1255593Z DESCRIPTION: Upgrade complete
+2026-10-20T15:40:04.1255943Z TEST SUITE: None
+2026-10-20T15:40:04.1256249Z USER-SUPPLIED VALUES:
+2026-10-20T15:40:04.1256742Z alertmanager:
+2026-10-20T15:40:04.1257027Z   enabled: false
+2026-10-20T15:40:04.1257323Z kube-state-metrics:
+2026-10-20T15:40:04.1257697Z   enabled: false
+2026-10-20T15:40:04.1258097Z prometheus-node-exporter:
+2026-10-20T15:40:04.1258496Z   enabled: false
+2026-10-20T15:40:04.1258914Z prometheus-pushgateway:
+2026-10-20T15:40:04.1259343Z   enabled: false
+2026-10-20T15:40:04.1259614Z server:
+2026-10-20T15:40:04.1259869Z   global:
+2026-10-20T15:40:04.1260231Z     evaluation_interval: 15s
+2026-10-20T15:40:04.1260680Z     scrape_interval: 15s
+2026-10-20T15:40:04.1261005Z     scrape_timeout: 10s
+2026-10-20T15:40:04.1261375Z   persistentVolume:
+2026-10-20T15:40:04.1261838Z     enabled: false
+2026-10-20T15:40:04.1262081Z   resources:
+2026-10-20T15:40:04.1262315Z     limits:
+2026-10-20T15:40:04.1262545Z       cpu: 500m
+2026-10-20T15:40:04.1262941Z       memory: 512Mi
+2026-10-20T15:40:04.1263188Z     requests:
+2026-10-20T15:40:04.1263416Z       cpu: 100m
+2026-10-20T15:40:04.1263646Z       memory: 256Mi
+2026-10-20T15:40:04.1263963Z serverFiles:
+2026-10-20T15:40:04.1264281Z   prometheus.yml:
+2026-10-20T15:40:04.1264521Z     rule_files:
+2026-10-20T15:40:04.1264774Z     - /etc/config/recording_rules.yml
+2026-10-20T15:40:04.1265199Z     - /etc/config/alerting_rules.yml
+2026-10-20T15:40:04.1265598Z     - /etc/config/rules
+2026-10-20T15:40:04.1265872Z     - /etc/config/alerts
+2026-10-20T15:40:04.1266141Z     scrape_configs:
+2026-10-20T15:40:04.1266542Z     - job_name: heart-disease-api
+2026-10-20T15:40:04.1267167Z       metrics_path: /metrics
+2026-10-20T15:40:04.1267448Z       static_configs:
+2026-10-20T15:40:04.1267858Z       - targets:
+2026-10-20T15:40:04.1268216Z         - heart-disease-api.default.svc.cluster.local:8000
+2026-10-20T15:40:04.1268509Z 
+2026-10-20T15:40:04.1268622Z COMPUTED VALUES:
+2026-10-20T15:40:04.1282669Z alertRelabelConfigs: {}
+2026-10-20T15:40:04.1283120Z alertmanager:
+2026-10-20T15:40:04.1292293Z   enabled: false
+2026-10-20T15:40:04.1292828Z   persistence:
+2026-10-20T15:40:04.1293181Z     accessModes:
+2026-10-20T15:40:04.1293584Z     - ReadWriteOnce
+2026-10-20T15:40:04.1293966Z     annotations: {}
+2026-10-20T15:40:04.1294307Z     emptyDir: {}
+2026-10-20T15:40:04.1294652Z     enabled: true
+2026-10-20T15:40:04.1295005Z     labels: {}
+2026-10-20T15:40:04.1295337Z     size: 2Gi
+2026-10-20T15:40:04.1295684Z   podSecurityContext:
+2026-10-20T15:40:04.1296078Z     fsGroup: 65534
+2026-10-20T15:40:04.1296436Z     runAsGroup: 65534
+2026-10-20T15:40:04.1296799Z     runAsNonRoot: true
+2026-10-20T15:40:04.1297173Z     runAsUser: 65534
+2026-10-20T15:40:04.1297536Z commonMetaLabels: {}
+2026-10-20T15:40:04.1298065Z configmapReload:
+2026-10-20T15:40:04.1298269Z   env: []
+2026-10-20T15:40:04.1298460Z   prometheus:
+2026-10-20T15:40:04.1298662Z     containerPort: 8080
+2026-10-20T15:40:04.1298902Z     containerPortName: metrics
+2026-10-20T15:40:04.1299177Z     containerSecurityContext: {}
+2026-10-20T15:40:04.1299438Z     enabled: true
+2026-10-20T15:40:04.1299645Z     extraArgs: {}
+2026-10-20T15:40:04.1299859Z     extraConfigmapMounts: []
+2026-10-20T15:40:04.1300113Z     extraVolumeDirs: []
+2026-10-20T15:40:04.1300344Z     extraVolumeMounts: []
+2026-10-20T15:40:04.1300567Z     image:
+2026-10-20T15:40:04.1300908Z       digest: ""
+2026-10-20T15:40:04.1301122Z       pullPolicy: IfNotPresent
+2026-10-20T15:40:04.1301746Z       repository: quay.io/prometheus-operator/prometheus-config-reloader
+2026-10-20T15:40:04.1302144Z       tag: v0.94.1
+2026-10-20T15:40:04.1302359Z     livenessProbe:
+2026-10-20T15:40:04.1302558Z       httpGet:
+2026-10-20T15:40:04.1302768Z         path: /healthz
+2026-10-20T15:40:04.1302990Z         port: metrics
+2026-10-20T15:40:04.1303205Z         scheme: HTTP
+2026-10-20T15:40:04.1303427Z       initialDelaySeconds: 2
+2026-10-20T15:40:04.1303665Z       periodSeconds: 10
+2026-10-20T15:40:04.1303903Z     name: configmap-reload
+2026-10-20T15:40:04.1304132Z     readinessProbe:
+2026-10-20T15:40:04.1304337Z       httpGet:
+2026-10-20T15:40:04.1304539Z         path: /healthz
+2026-10-20T15:40:04.1304747Z         port: metrics
+2026-10-20T15:40:04.1304957Z         scheme: HTTP
+2026-10-20T15:40:04.1305172Z       periodSeconds: 10
+2026-10-20T15:40:04.1305438Z     resources: {}
+2026-10-20T15:40:04.1305641Z     startupProbe:
+2026-10-20T15:40:04.1305847Z       enabled: false
+2026-10-20T15:40:04.1306195Z       httpGet:
+2026-10-20T15:40:04.1306513Z         path: /healthz
+2026-10-20T15:40:04.1306839Z         port: metrics
+2026-10-20T15:40:04.1307182Z         scheme: HTTP
+2026-10-20T15:40:04.1307544Z       periodSeconds: 10
+2026-10-20T15:40:04.1307919Z   reloadUrl: ""
+2026-10-20T15:40:04.1308253Z extraManifests: []
+2026-10-20T15:40:04.1308613Z extraScrapeConfigs: ""
+2026-10-20T15:40:04.1309005Z forceNamespace: ""
+2026-10-20T15:40:04.1309369Z imagePullSecrets: []
+2026-10-20T15:40:04.1309946Z kube-state-metrics:
+2026-10-20T15:40:04.1310306Z   enabled: false
+2026-10-20T15:40:04.1310664Z networkPolicy:
+2026-10-20T15:40:04.1311001Z   enabled: false
+2026-10-20T15:40:04.1311367Z prometheus-node-exporter:
+2026-10-20T15:40:04.1312041Z   containerSecurityContext:
+2026-10-20T15:40:04.1312473Z     allowPrivilegeEscalation: false
+2026-10-20T15:40:04.1312919Z   enabled: false
+2026-10-20T15:40:04.1313258Z   rbac:
+2026-10-20T15:40:04.1313450Z     pspEnabled: false
+2026-10-20T15:40:04.1313685Z prometheus-pushgateway:
+2026-10-20T15:40:04.1313917Z   enabled: false
+2026-10-20T15:40:04.1314124Z   serviceAnnotations:
+2026-10-20T15:40:04.1314363Z     prometheus.io/probe: pushgateway
+2026-10-20T15:40:04.1314619Z rbac:
+2026-10-20T15:40:04.1314808Z   create: true
+2026-10-20T15:40:04.1315201Z ruleFiles: {}
+2026-10-20T15:40:04.1315404Z scrapeConfigFiles: []
+2026-10-20T15:40:04.1315633Z scrapeConfigs:
+2026-10-20T15:40:04.1315844Z   kubernetes-api-servers:
+2026-10-20T15:40:04.1316193Z     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1316568Z     enabled: true
+2026-10-20T15:40:04.1316779Z     job_name: ""
+2026-10-20T15:40:04.1316988Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1317291Z     - role: endpointslice
+2026-10-20T15:40:04.1317551Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1317790Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1318026Z     relabel_configs:
+2026-10-20T15:40:04.1318234Z     - action: keep
+2026-10-20T15:40:04.1318455Z       regex: default;kubernetes;https
+2026-10-20T15:40:04.1318721Z       source_labels:
+2026-10-20T15:40:04.1318943Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1319215Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1319517Z       - __meta_kubernetes_endpointslice_port_name
+2026-10-20T15:40:04.1319822Z     scheme: https
+2026-10-20T15:40:04.1320147Z     tls_config:
+2026-10-20T15:40:04.1320431Z       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1320786Z   kubernetes-nodes:
+2026-10-20T15:40:04.1321104Z     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1321813Z     enabled: true
+2026-10-20T15:40:04.1322025Z     job_name: ""
+2026-10-20T15:40:04.1322229Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1322456Z     - role: node
+2026-10-20T15:40:04.1322662Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1322915Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1323144Z     relabel_configs:
+2026-10-20T15:40:04.1323355Z     - action: labelmap
+2026-10-20T15:40:04.1323607Z       regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1323888Z     scheme: https
+2026-10-20T15:40:04.1324084Z     tls_config:
+2026-10-20T15:40:04.1324360Z       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1324725Z       insecure_skip_verify: true
+2026-10-20T15:40:04.1324994Z   kubernetes-nodes-cadvisor:
+2026-10-20T15:40:04.1325344Z     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1325712Z     enabled: true
+2026-10-20T15:40:04.1325911Z     job_name: ""
+2026-10-20T15:40:04.1326113Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1326342Z     - role: node
+2026-10-20T15:40:04.1326561Z     metrics_path: /metrics/cadvisor
+2026-10-20T15:40:04.1326820Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1327054Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1327289Z     relabel_configs:
+2026-10-20T15:40:04.1327502Z     - action: labelmap
+2026-10-20T15:40:04.1327746Z       regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1328033Z     - source_labels:
+2026-10-20T15:40:04.1328248Z       - __metrics_path__
+2026-10-20T15:40:04.1328483Z       target_label: metrics_path
+2026-10-20T15:40:04.1328727Z     scheme: https
+2026-10-20T15:40:04.1328940Z     tls_config:
+2026-10-20T15:40:04.1329213Z       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1329567Z       insecure_skip_verify: true
+2026-10-20T15:40:04.1329823Z   kubernetes-pods:
+2026-10-20T15:40:04.1330030Z     enabled: true
+2026-10-20T15:40:04.1330239Z     honor_labels: true
+2026-10-20T15:40:04.1330456Z     job_name: ""
+2026-10-20T15:40:04.1330667Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1330903Z     - role: pod
+2026-10-20T15:40:04.1331119Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1331368Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1331855Z     relabel_configs:
+2026-10-20T15:40:04.1332068Z     - action: keep
+2026-10-20T15:40:04.1332272Z       regex: true
+2026-10-20T15:40:04.1332477Z       source_labels:
+2026-10-20T15:40:04.1332751Z       - __meta_kubernetes_pod_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1333074Z     - action: drop
+2026-10-20T15:40:04.1333279Z       regex: true
+2026-10-20T15:40:04.1333474Z       source_labels:
+2026-10-20T15:40:04.1333903Z       - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1334249Z     - action: replace
+2026-10-20T15:40:04.1334460Z       regex: (https?)
+2026-10-20T15:40:04.1334665Z       source_labels:
+2026-10-20T15:40:04.1334927Z       - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1335257Z       target_label: __scheme__
+2026-10-20T15:40:04.1335494Z     - action: replace
+2026-10-20T15:40:04.1335698Z       regex: (.+)
+2026-10-20T15:40:04.1335901Z       source_labels:
+2026-10-20T15:40:04.1336158Z       - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1336484Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1336742Z     - action: replace
+2026-10-20T15:40:04.1340029Z       regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1340397Z       replacement: '[$2]:$1'
+2026-10-20T15:40:04.1340654Z       source_labels:
+2026-10-20T15:40:04.1340952Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1341306Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1342179Z       target_label: __address__
+2026-10-20T15:40:04.1342442Z     - action: replace
+2026-10-20T15:40:04.1342677Z       regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1342954Z       replacement: $2:$1
+2026-10-20T15:40:04.1343179Z       source_labels:
+2026-10-20T15:40:04.1343456Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1343797Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1344054Z       target_label: __address__
+2026-10-20T15:40:04.1344303Z     - action: labelmap
+2026-10-20T15:40:04.1344613Z       regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1345110Z       replacement: __param_$1
+2026-10-20T15:40:04.1345483Z     - action: labelmap
+2026-10-20T15:40:04.1345733Z       regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1346011Z     - action: replace
+2026-10-20T15:40:04.1346222Z       source_labels:
+2026-10-20T15:40:04.1346470Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1346743Z       target_label: namespace
+2026-10-20T15:40:04.1346977Z     - action: replace
+2026-10-20T15:40:04.1347186Z       source_labels:
+2026-10-20T15:40:04.1347402Z       - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1347655Z       target_label: pod
+2026-10-20T15:40:04.1347876Z     - action: drop
+2026-10-20T15:40:04.1348121Z       regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1348405Z       source_labels:
+2026-10-20T15:40:04.1348625Z       - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1348887Z     - action: replace
+2026-10-20T15:40:04.1349097Z       source_labels:
+2026-10-20T15:40:04.1349320Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1349592Z       target_label: node
+2026-10-20T15:40:04.1349827Z   kubernetes-pods-slow:
+2026-10-20T15:40:04.1350051Z     enabled: true
+2026-10-20T15:40:04.1350252Z     honor_labels: true
+2026-10-20T15:40:04.1350467Z     job_name: ""
+2026-10-20T15:40:04.1350679Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1350905Z     - role: pod
+2026-10-20T15:40:04.1351126Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1351369Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1351873Z     relabel_configs:
+2026-10-20T15:40:04.1352092Z     - action: keep
+2026-10-20T15:40:04.1352304Z       regex: true
+2026-10-20T15:40:04.1352499Z       source_labels:
+2026-10-20T15:40:04.1352784Z       - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1353140Z     - action: replace
+2026-10-20T15:40:04.1353365Z       regex: (https?)
+2026-10-20T15:40:04.1353572Z       source_labels:
+2026-10-20T15:40:04.1353846Z       - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1354189Z       target_label: __scheme__
+2026-10-20T15:40:04.1354427Z     - action: replace
+2026-10-20T15:40:04.1354635Z       regex: (.+)
+2026-10-20T15:40:04.1354842Z       source_labels:
+2026-10-20T15:40:04.1355106Z       - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1355600Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1355876Z     - action: replace
+2026-10-20T15:40:04.1356146Z       regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1356461Z       replacement: '[$2]:$1'
+2026-10-20T15:40:04.1356693Z       source_labels:
+2026-10-20T15:40:04.1356954Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1357281Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1357536Z       target_label: __address__
+2026-10-20T15:40:04.1357777Z     - action: replace
+2026-10-20T15:40:04.1357995Z       regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1358261Z       replacement: $2:$1
+2026-10-20T15:40:04.1358485Z       source_labels:
+2026-10-20T15:40:04.1358745Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1359065Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1359314Z       target_label: __address__
+2026-10-20T15:40:04.1359556Z     - action: labelmap
+2026-10-20T15:40:04.1359874Z       regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1360431Z       replacement: __param_$1
+2026-10-20T15:40:04.1360680Z     - action: labelmap
+2026-10-20T15:40:04.1360917Z       regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1361198Z     - action: replace
+2026-10-20T15:40:04.1361410Z       source_labels:
+2026-10-20T15:40:04.1361867Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1362128Z       target_label: namespace
+2026-10-20T15:40:04.1362366Z     - action: replace
+2026-10-20T15:40:04.1362579Z       source_labels:
+2026-10-20T15:40:04.1362799Z       - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1363050Z       target_label: pod
+2026-10-20T15:40:04.1363272Z     - action: drop
+2026-10-20T15:40:04.1363511Z       regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1363794Z       source_labels:
+2026-10-20T15:40:04.1364013Z       - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1364275Z     - action: replace
+2026-10-20T15:40:04.1364496Z       source_labels:
+2026-10-20T15:40:04.1364730Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1365022Z       target_label: node
+2026-10-20T15:40:04.1365258Z     scrape_interval: 5m
+2026-10-20T15:40:04.1365485Z     scrape_timeout: 30s
+2026-10-20T15:40:04.1365731Z   kubernetes-service-endpoints:
+2026-10-20T15:40:04.1365988Z     enabled: true
+2026-10-20T15:40:04.1366199Z     honor_labels: true
+2026-10-20T15:40:04.1366410Z     job_name: ""
+2026-10-20T15:40:04.1366624Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1366859Z     - role: endpointslice
+2026-10-20T15:40:04.1367095Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1367336Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1367571Z     relabel_configs:
+2026-10-20T15:40:04.1367781Z     - action: keep
+2026-10-20T15:40:04.1367989Z       regex: true
+2026-10-20T15:40:04.1368191Z       source_labels:
+2026-10-20T15:40:04.1368472Z       - __meta_kubernetes_service_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1368811Z     - action: drop
+2026-10-20T15:40:04.1369017Z       regex: true
+2026-10-20T15:40:04.1369222Z       source_labels:
+2026-10-20T15:40:04.1369518Z       - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1369867Z     - action: replace
+2026-10-20T15:40:04.1370088Z       regex: (https?)
+2026-10-20T15:40:04.1370296Z       source_labels:
+2026-10-20T15:40:04.1370572Z       - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1370914Z       target_label: __scheme__
+2026-10-20T15:40:04.1371154Z     - action: replace
+2026-10-20T15:40:04.1371360Z       regex: (.+)
+2026-10-20T15:40:04.1371768Z       source_labels:
+2026-10-20T15:40:04.1372052Z       - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1372397Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1372654Z     - action: replace
+2026-10-20T15:40:04.1372882Z       regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1373128Z       replacement: $1:$2
+2026-10-20T15:40:04.1373483Z       source_labels:
+2026-10-20T15:40:04.1373692Z       - __address__
+2026-10-20T15:40:04.1373972Z       - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1374303Z       target_label: __address__
+2026-10-20T15:40:04.1374543Z     - action: labelmap
+2026-10-20T15:40:04.1374869Z       regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1375246Z       replacement: __param_$1
+2026-10-20T15:40:04.1375496Z     - action: labelmap
+2026-10-20T15:40:04.1375752Z       regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1376047Z     - action: replace
+2026-10-20T15:40:04.1376257Z       source_labels:
+2026-10-20T15:40:04.1376483Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1376745Z       target_label: namespace
+2026-10-20T15:40:04.1376978Z     - action: replace
+2026-10-20T15:40:04.1377183Z       source_labels:
+2026-10-20T15:40:04.1377411Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1377677Z       target_label: service
+2026-10-20T15:40:04.1377911Z     - action: replace
+2026-10-20T15:40:04.1378120Z       source_labels:
+2026-10-20T15:40:04.1378464Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1378729Z       target_label: node
+2026-10-20T15:40:04.1378982Z   kubernetes-service-endpoints-slow:
+2026-10-20T15:40:04.1379258Z     enabled: true
+2026-10-20T15:40:04.1379460Z     honor_labels: true
+2026-10-20T15:40:04.1379673Z     job_name: ""
+2026-10-20T15:40:04.1379888Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1380128Z     - role: endpointslice
+2026-10-20T15:40:04.1380358Z     relabel_configs:
+2026-10-20T15:40:04.1380564Z     - action: keep
+2026-10-20T15:40:04.1380771Z       regex: true
+2026-10-20T15:40:04.1380977Z       source_labels:
+2026-10-20T15:40:04.1381272Z       - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1381897Z     - action: replace
+2026-10-20T15:40:04.1382117Z       regex: (https?)
+2026-10-20T15:40:04.1382327Z       source_labels:
+2026-10-20T15:40:04.1382617Z       - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1382970Z       target_label: __scheme__
+2026-10-20T15:40:04.1383209Z     - action: replace
+2026-10-20T15:40:04.1383416Z       regex: (.+)
+2026-10-20T15:40:04.1383621Z       source_labels:
+2026-10-20T15:40:04.1383890Z       - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1384226Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1384490Z     - action: replace
+2026-10-20T15:40:04.1384708Z       regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1384952Z       replacement: $1:$2
+2026-10-20T15:40:04.1385172Z       source_labels:
+2026-10-20T15:40:04.1385383Z       - __address__
+2026-10-20T15:40:04.1385651Z       - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1385978Z       target_label: __address__
+2026-10-20T15:40:04.1386224Z     - action: labelmap
+2026-10-20T15:40:04.1386543Z       regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1386923Z       replacement: __param_$1
+2026-10-20T15:40:04.1387167Z     - action: labelmap
+2026-10-20T15:40:04.1387417Z       regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1387702Z     - action: replace
+2026-10-20T15:40:04.1387908Z       source_labels:
+2026-10-20T15:40:04.1388133Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1388412Z       target_label: namespace
+2026-10-20T15:40:04.1388645Z     - action: replace
+2026-10-20T15:40:04.1388854Z       source_labels:
+2026-10-20T15:40:04.1389074Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1389336Z       target_label: service
+2026-10-20T15:40:04.1389570Z     - action: replace
+2026-10-20T15:40:04.1389774Z       source_labels:
+2026-10-20T15:40:04.1389997Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1390260Z       target_label: node
+2026-10-20T15:40:04.1390493Z     scrape_interval: 5m
+2026-10-20T15:40:04.1390720Z     scrape_timeout: 30s
+2026-10-20T15:40:04.1390943Z   kubernetes-services:
+2026-10-20T15:40:04.1391305Z     enabled: true
+2026-10-20T15:40:04.1391793Z     honor_labels: true
+2026-10-20T15:40:04.1392173Z     job_name: ""
+2026-10-20T15:40:04.1392418Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1392658Z     - role: service
+2026-10-20T15:40:04.1392873Z     metrics_path: /probe
+2026-10-20T15:40:04.1393095Z     params:
+2026-10-20T15:40:04.1393287Z       module:
+2026-10-20T15:40:04.1393479Z       - http_2xx
+2026-10-20T15:40:04.1393689Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1393940Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1394182Z     relabel_configs:
+2026-10-20T15:40:04.1394394Z     - action: keep
+2026-10-20T15:40:04.1394599Z       regex: true
+2026-10-20T15:40:04.1394807Z       source_labels:
+2026-10-20T15:40:04.1395096Z       - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1395436Z     - source_labels:
+2026-10-20T15:40:04.1395652Z       - __address__
+2026-10-20T15:40:04.1395882Z       target_label: __param_target
+2026-10-20T15:40:04.1396149Z     - replacement: blackbox
+2026-10-20T15:40:04.1396399Z       target_label: __address__
+2026-10-20T15:40:04.1396795Z     - source_labels:
+2026-10-20T15:40:04.1397009Z       - __param_target
+2026-10-20T15:40:04.1397361Z       target_label: instance
+2026-10-20T15:40:04.1397695Z     - action: labelmap
+2026-10-20T15:40:04.1398200Z       regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1398681Z     - source_labels:
+2026-10-20T15:40:04.1399086Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1399469Z       target_label: namespace
+2026-10-20T15:40:04.1399897Z     - source_labels:
+2026-10-20T15:40:04.1400267Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1413090Z       target_label: service
+2026-10-20T15:40:04.1413418Z   prometheus:
+2026-10-20T15:40:04.1413638Z     enabled: true
+2026-10-20T15:40:04.1413853Z     job_name: ""
+2026-10-20T15:40:04.1414057Z     static_configs:
+2026-10-20T15:40:04.1414270Z     - targets:
+2026-10-20T15:40:04.1414485Z       - localhost:9090
+2026-10-20T15:40:04.1414745Z   prometheus-pushgateway:
+2026-10-20T15:40:04.1414985Z     enabled: true
+2026-10-20T15:40:04.1415199Z     honor_labels: true
+2026-10-20T15:40:04.1415419Z     job_name: ""
+2026-10-20T15:40:04.1415629Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1415862Z     - role: service
+2026-10-20T15:40:04.1416078Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1416335Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1416568Z     relabel_configs:
+2026-10-20T15:40:04.1416783Z     - action: keep
+2026-10-20T15:40:04.1417003Z       regex: pushgateway
+2026-10-20T15:40:04.1417222Z       source_labels:
+2026-10-20T15:40:04.1417507Z       - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1417843Z server:
+2026-10-20T15:40:04.1418038Z   affinity: {}
+2026-10-20T15:40:04.1418242Z   alertmanagers: []
+2026-10-20T15:40:04.1418444Z   baseURL: ""
+2026-10-20T15:40:04.1418657Z   clusterRoleNameOverride: ""
+2026-10-20T15:40:04.1418898Z   command: []
+2026-10-20T15:40:04.1419099Z   configFromSecret: ""
+2026-10-20T15:40:04.1419332Z   configMapAnnotations: {}
+2026-10-20T15:40:04.1419593Z   configMapOverrideName: ""
+2026-10-20T15:40:04.1419869Z   configPath: /etc/config/prometheus.yml
+2026-10-20T15:40:04.1420165Z   containerSecurityContext: {}
+2026-10-20T15:40:04.1420414Z   daemonSet:
+2026-10-20T15:40:04.1420608Z     annotations: {}
+2026-10-20T15:40:04.1420814Z     enabled: false
+2026-10-20T15:40:04.1421014Z     labels: {}
+2026-10-20T15:40:04.1421229Z   defaultFlagsOverride: []
+2026-10-20T15:40:04.1421684Z   deploymentAnnotations: {}
+2026-10-20T15:40:04.1421990Z   dnsConfig: {}
+2026-10-20T15:40:04.1422200Z   dnsPolicy: ClusterFirst
+2026-10-20T15:40:04.1422421Z   emptyDir:
+2026-10-20T15:40:04.1422605Z     medium: ""
+2026-10-20T15:40:04.1422797Z     sizeLimit: ""
+2026-10-20T15:40:04.1423017Z   enableServiceLinks: true
+2026-10-20T15:40:04.1423238Z   env: []
+2026-10-20T15:40:04.1423421Z   exemplars: {}
+2026-10-20T15:40:04.1423625Z   extraArgs: {}
+2026-10-20T15:40:04.1423832Z   extraConfigmapLabels: {}
+2026-10-20T15:40:04.1424286Z   extraConfigmapMounts: []
+2026-10-20T15:40:04.1424510Z   extraFlags:
+2026-10-20T15:40:04.1424728Z   - web.enable-lifecycle
+2026-10-20T15:40:04.1424969Z   extraHostPathMounts: []
+2026-10-20T15:40:04.1425208Z   extraInitContainers: []
+2026-10-20T15:40:04.1425625Z   extraSecretMounts: []
+2026-10-20T15:40:04.1426002Z   extraVolumeMounts: []
+2026-10-20T15:40:04.1426277Z   extraVolumes: []
+2026-10-20T15:40:04.1426494Z   fullnameOverride: ""
+2026-10-20T15:40:04.1426704Z   global:
+2026-10-20T15:40:04.1426904Z     evaluation_interval: 15s
+2026-10-20T15:40:04.1427149Z     scrape_interval: 15s
+2026-10-20T15:40:04.1427385Z     scrape_timeout: 10s
+2026-10-20T15:40:04.1427600Z   hostAliases: []
+2026-10-20T15:40:04.1427809Z   hostNetwork: false
+2026-10-20T15:40:04.1428022Z   image:
+2026-10-20T15:40:04.1428205Z     digest: ""
+2026-10-20T15:40:04.1428405Z     distroless: false
+2026-10-20T15:40:04.1428634Z     pullPolicy: IfNotPresent
+2026-10-20T15:40:04.1428918Z     repository: quay.io/prometheus/prometheus
+2026-10-20T15:40:04.1429204Z     tag: ""
+2026-10-20T15:40:04.1429384Z   ingress:
+2026-10-20T15:40:04.1429735Z     annotations: {}
+2026-10-20T15:40:04.1429939Z     enabled: false
+2026-10-20T15:40:04.1430143Z     extraLabels: {}
+2026-10-20T15:40:04.1430345Z     extraPaths: []
+2026-10-20T15:40:04.1430545Z     hosts: []
+2026-10-20T15:40:04.1430741Z     ingressClassName: ""
+2026-10-20T15:40:04.1430961Z     path: /
+2026-10-20T15:40:04.1431152Z     pathType: Prefix
+2026-10-20T15:40:04.1431353Z     tls: []
+2026-10-20T15:40:04.1431862Z   livenessProbeFailureThreshold: 3
+2026-10-20T15:40:04.1432153Z   livenessProbeInitialDelay: 30
+2026-10-20T15:40:04.1432426Z   livenessProbePeriodSeconds: 15
+2026-10-20T15:40:04.1432698Z   livenessProbeSuccessThreshold: 1
+2026-10-20T15:40:04.1432963Z   livenessProbeTimeout: 10
+2026-10-20T15:40:04.1433194Z   name: server
+2026-10-20T15:40:04.1433388Z   namespaces: []
+2026-10-20T15:40:04.1433584Z   nodeSelector: {}
+2026-10-20T15:40:04.1433777Z   otlp: {}
+2026-10-20T15:40:04.1433971Z   persistentVolume:
+2026-10-20T15:40:04.1434185Z     accessModes:
+2026-10-20T15:40:04.1434388Z     - ReadWriteOnce
+2026-10-20T15:40:04.1434608Z     annotations: {}
+2026-10-20T15:40:04.1434808Z     enabled: false
+2026-10-20T15:40:04.1435018Z     existingClaim: ""
+2026-10-20T15:40:04.1435228Z     labels: {}
+2026-10-20T15:40:04.1435434Z     mountPath: /data
+2026-10-20T15:40:04.1435644Z     size: 8Gi
+2026-10-20T15:40:04.1435858Z     statefulSetNameOverride: ""
+2026-10-20T15:40:04.1436108Z     subPath: ""
+2026-10-20T15:40:04.1436310Z   podAnnotations: {}
+2026-10-20T15:40:04.1436528Z   podAntiAffinity: ""
+2026-10-20T15:40:04.1436797Z   podAntiAffinityTopologyKey: kubernetes.io/hostname
+2026-10-20T15:40:04.1437126Z   podDisruptionBudget:
+2026-10-20T15:40:04.1437346Z     enabled: false
+2026-10-20T15:40:04.1437544Z   podLabels: {}
+2026-10-20T15:40:04.1437747Z   portName: ""
+2026-10-20T15:40:04.1437945Z   prefixURL: ""
+2026-10-20T15:40:04.1438152Z   priorityClassName: ""
+2026-10-20T15:40:04.1438372Z   probeHeaders: []
+2026-10-20T15:40:04.1438583Z   probeScheme: HTTP
+2026-10-20T15:40:04.1438815Z   readinessProbeFailureThreshold: 3
+2026-10-20T15:40:04.1439109Z   readinessProbeInitialDelay: 30
+2026-10-20T15:40:04.1439383Z   readinessProbePeriodSeconds: 5
+2026-10-20T15:40:04.1439654Z   readinessProbeSuccessThreshold: 1
+2026-10-20T15:40:04.1439925Z   readinessProbeTimeout: 4
+2026-10-20T15:40:04.1440168Z   releaseNamespace: false
+2026-10-20T15:40:04.1440402Z   remoteRead: []
+2026-10-20T15:40:04.1440604Z   remoteWrite: []
+2026-10-20T15:40:04.1440811Z   replicaCount: 1
+2026-10-20T15:40:04.1441011Z   resources:
+2026-10-20T15:40:04.1441196Z     limits:
+2026-10-20T15:40:04.1441388Z       cpu: 500m
+2026-10-20T15:40:04.1441806Z       memory: 512Mi
+2026-10-20T15:40:04.1442011Z     requests:
+2026-10-20T15:40:04.1442197Z       cpu: 100m
+2026-10-20T15:40:04.1442387Z       memory: 256Mi
+2026-10-20T15:40:04.1442582Z   retention: 15d
+2026-10-20T15:40:04.1442776Z   retentionSize: ""
+2026-10-20T15:40:04.1442987Z   revisionHistoryLimit: 10
+2026-10-20T15:40:04.1443359Z   route:
+2026-10-20T15:40:04.1443540Z     main:
+2026-10-20T15:40:04.1443735Z       additionalRules: []
+2026-10-20T15:40:04.1443959Z       annotations: {}
+2026-10-20T15:40:04.1444164Z       apiVersion: ""
+2026-10-20T15:40:04.1444374Z       enabled: false
+2026-10-20T15:40:04.1444570Z       filters: []
+2026-10-20T15:40:04.1444763Z       hostnames: []
+2026-10-20T15:40:04.1444971Z       httpsRedirect: false
+2026-10-20T15:40:04.1445184Z       kind: ""
+2026-10-20T15:40:04.1445369Z       labels: {}
+2026-10-20T15:40:04.1445555Z       matches:
+2026-10-20T15:40:04.1445748Z       - path:
+2026-10-20T15:40:04.1445941Z           type: PathPrefix
+2026-10-20T15:40:04.1446155Z           value: /
+2026-10-20T15:40:04.1446353Z       parentRefs: []
+2026-10-20T15:40:04.1446561Z   runtimeClassName: ""
+2026-10-20T15:40:04.1446773Z   securityContext:
+2026-10-20T15:40:04.1446971Z     fsGroup: 65534
+2026-10-20T15:40:04.1447168Z     runAsGroup: 65534
+2026-10-20T15:40:04.1447375Z     runAsNonRoot: true
+2026-10-20T15:40:04.1447590Z     runAsUser: 65534
+2026-10-20T15:40:04.1447787Z   service:
+2026-10-20T15:40:04.1448094Z     additionalPorts: []
+2026-10-20T15:40:04.1448306Z     annotations: {}
+2026-10-20T15:40:04.1448502Z     clusterIP: ""
+2026-10-20T15:40:04.1448698Z     enabled: true
+2026-10-20T15:40:04.1448890Z     externalIPs: []
+2026-10-20T15:40:04.1449103Z     externalTrafficPolicy: ""
+2026-10-20T15:40:04.1449340Z     gRPC:
+2026-10-20T15:40:04.1449521Z       enabled: false
+2026-10-20T15:40:04.1449730Z       servicePort: 10901
+2026-10-20T15:40:04.1449944Z     labels: {}
+2026-10-20T15:40:04.1450141Z     loadBalancerClass: ""
+2026-10-20T15:40:04.1450363Z     loadBalancerIP: ""
+2026-10-20T15:40:04.1450589Z     loadBalancerSourceRanges: []
+2026-10-20T15:40:04.1450837Z     servicePort: 80
+2026-10-20T15:40:04.1451045Z     sessionAffinity: None
+2026-10-20T15:40:04.1451277Z     statefulsetReplica:
+2026-10-20T15:40:04.1451751Z       enabled: false
+2026-10-20T15:40:04.1452047Z       replica: 0
+2026-10-20T15:40:04.1452244Z     type: ClusterIP
+2026-10-20T15:40:04.1452457Z   sidecarContainers: {}
+2026-10-20T15:40:04.1452698Z   sidecarTemplateValues: {}
+2026-10-20T15:40:04.1452929Z   startupProbe:
+2026-10-20T15:40:04.1453120Z     enabled: false
+2026-10-20T15:40:04.1453321Z     failureThreshold: 30
+2026-10-20T15:40:04.1453544Z     periodSeconds: 5
+2026-10-20T15:40:04.1453749Z     timeoutSeconds: 10
+2026-10-20T15:40:04.1453951Z   statefulSet:
+2026-10-20T15:40:04.1454145Z     annotations: {}
+2026-10-20T15:40:04.1454341Z     enabled: false
+2026-10-20T15:40:04.1454531Z     headless:
+2026-10-20T15:40:04.1454721Z       annotations: {}
+2026-10-20T15:40:04.1454932Z       gRPC:
+2026-10-20T15:40:04.1455120Z         enabled: false
+2026-10-20T15:40:04.1455337Z         servicePort: 10901
+2026-10-20T15:40:04.1455558Z       labels: {}
+2026-10-20T15:40:04.1455751Z       servicePort: 80
+2026-10-20T15:40:04.1455952Z     labels: {}
+2026-10-20T15:40:04.1456171Z     podManagementPolicy: OrderedReady
+2026-10-20T15:40:04.1456457Z     pvcDeleteOnStsDelete: false
+2026-10-20T15:40:04.1456720Z     pvcDeleteOnStsScale: false
+2026-10-20T15:40:04.1456961Z   storagePath: ""
+2026-10-20T15:40:04.1457172Z   strategy:
+2026-10-20T15:40:04.1457361Z     type: Recreate
+2026-10-20T15:40:04.1457573Z   tcpSocketProbeEnabled: false
+2026-10-20T15:40:04.1457838Z   terminationGracePeriodSeconds: 300
+2026-10-20T15:40:04.1458102Z   tolerations: []
+2026-10-20T15:40:04.1458323Z   topologySpreadConstraints: []
+2026-10-20T15:40:04.1458563Z   tsdb: {}
+2026-10-20T15:40:04.1458778Z   useExistingClusterRoleName: ""
+2026-10-20T15:40:04.1459030Z   verticalAutoscaler:
+2026-10-20T15:40:04.1459241Z     enabled: false
+2026-10-20T15:40:04.1459440Z serverFiles:
+2026-10-20T15:40:04.1459633Z   alerting_rules.yml: {}
+2026-10-20T15:40:04.1459850Z   alerts: {}
+2026-10-20T15:40:04.1460040Z   prometheus.yml:
+2026-10-20T15:40:04.1460239Z     rule_files:
+2026-10-20T15:40:04.1460456Z     - /etc/config/recording_rules.yml
+2026-10-20T15:40:04.1460728Z     - /etc/config/alerting_rules.yml
+2026-10-20T15:40:04.1460986Z     - /etc/config/rules
+2026-10-20T15:40:04.1461344Z     - /etc/config/alerts
+2026-10-20T15:40:04.1461811Z     scrape_configs:
+2026-10-20T15:40:04.1462032Z     - job_name: heart-disease-api
+2026-10-20T15:40:04.1462283Z       metrics_path: /metrics
+2026-10-20T15:40:04.1462509Z       static_configs:
+2026-10-20T15:40:04.1462705Z       - targets:
+2026-10-20T15:40:04.1462976Z         - heart-disease-api.default.svc.cluster.local:8000
+2026-10-20T15:40:04.1463314Z   recording_rules.yml: {}
+2026-10-20T15:40:04.1463530Z   rules: {}
+2026-10-20T15:40:04.1463712Z serviceAccounts:
+2026-10-20T15:40:04.1463907Z   server:
+2026-10-20T15:40:04.1464086Z     annotations: {}
+2026-10-20T15:40:04.1464280Z     create: true
+2026-10-20T15:40:04.1464473Z     name: ""
+2026-10-20T15:40:04.1464579Z 
+2026-10-20T15:40:04.1464660Z HOOKS:
+2026-10-20T15:40:04.1464840Z MANIFEST:
+2026-10-20T15:40:04.1465016Z ---
+2026-10-20T15:40:04.1465248Z # Source: prometheus/templates/serviceaccount.yaml
+2026-10-20T15:40:04.1465551Z apiVersion: v1
+2026-10-20T15:40:04.1465757Z kind: ServiceAccount
+2026-10-20T15:40:04.1465961Z metadata:
+2026-10-20T15:40:04.1466269Z   labels:
+2026-10-20T15:40:04.1466473Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1466753Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1467035Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1467321Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1467595Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1467872Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1468148Z   name: prometheus-server
+2026-10-20T15:40:04.1468378Z   namespace: monitoring
+2026-10-20T15:40:04.1468599Z   annotations:
+2026-10-20T15:40:04.1468787Z     {}
+2026-10-20T15:40:04.1468885Z 
+2026-10-20T15:40:04.1468962Z ---
+2026-10-20T15:40:04.1469156Z # Source: prometheus/templates/cm.yaml
+2026-10-20T15:40:04.1469415Z apiVersion: v1
+2026-10-20T15:40:04.1469607Z kind: ConfigMap
+2026-10-20T15:40:04.1469795Z metadata:
+2026-10-20T15:40:04.1469972Z   labels:
+2026-10-20T15:40:04.1470175Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1470451Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1470729Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1471013Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1471279Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1471851Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1472140Z   name: prometheus-server
+2026-10-20T15:40:04.1472368Z   namespace: monitoring
+2026-10-20T15:40:04.1472572Z data:
+2026-10-20T15:40:04.1472775Z   allow-snippet-annotations: "false"
+2026-10-20T15:40:04.1473047Z   alerting_rules.yml: |
+2026-10-20T15:40:04.1473260Z     {}
+2026-10-20T15:40:04.1473433Z   alerts: |
+2026-10-20T15:40:04.1473611Z     {}
+2026-10-20T15:40:04.1473790Z   prometheus.yml: |
+2026-10-20T15:40:04.1473989Z     global:
+2026-10-20T15:40:04.1474184Z       evaluation_interval: 15s
+2026-10-20T15:40:04.1474432Z       scrape_interval: 15s
+2026-10-20T15:40:04.1474659Z       scrape_timeout: 10s
+2026-10-20T15:40:04.1474881Z     scrape_configs:
+2026-10-20T15:40:04.1475110Z     - job_name: kubernetes-api-servers
+2026-10-20T15:40:04.1475479Z       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1475857Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1476102Z       - role: endpointslice
+2026-10-20T15:40:04.1476326Z       relabel_configs:
+2026-10-20T15:40:04.1476539Z       - action: keep
+2026-10-20T15:40:04.1476766Z         regex: default;kubernetes;https
+2026-10-20T15:40:04.1477036Z         source_labels:
+2026-10-20T15:40:04.1477263Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1477534Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1477834Z         - __meta_kubernetes_endpointslice_port_name
+2026-10-20T15:40:04.1478124Z       scheme: https
+2026-10-20T15:40:04.1478320Z       tls_config:
+2026-10-20T15:40:04.1478602Z         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1478952Z     - job_name: kubernetes-nodes
+2026-10-20T15:40:04.1479432Z       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1479812Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1480048Z       - role: node
+2026-10-20T15:40:04.1480249Z       relabel_configs:
+2026-10-20T15:40:04.1480461Z       - action: labelmap
+2026-10-20T15:40:04.1480714Z         regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1480992Z       scheme: https
+2026-10-20T15:40:04.1481198Z       tls_config:
+2026-10-20T15:40:04.1481679Z         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1482041Z         insecure_skip_verify: true
+2026-10-20T15:40:04.1482314Z     - job_name: kubernetes-nodes-cadvisor
+2026-10-20T15:40:04.1482685Z       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1483059Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1483287Z       - role: node
+2026-10-20T15:40:04.1483506Z       metrics_path: /metrics/cadvisor
+2026-10-20T15:40:04.1483771Z       relabel_configs:
+2026-10-20T15:40:04.1484112Z       - action: labelmap
+2026-10-20T15:40:04.1484358Z         regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1484632Z       - source_labels:
+2026-10-20T15:40:04.1484851Z         - __metrics_path__
+2026-10-20T15:40:04.1485086Z         target_label: metrics_path
+2026-10-20T15:40:04.1485331Z       scheme: https
+2026-10-20T15:40:04.1485535Z       tls_config:
+2026-10-20T15:40:04.1485801Z         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1486139Z         insecure_skip_verify: true
+2026-10-20T15:40:04.1486396Z     - job_name: kubernetes-pods
+2026-10-20T15:40:04.1486640Z       honor_labels: true
+2026-10-20T15:40:04.1486868Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1487097Z       - role: pod
+2026-10-20T15:40:04.1487300Z       relabel_configs:
+2026-10-20T15:40:04.1487513Z       - action: keep
+2026-10-20T15:40:04.1487720Z         regex: true
+2026-10-20T15:40:04.1487931Z         source_labels:
+2026-10-20T15:40:04.1488198Z         - __meta_kubernetes_pod_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1488519Z       - action: drop
+2026-10-20T15:40:04.1488722Z         regex: true
+2026-10-20T15:40:04.1488927Z         source_labels:
+2026-10-20T15:40:04.1489210Z         - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1489548Z       - action: replace
+2026-10-20T15:40:04.1489767Z         regex: (https?)
+2026-10-20T15:40:04.1489974Z         source_labels:
+2026-10-20T15:40:04.1490239Z         - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1490560Z         target_label: __scheme__
+2026-10-20T15:40:04.1490798Z       - action: replace
+2026-10-20T15:40:04.1491006Z         regex: (.+)
+2026-10-20T15:40:04.1491211Z         source_labels:
+2026-10-20T15:40:04.1491685Z         - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1492028Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1492285Z       - action: replace
+2026-10-20T15:40:04.1492573Z         regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1492893Z         replacement: '[$2]:$1'
+2026-10-20T15:40:04.1493130Z         source_labels:
+2026-10-20T15:40:04.1493398Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1493727Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1493984Z         target_label: __address__
+2026-10-20T15:40:04.1494230Z       - action: replace
+2026-10-20T15:40:04.1494464Z         regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1494734Z         replacement: $2:$1
+2026-10-20T15:40:04.1494955Z         source_labels:
+2026-10-20T15:40:04.1495220Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1495538Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1495791Z         target_label: __address__
+2026-10-20T15:40:04.1496035Z       - action: labelmap
+2026-10-20T15:40:04.1496349Z         regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1496841Z         replacement: __param_$1
+2026-10-20T15:40:04.1497090Z       - action: labelmap
+2026-10-20T15:40:04.1497340Z         regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1497622Z       - action: replace
+2026-10-20T15:40:04.1497833Z         source_labels:
+2026-10-20T15:40:04.1498061Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1498318Z         target_label: namespace
+2026-10-20T15:40:04.1498550Z       - action: replace
+2026-10-20T15:40:04.1498756Z         source_labels:
+2026-10-20T15:40:04.1498977Z         - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1499233Z         target_label: pod
+2026-10-20T15:40:04.1499457Z       - action: drop
+2026-10-20T15:40:04.1499704Z         regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1499988Z         source_labels:
+2026-10-20T15:40:04.1500206Z         - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1500460Z       - action: replace
+2026-10-20T15:40:04.1500666Z         source_labels:
+2026-10-20T15:40:04.1500895Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1501280Z         target_label: node
+2026-10-20T15:40:04.1501761Z     - job_name: kubernetes-pods-slow
+2026-10-20T15:40:04.1502042Z       honor_labels: true
+2026-10-20T15:40:04.1502271Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1502503Z       - role: pod
+2026-10-20T15:40:04.1502704Z       relabel_configs:
+2026-10-20T15:40:04.1502911Z       - action: keep
+2026-10-20T15:40:04.1503115Z         regex: true
+2026-10-20T15:40:04.1503322Z         source_labels:
+2026-10-20T15:40:04.1503604Z         - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1503942Z       - action: replace
+2026-10-20T15:40:04.1504163Z         regex: (https?)
+2026-10-20T15:40:04.1504371Z         source_labels:
+2026-10-20T15:40:04.1504678Z         - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1505007Z         target_label: __scheme__
+2026-10-20T15:40:04.1505249Z       - action: replace
+2026-10-20T15:40:04.1505464Z         regex: (.+)
+2026-10-20T15:40:04.1505661Z         source_labels:
+2026-10-20T15:40:04.1505935Z         - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1506261Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1506517Z       - action: replace
+2026-10-20T15:40:04.1506794Z         regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1507118Z         replacement: '[$2]:$1'
+2026-10-20T15:40:04.1507361Z         source_labels:
+2026-10-20T15:40:04.1507630Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1507955Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1508215Z         target_label: __address__
+2026-10-20T15:40:04.1508460Z       - action: replace
+2026-10-20T15:40:04.1508689Z         regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1508956Z         replacement: $2:$1
+2026-10-20T15:40:04.1509184Z         source_labels:
+2026-10-20T15:40:04.1509446Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1509768Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1510026Z         target_label: __address__
+2026-10-20T15:40:04.1510267Z       - action: labelmap
+2026-10-20T15:40:04.1510575Z         regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1510933Z         replacement: __param_$1
+2026-10-20T15:40:04.1511168Z       - action: labelmap
+2026-10-20T15:40:04.1511417Z         regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1512002Z       - action: replace
+2026-10-20T15:40:04.1512218Z         source_labels:
+2026-10-20T15:40:04.1512448Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1512708Z         target_label: namespace
+2026-10-20T15:40:04.1512938Z       - action: replace
+2026-10-20T15:40:04.1513144Z         source_labels:
+2026-10-20T15:40:04.1513366Z         - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1513618Z         target_label: pod
+2026-10-20T15:40:04.1513837Z       - action: drop
+2026-10-20T15:40:04.1514229Z         regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1514516Z         source_labels:
+2026-10-20T15:40:04.1514738Z         - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1514993Z       - action: replace
+2026-10-20T15:40:04.1515201Z         source_labels:
+2026-10-20T15:40:04.1515424Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1515690Z         target_label: node
+2026-10-20T15:40:04.1515922Z       scrape_interval: 5m
+2026-10-20T15:40:04.1516143Z       scrape_timeout: 30s
+2026-10-20T15:40:04.1516396Z     - job_name: kubernetes-service-endpoints
+2026-10-20T15:40:04.1516691Z       honor_labels: true
+2026-10-20T15:40:04.1516917Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1517157Z       - role: endpointslice
+2026-10-20T15:40:04.1517383Z       relabel_configs:
+2026-10-20T15:40:04.1517595Z       - action: keep
+2026-10-20T15:40:04.1517798Z         regex: true
+2026-10-20T15:40:04.1517996Z         source_labels:
+2026-10-20T15:40:04.1518294Z         - __meta_kubernetes_service_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1518760Z       - action: drop
+2026-10-20T15:40:04.1518971Z         regex: true
+2026-10-20T15:40:04.1519183Z         source_labels:
+2026-10-20T15:40:04.1519476Z         - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1519834Z       - action: replace
+2026-10-20T15:40:04.1520051Z         regex: (https?)
+2026-10-20T15:40:04.1520270Z         source_labels:
+2026-10-20T15:40:04.1520551Z         - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1520887Z         target_label: __scheme__
+2026-10-20T15:40:04.1521144Z       - action: replace
+2026-10-20T15:40:04.1521352Z         regex: (.+)
+2026-10-20T15:40:04.1521769Z         source_labels:
+2026-10-20T15:40:04.1522046Z         - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1522390Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1522650Z       - action: replace
+2026-10-20T15:40:04.1522880Z         regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1523131Z         replacement: $1:$2
+2026-10-20T15:40:04.1523362Z         source_labels:
+2026-10-20T15:40:04.1523571Z         - __address__
+2026-10-20T15:40:04.1523857Z         - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1524183Z         target_label: __address__
+2026-10-20T15:40:04.1524431Z       - action: labelmap
+2026-10-20T15:40:04.1524757Z         regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1525140Z         replacement: __param_$1
+2026-10-20T15:40:04.1525384Z       - action: labelmap
+2026-10-20T15:40:04.1525637Z         regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1525938Z       - action: replace
+2026-10-20T15:40:04.1526150Z         source_labels:
+2026-10-20T15:40:04.1526377Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1526651Z         target_label: namespace
+2026-10-20T15:40:04.1526887Z       - action: replace
+2026-10-20T15:40:04.1527106Z         source_labels:
+2026-10-20T15:40:04.1527334Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1527621Z         target_label: service
+2026-10-20T15:40:04.1527855Z       - action: replace
+2026-10-20T15:40:04.1528066Z         source_labels:
+2026-10-20T15:40:04.1528297Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1528567Z         target_label: node
+2026-10-20T15:40:04.1528866Z     - job_name: kubernetes-service-endpoints-slow
+2026-10-20T15:40:04.1529180Z       honor_labels: true
+2026-10-20T15:40:04.1529409Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1529650Z       - role: endpointslice
+2026-10-20T15:40:04.1529882Z       relabel_configs:
+2026-10-20T15:40:04.1530100Z       - action: keep
+2026-10-20T15:40:04.1530309Z         regex: true
+2026-10-20T15:40:04.1530513Z         source_labels:
+2026-10-20T15:40:04.1530816Z         - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1531174Z       - action: replace
+2026-10-20T15:40:04.1531754Z         regex: (https?)
+2026-10-20T15:40:04.1531974Z         source_labels:
+2026-10-20T15:40:04.1532265Z         - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1532611Z         target_label: __scheme__
+2026-10-20T15:40:04.1532853Z       - action: replace
+2026-10-20T15:40:04.1533069Z         regex: (.+)
+2026-10-20T15:40:04.1533269Z         source_labels:
+2026-10-20T15:40:04.1533545Z         - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1533890Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1534153Z       - action: replace
+2026-10-20T15:40:04.1534370Z         regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1534617Z         replacement: $1:$2
+2026-10-20T15:40:04.1534845Z         source_labels:
+2026-10-20T15:40:04.1535053Z         - __address__
+2026-10-20T15:40:04.1535329Z         - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1535664Z         target_label: __address__
+2026-10-20T15:40:04.1535909Z       - action: labelmap
+2026-10-20T15:40:04.1536240Z         regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1536792Z         replacement: __param_$1
+2026-10-20T15:40:04.1537035Z       - action: labelmap
+2026-10-20T15:40:04.1537287Z         regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1537578Z       - action: replace
+2026-10-20T15:40:04.1537798Z         source_labels:
+2026-10-20T15:40:04.1538023Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1538289Z         target_label: namespace
+2026-10-20T15:40:04.1538532Z       - action: replace
+2026-10-20T15:40:04.1538740Z         source_labels:
+2026-10-20T15:40:04.1538966Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1539239Z         target_label: service
+2026-10-20T15:40:04.1539482Z       - action: replace
+2026-10-20T15:40:04.1539697Z         source_labels:
+2026-10-20T15:40:04.1539926Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1540203Z         target_label: node
+2026-10-20T15:40:04.1540441Z       scrape_interval: 5m
+2026-10-20T15:40:04.1540671Z       scrape_timeout: 30s
+2026-10-20T15:40:04.1540924Z     - job_name: kubernetes-services
+2026-10-20T15:40:04.1541186Z       honor_labels: true
+2026-10-20T15:40:04.1541410Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1541890Z       - role: service
+2026-10-20T15:40:04.1542114Z       metrics_path: /probe
+2026-10-20T15:40:04.1542342Z       params:
+2026-10-20T15:40:04.1542537Z         module:
+2026-10-20T15:40:04.1542745Z         - http_2xx
+2026-10-20T15:40:04.1542953Z       relabel_configs:
+2026-10-20T15:40:04.1543166Z       - action: keep
+2026-10-20T15:40:04.1543377Z         regex: true
+2026-10-20T15:40:04.1543584Z         source_labels:
+2026-10-20T15:40:04.1543880Z         - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1544215Z       - source_labels:
+2026-10-20T15:40:04.1544430Z         - __address__
+2026-10-20T15:40:04.1544655Z         target_label: __param_target
+2026-10-20T15:40:04.1544937Z       - replacement: blackbox
+2026-10-20T15:40:04.1545195Z         target_label: __address__
+2026-10-20T15:40:04.1545455Z       - source_labels:
+2026-10-20T15:40:04.1545673Z         - __param_target
+2026-10-20T15:40:04.1545903Z         target_label: instance
+2026-10-20T15:40:04.1546153Z       - action: labelmap
+2026-10-20T15:40:04.1546409Z         regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1546705Z       - source_labels:
+2026-10-20T15:40:04.1546943Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1547214Z         target_label: namespace
+2026-10-20T15:40:04.1547456Z       - source_labels:
+2026-10-20T15:40:04.1547686Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1547965Z         target_label: service
+2026-10-20T15:40:04.1548214Z     - job_name: prometheus
+2026-10-20T15:40:04.1548456Z       static_configs:
+2026-10-20T15:40:04.1548678Z       - targets:
+2026-10-20T15:40:04.1548885Z         - localhost:9090
+2026-10-20T15:40:04.1549133Z     - job_name: prometheus-pushgateway
+2026-10-20T15:40:04.1549544Z       honor_labels: true
+2026-10-20T15:40:04.1549781Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1550020Z       - role: service
+2026-10-20T15:40:04.1550234Z       relabel_configs:
+2026-10-20T15:40:04.1550453Z       - action: keep
+2026-10-20T15:40:04.1550668Z         regex: pushgateway
+2026-10-20T15:40:04.1550889Z         source_labels:
+2026-10-20T15:40:04.1551168Z         - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1551815Z     - job_name: heart-disease-api
+2026-10-20T15:40:04.1552087Z       metrics_path: /metrics
+2026-10-20T15:40:04.1552323Z       static_configs:
+2026-10-20T15:40:04.1552536Z       - targets:
+2026-10-20T15:40:04.1552808Z         - heart-disease-api.default.svc.cluster.local:8000
+2026-10-20T15:40:04.1553133Z     rule_files:
+2026-10-20T15:40:04.1553360Z     - /etc/config/recording_rules.yml
+2026-10-20T15:40:04.1553632Z     - /etc/config/alerting_rules.yml
+2026-10-20T15:40:04.1553888Z     - /etc/config/rules
+2026-10-20T15:40:04.1554127Z     - /etc/config/alerts
+2026-10-20T15:40:04.1554365Z   recording_rules.yml: |
+2026-10-20T15:40:04.1554791Z     {}
+2026-10-20T15:40:04.1554999Z   rules: |
+2026-10-20T15:40:04.1555189Z     {}
+2026-10-20T15:40:04.1555368Z ---
+2026-10-20T15:40:04.1555601Z # Source: prometheus/templates/clusterrole.yaml
+2026-10-20T15:40:04.1555938Z apiVersion: rbac.authorization.k8s.io/v1
+2026-10-20T15:40:04.1556226Z kind: ClusterRole
+2026-10-20T15:40:04.1556432Z metadata:
+2026-10-20T15:40:04.1556616Z   labels:
+2026-10-20T15:40:04.1556833Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1557136Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1557425Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1557716Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1558000Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1558279Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1558565Z   name: prometheus-server
+2026-10-20T15:40:04.1558799Z rules:
+2026-10-20T15:40:04.1558996Z   - apiGroups:
+2026-10-20T15:40:04.1559196Z       - ""
+2026-10-20T15:40:04.1559385Z     resources:
+2026-10-20T15:40:04.1559576Z       - nodes
+2026-10-20T15:40:04.1559777Z       - nodes/metrics
+2026-10-20T15:40:04.1559986Z       - services
+2026-10-20T15:40:04.1560189Z       - endpoints
+2026-10-20T15:40:04.1560387Z       - pods
+2026-10-20T15:40:04.1560575Z       - ingresses
+2026-10-20T15:40:04.1560777Z       - configmaps
+2026-10-20T15:40:04.1560970Z     verbs:
+2026-10-20T15:40:04.1561151Z       - get
+2026-10-20T15:40:04.1561333Z       - list
+2026-10-20T15:40:04.1561416Z       - watch
+2026-10-20T15:40:04.1561659Z   - apiGroups:
+2026-10-20T15:40:04.1561755Z       - "networking.k8s.io"
+2026-10-20T15:40:04.1561838Z     resources:
+2026-10-20T15:40:04.1561929Z       - ingresses/status
+2026-10-20T15:40:04.1562008Z       - ingresses
+2026-10-20T15:40:04.1562088Z     verbs:
+2026-10-20T15:40:04.1562169Z       - get
+2026-10-20T15:40:04.1562247Z       - list
+2026-10-20T15:40:04.1562328Z       - watch
+2026-10-20T15:40:04.1562414Z   - apiGroups:
+2026-10-20T15:40:04.1562500Z       - "discovery.k8s.io"
+2026-10-20T15:40:04.1562588Z     resources:
+2026-10-20T15:40:04.1562676Z       - endpointslices
+2026-10-20T15:40:04.1562749Z     verbs:
+2026-10-20T15:40:04.1562826Z       - get
+2026-10-20T15:40:04.1562901Z       - list
+2026-10-20T15:40:04.1563041Z       - watch
+2026-10-20T15:40:04.1563292Z   - nonResourceURLs:
+2026-10-20T15:40:04.1563423Z       - "/metrics"
+2026-10-20T15:40:04.1563568Z     verbs:
+2026-10-20T15:40:04.1563715Z       - get
+2026-10-20T15:40:04.1563720Z 
+2026-10-20T15:40:04.1563827Z ---
+2026-10-20T15:40:04.1564088Z # Source: prometheus/templates/clusterrolebinding.yaml
+2026-10-20T15:40:04.1564324Z apiVersion: rbac.authorization.k8s.io/v1
+2026-10-20T15:40:04.1564449Z kind: ClusterRoleBinding
+2026-10-20T15:40:04.1564601Z metadata:
+2026-10-20T15:40:04.1564729Z   labels:
+2026-10-20T15:40:04.1564910Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1565103Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1565413Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1565553Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1565709Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1565987Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1566115Z   name: prometheus-server
+2026-10-20T15:40:04.1566263Z subjects:
+2026-10-20T15:40:04.1566421Z   - kind: ServiceAccount
+2026-10-20T15:40:04.1566531Z     name: prometheus-server
+2026-10-20T15:40:04.1566754Z     namespace: monitoring
+2026-10-20T15:40:04.1566902Z roleRef:
+2026-10-20T15:40:04.1567040Z   apiGroup: rbac.authorization.k8s.io
+2026-10-20T15:40:04.1567192Z   kind: ClusterRole
+2026-10-20T15:40:04.1567385Z   name: prometheus-server
+2026-10-20T15:40:04.1567391Z 
+2026-10-20T15:40:04.1567544Z ---
+2026-10-20T15:40:04.1577101Z # Source: prometheus/templates/service.yaml
+2026-10-20T15:40:04.1577249Z apiVersion: v1
+2026-10-20T15:40:04.1577337Z kind: Service
+2026-10-20T15:40:04.1577422Z metadata:
+2026-10-20T15:40:04.1577512Z   labels:
+2026-10-20T15:40:04.1577625Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1577926Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1578045Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1578149Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1578260Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1578374Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1578471Z   name: prometheus-server
+2026-10-20T15:40:04.1578569Z   namespace: monitoring
+2026-10-20T15:40:04.1578650Z spec:
+2026-10-20T15:40:04.1578727Z   ports:
+2026-10-20T15:40:04.1578817Z     - name: http
+2026-10-20T15:40:04.1578900Z       port: 80
+2026-10-20T15:40:04.1578981Z       protocol: TCP
+2026-10-20T15:40:04.1579073Z       targetPort: 9090
+2026-10-20T15:40:04.1579155Z   selector:
+2026-10-20T15:40:04.1579263Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1579372Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1579483Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1579577Z   sessionAffinity: None
+2026-10-20T15:40:04.1579676Z   type: "ClusterIP"
+2026-10-20T15:40:04.1579754Z ---
+2026-10-20T15:40:04.1579864Z # Source: prometheus/templates/deploy.yaml
+2026-10-20T15:40:04.1579958Z apiVersion: apps/v1
+2026-10-20T15:40:04.1580046Z kind: Deployment
+2026-10-20T15:40:04.1580123Z metadata:
+2026-10-20T15:40:04.1580198Z   labels:
+2026-10-20T15:40:04.1580306Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1580403Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1580511Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1580615Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1580715Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1580823Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1580921Z   name: prometheus-server
+2026-10-20T15:40:04.1581006Z   namespace: monitoring
+2026-10-20T15:40:04.1581082Z spec:
+2026-10-20T15:40:04.1581161Z   strategy:
+2026-10-20T15:40:04.1581247Z     type: Recreate
+2026-10-20T15:40:04.1581335Z     rollingUpdate: null
+2026-10-20T15:40:04.1581415Z   selector:
+2026-10-20T15:40:04.1581673Z     matchLabels:
+2026-10-20T15:40:04.1581784Z       app.kubernetes.io/component: server
+2026-10-20T15:40:04.1581886Z       app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1582003Z       app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1582089Z   replicas: 1
+2026-10-20T15:40:04.1582185Z   revisionHistoryLimit: 10
+2026-10-20T15:40:04.1582268Z   template:
+2026-10-20T15:40:04.1582349Z     metadata:
+2026-10-20T15:40:04.1582429Z       annotations:
+2026-10-20T15:40:04.1582623Z         kubectl.kubernetes.io/default-container: prometheus-server
+2026-10-20T15:40:04.1582703Z       labels:
+2026-10-20T15:40:04.1582812Z         app.kubernetes.io/component: server
+2026-10-20T15:40:04.1582921Z         app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1583037Z         app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1583139Z         app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1583373Z         helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1583489Z         app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1583565Z     spec:
+2026-10-20T15:40:04.1583663Z       enableServiceLinks: true
+2026-10-20T15:40:04.1583774Z       serviceAccountName: prometheus-server
+2026-10-20T15:40:04.1583854Z       containers:
+2026-10-20T15:40:04.1583992Z         - name: prometheus-server-configmap-reload
+2026-10-20T15:40:04.1584212Z           image: "quay.io/prometheus-operator/prometheus-config-reloader:v0.94.1"
+2026-10-20T15:40:04.1584322Z           imagePullPolicy: "IfNotPresent"
+2026-10-20T15:40:04.1584403Z           args:
+2026-10-20T15:40:04.1584506Z             - --watched-dir=/etc/config
+2026-10-20T15:40:04.1584605Z             - --listen-address=0.0.0.0:8080
+2026-10-20T15:40:04.1584804Z             - --reload-url=http://127.0.0.1:9090/-/reload
+2026-10-20T15:40:04.1584889Z           ports:
+2026-10-20T15:40:04.1584987Z             - containerPort: 8080
+2026-10-20T15:40:04.1585081Z               name: metrics
+2026-10-20T15:40:04.1585289Z           livenessProbe:
+2026-10-20T15:40:04.1585367Z             httpGet:
+2026-10-20T15:40:04.1585458Z               path: /healthz
+2026-10-20T15:40:04.1585546Z               port: metrics
+2026-10-20T15:40:04.1585630Z               scheme: HTTP
+2026-10-20T15:40:04.1585732Z             initialDelaySeconds: 2
+2026-10-20T15:40:04.1585827Z             periodSeconds: 10
+2026-10-20T15:40:04.1585914Z           readinessProbe:
+2026-10-20T15:40:04.1585994Z             httpGet:
+2026-10-20T15:40:04.1586083Z               path: /healthz
+2026-10-20T15:40:04.1586164Z               port: metrics
+2026-10-20T15:40:04.1586252Z               scheme: HTTP
+2026-10-20T15:40:04.1586344Z             periodSeconds: 10
+2026-10-20T15:40:04.1586427Z           volumeMounts:
+2026-10-20T15:40:04.1586523Z             - name: config-volume
+2026-10-20T15:40:04.1586624Z               mountPath: /etc/config
+2026-10-20T15:40:04.1586719Z               readOnly: true
+2026-10-20T15:40:04.1586724Z 
+2026-10-20T15:40:04.1586826Z         - name: prometheus-server
+2026-10-20T15:40:04.1586974Z           image: "quay.io/prometheus/prometheus:v3.15.0"
+2026-10-20T15:40:04.1587082Z           imagePullPolicy: "IfNotPresent"
+2026-10-20T15:40:04.1587165Z           args:
+2026-10-20T15:40:04.1587290Z             - --storage.tsdb.retention.time=15d
+2026-10-20T15:40:04.1587415Z             - --config.file=/etc/config/prometheus.yml
+2026-10-20T15:40:04.1587522Z             - --storage.tsdb.path=/data
+2026-10-20T15:40:04.1587696Z             - --web.console.libraries=/etc/prometheus/console_libraries
+2026-10-20T15:40:04.1587838Z             - --web.console.templates=/etc/prometheus/consoles
+2026-10-20T15:40:04.1587939Z             - --web.enable-lifecycle
+2026-10-20T15:40:04.1588024Z           ports:
+2026-10-20T15:40:04.1588119Z             - containerPort: 9090
+2026-10-20T15:40:04.1588216Z           readinessProbe:
+2026-10-20T15:40:04.1588299Z             httpGet:
+2026-10-20T15:40:04.1588391Z               path: /-/ready
+2026-10-20T15:40:04.1588482Z               port: 9090
+2026-10-20T15:40:04.1588574Z               scheme: HTTP
+2026-10-20T15:40:04.1588677Z             initialDelaySeconds: 30
+2026-10-20T15:40:04.1588767Z             periodSeconds: 5
+2026-10-20T15:40:04.1588857Z             timeoutSeconds: 4
+2026-10-20T15:40:04.1588947Z             failureThreshold: 3
+2026-10-20T15:40:04.1589040Z             successThreshold: 1
+2026-10-20T15:40:04.1589129Z           livenessProbe:
+2026-10-20T15:40:04.1589205Z             httpGet:
+2026-10-20T15:40:04.1589296Z               path: /-/healthy
+2026-10-20T15:40:04.1589382Z               port: 9090
+2026-10-20T15:40:04.1589463Z               scheme: HTTP
+2026-10-20T15:40:04.1589560Z             initialDelaySeconds: 30
+2026-10-20T15:40:04.1589653Z             periodSeconds: 15
+2026-10-20T15:40:04.1589741Z             timeoutSeconds: 10
+2026-10-20T15:40:04.1589837Z             failureThreshold: 3
+2026-10-20T15:40:04.1590020Z             successThreshold: 1
+2026-10-20T15:40:04.1590100Z           resources:
+2026-10-20T15:40:04.1590186Z             limits:
+2026-10-20T15:40:04.1590267Z               cpu: 500m
+2026-10-20T15:40:04.1590356Z               memory: 512Mi
+2026-10-20T15:40:04.1590440Z             requests:
+2026-10-20T15:40:04.1590518Z               cpu: 100m
+2026-10-20T15:40:04.1590604Z               memory: 256Mi
+2026-10-20T15:40:04.1590689Z           volumeMounts:
+2026-10-20T15:40:04.1590783Z             - name: config-volume
+2026-10-20T15:40:04.1590885Z               mountPath: /etc/config
+2026-10-20T15:40:04.1590986Z             - name: storage-volume
+2026-10-20T15:40:04.1591075Z               mountPath: /data
+2026-10-20T15:40:04.1591162Z               subPath: ""
+2026-10-20T15:40:04.1591267Z       dnsPolicy: ClusterFirst
+2026-10-20T15:40:04.1591354Z       securityContext:
+2026-10-20T15:40:04.1591440Z         fsGroup: 65534
+2026-10-20T15:40:04.1591794Z         runAsGroup: 65534
+2026-10-20T15:40:04.1591959Z         runAsNonRoot: true
+2026-10-20T15:40:04.1592059Z         runAsUser: 65534
+2026-10-20T15:40:04.1592315Z       terminationGracePeriodSeconds: 300
+2026-10-20T15:40:04.1592393Z       volumes:
+2026-10-20T15:40:04.1592488Z         - name: config-volume
+2026-10-20T15:40:04.1592570Z           configMap:
+2026-10-20T15:40:04.1592662Z             name: prometheus-server
+2026-10-20T15:40:04.1592755Z         - name: storage-volume
+2026-10-20T15:40:04.1592837Z           emptyDir:
+2026-10-20T15:40:04.1592909Z             {}
+2026-10-20T15:40:04.1592914Z 
+2026-10-20T15:40:04.1592918Z 
+2026-10-20T15:40:04.1592994Z NOTES:
+2026-10-20T15:40:04.1593291Z The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+2026-10-20T15:40:04.1593433Z prometheus-server.monitoring.svc.cluster.local
+2026-10-20T15:40:04.1593438Z 
+2026-10-20T15:40:04.1593447Z 
+2026-10-20T15:40:04.1593645Z Get the Prometheus server URL by running these commands in the same shell:
+2026-10-20T15:40:04.1594214Z   export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=prometheus,app.kubernetes.io/instance=prometheus" -o jsonpath="{.items[0].metadata.name}")
+2026-10-20T15:40:04.1594394Z   kubectl --namespace monitoring port-forward $POD_NAME 9090
+2026-10-20T15:40:04.1594522Z #################################################################################
+2026-10-20T15:40:04.1594727Z ######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+2026-10-20T15:40:04.1594894Z ######            the Server pod is terminated.                             #####
+2026-10-20T15:40:04.1595012Z #################################################################################
+2026-10-20T15:40:04.1595017Z 
+2026-10-20T15:40:04.1595020Z 
+2026-10-20T15:40:04.1595023Z 
+2026-10-20T15:40:04.1595030Z 
+2026-10-20T15:40:04.1595033Z 
+2026-10-20T15:40:04.1595164Z For more information on running Prometheus, visit:
+2026-10-20T15:40:04.1595263Z https://prometheus.io/

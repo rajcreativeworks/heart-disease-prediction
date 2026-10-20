@@ -1,0 +1,25 @@
+﻿2026-10-20T15:10:56.0312676Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:56.0312988Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:56.0313294Z [36;1mkubectl set image deployment/heart-disease-api \[0m
+2026-10-20T15:10:56.0313649Z [36;1m  api="${IMAGE}:${IMAGE_TAG}"[0m
+2026-10-20T15:10:56.0342876Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:56.0343157Z env:
+2026-10-20T15:10:56.0343369Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:56.0343659Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:56.0343923Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:56.0344230Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:56.0344900Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0345989Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0346830Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0347412Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0347704Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0347965Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0348224Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0348478Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0348808Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:56.0349162Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:56.0349686Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0350443Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0351016Z   IMAGE_TAG: sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:56.0351323Z ##[endgroup]
+2026-10-20T15:10:57.3978444Z deployment.apps/heart-disease-api image updated

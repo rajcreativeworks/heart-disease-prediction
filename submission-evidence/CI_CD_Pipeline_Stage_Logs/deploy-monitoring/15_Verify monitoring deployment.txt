@@ -1,0 +1,46 @@
+﻿2026-10-20T15:40:17.5664523Z ##[group]Run set -euo pipefail
+2026-10-20T15:40:17.5665053Z [36;1mset -euo pipefail[0m
+2026-10-20T15:40:17.5665627Z [36;1mkubectl rollout status deployment/prometheus-server \[0m
+2026-10-20T15:40:17.5666293Z [36;1m  --namespace monitoring --timeout=5m[0m
+2026-10-20T15:40:17.5666888Z [36;1mkubectl rollout status deployment/grafana \[0m
+2026-10-20T15:40:17.5667517Z [36;1m  --namespace monitoring --timeout=5m[0m
+2026-10-20T15:40:17.5668115Z [36;1mkubectl get pods,services -n monitoring[0m
+2026-10-20T15:40:17.5668805Z [36;1mkubectl get configmap heart-disease-api-dashboard \[0m
+2026-10-20T15:40:17.5669442Z [36;1m  -n monitoring[0m
+2026-10-20T15:40:17.5741367Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:40:17.5741828Z env:
+2026-10-20T15:40:17.5742045Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:40:17.5742345Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:40:17.5742632Z   GKE_LOCATION: asia-south1
+2026-10-20T15:40:17.5743282Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:17.5744334Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:17.5745245Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:17.5745842Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746146Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746426Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746708Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746991Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5747345Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:40:17.5747733Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:40:17.5748303Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:17.5749130Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:17.5749691Z ##[endgroup]
+2026-10-20T15:40:19.0724418Z deployment "prometheus-server" successfully rolled out
+2026-10-20T15:40:20.5376472Z deployment "grafana" successfully rolled out
+2026-10-20T15:40:22.0090379Z NAME                                                   READY   STATUS    RESTARTS       AGE
+2026-10-20T15:40:22.0091355Z pod/grafana-6bd978c76f-88sfp                           2/2     Running   0              27m
+2026-10-20T15:40:22.0092523Z pod/prometheus-alertmanager-0                          2/2     Running   0              85m
+2026-10-20T15:40:22.0093570Z pod/prometheus-kube-state-metrics-7589577868-6qzvj     1/1     Running   0              69m
+2026-10-20T15:40:22.0094764Z pod/prometheus-prometheus-pushgateway-6755fcf8-j8s5q   1/1     Running   0              85m
+2026-10-20T15:40:22.0095891Z pod/prometheus-server-955f7f646-d9g8x                  2/2     Running   15 (38m ago)   85m
+2026-10-20T15:40:22.0100896Z 
+2026-10-20T15:40:22.0101620Z NAME                                          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+2026-10-20T15:40:22.0102675Z service/grafana                               ClusterIP   34.118.234.47    <none>        80/TCP     27m
+2026-10-20T15:40:22.0103316Z service/prometheus-alertmanager               ClusterIP   34.118.226.201   <none>        9093/TCP   85m
+2026-10-20T15:40:22.0104005Z service/prometheus-alertmanager-headless      ClusterIP   None             <none>        9093/TCP   85m
+2026-10-20T15:40:22.0104684Z service/prometheus-kube-state-metrics         ClusterIP   34.118.233.66    <none>        8080/TCP   85m
+2026-10-20T15:40:22.0105361Z service/prometheus-prometheus-node-exporter   ClusterIP   34.118.239.241   <none>        9100/TCP   85m
+2026-10-20T15:40:22.0106399Z service/prometheus-prometheus-pushgateway     ClusterIP   34.118.227.136   <none>        9091/TCP   85m
+2026-10-20T15:40:22.0107228Z service/prometheus-server                     ClusterIP   34.118.232.117   <none>        80/TCP     85m
+2026-10-20T15:40:23.2311841Z NAME                          DATA   AGE
+2026-10-20T15:40:23.2312557Z heart-disease-api-dashboard   1      26m

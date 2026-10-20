@@ -1,0 +1,36 @@
+﻿2026-10-20T15:07:15.6580328Z ##[group]Run actions/upload-artifact@v4
+2026-10-20T15:07:15.6580645Z with:
+2026-10-20T15:07:15.6580871Z   name: heart-disease-training-51
+2026-10-20T15:07:15.6581145Z   if-no-files-found: warn
+2026-10-20T15:07:15.6581385Z   retention-days: 14
+2026-10-20T15:07:15.6581633Z   path: models/
+reports/training/
+mlruns/
+
+2026-10-20T15:07:15.6581932Z   compression-level: 6
+2026-10-20T15:07:15.6582151Z   overwrite: false
+2026-10-20T15:07:15.6582373Z   include-hidden-files: false
+2026-10-20T15:07:15.6582618Z env:
+2026-10-20T15:07:15.6582872Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6583320Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:15.6583762Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6584169Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6584574Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:15.6584985Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:15.6585341Z ##[endgroup]
+2026-10-20T15:07:15.8300027Z (node:2703) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T15:07:15.8300808Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T15:07:15.8423143Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-20T15:07:15.8426560Z The least common ancestor is /home/runner/work/heart-disease-prediction/heart-disease-prediction. This will be the root directory of the artifact
+2026-10-20T15:07:15.8427878Z With the provided path, there will be 9 files uploaded
+2026-10-20T15:07:15.8436322Z Artifact name is valid!
+2026-10-20T15:07:15.8436838Z Root directory input is valid!
+2026-10-20T15:07:16.2591503Z Beginning upload of artifact content to blob storage
+2026-10-20T15:07:16.2931789Z (node:2703) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-20T15:07:16.7024247Z Uploaded bytes 96891
+2026-10-20T15:07:16.7807905Z Finished uploading artifact content to blob storage!
+2026-10-20T15:07:16.7809003Z SHA256 digest of uploaded artifact zip is 0581752f37c3fd3759aeb6f06f01086c4d66adbaf6bc85b817c1555f87815988
+2026-10-20T15:07:16.7810582Z Finalizing artifact upload
+2026-10-20T15:07:17.0968211Z Artifact heart-disease-training-51.zip successfully finalized. Artifact ID 12276095744
+2026-10-20T15:07:17.0969707Z Artifact heart-disease-training-51 has been successfully uploaded! Final size is 96891 bytes. Artifact ID is 12276095744
+2026-10-20T15:07:17.0974963Z Artifact download URL: https://github.com/rajcreativeworks/heart-disease-prediction/actions/runs/39445240905/artifacts/12276095744

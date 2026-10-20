@@ -1,0 +1,15 @@
+﻿2026-10-20T15:08:25.2433484Z ##[group]Run docker run -d \
+2026-10-20T15:08:25.2433992Z [36;1mdocker run -d \[0m
+2026-10-20T15:08:25.2434286Z [36;1m  --name heart-disease-mlops \[0m
+2026-10-20T15:08:25.2434594Z [36;1m  -p 8000:8000 \[0m
+2026-10-20T15:08:25.2434869Z [36;1m  heart-disease-mlops:test[0m
+2026-10-20T15:08:25.2487092Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:08:25.2487378Z env:
+2026-10-20T15:08:25.2487668Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.2488159Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:08:25.2488635Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.2489042Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.2489463Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.2489868Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:08:25.2490220Z ##[endgroup]
+2026-10-20T15:08:25.2852036Z 7ee09f921f424b4930b9a5724ebc4a5c39fd07a68e03ab98121f5c6ffe421d4b

@@ -1,0 +1,26 @@
+﻿2026-10-20T15:10:57.4056430Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:57.4056949Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:57.4057506Z [36;1mkubectl rollout status deployment/heart-disease-api \[0m
+2026-10-20T15:10:57.4058124Z [36;1m  --timeout=5m[0m
+2026-10-20T15:10:57.4099343Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:57.4099615Z env:
+2026-10-20T15:10:57.4099823Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:57.4100086Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:57.4100363Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:57.4100670Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:57.4101342Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:57.4102266Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:57.4103096Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:57.4104343Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4104813Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4105241Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4105805Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4106237Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4106566Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:57.4106920Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:57.4107447Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:57.4108212Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:57.4108721Z ##[endgroup]
+2026-10-20T15:10:58.9306981Z Waiting for deployment "heart-disease-api" rollout to finish: 1 old replicas are pending termination...
+2026-10-20T15:12:03.2826641Z Waiting for deployment "heart-disease-api" rollout to finish: 1 old replicas are pending termination...
+2026-10-20T15:12:03.4366230Z deployment "heart-disease-api" successfully rolled out

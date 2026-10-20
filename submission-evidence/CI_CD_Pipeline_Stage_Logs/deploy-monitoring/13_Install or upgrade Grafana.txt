@@ -1,0 +1,53 @@
+﻿2026-10-20T15:40:04.1623142Z ##[group]Run set -euo pipefail
+2026-10-20T15:40:04.1623308Z [36;1mset -euo pipefail[0m
+2026-10-20T15:40:04.1623435Z [36;1mhelm upgrade --install grafana \[0m
+2026-10-20T15:40:04.1623531Z [36;1m  grafana/grafana \[0m
+2026-10-20T15:40:04.1623631Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:40:04.1623771Z [36;1m  --values monitoring/grafana/values.yaml \[0m
+2026-10-20T15:40:04.1623855Z [36;1m  --wait \[0m
+2026-10-20T15:40:04.1623939Z [36;1m  --timeout 10m[0m
+2026-10-20T15:40:04.1686008Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:40:04.1686099Z env:
+2026-10-20T15:40:04.1686208Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:40:04.1686312Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:40:04.1686407Z   GKE_LOCATION: asia-south1
+2026-10-20T15:40:04.1686903Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:04.1687361Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:04.1687795Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:04.1687917Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688027Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688130Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688232Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688344Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688516Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:40:04.1688633Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:40:04.1689006Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:04.1689394Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:04.1689485Z ##[endgroup]
+2026-10-20T15:40:06.0782665Z level=WARN msg="this chart is deprecated"
+2026-10-20T15:40:15.7946884Z Release "grafana" has been upgraded. Happy Helming!
+2026-10-20T15:40:15.7947417Z NAME: grafana
+2026-10-20T15:40:15.7947732Z LAST DEPLOYED: Tue Oct 20 15:40:07 2026
+2026-10-20T15:40:15.7948132Z NAMESPACE: monitoring
+2026-10-20T15:40:15.7948458Z STATUS: deployed
+2026-10-20T15:40:15.7948747Z REVISION: 2
+2026-10-20T15:40:15.7949040Z DESCRIPTION: Upgrade complete
+2026-10-20T15:40:15.7949385Z NOTES:
+2026-10-20T15:40:15.7949703Z 1. Get your 'admin' user password by running:
+2026-10-20T15:40:15.7950005Z 
+2026-10-20T15:40:15.7950548Z    kubectl get secret --namespace monitoring grafana-admin -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+2026-10-20T15:40:15.7951233Z 
+2026-10-20T15:40:15.7951237Z 
+2026-10-20T15:40:15.7952034Z 2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+2026-10-20T15:40:15.7952615Z 
+2026-10-20T15:40:15.7952815Z    grafana.monitoring.svc.cluster.local
+2026-10-20T15:40:15.7953114Z 
+2026-10-20T15:40:15.7953387Z    Get the Grafana URL to visit by running these commands in the same shell:
+2026-10-20T15:40:15.7954614Z      export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}")
+2026-10-20T15:40:15.7955773Z      kubectl --namespace monitoring port-forward $POD_NAME 3000
+2026-10-20T15:40:15.7956186Z 
+2026-10-20T15:40:15.7956453Z 3. Login with the password from step 1 and the username: admin
+2026-10-20T15:40:15.7957000Z #################################################################################
+2026-10-20T15:40:15.7957615Z ######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+2026-10-20T15:40:15.7958288Z ######            the Grafana pod is terminated.                            #####
+2026-10-20T15:40:15.7958836Z #################################################################################

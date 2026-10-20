@@ -1,0 +1,36 @@
+﻿2026-10-20T15:07:08.2493580Z ##[group]Run python -m heart_ml.train \
+2026-10-20T15:07:08.2494100Z [36;1mpython -m heart_ml.train \[0m
+2026-10-20T15:07:08.2494561Z [36;1m  --data data/raw/heart_disease.csv \[0m
+2026-10-20T15:07:08.2495173Z [36;1m  --output models/model.joblib \[0m
+2026-10-20T15:07:08.2495836Z [36;1m  --mlflow \[0m
+2026-10-20T15:07:08.2496316Z [36;1m  --quick[0m
+2026-10-20T15:07:08.2547352Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:07:08.2547725Z env:
+2026-10-20T15:07:08.2548186Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:08.2548776Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:08.2549402Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:08.2550020Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:08.2550537Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:08.2551086Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:08.2551693Z ##[endgroup]
+2026-10-20T15:07:10.8257574Z {"timestamp": "2026-10-20T15:07:10.825307+00:00", "level": "INFO", "logger": "__main__", "message": "event=training_entry data=data/raw/heart_disease.csv output=models/model.joblib tracking=True quick=True"}
+2026-10-20T15:07:11.6064173Z 2026/10/20 15:07:11 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026-10-20T15:07:11.6194635Z 2026/10/20 15:07:11 INFO mlflow.store.db.utils: Updating database tables
+2026-10-20T15:07:12.4326634Z 2026/10/20 15:07:12 INFO mlflow.tracking.fluent: Experiment with name 'heart-disease-classification' does not exist. Creating a new experiment.
+2026-10-20T15:07:12.5132422Z {"timestamp": "2026-10-20T15:07:12.512888+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:12.5587790Z {"timestamp": "2026-10-20T15:07:12.557277+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:12.6037475Z {"timestamp": "2026-10-20T15:07:12.602463+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:12.6457815Z {"timestamp": "2026-10-20T15:07:12.643222+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:12.6666921Z {"timestamp": "2026-10-20T15:07:12.664506+00:00", "level": "INFO", "logger": "__main__", "message": "event=candidate_evaluated model=logistic_regression cv_roc_auc=0.9063"}
+2026-10-20T15:07:14.4700219Z {"timestamp": "2026-10-20T15:07:14.469812+00:00", "level": "INFO", "logger": "__main__", "message": "event=candidate_evaluated model=random_forest cv_roc_auc=0.8955"}
+2026-10-20T15:07:14.4910001Z {"timestamp": "2026-10-20T15:07:14.490756+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.5227336Z {"timestamp": "2026-10-20T15:07:14.520802+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.5507310Z {"timestamp": "2026-10-20T15:07:14.550438+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.5807284Z {"timestamp": "2026-10-20T15:07:14.580420+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.6107245Z {"timestamp": "2026-10-20T15:07:14.610435+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.6437370Z {"timestamp": "2026-10-20T15:07:14.642080+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.6737304Z {"timestamp": "2026-10-20T15:07:14.672287+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.7057748Z {"timestamp": "2026-10-20T15:07:14.704638+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.7387807Z {"timestamp": "2026-10-20T15:07:14.737085+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:14.7687855Z {"timestamp": "2026-10-20T15:07:14.767496+00:00", "level": "WARNING", "logger": "py.warnings", "message": "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:451: OptimizeWarning: Unknown solver options: iprint\n  opt_res = optimize.minimize(\n"}
+2026-10-20T15:07:15.0576362Z {"timestamp": "2026-10-20T15:07:15.057284+00:00", "level": "INFO", "logger": "__main__", "message": "event=training_exit selected_model=logistic_regression test_roc_auc=0.9654 output=/home/runner/work/heart-disease-prediction/heart-disease-prediction/models/model.joblib"}

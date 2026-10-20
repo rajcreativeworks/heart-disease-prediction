@@ -1,0 +1,24 @@
+﻿2026-10-20T15:10:03.7674762Z Post job cleanup.
+2026-10-20T15:10:04.0171425Z ##[group]Generating build summary
+2026-10-20T15:10:04.0176416Z exporting build record to /home/runner/work/_temp/docker-actions-toolkit-2a5nT4/export
+2026-10-20T15:10:04.0190695Z (node:3370) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T15:10:04.0191458Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T15:10:04.2623053Z [command]/usr/bin/docker buildx history export --builder builder-eebf1b34-5871-47c9-aa9c-ea168c6d8755 --output /home/runner/work/_temp/docker-actions-toolkit-2a5nT4/export/rajcreativeworks~heart-disease-prediction~XLKI5O.dockerbuild xlki5o3w888e2jxdd512xvbn6 --finalize
+2026-10-20T15:10:04.5376813Z Build record written to /home/runner/work/_temp/docker-actions-toolkit-2a5nT4/export/rajcreativeworks~heart-disease-prediction~XLKI5O.dockerbuild (65.77 KB)
+2026-10-20T15:10:04.5401145Z Uploading rajcreativeworks~heart-disease-prediction~XLKI5O.dockerbuild to blob storage
+2026-10-20T15:10:04.9617920Z Beginning upload of artifact content to blob storage
+2026-10-20T15:10:04.9703760Z (node:3370) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-20T15:10:04.9713143Z Uploaded bytes 65536
+2026-10-20T15:10:04.9715398Z Uploaded bytes 67348
+2026-10-20T15:10:05.3491696Z Finished uploading artifact content to blob storage!
+2026-10-20T15:10:05.3496437Z SHA256 hash of uploaded artifact is fe583c8a6ac1d36991f590c781e26b3e1d48c41a6ab0c08094daab1071d021a5
+2026-10-20T15:10:05.3498264Z Finalizing artifact upload
+2026-10-20T15:10:05.7480458Z Artifact successfully finalized (12277130718)
+2026-10-20T15:10:05.7482257Z Artifact download URL: https://github.com/rajcreativeworks/heart-disease-prediction/actions/runs/39445695001/artifacts/12277130718
+2026-10-20T15:10:05.7508147Z Writing summary
+2026-10-20T15:10:05.7520716Z ##[endgroup]
+2026-10-20T15:10:05.7521543Z ##[group]Removing temp folder /home/runner/work/_temp/docker-actions-toolkit-BN0zPp
+2026-10-20T15:10:05.7525312Z ##[endgroup]
+2026-10-20T15:10:05.7526206Z ##[group]Post cache
+2026-10-20T15:10:05.7527680Z State not set
+2026-10-20T15:10:05.7528265Z ##[endgroup]

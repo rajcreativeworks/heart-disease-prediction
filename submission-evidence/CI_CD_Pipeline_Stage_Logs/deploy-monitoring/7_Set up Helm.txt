@@ -1,0 +1,27 @@
+﻿2026-10-20T15:39:42.9397877Z ##[group]Run azure/setup-helm@v4
+2026-10-20T15:39:42.9398192Z with:
+2026-10-20T15:39:42.9398464Z   version: latest
+2026-10-20T15:39:42.9400983Z   token: ***
+2026-10-20T15:39:42.9401246Z   downloadBaseURL: https://get.helm.sh
+2026-10-20T15:39:42.9401981Z env:
+2026-10-20T15:39:42.9402215Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:42.9402518Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:42.9402804Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:42.9403435Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:42.9404417Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:42.9405318Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:42.9405907Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9406250Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9406533Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9406817Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9407091Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9407448Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:42.9407837Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:42.9408395Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:42.9409207Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:42.9409759Z ##[endgroup]
+2026-10-20T15:39:43.0482496Z ##[group]Installing v4.3.1
+2026-10-20T15:39:43.0493228Z Downloading 'v4.3.1' from 'https://get.helm.sh'
+2026-10-20T15:39:43.2098408Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/a6eecbb5-61ef-4d0f-8f9d-635d294640f8 -f /home/runner/work/_temp/3c821912-def3-48a1-ac50-616b8504deb2
+2026-10-20T15:39:43.6612698Z ##[endgroup]
+2026-10-20T15:39:43.6613736Z Helm tool version 'v4.3.1' has been cached at /opt/hostedtoolcache/helm/4.3.1/x64/linux-amd64/helm

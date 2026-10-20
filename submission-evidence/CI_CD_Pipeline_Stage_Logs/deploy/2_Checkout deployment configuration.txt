@@ -1,0 +1,95 @@
+﻿2026-10-20T15:10:23.0512976Z ##[group]Run actions/checkout@v4
+2026-10-20T15:10:23.0513690Z with:
+2026-10-20T15:10:23.0514065Z   ref: 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.0514569Z   repository: rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.0517756Z   token: ***
+2026-10-20T15:10:23.0518084Z   ssh-strict: true
+2026-10-20T15:10:23.0518416Z   ssh-user: git
+2026-10-20T15:10:23.0518762Z   persist-credentials: true
+2026-10-20T15:10:23.0519128Z   clean: true
+2026-10-20T15:10:23.0519475Z   sparse-checkout-cone-mode: true
+2026-10-20T15:10:23.0519874Z   fetch-depth: 1
+2026-10-20T15:10:23.0520199Z   fetch-tags: false
+2026-10-20T15:10:23.0520530Z   show-progress: true
+2026-10-20T15:10:23.0520859Z   lfs: false
+2026-10-20T15:10:23.0521175Z   submodules: false
+2026-10-20T15:10:23.0521553Z   set-safe-directory: true
+2026-10-20T15:10:23.0521943Z   allow-unsafe-pr-checkout: false
+2026-10-20T15:10:23.0522582Z env:
+2026-10-20T15:10:23.0522911Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:23.0523309Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:23.0523764Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:23.0524197Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.0524630Z ##[endgroup]
+2026-10-20T15:10:23.1545201Z Syncing repository: rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.1547274Z ##[group]Getting Git version info
+2026-10-20T15:10:23.1547946Z Working directory is '/home/runner/work/heart-disease-prediction/heart-disease-prediction'
+2026-10-20T15:10:23.1548809Z [command]/usr/bin/git version
+2026-10-20T15:10:23.1595267Z git version 2.55.0
+2026-10-20T15:10:23.1614966Z ##[endgroup]
+2026-10-20T15:10:23.1629558Z Temporarily overriding HOME='/home/runner/work/_temp/8aa25584-a5cc-4149-a576-de181ffe1999' before making global git config changes
+2026-10-20T15:10:23.1636252Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T15:10:23.1638063Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:10:23.1692111Z Deleting the contents of '/home/runner/work/heart-disease-prediction/heart-disease-prediction'
+2026-10-20T15:10:23.1696350Z ##[group]Initializing the repository
+2026-10-20T15:10:23.1700080Z [command]/usr/bin/git init /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:10:23.1788571Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-20T15:10:23.1791200Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-20T15:10:23.1792468Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-20T15:10:23.1793441Z hint: call:
+2026-10-20T15:10:23.1793968Z hint:
+2026-10-20T15:10:23.1794729Z hint: 	git config --global init.defaultBranch <name>
+2026-10-20T15:10:23.1795718Z hint:
+2026-10-20T15:10:23.1796475Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-20T15:10:23.1797698Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-20T15:10:23.1798685Z hint:
+2026-10-20T15:10:23.1799245Z hint: 	git branch -m <name>
+2026-10-20T15:10:23.1799866Z hint:
+2026-10-20T15:10:23.1800677Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-20T15:10:23.1802515Z Initialized empty Git repository in /home/runner/work/heart-disease-prediction/heart-disease-prediction/.git/
+2026-10-20T15:10:23.1805250Z [command]/usr/bin/git remote add origin https://github.com/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.1844961Z ##[endgroup]
+2026-10-20T15:10:23.1846242Z ##[group]Disabling automatic garbage collection
+2026-10-20T15:10:23.1848449Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-20T15:10:23.1877028Z ##[endgroup]
+2026-10-20T15:10:23.1878131Z ##[group]Setting up auth
+2026-10-20T15:10:23.1883504Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T15:10:23.1913306Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T15:10:23.2239716Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T15:10:23.2276048Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T15:10:23.2480221Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T15:10:23.2514889Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T15:10:23.2705709Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-20T15:10:23.2741710Z ##[endgroup]
+2026-10-20T15:10:23.2742762Z ##[group]Fetching the repository
+2026-10-20T15:10:23.2751201Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.7386720Z From https://github.com/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.7388186Z  * branch            8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4 -> FETCH_HEAD
+2026-10-20T15:10:23.7391198Z ##[endgroup]
+2026-10-20T15:10:23.7391931Z ##[group]Determining the checkout info
+2026-10-20T15:10:23.7397397Z ##[endgroup]
+2026-10-20T15:10:23.7401172Z [command]/usr/bin/git sparse-checkout disable
+2026-10-20T15:10:23.7455950Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-20T15:10:23.7484048Z ##[group]Checking out the ref
+2026-10-20T15:10:23.7489967Z [command]/usr/bin/git checkout --progress --force 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.7552112Z Note: switching to '8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4'.
+2026-10-20T15:10:23.7552855Z 
+2026-10-20T15:10:23.7556446Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-20T15:10:23.7557132Z changes and commit them, and you can discard any commits you make in this
+2026-10-20T15:10:23.7557606Z state without impacting any branches by switching back to a branch.
+2026-10-20T15:10:23.7557874Z 
+2026-10-20T15:10:23.7558079Z If you want to create a new branch to retain commits you create, you may
+2026-10-20T15:10:23.7558523Z do so (now or later) by using -c with the switch command. Example:
+2026-10-20T15:10:23.7558811Z 
+2026-10-20T15:10:23.7558994Z   git switch -c <new-branch-name>
+2026-10-20T15:10:23.7559270Z 
+2026-10-20T15:10:23.7559456Z Or undo this operation with:
+2026-10-20T15:10:23.7559724Z 
+2026-10-20T15:10:23.7559901Z   git switch -
+2026-10-20T15:10:23.7560125Z 
+2026-10-20T15:10:23.7560359Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-20T15:10:23.7560644Z 
+2026-10-20T15:10:23.7560756Z HEAD is now at 8f8c244 Modified
+2026-10-20T15:10:23.7561597Z ##[endgroup]
+2026-10-20T15:10:23.7599231Z [command]/usr/bin/git log -1 --format=%H
+2026-10-20T15:10:23.7623867Z 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4

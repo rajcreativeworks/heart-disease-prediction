@@ -1,0 +1,7 @@
+﻿2026-10-20T15:08:31.6976233Z Post job cleanup.
+2026-10-20T15:08:31.6979955Z ##[start-action display=Load Sonar Scanner CLI from cache;id=__5ad18f31-a0f7-48b7-894d-26ab635d520d.sonar-scanner-cli]
+2026-10-20T15:08:31.7015339Z Post job cleanup.
+2026-10-20T15:08:31.8134949Z Cache hit occurred on the primary key sonar-scanner-cli-7.2.0.5079-Linux-X64, not saving cache.
+2026-10-20T15:08:31.8136852Z (node:3469) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T15:08:31.8138516Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T15:08:31.8200992Z ##[end-action id=__5ad18f31-a0f7-48b7-894d-26ab635d520d.sonar-scanner-cli;outcome=success;conclusion=success;duration_ms=122]

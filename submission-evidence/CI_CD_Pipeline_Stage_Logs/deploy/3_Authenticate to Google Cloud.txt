@@ -1,0 +1,18 @@
+﻿2026-10-20T15:10:23.7881062Z ##[group]Run google-github-actions/auth@v2
+2026-10-20T15:10:23.7881412Z with:
+2026-10-20T15:10:23.7881920Z   workload_identity_provider: projects/119234187259/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+2026-10-20T15:10:23.7882617Z   service_account: github-gke-deployer@heart-risk-mlops.iam.gserviceaccount.com
+2026-10-20T15:10:23.7883023Z   create_credentials_file: true
+2026-10-20T15:10:23.7883276Z   export_environment_variables: true
+2026-10-20T15:10:23.7883541Z   universe: googleapis.com
+2026-10-20T15:10:23.7883809Z   cleanup_credentials: true
+2026-10-20T15:10:23.7884079Z   access_token_lifetime: 3600s
+2026-10-20T15:10:23.7884420Z   access_token_scopes: https://www.googleapis.com/auth/cloud-platform
+2026-10-20T15:10:23.7884783Z   id_token_include_email: false
+2026-10-20T15:10:23.7885009Z env:
+2026-10-20T15:10:23.7885200Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:23.7885447Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:23.7886025Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:23.7886372Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.7886685Z ##[endgroup]
+2026-10-20T15:10:24.1149021Z Created credentials file at "/home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json"

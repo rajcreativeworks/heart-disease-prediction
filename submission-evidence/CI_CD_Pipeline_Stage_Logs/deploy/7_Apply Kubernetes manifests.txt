@@ -1,0 +1,25 @@
+﻿2026-10-20T15:10:52.3471837Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:52.3472158Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:52.3472426Z [36;1mkubectl apply -f k8s/deployment.yaml[0m
+2026-10-20T15:10:52.3472747Z [36;1mkubectl apply -f k8s/service.yaml[0m
+2026-10-20T15:10:52.3503184Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:52.3503447Z env:
+2026-10-20T15:10:52.3503658Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:52.3503933Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:52.3504200Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:52.3504523Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:52.3505195Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:52.3506274Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:52.3507105Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:52.3507699Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3507986Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3508249Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3508512Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3508767Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3509095Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:52.3509451Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:52.3509981Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:52.3510731Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:52.3511240Z ##[endgroup]
+2026-10-20T15:10:54.2487033Z deployment.apps/heart-disease-api configured
+2026-10-20T15:10:56.0098663Z service/heart-disease-api unchanged

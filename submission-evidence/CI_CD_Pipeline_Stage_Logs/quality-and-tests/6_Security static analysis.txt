@@ -1,0 +1,11 @@
+﻿2026-10-20T15:06:36.5488829Z ##[group]Run bandit -q -r src
+2026-10-20T15:06:36.5489146Z [36;1mbandit -q -r src[0m
+2026-10-20T15:06:36.5535014Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:06:36.5535278Z env:
+2026-10-20T15:06:36.5535800Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:06:36.5536286Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:06:36.5536765Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:06:36.5537180Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:06:36.5537593Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:06:36.5538003Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:06:36.5538339Z ##[endgroup]

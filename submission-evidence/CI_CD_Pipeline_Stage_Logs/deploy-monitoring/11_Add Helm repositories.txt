@@ -1,0 +1,30 @@
+﻿2026-10-20T15:39:51.4909956Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:51.4910311Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:51.4910631Z [36;1mhelm repo add prometheus-community \[0m
+2026-10-20T15:39:51.4911087Z [36;1m  https://prometheus-community.github.io/helm-charts[0m
+2026-10-20T15:39:51.4911885Z [36;1mhelm repo add grafana https://grafana.github.io/helm-charts[0m
+2026-10-20T15:39:51.4912326Z [36;1mhelm repo update[0m
+2026-10-20T15:39:51.4975086Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:51.4975392Z env:
+2026-10-20T15:39:51.4975634Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:51.4975953Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:51.4976294Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:51.4977041Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:51.4978242Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:51.4979373Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:51.4980087Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4980441Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4980770Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4981086Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4981408Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4982086Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:51.4982530Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:51.4983208Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:51.4984205Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:51.4984805Z ##[endgroup]
+2026-10-20T15:39:52.0303304Z "prometheus-community" has been added to your repositories
+2026-10-20T15:39:52.4356537Z "grafana" has been added to your repositories
+2026-10-20T15:39:52.4704969Z Hang tight while we grab the latest from your chart repositories...
+2026-10-20T15:39:52.8877134Z ...Successfully got an update from the "grafana" chart repository
+2026-10-20T15:39:53.0180483Z ...Successfully got an update from the "prometheus-community" chart repository
+2026-10-20T15:39:53.0181826Z Update Complete. ⎈Happy Helming!⎈

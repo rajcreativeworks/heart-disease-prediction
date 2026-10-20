@@ -1,0 +1,343 @@
+﻿2026-10-20T15:07:17.1199715Z ##[group]Run SonarSource/sonarqube-scan-action@v5
+2026-10-20T15:07:17.1200096Z with:
+2026-10-20T15:07:17.1200315Z   scannerVersion: 7.2.0.5079
+2026-10-20T15:07:17.1200760Z   scannerBinariesUrl: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli
+2026-10-20T15:07:17.1201227Z env:
+2026-10-20T15:07:17.1201498Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1201959Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:17.1202415Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1202821Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1218471Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1219258Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:17.1220219Z   SONAR_TOKEN: ***
+2026-10-20T15:07:17.1220497Z   SONAR_HOST_URL: https://sonarcloud.io
+2026-10-20T15:07:17.1220813Z ##[endgroup]
+2026-10-20T15:07:17.1281588Z ##[start-action display=Sanity checks;id=__SonarSource_sonarqube-scan-action.__run]
+2026-10-20T15:07:17.1305820Z ##[group]Run ${GITHUB_ACTION_PATH}/scripts/sanity-checks.sh
+2026-10-20T15:07:17.1306303Z [36;1m${GITHUB_ACTION_PATH}/scripts/sanity-checks.sh[0m
+2026-10-20T15:07:17.1358133Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T15:07:17.1358514Z env:
+2026-10-20T15:07:17.1358798Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1359271Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:17.1359723Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1360122Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1360535Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1360944Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:17.1361411Z   SONAR_TOKEN: ***
+2026-10-20T15:07:17.1361664Z   SONAR_HOST_URL: https://sonarcloud.io
+2026-10-20T15:07:17.1361989Z   INPUT_PROJECTBASEDIR: 
+2026-10-20T15:07:17.1362243Z   INPUT_SCANNERVERSION: 7.2.0.5079
+2026-10-20T15:07:17.1362511Z ##[endgroup]
+2026-10-20T15:07:17.1476114Z ##[end-action id=__SonarSource_sonarqube-scan-action.__run;outcome=success;conclusion=success;duration_ms=19]
+2026-10-20T15:07:17.1478590Z ##[start-action display=Vulnerability warning;id=__SonarSource_sonarqube-scan-action.__run_2]
+2026-10-20T15:07:17.1495861Z ##[group]Run echo "::warning title=Vulnerability warning::This version of the SonarQube Scanner GitHub Action is no longer supported and contains a security vulnerability. Please update your workflow to use sonarsource/sonarqube-scan-action@v6 for the latest security patches and features. For more information visit https://community.sonarsource.com/gha-v6-update"
+2026-10-20T15:07:17.1498413Z [36;1mecho "::warning title=Vulnerability warning::This version of the SonarQube Scanner GitHub Action is no longer supported and contains a security vulnerability. Please update your workflow to use sonarsource/sonarqube-scan-action@v6 for the latest security patches and features. For more information visit https://community.sonarsource.com/gha-v6-update"[0m
+2026-10-20T15:07:17.1547435Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T15:07:17.1547800Z env:
+2026-10-20T15:07:17.1548077Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1548537Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:17.1548988Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1549380Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1549778Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1550187Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:17.1550645Z   SONAR_TOKEN: ***
+2026-10-20T15:07:17.1550895Z   SONAR_HOST_URL: https://sonarcloud.io
+2026-10-20T15:07:17.1551404Z ##[endgroup]
+2026-10-20T15:07:17.1634982Z ##[warning]This version of the SonarQube Scanner GitHub Action is no longer supported and contains a security vulnerability. Please update your workflow to use sonarsource/sonarqube-scan-action@v6 for the latest security patches and features. For more information visit https://community.sonarsource.com/gha-v6-update
+2026-10-20T15:07:17.1641135Z ##[end-action id=__SonarSource_sonarqube-scan-action.__run_2;outcome=success;conclusion=success;duration_ms=16]
+2026-10-20T15:07:17.1643631Z ##[start-action display=Load Sonar Scanner CLI from cache;id=__SonarSource_sonarqube-scan-action.sonar-scanner-cli]
+2026-10-20T15:07:17.1682440Z ##[group]Run actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
+2026-10-20T15:07:17.1682807Z with:
+2026-10-20T15:07:17.1683122Z   path: /home/runner/work/_temp/sonar-scanner-cli-7.2.0.5079-Linux-X64
+2026-10-20T15:07:17.1683537Z   key: sonar-scanner-cli-7.2.0.5079-Linux-X64
+2026-10-20T15:07:17.1683857Z   enableCrossOsArchive: false
+2026-10-20T15:07:17.1684136Z   fail-on-cache-miss: false
+2026-10-20T15:07:17.1684386Z   lookup-only: false
+2026-10-20T15:07:17.1684606Z   save-always: false
+2026-10-20T15:07:17.1684808Z env:
+2026-10-20T15:07:17.1685073Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1685722Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:17.1686187Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1686585Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1686989Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:17.1687397Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:17.1687850Z   SONAR_TOKEN: ***
+2026-10-20T15:07:17.1688097Z   SONAR_HOST_URL: https://sonarcloud.io
+2026-10-20T15:07:17.1688400Z   SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
+2026-10-20T15:07:17.1688662Z ##[endgroup]
+2026-10-20T15:07:17.2765177Z (node:2718) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T15:07:17.2766542Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T15:07:17.5267447Z Cache hit for: sonar-scanner-cli-7.2.0.5079-Linux-X64
+2026-10-20T15:07:17.5379870Z (node:2718) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-20T15:07:18.7922046Z Received 25165824 of 52323077 (48.1%), 24.0 MBs/sec
+2026-10-20T15:07:19.0185445Z Received 52323077 of 52323077 (100.0%), 40.7 MBs/sec
+2026-10-20T15:07:19.0188064Z Cache Size: ~50 MB (52323077 B)
+2026-10-20T15:07:19.0296744Z [command]/usr/bin/tar -xf /home/runner/work/_temp/829f45a8-4244-4aef-9295-e123b55620b6/cache.tzst -P -C /home/runner/work/heart-disease-prediction/heart-disease-prediction --use-compress-program unzstd
+2026-10-20T15:07:19.2942245Z Cache restored successfully
+2026-10-20T15:07:19.3051557Z Cache restored from key: sonar-scanner-cli-7.2.0.5079-Linux-X64
+2026-10-20T15:07:19.3159432Z ##[end-action id=__SonarSource_sonarqube-scan-action.sonar-scanner-cli;outcome=success;conclusion=success;duration_ms=2151]
+2026-10-20T15:07:19.3166944Z ##[start-action display=Install Sonar Scanner CLI;id=__SonarSource_sonarqube-scan-action.__run_3]
+2026-10-20T15:07:19.3190192Z ##[end-action id=__SonarSource_sonarqube-scan-action.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-20T15:07:19.3192528Z ##[start-action display=Add SonarScanner CLI to the PATH;id=__SonarSource_sonarqube-scan-action.__run_4]
+2026-10-20T15:07:19.3211344Z ##[group]Run echo "${RUNNER_TEMP}/sonar-scanner-cli-7.2.0.5079-Linux-X64/bin" >> $GITHUB_PATH
+2026-10-20T15:07:19.3212022Z [36;1mecho "${RUNNER_TEMP}/sonar-scanner-cli-7.2.0.5079-Linux-X64/bin" >> $GITHUB_PATH[0m
+2026-10-20T15:07:19.3263370Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T15:07:19.3263736Z env:
+2026-10-20T15:07:19.3264220Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3264692Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:19.3265171Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3265850Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3266277Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3266734Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:19.3267267Z   SONAR_TOKEN: ***
+2026-10-20T15:07:19.3267524Z   SONAR_HOST_URL: https://sonarcloud.io
+2026-10-20T15:07:19.3267829Z ##[endgroup]
+2026-10-20T15:07:19.3347190Z ##[end-action id=__SonarSource_sonarqube-scan-action.__run_4;outcome=success;conclusion=success;duration_ms=15]
+2026-10-20T15:07:19.3350676Z ##[start-action display=Run SonarScanner;id=__SonarSource_sonarqube-scan-action.__run_5]
+2026-10-20T15:07:19.3366904Z ##[group]Run ${GITHUB_ACTION_PATH}/scripts/run-sonar-scanner.sh
+2026-10-20T15:07:19.3367393Z [36;1m${GITHUB_ACTION_PATH}/scripts/run-sonar-scanner.sh[0m
+2026-10-20T15:07:19.3414802Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T15:07:19.3415166Z env:
+2026-10-20T15:07:19.3415447Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3416311Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:19.3416777Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3417187Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3417594Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:19.3418020Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:19.3418531Z   SONAR_TOKEN: ***
+2026-10-20T15:07:19.3418784Z   SONAR_HOST_URL: https://sonarcloud.io
+2026-10-20T15:07:19.3419077Z   INPUT_ARGS: 
+2026-10-20T15:07:19.3419296Z   INPUT_PROJECTBASEDIR: 
+2026-10-20T15:07:19.3419742Z   SONAR_SCANNER_JRE: /home/runner/work/_temp/sonar-scanner-cli-7.2.0.5079-Linux-X64/jre
+2026-10-20T15:07:19.3420202Z ##[endgroup]
+2026-10-20T15:07:19.3533922Z + sonar-scanner
+2026-10-20T15:07:19.6478355Z 15:07:19.645 INFO  Scanner configuration file: /home/runner/work/_temp/sonar-scanner-cli-7.2.0.5079-Linux-X64/conf/sonar-scanner.properties
+2026-10-20T15:07:19.6486672Z 15:07:19.648 INFO  Project root configuration file: /home/runner/work/heart-disease-prediction/heart-disease-prediction/sonar-project.properties
+2026-10-20T15:07:19.6640048Z 15:07:19.663 INFO  SonarScanner CLI 7.2.0.5079
+2026-10-20T15:07:19.6659715Z 15:07:19.665 INFO  Linux 7.0.0-1017-azure amd64
+2026-10-20T15:07:20.3147293Z 15:07:20.313 INFO  Communicating with SonarQube Cloud
+2026-10-20T15:07:20.3167395Z 15:07:20.314 INFO  JRE provisioning: os[linux], arch[x86_64]
+2026-10-20T15:07:23.6670656Z 15:07:23.666 INFO  Starting SonarScanner Engine...
+2026-10-20T15:07:23.6676837Z 15:07:23.667 INFO  Java 21.0.12.1 Eclipse Adoptium (64-bit)
+2026-10-20T15:07:24.4204990Z 15:07:24.420 INFO  Load global settings
+2026-10-20T15:07:25.4384292Z 15:07:25.438 INFO  Load global settings (done) | time=1018ms
+2026-10-20T15:07:25.4423400Z 15:07:25.441 INFO  Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
+2026-10-20T15:07:25.4474552Z 15:07:25.447 INFO  Found an active CI vendor: 'Github Actions'
+2026-10-20T15:07:25.7513300Z 15:07:25.751 INFO  Loading required plugins
+2026-10-20T15:07:25.7515887Z 15:07:25.751 INFO  Load plugins index
+2026-10-20T15:07:26.0552561Z 15:07:26.053 INFO  Load plugins index (done) | time=302ms
+2026-10-20T15:07:26.1347036Z 15:07:26.132 INFO  Load/download plugins
+2026-10-20T15:07:27.0426876Z 15:07:27.041 INFO  Load/download plugins (done) | time=906ms
+2026-10-20T15:07:27.3321513Z 15:07:27.331 INFO  Loaded core extensions: sca, a3s, architecture
+2026-10-20T15:07:27.5767132Z 15:07:27.574 INFO  Load project settings for component key: 'rajcreativeworks_heart-disease-prediction'
+2026-10-20T15:07:27.9567201Z 15:07:27.955 INFO  Load project settings for component key: 'rajcreativeworks_heart-disease-prediction' (done) | time=381ms
+2026-10-20T15:07:28.3196927Z 15:07:28.318 INFO  Process project properties
+2026-10-20T15:07:28.3418530Z 15:07:28.341 INFO  Project key: rajcreativeworks_heart-disease-prediction
+2026-10-20T15:07:28.3420556Z 15:07:28.341 INFO  Base dir: /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:07:28.3424964Z 15:07:28.342 INFO  Working dir: /home/runner/work/heart-disease-prediction/heart-disease-prediction/.scannerwork
+2026-10-20T15:07:28.3704265Z 15:07:28.369 INFO  Check ALM binding of project 'rajcreativeworks_heart-disease-prediction'
+2026-10-20T15:07:28.6047208Z 15:07:28.604 INFO  Detected project binding: BOUND
+2026-10-20T15:07:28.6049444Z 15:07:28.604 INFO  Check ALM binding of project 'rajcreativeworks_heart-disease-prediction' (done) | time=236ms
+2026-10-20T15:07:28.6099583Z 15:07:28.609 INFO  Load branch configuration
+2026-10-20T15:07:28.6107044Z 15:07:28.610 INFO  Github event: push
+2026-10-20T15:07:28.6123992Z 15:07:28.611 INFO  Auto-configuring branch 'main'
+2026-10-20T15:07:28.6136017Z 15:07:28.612 INFO  Load branch configuration (done) | time=3ms
+2026-10-20T15:07:28.6168386Z 15:07:28.616 INFO  Create analysis
+2026-10-20T15:07:29.0958484Z 15:07:29.095 INFO  Branch name: main, type: long
+2026-10-20T15:07:29.0969495Z 15:07:29.095 INFO  Create analysis (done) | time=479ms
+2026-10-20T15:07:29.5526836Z 15:07:29.550 INFO  Load quality profiles
+2026-10-20T15:07:29.9920324Z 15:07:29.991 INFO  Load quality profiles (done) | time=440ms
+2026-10-20T15:07:30.0136376Z 15:07:30.012 INFO  Load active rules
+2026-10-20T15:07:31.0197450Z 15:07:31.018 INFO  Load active rules (done) | time=1005ms
+2026-10-20T15:07:31.2564033Z 15:07:31.256 INFO  Organization key: rajcreativeworks
+2026-10-20T15:07:31.2816485Z 15:07:31.278 INFO  Preprocessing files...
+2026-10-20T15:07:31.3497023Z 15:07:31.347 INFO  1 language detected in 12 preprocessed files (done) | time=68ms
+2026-10-20T15:07:31.3523375Z 15:07:31.348 INFO  5 files ignored because of inclusion/exclusion patterns
+2026-10-20T15:07:31.3524804Z 15:07:31.348 INFO  1 directory skipped because of exclusion patterns (content not counted)
+2026-10-20T15:07:31.3526221Z 15:07:31.348 INFO  5 files ignored because of scm ignore settings
+2026-10-20T15:07:31.4402985Z 15:07:31.440 INFO  Loading plugins for detected languages
+2026-10-20T15:07:31.4420356Z 15:07:31.441 INFO  Load/download plugins
+2026-10-20T15:07:32.1483108Z 15:07:32.147 INFO  Load/download plugins (done) | time=707ms
+2026-10-20T15:07:32.4887374Z 15:07:32.487 INFO  Load project repositories
+2026-10-20T15:07:32.7865178Z 15:07:32.786 INFO  Load project repositories (done) | time=298ms
+2026-10-20T15:07:32.8164014Z 15:07:32.815 INFO  Indexing files...
+2026-10-20T15:07:32.8165142Z 15:07:32.815 INFO  Project configuration:
+2026-10-20T15:07:32.8166775Z 15:07:32.815 INFO    Excluded sources: **/__pycache__/**, **/mlruns/**, **/build-wrapper-dump.json, tests/**/*.py
+2026-10-20T15:07:32.8168149Z 15:07:32.815 INFO    Included tests: tests/**/*.py
+2026-10-20T15:07:32.8223303Z 15:07:32.820 INFO  12 files indexed (done) | time=6ms
+2026-10-20T15:07:32.8225854Z 15:07:32.822 INFO  Quality profile for py: Sonar way core
+2026-10-20T15:07:32.8227885Z 15:07:32.822 INFO  ------------- Run sensors on module Heart Disease MLOps
+2026-10-20T15:07:32.8790432Z 15:07:32.878 INFO  Load metrics repository
+2026-10-20T15:07:33.0775507Z 15:07:33.077 INFO  Load metrics repository (done) | time=199ms
+2026-10-20T15:07:33.0876594Z 15:07:33.086 INFO  Sensor cache enabled
+2026-10-20T15:07:33.0924636Z 15:07:33.091 INFO  Load sensor cache
+2026-10-20T15:07:34.8624348Z 15:07:34.862 INFO  Load sensor cache (684 KB) | time=1771ms
+2026-10-20T15:07:36.0623479Z 15:07:36.061 INFO  Sensor IaC YAML File Type Classification Sensor [iac]
+2026-10-20T15:07:36.0651325Z 15:07:36.064 INFO  Sensor IaC YAML File Type Classification Sensor [iac] (done) | time=4ms
+2026-10-20T15:07:36.0678718Z 15:07:36.065 INFO  Sensor Python Sensor [python]
+2026-10-20T15:07:36.4585934Z 15:07:36.458 INFO  Starting global symbols computation
+2026-10-20T15:07:36.4599189Z 15:07:36.459 INFO  12 source files to be analyzed
+2026-10-20T15:07:37.2349491Z 15:07:37.234 INFO  12/12 source files have been analyzed
+2026-10-20T15:07:37.2366463Z 15:07:37.235 INFO  Finished step global symbols computation in 774ms
+2026-10-20T15:07:37.2639499Z 15:07:37.263 INFO  Starting rules execution
+2026-10-20T15:07:37.2642936Z 15:07:37.263 INFO  12 source files to be analyzed
+2026-10-20T15:07:40.6076734Z 15:07:40.606 INFO  12/12 source files have been analyzed
+2026-10-20T15:07:40.6146539Z 15:07:40.609 INFO  Finished step rules execution in 3341ms
+2026-10-20T15:07:40.6196825Z 15:07:40.609 INFO  The Python analyzer was able to leverage cached data from previous analyses for 0 out of 12 files. These files were not parsed.
+2026-10-20T15:07:40.6256349Z 15:07:40.609 INFO  Sensor Python Sensor [python] (done) | time=4543ms
+2026-10-20T15:07:40.6286350Z 15:07:40.610 INFO  Sensor Cobertura Sensor for Python coverage [python]
+2026-10-20T15:07:40.6316183Z 15:07:40.622 INFO  Python test coverage
+2026-10-20T15:07:40.6317400Z 15:07:40.623 INFO  Parsing report '/home/runner/work/heart-disease-prediction/heart-disease-prediction/coverage.xml'
+2026-10-20T15:07:40.6906796Z 15:07:40.688 INFO  Sensor Cobertura Sensor for Python coverage [python] (done) | time=78ms
+2026-10-20T15:07:40.6936409Z 15:07:40.689 INFO  Sensor PythonXUnitSensor [python]
+2026-10-20T15:07:40.6996434Z 15:07:40.696 INFO  Sensor PythonXUnitSensor [python] (done) | time=6ms
+2026-10-20T15:07:40.6997551Z 15:07:40.697 INFO  Sensor Python Dependency Sensor [python]
+2026-10-20T15:07:40.7009232Z 15:07:40.700 INFO  Sensor Python Dependency Sensor [python] (done) | time=3ms
+2026-10-20T15:07:40.7011368Z 15:07:40.701 INFO  Sensor Scan Manifest Module Properties Collector [commona3scontextcollector]
+2026-10-20T15:07:41.4461854Z 15:07:41.445 INFO  Sensor Scan Manifest Module Properties Collector [commona3scontextcollector] (done) | time=747ms
+2026-10-20T15:07:41.4467456Z 15:07:41.446 INFO  Sensor PythonModuleSecuritySensor [securitypythonfrontend]
+2026-10-20T15:07:41.4476308Z 15:07:41.447 INFO  Sensor PythonModuleSecuritySensor [securitypythonfrontend] (done) | time=0ms
+2026-10-20T15:07:41.4477703Z 15:07:41.447 INFO  Sensor Python HTML templates processing [securitypythonfrontend]
+2026-10-20T15:07:41.4545374Z 15:07:41.452 INFO  Sensor Python HTML templates processing [securitypythonfrontend] (done) | time=4ms
+2026-10-20T15:07:41.4547110Z 15:07:41.453 INFO  Sensor IaC hadolint report Sensor [iac]
+2026-10-20T15:07:41.4548158Z 15:07:41.453 INFO  Sensor IaC hadolint report Sensor [iac] (done) | time=0ms
+2026-10-20T15:07:41.4576370Z 15:07:41.456 INFO  Sensor Java Config Sensor [iac]
+2026-10-20T15:07:41.4595291Z 15:07:41.457 INFO  There are no files to be analyzed for the Java language
+2026-10-20T15:07:41.4596713Z 15:07:41.457 INFO  Sensor Java Config Sensor [iac] (done) | time=0ms
+2026-10-20T15:07:41.4597699Z 15:07:41.457 INFO  Sensor IaC Docker Sensor [iac]
+2026-10-20T15:07:41.4598680Z 15:07:41.457 INFO  There are no files to be analyzed for the Docker language
+2026-10-20T15:07:41.4600182Z 15:07:41.457 INFO  Sensor IaC Docker Sensor [iac] (done) | time=2ms
+2026-10-20T15:07:41.4601133Z 15:07:41.457 INFO  Sensor IaC GitHub Actions Sensor [iac]
+2026-10-20T15:07:41.4602222Z 15:07:41.458 INFO  There are no files to be analyzed for the GitHub Actions language
+2026-10-20T15:07:41.4603352Z 15:07:41.458 INFO  Sensor IaC GitHub Actions Sensor [iac] (done) | time=0ms
+2026-10-20T15:07:41.4636598Z 15:07:41.460 INFO  Sensor IaC actionlint report Sensor [iac]
+2026-10-20T15:07:41.4637445Z 15:07:41.461 INFO  Sensor IaC actionlint report Sensor [iac] (done) | time=0ms
+2026-10-20T15:07:41.4676267Z 15:07:41.461 INFO  Sensor IaC Shell Sensor [iac]
+2026-10-20T15:07:41.4686748Z 15:07:41.461 INFO  There are no files to be analyzed for the Shell language
+2026-10-20T15:07:41.4696368Z 15:07:41.461 INFO  Sensor IaC Shell Sensor [iac] (done) | time=0ms
+2026-10-20T15:07:41.4726528Z 15:07:41.461 INFO  Sensor EnterpriseTextAndSecretsSensor [textenterprise]
+2026-10-20T15:07:41.4786553Z 15:07:41.477 INFO  Available processors: 4
+2026-10-20T15:07:41.4806766Z 15:07:41.478 INFO  Using 4 threads for analysis.
+2026-10-20T15:07:41.9415331Z 15:07:41.939 INFO  The following rules are activated in the quality profile but will not raise any issue, because they are being rolled out progressively: secrets:S8135, secrets:S8136. You can enable it by setting: sonar.featureflag.cloud-security-enable-secrets-S8135, sonar.featureflag.cloud-security-enable-secrets-S8136 to true.
+2026-10-20T15:07:42.0366939Z 15:07:42.034 INFO  Start fetching files for the text and secrets analysis
+2026-10-20T15:07:42.0422791Z 15:07:42.042 INFO  Using Git CLI to retrieve dirty files
+2026-10-20T15:07:42.0541516Z 15:07:42.051 INFO  Retrieving language associated files and files included via "sonar.text.inclusions" that are tracked by git
+2026-10-20T15:07:42.0544835Z 15:07:42.053 INFO  Starting the text and secrets analysis
+2026-10-20T15:07:42.0554533Z 15:07:42.055 INFO  12 source files to be analyzed for the text and secrets analysis
+2026-10-20T15:07:42.1021886Z 15:07:42.101 INFO  12/12 source files have been analyzed for the text and secrets analysis
+2026-10-20T15:07:42.1028363Z 15:07:42.102 INFO  Start fetching files for the binary file analysis
+2026-10-20T15:07:42.1029471Z 15:07:42.102 INFO  There are no files to be analyzed for the binary file analysis
+2026-10-20T15:07:42.1114130Z 15:07:42.110 INFO  Sensor EnterpriseTextAndSecretsSensor [textenterprise] (done) | time=652ms
+2026-10-20T15:07:42.1139530Z 15:07:42.111 INFO  Sensor javabugs [dbd]
+2026-10-20T15:07:42.1219723Z 15:07:42.121 INFO  No IR files have been included for analysis.
+2026-10-20T15:07:42.1246779Z 15:07:42.122 INFO  Sensor javabugs [dbd] (done) | time=11ms
+2026-10-20T15:07:42.1256693Z 15:07:42.122 INFO  Sensor pythonbugs [dbd]
+2026-10-20T15:07:42.1812782Z 15:07:42.180 INFO  Analyzing 31/57 functions to detect bugs.
+2026-10-20T15:07:42.5955483Z 15:07:42.593 INFO  Sensor pythonbugs [dbd] (done) | time=470ms
+2026-10-20T15:07:42.5966878Z 15:07:42.593 INFO  Sensor PythonSecuritySensor [security]
+2026-10-20T15:07:42.6009878Z 15:07:42.600 INFO  32 taint analysis rules enabled.
+2026-10-20T15:07:43.3595234Z 15:07:43.359 INFO  Analyzing 8541 UCFGs to detect vulnerabilities.
+2026-10-20T15:07:43.9909104Z 15:07:43.989 INFO  All rules entry points : 5
+2026-10-20T15:07:43.9926820Z 15:07:43.990 INFO  Retained UCFGs : 84
+2026-10-20T15:07:44.0100700Z 15:07:44.009 INFO  0 / 84 UCFGs simulated, memory usage: 662 MB
+2026-10-20T15:07:44.1547245Z 15:07:44.154 INFO  60 / 84 UCFGs simulated, memory usage: 676 MB
+2026-10-20T15:07:44.1730614Z 15:07:44.168 INFO  python security sensor: Begin: 2026-10-20T15:07:42.596101228Z, End: 2026-10-20T15:07:44.165766822Z, Duration: 00:00:01.569
+2026-10-20T15:07:44.1756973Z   Resolve files to analyze: Begin: 2026-10-20T15:07:42.600922034Z, End: 2026-10-20T15:07:42.601820842Z, Duration: 00:00:00.000
+2026-10-20T15:07:44.1787265Z   Load type hierarchy and UCFGs: Begin: 2026-10-20T15:07:42.601983305Z, End: 2026-10-20T15:07:43.358530079Z, Duration: 00:00:00.756
+2026-10-20T15:07:44.1797126Z     Load type hierarchy: Begin: 2026-10-20T15:07:42.601989296Z, End: 2026-10-20T15:07:42.712320785Z, Duration: 00:00:00.110
+2026-10-20T15:07:44.1809401Z     Load UCFGs: Begin: 2026-10-20T15:07:42.712389533Z, End: 2026-10-20T15:07:43.358300741Z, Duration: 00:00:00.645
+2026-10-20T15:07:44.1813383Z   Check cache: Begin: 2026-10-20T15:07:43.358704244Z, End: 2026-10-20T15:07:43.359336674Z, Duration: 00:00:00.000
+2026-10-20T15:07:44.1815226Z     Load cache: Begin: 2026-10-20T15:07:43.359038067Z, End: 2026-10-20T15:07:43.359064516Z, Duration: 00:00:00.000
+2026-10-20T15:07:44.1817282Z   Create runtime call graph: Begin: 2026-10-20T15:07:43.359382369Z, End: 2026-10-20T15:07:43.691530168Z, Duration: 00:00:00.332
+2026-10-20T15:07:44.1819068Z     Variable Type Analysis #1: Begin: 2026-10-20T15:07:43.359926675Z, End: 2026-10-20T15:07:43.595647544Z, Duration: 00:00:00.235
+2026-10-20T15:07:44.1820894Z       Create runtime type propagation graph: Begin: 2026-10-20T15:07:43.360628174Z, End: 2026-10-20T15:07:43.469613571Z, Duration: 00:00:00.108
+2026-10-20T15:07:44.1823055Z       Run SCC (Tarjan) on 19708 nodes: Begin: 2026-10-20T15:07:43.469905897Z, End: 2026-10-20T15:07:43.550069076Z, Duration: 00:00:00.080
+2026-10-20T15:07:44.1824986Z       Propagate runtime types to strongly connected components: Begin: 2026-10-20T15:07:43.550161669Z, End: 2026-10-20T15:07:43.595586800Z, Duration: 00:00:00.045
+2026-10-20T15:07:44.1827188Z     Variable Type Analysis #2: Begin: 2026-10-20T15:07:43.597695907Z, End: 2026-10-20T15:07:43.687874877Z, Duration: 00:00:00.090
+2026-10-20T15:07:44.1829074Z       Create runtime type propagation graph: Begin: 2026-10-20T15:07:43.597700615Z, End: 2026-10-20T15:07:43.642638959Z, Duration: 00:00:00.044
+2026-10-20T15:07:44.1830982Z       Run SCC (Tarjan) on 19058 nodes: Begin: 2026-10-20T15:07:43.642917588Z, End: 2026-10-20T15:07:43.657373987Z, Duration: 00:00:00.014
+2026-10-20T15:07:44.1833021Z       Propagate runtime types to strongly connected components: Begin: 2026-10-20T15:07:43.657501976Z, End: 2026-10-20T15:07:43.687736519Z, Duration: 00:00:00.030
+2026-10-20T15:07:44.1834899Z   Load config: Begin: 2026-10-20T15:07:43.691581034Z, End: 2026-10-20T15:07:43.946882423Z, Duration: 00:00:00.255
+2026-10-20T15:07:44.1836698Z   Compute entry points: Begin: 2026-10-20T15:07:43.946944519Z, End: 2026-10-20T15:07:43.988474892Z, Duration: 00:00:00.041
+2026-10-20T15:07:44.1838263Z   Slice call graph: Begin: 2026-10-20T15:07:43.988660649Z, End: 2026-10-20T15:07:43.990036106Z, Duration: 00:00:00.001
+2026-10-20T15:07:44.1839855Z   Live variable analysis: Begin: 2026-10-20T15:07:43.990081611Z, End: 2026-10-20T15:07:44.007775331Z, Duration: 00:00:00.017
+2026-10-20T15:07:44.1841523Z   Taint analysis for python: Begin: 2026-10-20T15:07:44.007890876Z, End: 2026-10-20T15:07:44.153630303Z, Duration: 00:00:00.145
+2026-10-20T15:07:44.1843116Z   Report issues: Begin: 2026-10-20T15:07:44.153694222Z, End: 2026-10-20T15:07:44.157166452Z, Duration: 00:00:00.003
+2026-10-20T15:07:44.1844637Z   Store cache: Begin: 2026-10-20T15:07:44.158077021Z, End: 2026-10-20T15:07:44.164944537Z, Duration: 00:00:00.006
+2026-10-20T15:07:44.1846300Z 15:07:44.168 INFO  python security sensor peak memory (pre-GC, max allocation pressure): 924 MB
+2026-10-20T15:07:44.1847662Z 15:07:44.168 INFO  python security sensor peak memory (post-GC, max live footprint): 536 MB
+2026-10-20T15:07:44.1848886Z 15:07:44.168 INFO  Sensor PythonSecuritySensor [security] (done) | time=1574ms
+2026-10-20T15:07:44.1849875Z 15:07:44.169 INFO  Sensor DBD End of Execution [dbd]
+2026-10-20T15:07:44.1850779Z 15:07:44.169 INFO  Sensor DBD End of Execution [dbd] (done) | time=0ms
+2026-10-20T15:07:44.1851762Z 15:07:44.178 INFO  ------------- Run sensors on project
+2026-10-20T15:07:44.4266874Z 15:07:44.422 INFO  Sensor BOMSensor [bom]
+2026-10-20T15:07:44.4277316Z 15:07:44.423 INFO  Skipping BOMSensor: CBOM generation is not available
+2026-10-20T15:07:44.4278471Z 15:07:44.423 INFO  Sensor BOMSensor [bom] (done) | time=0ms
+2026-10-20T15:07:44.4279931Z 15:07:44.423 INFO  Sensor SonarPython A3S Context Collector [python]
+2026-10-20T15:07:44.4281067Z 15:07:44.423 INFO  Sensor SonarPython A3S Context Collector [python] (done) | time=0ms
+2026-10-20T15:07:44.4282232Z 15:07:44.423 INFO  Sensor pySecurityContextCollectorSensor [security]
+2026-10-20T15:07:44.4283485Z 15:07:44.424 INFO  Sensor pySecurityContextCollectorSensor [security] (done) | time=0ms
+2026-10-20T15:07:44.4284775Z 15:07:44.424 INFO  Sensor Scan Manifest A3S Context Collector [commona3scontextcollector]
+2026-10-20T15:07:44.4286385Z 15:07:44.424 INFO  Sensor Scan Manifest A3S Context Collector [commona3scontextcollector] (done) | time=0ms
+2026-10-20T15:07:44.4287800Z 15:07:44.426 INFO  Sensor CveReachabilitySensor [cvereachability]
+2026-10-20T15:07:44.4289193Z 15:07:44.426 INFO  Skipping CveReachabilitySensor: CVE reachability feature is not available.
+2026-10-20T15:07:44.4290497Z 15:07:44.427 INFO  Sensor CveReachabilitySensor [cvereachability] (done) | time=0ms
+2026-10-20T15:07:44.4291796Z 15:07:44.427 INFO  Sensor IaC Project Sensor [iac]
+2026-10-20T15:07:44.4292727Z 15:07:44.427 INFO  Sensor IaC Project Sensor [iac] (done) | time=1ms
+2026-10-20T15:07:44.4293723Z 15:07:44.427 INFO  Sensor PythonArchitectureSensor [architecture]
+2026-10-20T15:07:44.4304091Z 15:07:44.429 INFO  Found 1 potential Udg file location(s) for "py" in "/home/runner/work/heart-disease-prediction/heart-disease-prediction/.scannerwork"
+2026-10-20T15:07:44.4306314Z 15:07:44.429 INFO  - /home/runner/work/heart-disease-prediction/heart-disease-prediction/.scannerwork/architecture/py
+2026-10-20T15:07:44.4440413Z 15:07:44.443 INFO  Architecture analysis is enabled.
+2026-10-20T15:07:44.4495597Z 15:07:44.449 INFO  * Protobuf reading starting | memory total=1640 | free=920 | used=719 (MB)
+2026-10-20T15:07:44.4505389Z 15:07:44.449 INFO  * Reading SonarArchitecture UDG data from directory "/home/runner/work/heart-disease-prediction/heart-disease-prediction/.scannerwork/architecture/py"
+2026-10-20T15:07:44.5155224Z 15:07:44.514 INFO  * Files successfully loaded: "7" out of "7"
+2026-10-20T15:07:44.5183839Z 15:07:44.515 INFO  * Purging externals (components not scanned) from graphs
+2026-10-20T15:07:44.5196579Z 15:07:44.517 INFO  * Purging excluded nodes from graphs
+2026-10-20T15:07:44.5197693Z 15:07:44.517 INFO  * Protobuf reading complete | memory total=1640 | free=915 | used=724 (MB)
+2026-10-20T15:07:44.5405210Z 15:07:44.539 INFO  * Build architecture.graph.py.file_graph.default_perspective hierarchy graph complete (filtered=false) | memory total=1640 | free=910 | used=729 (MB)
+2026-10-20T15:07:44.6079652Z 15:07:44.607 INFO  No directives configured
+2026-10-20T15:07:44.6174420Z 15:07:44.617 INFO  * No intended architecture defined or detected, using an empty model
+2026-10-20T15:07:44.7422251Z 15:07:44.741 INFO  Boundary detection is disabled.
+2026-10-20T15:07:44.7472442Z 15:07:44.747 INFO  Sensor PythonArchitectureSensor [architecture] (done) | time=321ms
+2026-10-20T15:07:44.7478314Z 15:07:44.747 INFO  Sensor Zero Coverage Sensor
+2026-10-20T15:07:44.7484145Z 15:07:44.748 INFO  Sensor Zero Coverage Sensor (done) | time=0ms
+2026-10-20T15:07:44.7500306Z 15:07:44.749 INFO  Sensor Architecture Telemetry [architecture]
+2026-10-20T15:07:44.7501525Z 15:07:44.749 INFO  Sensor Architecture Telemetry [architecture] (done) | time=0ms
+2026-10-20T15:07:44.7679986Z 15:07:44.767 INFO  ------------- Gather SCA dependencies on project
+2026-10-20T15:07:45.5344834Z 15:07:45.534 INFO  Dependency analysis skipped
+2026-10-20T15:07:45.5373903Z 15:07:45.537 INFO  CPD Executor 1 file had no CPD blocks
+2026-10-20T15:07:45.5377724Z 15:07:45.537 INFO  CPD Executor Calculating CPD for 6 files
+2026-10-20T15:07:45.5474066Z 15:07:45.547 INFO  CPD Executor CPD calculation finished (done) | time=8ms
+2026-10-20T15:07:45.5492446Z 15:07:45.548 INFO  SCM Publisher SCM provider for this project is: git
+2026-10-20T15:07:45.5493721Z 15:07:45.549 INFO  SCM Publisher 12 source files to be analyzed
+2026-10-20T15:07:45.5531723Z 15:07:45.552 WARN  Shallow clone detected, no blame information will be provided. You can convert to non-shallow with 'git fetch --unshallow'.
+2026-10-20T15:07:45.5576657Z 15:07:45.555 INFO  SCM Publisher 0/12 source files have been analyzed (done) | time=4ms
+2026-10-20T15:07:45.5601815Z 15:07:45.555 WARN  Missing blame information for the following files:
+2026-10-20T15:07:45.5602634Z 15:07:45.555 WARN    * tests/test_data.py
+2026-10-20T15:07:45.5625953Z 15:07:45.555 WARN    * src/heart_ml/__init__.py
+2026-10-20T15:07:45.5626764Z 15:07:45.555 WARN    * tests/test_eda.py
+2026-10-20T15:07:45.5627580Z 15:07:45.556 WARN    * tests/test_model.py
+2026-10-20T15:07:45.5628428Z 15:07:45.556 WARN    * tests/test_logging_config.py
+2026-10-20T15:07:45.5629283Z 15:07:45.556 WARN    * src/heart_ml/path_utils.py
+2026-10-20T15:07:45.5630147Z 15:07:45.556 WARN    * src/heart_ml/logging_config.py
+2026-10-20T15:07:45.5631003Z 15:07:45.557 WARN    * src/heart_ml/train.py
+2026-10-20T15:07:45.5631828Z 15:07:45.557 WARN    * tests/test_api.py
+2026-10-20T15:07:45.5632600Z 15:07:45.557 WARN    * src/heart_ml/data.py
+2026-10-20T15:07:45.5633670Z 15:07:45.557 WARN    * src/heart_ml/api.py
+2026-10-20T15:07:45.5634447Z 15:07:45.558 WARN    * src/heart_ml/eda.py
+2026-10-20T15:07:45.5635352Z 15:07:45.560 WARN  This may lead to missing/broken features in SonarCloud
+2026-10-20T15:07:45.5636782Z 15:07:45.562 INFO  SCM revision ID '8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4'
+2026-10-20T15:07:46.2207998Z 15:07:46.218 INFO  Analysis report generated in 659ms, dir size=292 KB
+2026-10-20T15:07:46.2472759Z 15:07:46.247 INFO  Analysis report compressed in 27ms, zip size=66 KB
+2026-10-20T15:07:46.8198363Z 15:07:46.819 INFO  Analysis report uploaded in 574ms
+2026-10-20T15:07:46.8222156Z 15:07:46.821 INFO  ANALYSIS SUCCESSFUL, you can find the results at: https://sonarcloud.io/dashboard?id=rajcreativeworks_heart-disease-prediction&branch=main
+2026-10-20T15:07:46.8229889Z 15:07:46.821 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+2026-10-20T15:07:46.8232099Z 15:07:46.821 INFO  More about the report processing at https://sonarcloud.io/api/ce/task?id=AaFZ2rCR_8SLu9XbH_vf
+2026-10-20T15:07:46.8233434Z 15:07:46.821 INFO  ------------- Upload SCA dependency files
+2026-10-20T15:07:48.3174878Z 15:07:48.317 INFO  Successfully sent architecture data
+2026-10-20T15:07:50.6549523Z 15:07:50.654 INFO  Sensor cache published successfully
+2026-10-20T15:07:51.3748060Z 15:07:51.374 INFO  Analysis total time: 27.658 s
+2026-10-20T15:07:51.4036595Z 15:07:51.402 INFO  SonarScanner Engine completed successfully
+2026-10-20T15:07:51.5252221Z 15:07:51.524 INFO  EXECUTION SUCCESS
+2026-10-20T15:07:51.5262378Z 15:07:51.526 INFO  Total time: 31.884s
+2026-10-20T15:07:51.8605889Z ##[end-action id=__SonarSource_sonarqube-scan-action.__run_5;outcome=success;conclusion=success;duration_ms=32525]

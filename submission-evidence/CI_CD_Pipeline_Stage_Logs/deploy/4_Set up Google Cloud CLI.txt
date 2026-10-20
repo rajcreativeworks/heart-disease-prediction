@@ -1,0 +1,21 @@
+﻿2026-10-20T15:10:24.1931687Z ##[group]Run google-github-actions/setup-gcloud@v2
+2026-10-20T15:10:24.1932044Z with:
+2026-10-20T15:10:24.1932239Z   version: latest
+2026-10-20T15:10:24.1932826Z   skip_install: false
+2026-10-20T15:10:24.1933147Z   skip_tool_cache: false
+2026-10-20T15:10:24.1933493Z env:
+2026-10-20T15:10:24.1933825Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:24.1934240Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:24.1934698Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:24.1935020Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:24.1935904Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:24.1936834Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:24.1937685Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:24.1938281Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1938559Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1938849Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1939124Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1939547Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1939825Z ##[endgroup]
+2026-10-20T15:10:24.9990041Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/ef5c513d-9710-438f-a9f2-852dbdb9f7e4 -f /home/runner/work/_temp/2a88680b-b584-4ff9-bdb5-6f58536a0fd9
+2026-10-20T15:10:39.5409083Z Successfully authenticated

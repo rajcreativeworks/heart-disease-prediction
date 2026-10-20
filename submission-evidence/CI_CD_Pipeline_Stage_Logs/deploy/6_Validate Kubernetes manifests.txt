@@ -1,0 +1,25 @@
+﻿2026-10-20T15:10:41.5975060Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:41.5975924Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:41.5976330Z [36;1mkubectl apply --dry-run=client -f k8s/deployment.yaml[0m
+2026-10-20T15:10:41.5976746Z [36;1mkubectl apply --dry-run=client -f k8s/service.yaml[0m
+2026-10-20T15:10:41.6091800Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:41.6092094Z env:
+2026-10-20T15:10:41.6092326Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:41.6092593Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:41.6092868Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:41.6093180Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:41.6093884Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:41.6094791Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:41.6095907Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:41.6096528Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6096826Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097098Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097376Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097637Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097974Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:41.6098332Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:41.6099071Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:41.6099839Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:41.6100363Z ##[endgroup]
+2026-10-20T15:10:49.2178994Z deployment.apps/heart-disease-api configured (dry run)
+2026-10-20T15:10:52.3402345Z service/heart-disease-api unchanged (dry run)

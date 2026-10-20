@@ -1,0 +1,8 @@
+﻿2026-10-20T15:08:47.2854399Z ##[group]Run test -s models/model.joblib || {
+2026-10-20T15:08:47.2854911Z [36;1mtest -s models/model.joblib || {[0m
+2026-10-20T15:08:47.2855363Z [36;1m  echo "ERROR: models/model.joblib was not found in the CI artifact."[0m
+2026-10-20T15:08:47.2855870Z [36;1m  find models -maxdepth 2 -type f 2>/dev/null || true[0m
+2026-10-20T15:08:47.2856458Z [36;1m  exit 1[0m
+2026-10-20T15:08:47.2856680Z [36;1m}[0m
+2026-10-20T15:08:47.3022666Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:08:47.3023043Z ##[endgroup]

@@ -1,0 +1,16 @@
+﻿2026-10-20T15:07:07.2313956Z ##[group]Run python -m heart_ml.data
+2026-10-20T15:07:07.2314336Z [36;1mpython -m heart_ml.data[0m
+2026-10-20T15:07:07.2365977Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:07:07.2366243Z env:
+2026-10-20T15:07:07.2366527Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:07.2367035Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:07:07.2367525Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:07.2367941Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:07.2368378Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:07:07.2368774Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:07:07.2369117Z ##[endgroup]
+2026-10-20T15:07:07.6206903Z {"timestamp": "2026-10-20T15:07:07.620260+00:00", "level": "INFO", "logger": "__main__", "message": "event=data_acquisition_entry output=/home/runner/work/heart-disease-prediction/heart-disease-prediction/data/raw/heart_disease.csv"}
+2026-10-20T15:07:07.6209691Z {"timestamp": "2026-10-20T15:07:07.620398+00:00", "level": "INFO", "logger": "__main__", "message": "event=data_fetch_start dataset=uci_heart_disease dataset_id=45"}
+2026-10-20T15:07:08.1933709Z {"timestamp": "2026-10-20T15:07:08.193109+00:00", "level": "INFO", "logger": "__main__", "message": "event=data_fetch_complete rows=303 columns=14 missing_values=6"}
+2026-10-20T15:07:08.1954478Z {"timestamp": "2026-10-20T15:07:08.195187+00:00", "level": "INFO", "logger": "__main__", "message": "event=data_acquisition_exit output=/home/runner/work/heart-disease-prediction/heart-disease-prediction/data/raw/heart_disease.csv rows=303"}
+2026-10-20T15:07:08.1957127Z Saved 303 rows to /home/runner/work/heart-disease-prediction/heart-disease-prediction/data/raw/heart_disease.csv

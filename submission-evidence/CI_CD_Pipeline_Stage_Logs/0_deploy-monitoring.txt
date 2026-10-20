@@ -1,0 +1,1809 @@
+﻿2026-10-20T15:39:17.9088979Z Current runner version: '2.337.0'
+2026-10-20T15:39:17.9114117Z ##[group]Runner Image Provisioner
+2026-10-20T15:39:17.9115164Z Hosted Compute Agent
+2026-10-20T15:39:17.9115779Z Version: 20261012.601
+2026-10-20T15:39:17.9116475Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-20T15:39:17.9117249Z Build Date: 2026-10-12T17:48:21Z
+2026-10-20T15:39:17.9117987Z Worker ID: {fe7f1f34-7dd7-48ee-a9e3-004eb3cb4791}
+2026-10-20T15:39:17.9119250Z Region: westus
+2026-10-20T15:39:17.9119884Z Cloud: Azure
+2026-10-20T15:39:17.9120493Z ##[endgroup]
+2026-10-20T15:39:17.9122214Z ##[group]Operating System
+2026-10-20T15:39:17.9122911Z Ubuntu
+2026-10-20T15:39:17.9123610Z 24.04.5
+2026-10-20T15:39:17.9124231Z LTS
+2026-10-20T15:39:17.9124845Z ##[endgroup]
+2026-10-20T15:39:17.9125440Z ##[group]Runner Image
+2026-10-20T15:39:17.9126111Z Image: ubuntu-24.04
+2026-10-20T15:39:17.9126878Z Version: 20261012.334.1
+2026-10-20T15:39:17.9128185Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-20T15:39:17.9129804Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-20T15:39:17.9130840Z ##[endgroup]
+2026-10-20T15:39:17.9132498Z ##[group]GITHUB_TOKEN Permissions
+2026-10-20T15:39:17.9134417Z Contents: read
+2026-10-20T15:39:17.9135142Z Metadata: read
+2026-10-20T15:39:17.9135756Z ##[endgroup]
+2026-10-20T15:39:17.9137807Z Secret source: Actions
+2026-10-20T15:39:17.9138817Z Cache mode: write
+2026-10-20T15:39:17.9139572Z Prepare workflow directory
+2026-10-20T15:39:17.9532975Z Prepare all required actions
+2026-10-20T15:39:17.9582063Z Getting action download info
+2026-10-20T15:39:18.3640707Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-20T15:39:18.4650195Z Download action repository 'google-github-actions/auth@v2' (SHA:c200f3691d83b41bf9bbd8638997a462592937ed)
+2026-10-20T15:39:18.8155195Z Download action repository 'google-github-actions/setup-gcloud@v2' (SHA:e427ad8a34f8676edf47cf7d7925499adf3eb74f)
+2026-10-20T15:39:19.3272304Z Download action repository 'google-github-actions/get-gke-credentials@v2' (SHA:64bc7249bbcf78056bb92f14d3cedc2da193946c)
+2026-10-20T15:39:19.6426938Z Download action repository 'azure/setup-helm@v4' (SHA:1a275c3b69536ee54be43f2070a358922e12c8d4)
+2026-10-20T15:39:20.0859645Z Complete job name: deploy-monitoring
+2026-10-20T15:39:20.1868412Z ##[group]Run actions/checkout@v4
+2026-10-20T15:39:20.1869781Z with:
+2026-10-20T15:39:20.1870690Z   ref: 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:39:20.1872371Z   repository: rajcreativeworks/heart-disease-prediction
+2026-10-20T15:39:20.1881243Z   token: ***
+2026-10-20T15:39:20.1882348Z   ssh-strict: true
+2026-10-20T15:39:20.1883216Z   ssh-user: git
+2026-10-20T15:39:20.1884140Z   persist-credentials: true
+2026-10-20T15:39:20.1885115Z   clean: true
+2026-10-20T15:39:20.1886010Z   sparse-checkout-cone-mode: true
+2026-10-20T15:39:20.1887051Z   fetch-depth: 1
+2026-10-20T15:39:20.1887908Z   fetch-tags: false
+2026-10-20T15:39:20.1888842Z   show-progress: true
+2026-10-20T15:39:20.1889722Z   lfs: false
+2026-10-20T15:39:20.1890530Z   submodules: false
+2026-10-20T15:39:20.1891427Z   set-safe-directory: true
+2026-10-20T15:39:20.1892694Z   allow-unsafe-pr-checkout: false
+2026-10-20T15:39:20.1894044Z env:
+2026-10-20T15:39:20.1894866Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:20.1895964Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:20.1897035Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:20.1897972Z ##[endgroup]
+2026-10-20T15:39:20.3024604Z Syncing repository: rajcreativeworks/heart-disease-prediction
+2026-10-20T15:39:20.3029538Z ##[group]Getting Git version info
+2026-10-20T15:39:20.3032721Z Working directory is '/home/runner/work/heart-disease-prediction/heart-disease-prediction'
+2026-10-20T15:39:20.3036885Z [command]/usr/bin/git version
+2026-10-20T15:39:20.3041190Z git version 2.55.0
+2026-10-20T15:39:20.3045927Z ##[endgroup]
+2026-10-20T15:39:20.3057394Z Temporarily overriding HOME='/home/runner/work/_temp/ed5f29a8-2eac-432f-b201-93e9e2f476a9' before making global git config changes
+2026-10-20T15:39:20.3062822Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T15:39:20.3066823Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:39:20.3130882Z Deleting the contents of '/home/runner/work/heart-disease-prediction/heart-disease-prediction'
+2026-10-20T15:39:20.3134881Z ##[group]Initializing the repository
+2026-10-20T15:39:20.3141385Z [command]/usr/bin/git init /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:39:20.3288118Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-20T15:39:20.3294764Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-20T15:39:20.3301121Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-20T15:39:20.3307313Z hint: call:
+2026-10-20T15:39:20.3311150Z hint:
+2026-10-20T15:39:20.3317127Z hint: 	git config --global init.defaultBranch <name>
+2026-10-20T15:39:20.3322632Z hint:
+2026-10-20T15:39:20.3326781Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-20T15:39:20.3330709Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-20T15:39:20.3334743Z hint:
+2026-10-20T15:39:20.3338321Z hint: 	git branch -m <name>
+2026-10-20T15:39:20.3340738Z hint:
+2026-10-20T15:39:20.3345518Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-20T15:39:20.3351981Z Initialized empty Git repository in /home/runner/work/heart-disease-prediction/heart-disease-prediction/.git/
+2026-10-20T15:39:20.3359817Z [command]/usr/bin/git remote add origin https://github.com/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:39:20.3384456Z ##[endgroup]
+2026-10-20T15:39:20.3386998Z ##[group]Disabling automatic garbage collection
+2026-10-20T15:39:20.3389337Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-20T15:39:20.3424407Z ##[endgroup]
+2026-10-20T15:39:20.3426841Z ##[group]Setting up auth
+2026-10-20T15:39:20.3432694Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T15:39:20.3468058Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T15:39:20.3922486Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T15:39:20.3960672Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T15:39:20.4227111Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T15:39:20.4279061Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T15:39:20.4661066Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-20T15:39:20.4703786Z ##[endgroup]
+2026-10-20T15:39:20.4706792Z ##[group]Fetching the repository
+2026-10-20T15:39:20.4717759Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:39:20.8345169Z From https://github.com/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:39:20.8346382Z  * branch            8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4 -> FETCH_HEAD
+2026-10-20T15:39:20.8359646Z ##[endgroup]
+2026-10-20T15:39:20.8360151Z ##[group]Determining the checkout info
+2026-10-20T15:39:20.8360660Z ##[endgroup]
+2026-10-20T15:39:20.8363030Z [command]/usr/bin/git sparse-checkout disable
+2026-10-20T15:39:20.8427851Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-20T15:39:20.8459284Z ##[group]Checking out the ref
+2026-10-20T15:39:20.8464260Z [command]/usr/bin/git checkout --progress --force 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:39:20.8543489Z Note: switching to '8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4'.
+2026-10-20T15:39:20.8543935Z 
+2026-10-20T15:39:20.8544229Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-20T15:39:20.8544852Z changes and commit them, and you can discard any commits you make in this
+2026-10-20T15:39:20.8545542Z state without impacting any branches by switching back to a branch.
+2026-10-20T15:39:20.8546127Z 
+2026-10-20T15:39:20.8546551Z If you want to create a new branch to retain commits you create, you may
+2026-10-20T15:39:20.8547478Z do so (now or later) by using -c with the switch command. Example:
+2026-10-20T15:39:20.8548031Z 
+2026-10-20T15:39:20.8548274Z   git switch -c <new-branch-name>
+2026-10-20T15:39:20.8548666Z 
+2026-10-20T15:39:20.8548903Z Or undo this operation with:
+2026-10-20T15:39:20.8549302Z 
+2026-10-20T15:39:20.8549527Z   git switch -
+2026-10-20T15:39:20.8549840Z 
+2026-10-20T15:39:20.8550328Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-20T15:39:20.8550985Z 
+2026-10-20T15:39:20.8551218Z HEAD is now at 8f8c244 Modified
+2026-10-20T15:39:20.8587879Z ##[endgroup]
+2026-10-20T15:39:20.8629189Z [command]/usr/bin/git log -1 --format=%H
+2026-10-20T15:39:20.8656122Z 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:39:20.8871243Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:20.8871859Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:20.8872170Z [36;1m[0m
+2026-10-20T15:39:20.8872436Z [36;1mtest -n "$GCP_PROVIDER" || {[0m
+2026-10-20T15:39:20.8872901Z [36;1m  echo "Missing repository variable GCP_WORKLOAD_IDENTITY_PROVIDER"[0m
+2026-10-20T15:39:20.8873343Z [36;1m  exit 1[0m
+2026-10-20T15:39:20.8873595Z [36;1m}[0m
+2026-10-20T15:39:20.8873830Z [36;1m[0m
+2026-10-20T15:39:20.8874106Z [36;1mtest -n "$GCP_SERVICE_ACCOUNT" || {[0m
+2026-10-20T15:39:20.8874544Z [36;1m  echo "Missing repository variable GCP_SERVICE_ACCOUNT"[0m
+2026-10-20T15:39:20.8874936Z [36;1m  exit 1[0m
+2026-10-20T15:39:20.8875184Z [36;1m}[0m
+2026-10-20T15:39:20.8875418Z [36;1m[0m
+2026-10-20T15:39:20.8875699Z [36;1mtest -n "$GRAFANA_ADMIN_PASSWORD" || {[0m
+2026-10-20T15:39:20.8876137Z [36;1m  echo "Missing GRAFANA_ADMIN_PASSWORD repository secret"[0m
+2026-10-20T15:39:20.8876547Z [36;1m  exit 1[0m
+2026-10-20T15:39:20.8876842Z [36;1m}[0m
+2026-10-20T15:39:20.8877084Z [36;1m[0m
+2026-10-20T15:39:20.8877381Z [36;1mtest -f monitoring/prometheus/values.yaml[0m
+2026-10-20T15:39:20.8877789Z [36;1mtest -f monitoring/grafana/values.yaml[0m
+2026-10-20T15:39:20.8878156Z [36;1mpython -m json.tool \[0m
+2026-10-20T15:39:20.8878570Z [36;1m  monitoring/grafana/dashboards/heart-disease-api.json \[0m
+2026-10-20T15:39:20.8878999Z [36;1m  > /dev/null[0m
+2026-10-20T15:39:20.9176763Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:20.9177206Z env:
+2026-10-20T15:39:20.9177577Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:20.9178038Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:20.9178506Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:20.9179342Z   GCP_PROVIDER: projects/119234187259/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+2026-10-20T15:39:20.9180412Z   GCP_SERVICE_ACCOUNT: github-gke-deployer@heart-risk-mlops.iam.gserviceaccount.com
+2026-10-20T15:39:20.9181239Z   GRAFANA_ADMIN_PASSWORD: ***
+2026-10-20T15:39:20.9181884Z ##[endgroup]
+2026-10-20T15:39:20.9721202Z ##[group]Run google-github-actions/auth@v2
+2026-10-20T15:39:20.9721915Z with:
+2026-10-20T15:39:20.9722519Z   workload_identity_provider: projects/119234187259/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+2026-10-20T15:39:20.9723356Z   service_account: github-gke-deployer@heart-risk-mlops.iam.gserviceaccount.com
+2026-10-20T15:39:20.9723853Z   create_credentials_file: true
+2026-10-20T15:39:20.9724177Z   export_environment_variables: true
+2026-10-20T15:39:20.9724696Z   universe: googleapis.com
+2026-10-20T15:39:20.9724996Z   cleanup_credentials: true
+2026-10-20T15:39:20.9725299Z   access_token_lifetime: 3600s
+2026-10-20T15:39:20.9726048Z   access_token_scopes: https://www.googleapis.com/auth/cloud-platform
+2026-10-20T15:39:20.9726796Z   id_token_include_email: false
+2026-10-20T15:39:20.9727092Z env:
+2026-10-20T15:39:20.9727367Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:20.9727708Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:20.9728117Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:20.9728426Z ##[endgroup]
+2026-10-20T15:39:21.3683498Z Created credentials file at "/home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json"
+2026-10-20T15:39:21.5324373Z ##[group]Run google-github-actions/setup-gcloud@v2
+2026-10-20T15:39:21.5324795Z with:
+2026-10-20T15:39:21.5325042Z   version: latest
+2026-10-20T15:39:21.5325308Z   skip_install: false
+2026-10-20T15:39:21.5325595Z   skip_tool_cache: false
+2026-10-20T15:39:21.5325886Z env:
+2026-10-20T15:39:21.5326138Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:21.5326465Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:21.5326795Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:21.5327474Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:21.5328525Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:21.5329488Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:21.5330162Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:21.5330517Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:21.5330853Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:21.5331180Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:21.5331669Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:21.5332006Z ##[endgroup]
+2026-10-20T15:39:22.4976809Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/7a9597b4-6037-4c2b-ad67-ae0e1bb1000f -f /home/runner/work/_temp/ca5eccf6-bb3a-4c8d-8786-6eab66f5fa49
+2026-10-20T15:39:40.6712929Z Successfully authenticated
+2026-10-20T15:39:40.7005078Z ##[group]Run google-github-actions/get-gke-credentials@v2
+2026-10-20T15:39:40.7005474Z with:
+2026-10-20T15:39:40.7005707Z   cluster_name: heart-disease-cluster
+2026-10-20T15:39:40.7006003Z   location: asia-south1
+2026-10-20T15:39:40.7006252Z   project_id: heart-risk-mlops
+2026-10-20T15:39:40.7006523Z   use_auth_provider: false
+2026-10-20T15:39:40.7006764Z   use_internal_ip: false
+2026-10-20T15:39:40.7007015Z   use_connect_gateway: false
+2026-10-20T15:39:40.7007271Z   use_dns_based_endpoint: false
+2026-10-20T15:39:40.7007534Z env:
+2026-10-20T15:39:40.7028418Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:40.7029004Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:40.7029508Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:40.7030580Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:40.7032405Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:40.7033966Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:40.7034970Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:40.7035447Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:40.7035888Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:40.7036308Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:40.7036741Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:40.7037334Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:40.7037972Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:40.7038643Z ##[endgroup]
+2026-10-20T15:39:42.9277652Z Successfully created and exported "KUBECONFIG" at: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:42.9397892Z ##[group]Run azure/setup-helm@v4
+2026-10-20T15:39:42.9398196Z with:
+2026-10-20T15:39:42.9398466Z   version: latest
+2026-10-20T15:39:42.9400986Z   token: ***
+2026-10-20T15:39:42.9401249Z   downloadBaseURL: https://get.helm.sh
+2026-10-20T15:39:42.9401986Z env:
+2026-10-20T15:39:42.9402218Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:42.9402520Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:42.9402806Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:42.9403439Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:42.9404420Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:42.9405322Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:42.9405946Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9406253Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9406535Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9406819Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9407093Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:42.9407451Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:42.9407840Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:42.9408398Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:42.9409209Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:42.9409761Z ##[endgroup]
+2026-10-20T15:39:43.0482531Z ##[group]Installing v4.3.1
+2026-10-20T15:39:43.0493261Z Downloading 'v4.3.1' from 'https://get.helm.sh'
+2026-10-20T15:39:43.2098483Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/a6eecbb5-61ef-4d0f-8f9d-635d294640f8 -f /home/runner/work/_temp/3c821912-def3-48a1-ac50-616b8504deb2
+2026-10-20T15:39:43.6612734Z ##[endgroup]
+2026-10-20T15:39:43.6613743Z Helm tool version 'v4.3.1' has been cached at /opt/hostedtoolcache/helm/4.3.1/x64/linux-amd64/helm
+2026-10-20T15:39:43.6731033Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:43.6731362Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:43.6731987Z [36;1mkubectl apply --dry-run=server -f k8s/service.yaml[0m
+2026-10-20T15:39:43.6795262Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:43.6795553Z env:
+2026-10-20T15:39:43.6795786Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:43.6796095Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:43.6796415Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:43.6797116Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:43.6798246Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:43.6799267Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:43.6799955Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:43.6800284Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:43.6800591Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:43.6800895Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:43.6801198Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:43.6801893Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:43.6802323Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:43.6802945Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:43.6804039Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:43.6804665Z ##[endgroup]
+2026-10-20T15:39:47.9985597Z service/heart-disease-api unchanged (server dry run)
+2026-10-20T15:39:48.0048773Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:48.0049127Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:48.0049443Z [36;1mkubectl create namespace monitoring \[0m
+2026-10-20T15:39:48.0049824Z [36;1m  --dry-run=client -o yaml | kubectl apply -f -[0m
+2026-10-20T15:39:48.0112961Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:48.0113245Z env:
+2026-10-20T15:39:48.0113476Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:48.0113790Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:48.0114097Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:48.0114791Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:48.0115927Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:48.0116984Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:48.0117658Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0117985Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0118300Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0118598Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0118897Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0119302Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:48.0119717Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:48.0120348Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:48.0121288Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:48.0122161Z ##[endgroup]
+2026-10-20T15:39:49.7333003Z namespace/monitoring unchanged
+2026-10-20T15:39:49.7395864Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:49.7396230Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:49.7396544Z [36;1mkubectl create secret generic grafana-admin \[0m
+2026-10-20T15:39:49.7396900Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:39:49.7397218Z [36;1m  --from-literal=admin-user=admin \[0m
+2026-10-20T15:39:49.7398028Z [36;1m  --from-literal=admin-*** \[0m
+2026-10-20T15:39:49.7398399Z [36;1m  --dry-run=client -o yaml | kubectl apply -f -[0m
+2026-10-20T15:39:49.7461643Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:49.7462146Z env:
+2026-10-20T15:39:49.7462376Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:49.7462691Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:49.7462999Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:49.7463704Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:49.7464864Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:49.7465880Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:49.7466535Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:49.7466867Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:49.7467172Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:49.7467469Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:49.7467770Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:49.7468154Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:49.7468564Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:49.7469189Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:49.7470322Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:49.7471138Z   GRAFANA_ADMIN_PASSWORD: ***
+2026-10-20T15:39:49.7471423Z ##[endgroup]
+2026-10-20T15:39:51.4846633Z secret/grafana-admin unchanged
+2026-10-20T15:39:51.4909967Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:51.4910321Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:51.4910633Z [36;1mhelm repo add prometheus-community \[0m
+2026-10-20T15:39:51.4911090Z [36;1m  https://prometheus-community.github.io/helm-charts[0m
+2026-10-20T15:39:51.4911889Z [36;1mhelm repo add grafana https://grafana.github.io/helm-charts[0m
+2026-10-20T15:39:51.4912329Z [36;1mhelm repo update[0m
+2026-10-20T15:39:51.4975093Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:51.4975394Z env:
+2026-10-20T15:39:51.4975636Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:51.4975955Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:51.4976303Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:51.4977045Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:51.4978276Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:51.4979376Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:51.4980096Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4980444Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4980772Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4981088Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4981410Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:51.4982090Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:51.4982532Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:51.4983211Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:51.4984208Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:51.4984807Z ##[endgroup]
+2026-10-20T15:39:52.0303358Z "prometheus-community" has been added to your repositories
+2026-10-20T15:39:52.4356576Z "grafana" has been added to your repositories
+2026-10-20T15:39:52.4705005Z Hang tight while we grab the latest from your chart repositories...
+2026-10-20T15:39:52.8877181Z ...Successfully got an update from the "grafana" chart repository
+2026-10-20T15:39:53.0180533Z ...Successfully got an update from the "prometheus-community" chart repository
+2026-10-20T15:39:53.0181833Z Update Complete. ⎈Happy Helming!⎈
+2026-10-20T15:39:53.0242198Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:53.0242568Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:53.0242996Z [36;1mhelm upgrade --install prometheus prometheus-community/prometheus \[0m
+2026-10-20T15:39:53.0243452Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:39:53.0243732Z [36;1m  --create-namespace \[0m
+2026-10-20T15:39:53.0244066Z [36;1m  --values monitoring/prometheus/values.yaml \[0m
+2026-10-20T15:39:53.0244380Z [36;1m  --debug \[0m
+2026-10-20T15:39:53.0244592Z [36;1m  --wait \[0m
+2026-10-20T15:39:53.0244807Z [36;1m  --timeout 10m[0m
+2026-10-20T15:39:53.0307362Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:53.0307643Z env:
+2026-10-20T15:39:53.0307884Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:53.0308191Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:53.0308505Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:53.0309251Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:53.0310374Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:53.0311824Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:53.0312497Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0312826Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0313149Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0313451Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0313752Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:53.0314177Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:53.0314601Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:53.0315234Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:53.0316177Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:53.0316805Z ##[endgroup]
+2026-10-20T15:39:53.7817603Z level=DEBUG msg="getting history for release" release=prometheus
+2026-10-20T15:39:53.7818899Z level=DEBUG msg="getting release history" name=prometheus
+2026-10-20T15:39:54.9210486Z level=DEBUG msg="set up default downloader cache"
+2026-10-20T15:39:55.3754027Z level=DEBUG msg="attempting to download chart" ref=prometheus-community/prometheus version=""
+2026-10-20T15:39:55.3755655Z level=DEBUG msg=fetching url=https://github.com/prometheus-community/helm-charts/releases/download/prometheus-29.37.0/prometheus-29.37.0.tgz
+2026-10-20T15:39:55.5618354Z level=DEBUG msg="fetch complete" url=https://github.com/prometheus-community/helm-charts/releases/download/prometheus-29.37.0/prometheus-29.37.0.tgz status="200 OK" content-length=91978
+2026-10-20T15:39:55.5634736Z level=DEBUG msg="put downloaded chart in cache" id=df07dce99f49ea300c5bb8dadb167a09141bb7dbdc6609727157677434e4fbe5
+2026-10-20T15:39:55.7951990Z level=DEBUG msg="preparing upgrade" name=prometheus
+2026-10-20T15:39:55.7952835Z level=DEBUG msg="getting last revision" name=prometheus
+2026-10-20T15:39:55.7953385Z level=DEBUG msg="getting release history" name=prometheus
+2026-10-20T15:39:56.9886300Z level=DEBUG msg="chart name" chart-name=prometheus
+2026-10-20T15:39:56.9990103Z level=DEBUG msg="unmarshalled JSON schema" schema="{\n    \"$schema\": \"http://json-schema.org/schema#\",\n    \"type\": \"object\",\n    \"properties\": {\n        \"alertRelabelConfigs\": {\n            \"type\": \"object\"\n        },\n        \"alertmanager\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"persistence\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"size\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"podSecurityContext\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"fsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsNonRoot\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"runAsUser\": {\n                            \"type\": \"integer\"\n                        }\n                    }\n                }\n            }\n        },\n        \"configmapReload\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"env\": {\n                    \"type\": \"array\"\n                },\n                \"prometheus\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"containerSecurityContext\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"extraArgs\": {\n                            \"type\": \"object\"\n                        },\n                        \"extraConfigmapMounts\": {\n                            \"type\": \"array\"\n                        },\n                        \"extraVolumeDirs\": {\n                            \"type\": \"array\"\n                        },\n                        \"extraVolumeMounts\": {\n                            \"type\": \"array\"\n                        },\n                        \"image\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"digest\": {\n                                    \"type\": \"string\"\n                                },\n                                \"pullPolicy\": {\n                                    \"type\": \"string\"\n                                },\n                                \"repository\": {\n                                    \"type\": \"string\"\n                                },\n                                \"tag\": {\n                                    \"type\": \"string\"\n                                }\n                            }\n                        },\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"resources\": {\n                            \"type\": \"object\"\n                        }\n                    }\n                },\n                \"reloadUrl\": {\n                    \"type\": \"string\"\n                }\n            }\n        },\n        \"extraManifests\": {\n            \"type\": \"array\"\n        },\n        \"extraScrapeConfigs\": {\n            \"type\": \"string\"\n        },\n        \"forceNamespace\": {\n            \"type\": \"string\"\n        },\n        \"imagePullSecrets\": {\n            \"type\": \"array\"\n        },\n        \"kube-state-metrics\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                }\n            }\n        },\n        \"networkPolicy\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                }\n            }\n        },\n        \"prometheus-node-exporter\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"containerSecurityContext\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"allowPrivilegeEscalation\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                },\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"rbac\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"pspEnabled\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                }\n            }\n        },\n        \"prometheus-pushgateway\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"enabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"serviceAnnotations\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"prometheus.io/probe\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                }\n            }\n        },\n        \"rbac\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"create\": {\n                    \"type\": \"boolean\"\n                }\n            }\n        },\n        \"ruleFiles\": {\n            \"type\": \"object\"\n        },\n        \"server\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"affinity\": {\n                    \"type\": \"object\"\n                },\n                \"alertmanagers\": {\n                    \"type\": \"array\"\n                },\n                \"baseURL\": {\n                    \"type\": \"string\"\n                },\n                \"clusterRoleNameOverride\": {\n                    \"type\": \"string\"\n                },\n                \"command\": {\n                    \"type\": \"array\"\n                },\n                \"configMapAnnotations\": {\n                    \"type\": \"object\"\n                },\n                \"configMapOverrideName\": {\n                    \"type\": \"string\"\n                },\n                \"configPath\": {\n                    \"type\": \"string\"\n                },\n                \"containerSecurityContext\": {\n                    \"type\": \"object\"\n                },\n                \"defaultFlagsOverride\": {\n                    \"type\": \"array\"\n                },\n                \"deploymentAnnotations\": {\n                    \"type\": \"object\"\n                },\n                \"dnsConfig\": {\n                    \"type\": \"object\"\n                },\n                \"dnsPolicy\": {\n                    \"type\": \"string\"\n                },\n                \"emptyDir\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"sizeLimit\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"enableServiceLinks\": {\n                    \"type\": \"boolean\"\n                },\n                \"env\": {\n                    \"type\": \"array\"\n                },\n                \"exemplars\": {\n                    \"type\": \"object\"\n                },\n                \"extraArgs\": {\n                    \"type\": \"object\"\n                },\n                \"extraConfigmapLabels\": {\n                    \"type\": \"object\"\n                },\n                \"extraConfigmapMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraFlags\": {\n                    \"type\": \"array\",\n                    \"items\": {\n                        \"type\": \"string\"\n                    }\n                },\n                \"extraHostPathMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraInitContainers\": {\n                    \"type\": \"array\"\n                },\n                \"extraSecretMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraVolumeMounts\": {\n                    \"type\": \"array\"\n                },\n                \"extraVolumes\": {\n                    \"type\": \"array\"\n                },\n                \"fullnameOverride\": {\n                    \"type\": \"string\"\n                },\n                \"global\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"evaluation_interval\": {\n                            \"type\": \"string\"\n                        },\n                        \"scrape_interval\": {\n                            \"type\": \"string\"\n                        },\n                        \"scrape_timeout\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"hostAliases\": {\n                    \"type\": \"array\"\n                },\n                \"hostNetwork\": {\n                    \"type\": \"boolean\"\n                },\n                \"image\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"digest\": {\n                            \"type\": \"string\"\n                        },\n                      \"distroless\": {\n                        \"type\": \"boolean\"\n                      },\n                        \"pullPolicy\": {\n                            \"type\": \"string\"\n                        },\n                        \"repository\": {\n                            \"type\": \"string\"\n                        },\n                        \"tag\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"ingress\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"extraLabels\": {\n                            \"type\": \"object\"\n                        },\n                        \"extraPaths\": {\n                            \"type\": \"array\"\n                        },\n                        \"hosts\": {\n                            \"type\": \"array\"\n                        },\n                        \"path\": {\n                            \"type\": \"string\"\n                        },\n                        \"pathType\": {\n                            \"type\": \"string\"\n                        },\n                        \"tls\": {\n                            \"type\": \"array\"\n                        }\n                    }\n                },\n                \"livenessProbeFailureThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbeInitialDelay\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbePeriodSeconds\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbeSuccessThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"livenessProbeTimeout\": {\n                    \"type\": \"integer\"\n                },\n                \"name\": {\n                    \"type\": \"string\"\n                },\n                \"nodeSelector\": {\n                    \"type\": \"object\"\n                },\n                \"persistentVolume\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"accessModes\": {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"string\"\n                            }\n                        },\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"existingClaim\": {\n                            \"type\": \"string\"\n                        },\n                        \"labels\": {\n                            \"type\": \"object\"\n                        },\n                        \"mountPath\": {\n                            \"type\": \"string\"\n                        },\n                        \"size\": {\n                            \"type\": \"string\"\n                        },\n                        \"statefulSetNameOverride\": {\n                            \"type\": \"string\"\n                        },\n                        \"subPath\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"podAnnotations\": {\n                    \"type\": \"object\"\n                },\n                \"podAntiAffinity\": {\n                    \"type\": \"string\",\n                    \"enum\": [\"\", \"soft\", \"hard\"],\n                    \"default\": \"\"\n                },\n                \"podAntiAffinityTopologyKey\": {\n                    \"type\": \"string\"\n                },\n                \"podDisruptionBudget\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"maxUnavailable\": {\n                            \"type\": [\n                                \"string\",\n                                \"integer\"\n                            ]\n                        }\n                    }\n                },\n                \"podLabels\": {\n                    \"type\": \"object\"\n                },\n                \"portName\": {\n                    \"type\": \"string\"\n                },\n                \"prefixURL\": {\n                    \"type\": \"string\"\n                },\n                \"priorityClassName\": {\n                    \"type\": \"string\"\n                },\n                \"runtimeClassName\": {\n                    \"type\": \"string\"\n                },\n                \"probeHeaders\": {\n                    \"type\": \"array\"\n                },\n                \"probeScheme\": {\n                    \"type\": \"string\"\n                },\n                \"readinessProbeFailureThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbeInitialDelay\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbePeriodSeconds\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbeSuccessThreshold\": {\n                    \"type\": \"integer\"\n                },\n                \"readinessProbeTimeout\": {\n                    \"type\": \"integer\"\n                },\n                \"releaseNamespace\": {\n                    \"type\": \"boolean\"\n                },\n                \"remoteRead\": {\n                    \"type\": \"array\"\n                },\n                \"remoteWrite\": {\n                    \"type\": \"array\"\n                },\n                \"replicaCount\": {\n                    \"type\": \"integer\"\n                },\n                \"resources\": {\n                    \"type\": \"object\"\n                },\n                \"retention\": {\n                    \"type\": \"string\"\n                },\n                \"retentionSize\": {\n                    \"type\": \"string\"\n                },\n                \"revisionHistoryLimit\": {\n                    \"type\": \"integer\"\n                },\n                \"securityContext\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"fsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsGroup\": {\n                            \"type\": \"integer\"\n                        },\n                        \"runAsNonRoot\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"runAsUser\": {\n                            \"type\": \"integer\"\n                        }\n                    }\n                },\n                \"service\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"additionalPorts\": {\n                            \"type\": \"array\"\n                        },\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"clusterIP\": {\n                            \"type\": \"string\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"externalIPs\": {\n                            \"type\": \"array\"\n                        },\n                        \"gRPC\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"enabled\": {\n                                    \"type\": \"boolean\"\n                                },\n                                \"servicePort\": {\n                                    \"type\": \"integer\"\n                                }\n                            }\n                        },\n                        \"labels\": {\n                            \"type\": \"object\"\n                        },\n                        \"loadBalancerIP\": {\n                            \"type\": \"string\"\n                        },\n                        \"loadBalancerSourceRanges\": {\n                            \"type\": \"array\"\n                        },\n                        \"servicePort\": {\n                            \"type\": \"integer\"\n                        },\n                        \"sessionAffinity\": {\n                            \"type\": \"string\"\n                        },\n                        \"statefulsetReplica\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"enabled\": {\n                                    \"type\": \"boolean\"\n                                },\n                                \"replica\": {\n                                    \"type\": \"integer\"\n                                }\n                            }\n                        },\n                        \"type\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"sidecarContainers\": {\n                    \"type\": \"object\"\n                },\n                \"sidecarTemplateValues\": {\n                    \"type\": \"object\"\n                },\n                \"startupProbe\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"failureThreshold\": {\n                            \"type\": \"integer\"\n                        },\n                        \"periodSeconds\": {\n                            \"type\": \"integer\"\n                        },\n                        \"timeoutSeconds\": {\n                            \"type\": \"integer\"\n                        }\n                    }\n                },\n                \"statefulSet\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"headless\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"annotations\": {\n                                    \"type\": \"object\"\n                                },\n                                \"gRPC\": {\n                                    \"type\": \"object\",\n                                    \"properties\": {\n                                        \"enabled\": {\n                                            \"type\": \"boolean\"\n                                        },\n                                        \"servicePort\": {\n                                            \"type\": \"integer\"\n                                        }\n                                    }\n                                },\n                                \"labels\": {\n                                    \"type\": \"object\"\n                                },\n                                \"servicePort\": {\n                                    \"type\": \"integer\"\n                                }\n                            }\n                        },\n                        \"labels\": {\n                            \"type\": \"object\"\n                        },\n                        \"podManagementPolicy\": {\n                            \"type\": \"string\"\n                        },\n                        \"pvcDeleteOnStsDelete\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"pvcDeleteOnStsScale\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                },\n                \"storagePath\": {\n                    \"type\": \"string\"\n                },\n                \"strategy\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"type\": {\n                            \"type\": \"string\"\n                        }\n                    }\n                },\n                \"tcpSocketProbeEnabled\": {\n                    \"type\": \"boolean\"\n                },\n                \"terminationGracePeriodSeconds\": {\n                    \"type\": \"integer\"\n                },\n                \"tolerations\": {\n                    \"type\": \"array\"\n                },\n                \"topologySpreadConstraints\": {\n                    \"type\": \"array\"\n                },\n                \"tsdb\": {\n                    \"type\": \"object\"\n                },\n                \"verticalAutoscaler\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"enabled\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                }\n            }\n        },\n        \"scrapeConfigFiles\": {\n            \"type\": \"array\"\n        },\n        \"scrapeConfigs\": {\n            \"type\": \"object\",\n            \"additionalProperties\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"pre_relabel_configs\": {\n                        \"description\": \"Templated YAML block-scalar relabel rules inserted before relabel_configs.\",\n                        \"type\": \"string\"\n                    },\n                    \"post_relabel_configs\": {\n                        \"description\": \"Templated YAML block-scalar relabel rules inserted after relabel_configs.\",\n                        \"type\": \"string\"\n                    }\n                }\n            }\n        },\n        \"serverFiles\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"alerting_rules.yml\": {\n                    \"type\": \"object\"\n                },\n                \"alerts\": {\n                    \"type\": \"object\"\n                },\n                \"prometheus.yml\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"rule_files\": {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"string\"\n                            }\n                        },\n                        \"scrape_configs\": {\n                            \"type\": \"array\",\n                            \"items\": {\n                                \"type\": \"object\",\n                                \"properties\": {\n                                    \"job_name\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"static_configs\": {\n                                        \"type\": \"array\",\n                                        \"items\": {\n                                            \"type\": \"object\",\n                                            \"properties\": {\n                                                \"targets\": {\n                                                    \"type\": \"array\",\n                                                    \"items\": {\n                                                        \"type\": \"string\"\n                                                    }\n                                                }\n                                            }\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                },\n                \"recording_rules.yml\": {\n                    \"type\": \"object\"\n                },\n                \"rules\": {\n                    \"type\": \"object\"\n                }\n            }\n        },\n        \"serviceAccounts\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"server\": {\n                    \"type\": \"object\",\n                    \"properties\": {\n                        \"annotations\": {\n                            \"type\": \"object\"\n                        },\n                        \"create\": {\n                            \"type\": \"boolean\"\n                        },\n                        \"name\": {\n                            \"type\": \"string\"\n                        },\n                        \"automountServiceAccountToken\": {\n                            \"type\": \"boolean\"\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\n"
+2026-10-20T15:39:57.0089060Z level=DEBUG msg="number of dependencies in the chart" chart=prometheus dependencies=0
+2026-10-20T15:39:57.0109095Z level=DEBUG msg="determined release apply method" server_side_apply=true previous_release_apply_method=ssa
+2026-10-20T15:39:58.2525376Z level=DEBUG msg="performing update" name=prometheus
+2026-10-20T15:39:58.6133285Z level=DEBUG msg="creating upgraded release" name=prometheus
+2026-10-20T15:39:58.6133897Z level=DEBUG msg="creating release" key=sh.helm.release.v1.prometheus.v6
+2026-10-20T15:39:58.6134398Z level=DEBUG msg="getting release history" name=prometheus
+2026-10-20T15:39:59.3118766Z level=DEBUG msg="using server-side apply for resource creation" forceConflicts=false dryRun=false fieldValidationDirective=Strict
+2026-10-20T15:39:59.3120523Z level=DEBUG msg="using server-side apply for resource update" forceConflicts=false dryRun=false fieldValidationDirective=Strict upgradeClientSideFieldManager=false
+2026-10-20T15:39:59.3121967Z level=DEBUG msg="checking resources for changes" resources=6
+2026-10-20T15:39:59.8089072Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="/v1, Kind=ServiceAccount"
+2026-10-20T15:40:00.3091311Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="/v1, Kind=ConfigMap"
+2026-10-20T15:40:00.8198072Z level=DEBUG msg="Patched resource" namespace="" name=prometheus-server gvk="rbac.authorization.k8s.io/v1, Kind=ClusterRole"
+2026-10-20T15:40:01.3145643Z level=DEBUG msg="Patched resource" namespace="" name=prometheus-server gvk="rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding"
+2026-10-20T15:40:01.8099692Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="/v1, Kind=Service"
+2026-10-20T15:40:02.3512526Z level=DEBUG msg="Patched resource" namespace=monitoring name=prometheus-server gvk="apps/v1, Kind=Deployment"
+2026-10-20T15:40:02.3519083Z level=DEBUG msg="waiting for resources" count=6 timeout=10m0s
+2026-10-20T15:40:03.0593771Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=ServiceAccount expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.0686142Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.0743652Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.1025741Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=ServiceAccount expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.3132541Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.3628658Z level=DEBUG msg="waiting for resource" namespace=monitoring name=prometheus-server kind=Deployment expectedStatus=Current actualStatus=Unknown
+2026-10-20T15:40:03.5745348Z level=DEBUG msg="all resources achieved desired status" desiredStatus=Current resourceCount=6
+2026-10-20T15:40:03.5747087Z level=DEBUG msg="updating release" key=sh.helm.release.v1.prometheus.v5
+2026-10-20T15:40:03.8522474Z level=DEBUG msg="updating status for upgraded release" name=prometheus
+2026-10-20T15:40:03.8523457Z level=DEBUG msg="updating release" key=sh.helm.release.v1.prometheus.v6
+2026-10-20T15:40:04.1251751Z Release "prometheus" has been upgraded. Happy Helming!
+2026-10-20T15:40:04.1253318Z NAME: prometheus
+2026-10-20T15:40:04.1253679Z LAST DEPLOYED: Tue Oct 20 15:39:57 2026
+2026-10-20T15:40:04.1254243Z NAMESPACE: monitoring
+2026-10-20T15:40:04.1254758Z STATUS: deployed
+2026-10-20T15:40:04.1255143Z REVISION: 6
+2026-10-20T15:40:04.1255596Z DESCRIPTION: Upgrade complete
+2026-10-20T15:40:04.1255946Z TEST SUITE: None
+2026-10-20T15:40:04.1256252Z USER-SUPPLIED VALUES:
+2026-10-20T15:40:04.1256746Z alertmanager:
+2026-10-20T15:40:04.1257030Z   enabled: false
+2026-10-20T15:40:04.1257326Z kube-state-metrics:
+2026-10-20T15:40:04.1257700Z   enabled: false
+2026-10-20T15:40:04.1258104Z prometheus-node-exporter:
+2026-10-20T15:40:04.1258508Z   enabled: false
+2026-10-20T15:40:04.1258919Z prometheus-pushgateway:
+2026-10-20T15:40:04.1259346Z   enabled: false
+2026-10-20T15:40:04.1259616Z server:
+2026-10-20T15:40:04.1259872Z   global:
+2026-10-20T15:40:04.1260256Z     evaluation_interval: 15s
+2026-10-20T15:40:04.1260683Z     scrape_interval: 15s
+2026-10-20T15:40:04.1261007Z     scrape_timeout: 10s
+2026-10-20T15:40:04.1261378Z   persistentVolume:
+2026-10-20T15:40:04.1261843Z     enabled: false
+2026-10-20T15:40:04.1262084Z   resources:
+2026-10-20T15:40:04.1262318Z     limits:
+2026-10-20T15:40:04.1262547Z       cpu: 500m
+2026-10-20T15:40:04.1262945Z       memory: 512Mi
+2026-10-20T15:40:04.1263190Z     requests:
+2026-10-20T15:40:04.1263418Z       cpu: 100m
+2026-10-20T15:40:04.1263648Z       memory: 256Mi
+2026-10-20T15:40:04.1263968Z serverFiles:
+2026-10-20T15:40:04.1264284Z   prometheus.yml:
+2026-10-20T15:40:04.1264522Z     rule_files:
+2026-10-20T15:40:04.1264776Z     - /etc/config/recording_rules.yml
+2026-10-20T15:40:04.1265203Z     - /etc/config/alerting_rules.yml
+2026-10-20T15:40:04.1265600Z     - /etc/config/rules
+2026-10-20T15:40:04.1265874Z     - /etc/config/alerts
+2026-10-20T15:40:04.1266143Z     scrape_configs:
+2026-10-20T15:40:04.1266845Z     - job_name: heart-disease-api
+2026-10-20T15:40:04.1267170Z       metrics_path: /metrics
+2026-10-20T15:40:04.1267450Z       static_configs:
+2026-10-20T15:40:04.1267875Z       - targets:
+2026-10-20T15:40:04.1268219Z         - heart-disease-api.default.svc.cluster.local:8000
+2026-10-20T15:40:04.1268518Z 
+2026-10-20T15:40:04.1268624Z COMPUTED VALUES:
+2026-10-20T15:40:04.1282692Z alertRelabelConfigs: {}
+2026-10-20T15:40:04.1283125Z alertmanager:
+2026-10-20T15:40:04.1292306Z   enabled: false
+2026-10-20T15:40:04.1292835Z   persistence:
+2026-10-20T15:40:04.1293186Z     accessModes:
+2026-10-20T15:40:04.1293591Z     - ReadWriteOnce
+2026-10-20T15:40:04.1293971Z     annotations: {}
+2026-10-20T15:40:04.1294311Z     emptyDir: {}
+2026-10-20T15:40:04.1294657Z     enabled: true
+2026-10-20T15:40:04.1295009Z     labels: {}
+2026-10-20T15:40:04.1295340Z     size: 2Gi
+2026-10-20T15:40:04.1295687Z   podSecurityContext:
+2026-10-20T15:40:04.1296081Z     fsGroup: 65534
+2026-10-20T15:40:04.1296439Z     runAsGroup: 65534
+2026-10-20T15:40:04.1296816Z     runAsNonRoot: true
+2026-10-20T15:40:04.1297176Z     runAsUser: 65534
+2026-10-20T15:40:04.1297539Z commonMetaLabels: {}
+2026-10-20T15:40:04.1298069Z configmapReload:
+2026-10-20T15:40:04.1298272Z   env: []
+2026-10-20T15:40:04.1298462Z   prometheus:
+2026-10-20T15:40:04.1298665Z     containerPort: 8080
+2026-10-20T15:40:04.1298905Z     containerPortName: metrics
+2026-10-20T15:40:04.1299179Z     containerSecurityContext: {}
+2026-10-20T15:40:04.1299440Z     enabled: true
+2026-10-20T15:40:04.1299647Z     extraArgs: {}
+2026-10-20T15:40:04.1299860Z     extraConfigmapMounts: []
+2026-10-20T15:40:04.1300115Z     extraVolumeDirs: []
+2026-10-20T15:40:04.1300346Z     extraVolumeMounts: []
+2026-10-20T15:40:04.1300570Z     image:
+2026-10-20T15:40:04.1300910Z       digest: ""
+2026-10-20T15:40:04.1301124Z       pullPolicy: IfNotPresent
+2026-10-20T15:40:04.1301751Z       repository: quay.io/prometheus-operator/prometheus-config-reloader
+2026-10-20T15:40:04.1302147Z       tag: v0.94.1
+2026-10-20T15:40:04.1302361Z     livenessProbe:
+2026-10-20T15:40:04.1302567Z       httpGet:
+2026-10-20T15:40:04.1302770Z         path: /healthz
+2026-10-20T15:40:04.1302992Z         port: metrics
+2026-10-20T15:40:04.1303207Z         scheme: HTTP
+2026-10-20T15:40:04.1303429Z       initialDelaySeconds: 2
+2026-10-20T15:40:04.1303667Z       periodSeconds: 10
+2026-10-20T15:40:04.1303905Z     name: configmap-reload
+2026-10-20T15:40:04.1304135Z     readinessProbe:
+2026-10-20T15:40:04.1304340Z       httpGet:
+2026-10-20T15:40:04.1304541Z         path: /healthz
+2026-10-20T15:40:04.1304749Z         port: metrics
+2026-10-20T15:40:04.1304959Z         scheme: HTTP
+2026-10-20T15:40:04.1305174Z       periodSeconds: 10
+2026-10-20T15:40:04.1305440Z     resources: {}
+2026-10-20T15:40:04.1305643Z     startupProbe:
+2026-10-20T15:40:04.1305849Z       enabled: false
+2026-10-20T15:40:04.1306201Z       httpGet:
+2026-10-20T15:40:04.1306517Z         path: /healthz
+2026-10-20T15:40:04.1306842Z         port: metrics
+2026-10-20T15:40:04.1307185Z         scheme: HTTP
+2026-10-20T15:40:04.1307556Z       periodSeconds: 10
+2026-10-20T15:40:04.1307922Z   reloadUrl: ""
+2026-10-20T15:40:04.1308256Z extraManifests: []
+2026-10-20T15:40:04.1308624Z extraScrapeConfigs: ""
+2026-10-20T15:40:04.1309008Z forceNamespace: ""
+2026-10-20T15:40:04.1309373Z imagePullSecrets: []
+2026-10-20T15:40:04.1309954Z kube-state-metrics:
+2026-10-20T15:40:04.1310311Z   enabled: false
+2026-10-20T15:40:04.1310668Z networkPolicy:
+2026-10-20T15:40:04.1311007Z   enabled: false
+2026-10-20T15:40:04.1311378Z prometheus-node-exporter:
+2026-10-20T15:40:04.1312048Z   containerSecurityContext:
+2026-10-20T15:40:04.1312477Z     allowPrivilegeEscalation: false
+2026-10-20T15:40:04.1312922Z   enabled: false
+2026-10-20T15:40:04.1313260Z   rbac:
+2026-10-20T15:40:04.1313452Z     pspEnabled: false
+2026-10-20T15:40:04.1313687Z prometheus-pushgateway:
+2026-10-20T15:40:04.1313919Z   enabled: false
+2026-10-20T15:40:04.1314126Z   serviceAnnotations:
+2026-10-20T15:40:04.1314365Z     prometheus.io/probe: pushgateway
+2026-10-20T15:40:04.1314622Z rbac:
+2026-10-20T15:40:04.1315001Z   create: true
+2026-10-20T15:40:04.1315204Z ruleFiles: {}
+2026-10-20T15:40:04.1315407Z scrapeConfigFiles: []
+2026-10-20T15:40:04.1315635Z scrapeConfigs:
+2026-10-20T15:40:04.1315847Z   kubernetes-api-servers:
+2026-10-20T15:40:04.1316195Z     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1316570Z     enabled: true
+2026-10-20T15:40:04.1316781Z     job_name: ""
+2026-10-20T15:40:04.1316990Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1317293Z     - role: endpointslice
+2026-10-20T15:40:04.1317553Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1317792Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1318028Z     relabel_configs:
+2026-10-20T15:40:04.1318236Z     - action: keep
+2026-10-20T15:40:04.1318457Z       regex: default;kubernetes;https
+2026-10-20T15:40:04.1318723Z       source_labels:
+2026-10-20T15:40:04.1318945Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1319217Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1319525Z       - __meta_kubernetes_endpointslice_port_name
+2026-10-20T15:40:04.1319824Z     scheme: https
+2026-10-20T15:40:04.1320149Z     tls_config:
+2026-10-20T15:40:04.1320434Z       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1320788Z   kubernetes-nodes:
+2026-10-20T15:40:04.1321106Z     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1321816Z     enabled: true
+2026-10-20T15:40:04.1322027Z     job_name: ""
+2026-10-20T15:40:04.1322231Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1322459Z     - role: node
+2026-10-20T15:40:04.1322664Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1322917Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1323146Z     relabel_configs:
+2026-10-20T15:40:04.1323358Z     - action: labelmap
+2026-10-20T15:40:04.1323610Z       regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1323890Z     scheme: https
+2026-10-20T15:40:04.1324086Z     tls_config:
+2026-10-20T15:40:04.1324370Z       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1324728Z       insecure_skip_verify: true
+2026-10-20T15:40:04.1324997Z   kubernetes-nodes-cadvisor:
+2026-10-20T15:40:04.1325346Z     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1325714Z     enabled: true
+2026-10-20T15:40:04.1325913Z     job_name: ""
+2026-10-20T15:40:04.1326115Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1326344Z     - role: node
+2026-10-20T15:40:04.1326564Z     metrics_path: /metrics/cadvisor
+2026-10-20T15:40:04.1326822Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1327056Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1327291Z     relabel_configs:
+2026-10-20T15:40:04.1327504Z     - action: labelmap
+2026-10-20T15:40:04.1327748Z       regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1328035Z     - source_labels:
+2026-10-20T15:40:04.1328250Z       - __metrics_path__
+2026-10-20T15:40:04.1328485Z       target_label: metrics_path
+2026-10-20T15:40:04.1328734Z     scheme: https
+2026-10-20T15:40:04.1328941Z     tls_config:
+2026-10-20T15:40:04.1329215Z       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1329568Z       insecure_skip_verify: true
+2026-10-20T15:40:04.1329825Z   kubernetes-pods:
+2026-10-20T15:40:04.1330032Z     enabled: true
+2026-10-20T15:40:04.1330241Z     honor_labels: true
+2026-10-20T15:40:04.1330458Z     job_name: ""
+2026-10-20T15:40:04.1330669Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1330905Z     - role: pod
+2026-10-20T15:40:04.1331121Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1331370Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1331858Z     relabel_configs:
+2026-10-20T15:40:04.1332070Z     - action: keep
+2026-10-20T15:40:04.1332279Z       regex: true
+2026-10-20T15:40:04.1332480Z       source_labels:
+2026-10-20T15:40:04.1332754Z       - __meta_kubernetes_pod_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1333076Z     - action: drop
+2026-10-20T15:40:04.1333282Z       regex: true
+2026-10-20T15:40:04.1333619Z       source_labels:
+2026-10-20T15:40:04.1333906Z       - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1334252Z     - action: replace
+2026-10-20T15:40:04.1334463Z       regex: (https?)
+2026-10-20T15:40:04.1334667Z       source_labels:
+2026-10-20T15:40:04.1334929Z       - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1335259Z       target_label: __scheme__
+2026-10-20T15:40:04.1335496Z     - action: replace
+2026-10-20T15:40:04.1335700Z       regex: (.+)
+2026-10-20T15:40:04.1335903Z       source_labels:
+2026-10-20T15:40:04.1336161Z       - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1336486Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1336751Z     - action: replace
+2026-10-20T15:40:04.1340040Z       regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1340400Z       replacement: '[$2]:$1'
+2026-10-20T15:40:04.1340657Z       source_labels:
+2026-10-20T15:40:04.1340964Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1341309Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1342184Z       target_label: __address__
+2026-10-20T15:40:04.1342444Z     - action: replace
+2026-10-20T15:40:04.1342679Z       regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1342956Z       replacement: $2:$1
+2026-10-20T15:40:04.1343181Z       source_labels:
+2026-10-20T15:40:04.1343458Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1343799Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1344056Z       target_label: __address__
+2026-10-20T15:40:04.1344305Z     - action: labelmap
+2026-10-20T15:40:04.1344616Z       regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1345114Z       replacement: __param_$1
+2026-10-20T15:40:04.1345487Z     - action: labelmap
+2026-10-20T15:40:04.1345735Z       regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1346013Z     - action: replace
+2026-10-20T15:40:04.1346233Z       source_labels:
+2026-10-20T15:40:04.1346472Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1346745Z       target_label: namespace
+2026-10-20T15:40:04.1346979Z     - action: replace
+2026-10-20T15:40:04.1347188Z       source_labels:
+2026-10-20T15:40:04.1347405Z       - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1347657Z       target_label: pod
+2026-10-20T15:40:04.1347883Z     - action: drop
+2026-10-20T15:40:04.1348123Z       regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1348407Z       source_labels:
+2026-10-20T15:40:04.1348627Z       - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1348889Z     - action: replace
+2026-10-20T15:40:04.1349099Z       source_labels:
+2026-10-20T15:40:04.1349323Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1349594Z       target_label: node
+2026-10-20T15:40:04.1349829Z   kubernetes-pods-slow:
+2026-10-20T15:40:04.1350053Z     enabled: true
+2026-10-20T15:40:04.1350254Z     honor_labels: true
+2026-10-20T15:40:04.1350473Z     job_name: ""
+2026-10-20T15:40:04.1350681Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1350907Z     - role: pod
+2026-10-20T15:40:04.1351128Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1351371Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1351877Z     relabel_configs:
+2026-10-20T15:40:04.1352094Z     - action: keep
+2026-10-20T15:40:04.1352306Z       regex: true
+2026-10-20T15:40:04.1352501Z       source_labels:
+2026-10-20T15:40:04.1352787Z       - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1353142Z     - action: replace
+2026-10-20T15:40:04.1353367Z       regex: (https?)
+2026-10-20T15:40:04.1353574Z       source_labels:
+2026-10-20T15:40:04.1353848Z       - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1354191Z       target_label: __scheme__
+2026-10-20T15:40:04.1354429Z     - action: replace
+2026-10-20T15:40:04.1354637Z       regex: (.+)
+2026-10-20T15:40:04.1354844Z       source_labels:
+2026-10-20T15:40:04.1355268Z       - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1355602Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1355879Z     - action: replace
+2026-10-20T15:40:04.1356148Z       regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1356463Z       replacement: '[$2]:$1'
+2026-10-20T15:40:04.1356695Z       source_labels:
+2026-10-20T15:40:04.1356956Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1357283Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1357538Z       target_label: __address__
+2026-10-20T15:40:04.1357779Z     - action: replace
+2026-10-20T15:40:04.1357997Z       regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1358263Z       replacement: $2:$1
+2026-10-20T15:40:04.1358487Z       source_labels:
+2026-10-20T15:40:04.1358747Z       - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1359067Z       - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1359316Z       target_label: __address__
+2026-10-20T15:40:04.1359565Z     - action: labelmap
+2026-10-20T15:40:04.1359876Z       regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1360434Z       replacement: __param_$1
+2026-10-20T15:40:04.1360682Z     - action: labelmap
+2026-10-20T15:40:04.1360920Z       regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1361201Z     - action: replace
+2026-10-20T15:40:04.1361412Z       source_labels:
+2026-10-20T15:40:04.1361870Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1362130Z       target_label: namespace
+2026-10-20T15:40:04.1362368Z     - action: replace
+2026-10-20T15:40:04.1362581Z       source_labels:
+2026-10-20T15:40:04.1362801Z       - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1363053Z       target_label: pod
+2026-10-20T15:40:04.1363275Z     - action: drop
+2026-10-20T15:40:04.1363513Z       regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1363796Z       source_labels:
+2026-10-20T15:40:04.1364015Z       - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1364283Z     - action: replace
+2026-10-20T15:40:04.1364498Z       source_labels:
+2026-10-20T15:40:04.1364733Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1365024Z       target_label: node
+2026-10-20T15:40:04.1365260Z     scrape_interval: 5m
+2026-10-20T15:40:04.1365488Z     scrape_timeout: 30s
+2026-10-20T15:40:04.1365733Z   kubernetes-service-endpoints:
+2026-10-20T15:40:04.1365990Z     enabled: true
+2026-10-20T15:40:04.1366201Z     honor_labels: true
+2026-10-20T15:40:04.1366412Z     job_name: ""
+2026-10-20T15:40:04.1366626Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1366861Z     - role: endpointslice
+2026-10-20T15:40:04.1367097Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1367345Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1367573Z     relabel_configs:
+2026-10-20T15:40:04.1367783Z     - action: keep
+2026-10-20T15:40:04.1367991Z       regex: true
+2026-10-20T15:40:04.1368193Z       source_labels:
+2026-10-20T15:40:04.1368478Z       - __meta_kubernetes_service_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1368814Z     - action: drop
+2026-10-20T15:40:04.1369019Z       regex: true
+2026-10-20T15:40:04.1369224Z       source_labels:
+2026-10-20T15:40:04.1369520Z       - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1369869Z     - action: replace
+2026-10-20T15:40:04.1370090Z       regex: (https?)
+2026-10-20T15:40:04.1370298Z       source_labels:
+2026-10-20T15:40:04.1370574Z       - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1370916Z       target_label: __scheme__
+2026-10-20T15:40:04.1371155Z     - action: replace
+2026-10-20T15:40:04.1371362Z       regex: (.+)
+2026-10-20T15:40:04.1371771Z       source_labels:
+2026-10-20T15:40:04.1372055Z       - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1372400Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1372656Z     - action: replace
+2026-10-20T15:40:04.1372884Z       regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1373259Z       replacement: $1:$2
+2026-10-20T15:40:04.1373485Z       source_labels:
+2026-10-20T15:40:04.1373695Z       - __address__
+2026-10-20T15:40:04.1373975Z       - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1374305Z       target_label: __address__
+2026-10-20T15:40:04.1374545Z     - action: labelmap
+2026-10-20T15:40:04.1374871Z       regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1375248Z       replacement: __param_$1
+2026-10-20T15:40:04.1375498Z     - action: labelmap
+2026-10-20T15:40:04.1375754Z       regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1376049Z     - action: replace
+2026-10-20T15:40:04.1376259Z       source_labels:
+2026-10-20T15:40:04.1376485Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1376747Z       target_label: namespace
+2026-10-20T15:40:04.1376980Z     - action: replace
+2026-10-20T15:40:04.1377185Z       source_labels:
+2026-10-20T15:40:04.1377414Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1377684Z       target_label: service
+2026-10-20T15:40:04.1377913Z     - action: replace
+2026-10-20T15:40:04.1378122Z       source_labels:
+2026-10-20T15:40:04.1378466Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1378731Z       target_label: node
+2026-10-20T15:40:04.1378984Z   kubernetes-service-endpoints-slow:
+2026-10-20T15:40:04.1379261Z     enabled: true
+2026-10-20T15:40:04.1379462Z     honor_labels: true
+2026-10-20T15:40:04.1379675Z     job_name: ""
+2026-10-20T15:40:04.1379891Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1380131Z     - role: endpointslice
+2026-10-20T15:40:04.1380360Z     relabel_configs:
+2026-10-20T15:40:04.1380566Z     - action: keep
+2026-10-20T15:40:04.1380773Z       regex: true
+2026-10-20T15:40:04.1380979Z       source_labels:
+2026-10-20T15:40:04.1381274Z       - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1381901Z     - action: replace
+2026-10-20T15:40:04.1382119Z       regex: (https?)
+2026-10-20T15:40:04.1382336Z       source_labels:
+2026-10-20T15:40:04.1382625Z       - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1382972Z       target_label: __scheme__
+2026-10-20T15:40:04.1383211Z     - action: replace
+2026-10-20T15:40:04.1383418Z       regex: (.+)
+2026-10-20T15:40:04.1383623Z       source_labels:
+2026-10-20T15:40:04.1383893Z       - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1384228Z       target_label: __metrics_path__
+2026-10-20T15:40:04.1384492Z     - action: replace
+2026-10-20T15:40:04.1384710Z       regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1384954Z       replacement: $1:$2
+2026-10-20T15:40:04.1385174Z       source_labels:
+2026-10-20T15:40:04.1385385Z       - __address__
+2026-10-20T15:40:04.1385653Z       - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1385980Z       target_label: __address__
+2026-10-20T15:40:04.1386226Z     - action: labelmap
+2026-10-20T15:40:04.1386550Z       regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1386925Z       replacement: __param_$1
+2026-10-20T15:40:04.1387169Z     - action: labelmap
+2026-10-20T15:40:04.1387419Z       regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1387704Z     - action: replace
+2026-10-20T15:40:04.1387910Z       source_labels:
+2026-10-20T15:40:04.1388135Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1388414Z       target_label: namespace
+2026-10-20T15:40:04.1388647Z     - action: replace
+2026-10-20T15:40:04.1388856Z       source_labels:
+2026-10-20T15:40:04.1389076Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1389338Z       target_label: service
+2026-10-20T15:40:04.1389572Z     - action: replace
+2026-10-20T15:40:04.1389776Z       source_labels:
+2026-10-20T15:40:04.1389999Z       - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1390262Z       target_label: node
+2026-10-20T15:40:04.1390495Z     scrape_interval: 5m
+2026-10-20T15:40:04.1390722Z     scrape_timeout: 30s
+2026-10-20T15:40:04.1391075Z   kubernetes-services:
+2026-10-20T15:40:04.1391307Z     enabled: true
+2026-10-20T15:40:04.1391799Z     honor_labels: true
+2026-10-20T15:40:04.1392179Z     job_name: ""
+2026-10-20T15:40:04.1392420Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1392660Z     - role: service
+2026-10-20T15:40:04.1392875Z     metrics_path: /probe
+2026-10-20T15:40:04.1393098Z     params:
+2026-10-20T15:40:04.1393289Z       module:
+2026-10-20T15:40:04.1393481Z       - http_2xx
+2026-10-20T15:40:04.1393691Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1393943Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1394184Z     relabel_configs:
+2026-10-20T15:40:04.1394396Z     - action: keep
+2026-10-20T15:40:04.1394601Z       regex: true
+2026-10-20T15:40:04.1394809Z       source_labels:
+2026-10-20T15:40:04.1395098Z       - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1395438Z     - source_labels:
+2026-10-20T15:40:04.1395654Z       - __address__
+2026-10-20T15:40:04.1395884Z       target_label: __param_target
+2026-10-20T15:40:04.1396158Z     - replacement: blackbox
+2026-10-20T15:40:04.1396402Z       target_label: __address__
+2026-10-20T15:40:04.1396797Z     - source_labels:
+2026-10-20T15:40:04.1397011Z       - __param_target
+2026-10-20T15:40:04.1397363Z       target_label: instance
+2026-10-20T15:40:04.1397700Z     - action: labelmap
+2026-10-20T15:40:04.1398239Z       regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1398683Z     - source_labels:
+2026-10-20T15:40:04.1399088Z       - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1399470Z       target_label: namespace
+2026-10-20T15:40:04.1399899Z     - source_labels:
+2026-10-20T15:40:04.1400269Z       - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1413103Z       target_label: service
+2026-10-20T15:40:04.1413420Z   prometheus:
+2026-10-20T15:40:04.1413640Z     enabled: true
+2026-10-20T15:40:04.1413855Z     job_name: ""
+2026-10-20T15:40:04.1414059Z     static_configs:
+2026-10-20T15:40:04.1414272Z     - targets:
+2026-10-20T15:40:04.1414497Z       - localhost:9090
+2026-10-20T15:40:04.1414747Z   prometheus-pushgateway:
+2026-10-20T15:40:04.1414987Z     enabled: true
+2026-10-20T15:40:04.1415201Z     honor_labels: true
+2026-10-20T15:40:04.1415421Z     job_name: ""
+2026-10-20T15:40:04.1415631Z     kubernetes_sd_configs:
+2026-10-20T15:40:04.1415864Z     - role: service
+2026-10-20T15:40:04.1416081Z     post_relabel_configs: ""
+2026-10-20T15:40:04.1416338Z     pre_relabel_configs: ""
+2026-10-20T15:40:04.1416570Z     relabel_configs:
+2026-10-20T15:40:04.1416785Z     - action: keep
+2026-10-20T15:40:04.1417005Z       regex: pushgateway
+2026-10-20T15:40:04.1417224Z       source_labels:
+2026-10-20T15:40:04.1417510Z       - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1417846Z server:
+2026-10-20T15:40:04.1418040Z   affinity: {}
+2026-10-20T15:40:04.1418244Z   alertmanagers: []
+2026-10-20T15:40:04.1418446Z   baseURL: ""
+2026-10-20T15:40:04.1418660Z   clusterRoleNameOverride: ""
+2026-10-20T15:40:04.1418900Z   command: []
+2026-10-20T15:40:04.1419105Z   configFromSecret: ""
+2026-10-20T15:40:04.1419334Z   configMapAnnotations: {}
+2026-10-20T15:40:04.1419595Z   configMapOverrideName: ""
+2026-10-20T15:40:04.1419872Z   configPath: /etc/config/prometheus.yml
+2026-10-20T15:40:04.1420168Z   containerSecurityContext: {}
+2026-10-20T15:40:04.1420417Z   daemonSet:
+2026-10-20T15:40:04.1420610Z     annotations: {}
+2026-10-20T15:40:04.1420816Z     enabled: false
+2026-10-20T15:40:04.1421020Z     labels: {}
+2026-10-20T15:40:04.1421231Z   defaultFlagsOverride: []
+2026-10-20T15:40:04.1421689Z   deploymentAnnotations: {}
+2026-10-20T15:40:04.1421992Z   dnsConfig: {}
+2026-10-20T15:40:04.1422202Z   dnsPolicy: ClusterFirst
+2026-10-20T15:40:04.1422423Z   emptyDir:
+2026-10-20T15:40:04.1422607Z     medium: ""
+2026-10-20T15:40:04.1422804Z     sizeLimit: ""
+2026-10-20T15:40:04.1423019Z   enableServiceLinks: true
+2026-10-20T15:40:04.1423240Z   env: []
+2026-10-20T15:40:04.1423423Z   exemplars: {}
+2026-10-20T15:40:04.1423627Z   extraArgs: {}
+2026-10-20T15:40:04.1424041Z   extraConfigmapLabels: {}
+2026-10-20T15:40:04.1424288Z   extraConfigmapMounts: []
+2026-10-20T15:40:04.1424517Z   extraFlags:
+2026-10-20T15:40:04.1424730Z   - web.enable-lifecycle
+2026-10-20T15:40:04.1424971Z   extraHostPathMounts: []
+2026-10-20T15:40:04.1425210Z   extraInitContainers: []
+2026-10-20T15:40:04.1425630Z   extraSecretMounts: []
+2026-10-20T15:40:04.1426006Z   extraVolumeMounts: []
+2026-10-20T15:40:04.1426279Z   extraVolumes: []
+2026-10-20T15:40:04.1426496Z   fullnameOverride: ""
+2026-10-20T15:40:04.1426707Z   global:
+2026-10-20T15:40:04.1426906Z     evaluation_interval: 15s
+2026-10-20T15:40:04.1427151Z     scrape_interval: 15s
+2026-10-20T15:40:04.1427387Z     scrape_timeout: 10s
+2026-10-20T15:40:04.1427602Z   hostAliases: []
+2026-10-20T15:40:04.1427811Z   hostNetwork: false
+2026-10-20T15:40:04.1428024Z   image:
+2026-10-20T15:40:04.1428207Z     digest: ""
+2026-10-20T15:40:04.1428407Z     distroless: false
+2026-10-20T15:40:04.1428636Z     pullPolicy: IfNotPresent
+2026-10-20T15:40:04.1428929Z     repository: quay.io/prometheus/prometheus
+2026-10-20T15:40:04.1429206Z     tag: ""
+2026-10-20T15:40:04.1429386Z   ingress:
+2026-10-20T15:40:04.1429737Z     annotations: {}
+2026-10-20T15:40:04.1429941Z     enabled: false
+2026-10-20T15:40:04.1430145Z     extraLabels: {}
+2026-10-20T15:40:04.1430347Z     extraPaths: []
+2026-10-20T15:40:04.1430547Z     hosts: []
+2026-10-20T15:40:04.1430743Z     ingressClassName: ""
+2026-10-20T15:40:04.1430963Z     path: /
+2026-10-20T15:40:04.1431154Z     pathType: Prefix
+2026-10-20T15:40:04.1431354Z     tls: []
+2026-10-20T15:40:04.1431865Z   livenessProbeFailureThreshold: 3
+2026-10-20T15:40:04.1432155Z   livenessProbeInitialDelay: 30
+2026-10-20T15:40:04.1432428Z   livenessProbePeriodSeconds: 15
+2026-10-20T15:40:04.1432700Z   livenessProbeSuccessThreshold: 1
+2026-10-20T15:40:04.1432965Z   livenessProbeTimeout: 10
+2026-10-20T15:40:04.1433196Z   name: server
+2026-10-20T15:40:04.1433390Z   namespaces: []
+2026-10-20T15:40:04.1433586Z   nodeSelector: {}
+2026-10-20T15:40:04.1433779Z   otlp: {}
+2026-10-20T15:40:04.1433980Z   persistentVolume:
+2026-10-20T15:40:04.1434187Z     accessModes:
+2026-10-20T15:40:04.1434390Z     - ReadWriteOnce
+2026-10-20T15:40:04.1434610Z     annotations: {}
+2026-10-20T15:40:04.1434810Z     enabled: false
+2026-10-20T15:40:04.1435020Z     existingClaim: ""
+2026-10-20T15:40:04.1435231Z     labels: {}
+2026-10-20T15:40:04.1435436Z     mountPath: /data
+2026-10-20T15:40:04.1435646Z     size: 8Gi
+2026-10-20T15:40:04.1435860Z     statefulSetNameOverride: ""
+2026-10-20T15:40:04.1436110Z     subPath: ""
+2026-10-20T15:40:04.1436312Z   podAnnotations: {}
+2026-10-20T15:40:04.1436530Z   podAntiAffinity: ""
+2026-10-20T15:40:04.1436799Z   podAntiAffinityTopologyKey: kubernetes.io/hostname
+2026-10-20T15:40:04.1437128Z   podDisruptionBudget:
+2026-10-20T15:40:04.1437348Z     enabled: false
+2026-10-20T15:40:04.1437547Z   podLabels: {}
+2026-10-20T15:40:04.1437749Z   portName: ""
+2026-10-20T15:40:04.1437947Z   prefixURL: ""
+2026-10-20T15:40:04.1438155Z   priorityClassName: ""
+2026-10-20T15:40:04.1438379Z   probeHeaders: []
+2026-10-20T15:40:04.1438585Z   probeScheme: HTTP
+2026-10-20T15:40:04.1438818Z   readinessProbeFailureThreshold: 3
+2026-10-20T15:40:04.1439111Z   readinessProbeInitialDelay: 30
+2026-10-20T15:40:04.1439385Z   readinessProbePeriodSeconds: 5
+2026-10-20T15:40:04.1439656Z   readinessProbeSuccessThreshold: 1
+2026-10-20T15:40:04.1439927Z   readinessProbeTimeout: 4
+2026-10-20T15:40:04.1440171Z   releaseNamespace: false
+2026-10-20T15:40:04.1440404Z   remoteRead: []
+2026-10-20T15:40:04.1440606Z   remoteWrite: []
+2026-10-20T15:40:04.1440813Z   replicaCount: 1
+2026-10-20T15:40:04.1441013Z   resources:
+2026-10-20T15:40:04.1441198Z     limits:
+2026-10-20T15:40:04.1441390Z       cpu: 500m
+2026-10-20T15:40:04.1441808Z       memory: 512Mi
+2026-10-20T15:40:04.1442013Z     requests:
+2026-10-20T15:40:04.1442199Z       cpu: 100m
+2026-10-20T15:40:04.1442389Z       memory: 256Mi
+2026-10-20T15:40:04.1442584Z   retention: 15d
+2026-10-20T15:40:04.1442779Z   retentionSize: ""
+2026-10-20T15:40:04.1443131Z   revisionHistoryLimit: 10
+2026-10-20T15:40:04.1443361Z   route:
+2026-10-20T15:40:04.1443543Z     main:
+2026-10-20T15:40:04.1443738Z       additionalRules: []
+2026-10-20T15:40:04.1443961Z       annotations: {}
+2026-10-20T15:40:04.1444166Z       apiVersion: ""
+2026-10-20T15:40:04.1444376Z       enabled: false
+2026-10-20T15:40:04.1444572Z       filters: []
+2026-10-20T15:40:04.1444765Z       hostnames: []
+2026-10-20T15:40:04.1444974Z       httpsRedirect: false
+2026-10-20T15:40:04.1445186Z       kind: ""
+2026-10-20T15:40:04.1445371Z       labels: {}
+2026-10-20T15:40:04.1445557Z       matches:
+2026-10-20T15:40:04.1445750Z       - path:
+2026-10-20T15:40:04.1445943Z           type: PathPrefix
+2026-10-20T15:40:04.1446158Z           value: /
+2026-10-20T15:40:04.1446355Z       parentRefs: []
+2026-10-20T15:40:04.1446563Z   runtimeClassName: ""
+2026-10-20T15:40:04.1446775Z   securityContext:
+2026-10-20T15:40:04.1446973Z     fsGroup: 65534
+2026-10-20T15:40:04.1447170Z     runAsGroup: 65534
+2026-10-20T15:40:04.1447383Z     runAsNonRoot: true
+2026-10-20T15:40:04.1447592Z     runAsUser: 65534
+2026-10-20T15:40:04.1447789Z   service:
+2026-10-20T15:40:04.1448096Z     additionalPorts: []
+2026-10-20T15:40:04.1448308Z     annotations: {}
+2026-10-20T15:40:04.1448504Z     clusterIP: ""
+2026-10-20T15:40:04.1448700Z     enabled: true
+2026-10-20T15:40:04.1448892Z     externalIPs: []
+2026-10-20T15:40:04.1449105Z     externalTrafficPolicy: ""
+2026-10-20T15:40:04.1449342Z     gRPC:
+2026-10-20T15:40:04.1449523Z       enabled: false
+2026-10-20T15:40:04.1449732Z       servicePort: 10901
+2026-10-20T15:40:04.1449946Z     labels: {}
+2026-10-20T15:40:04.1450143Z     loadBalancerClass: ""
+2026-10-20T15:40:04.1450365Z     loadBalancerIP: ""
+2026-10-20T15:40:04.1450592Z     loadBalancerSourceRanges: []
+2026-10-20T15:40:04.1450838Z     servicePort: 80
+2026-10-20T15:40:04.1451047Z     sessionAffinity: None
+2026-10-20T15:40:04.1451279Z     statefulsetReplica:
+2026-10-20T15:40:04.1451757Z       enabled: false
+2026-10-20T15:40:04.1452049Z       replica: 0
+2026-10-20T15:40:04.1452253Z     type: ClusterIP
+2026-10-20T15:40:04.1452459Z   sidecarContainers: {}
+2026-10-20T15:40:04.1452700Z   sidecarTemplateValues: {}
+2026-10-20T15:40:04.1452931Z   startupProbe:
+2026-10-20T15:40:04.1453122Z     enabled: false
+2026-10-20T15:40:04.1453323Z     failureThreshold: 30
+2026-10-20T15:40:04.1453546Z     periodSeconds: 5
+2026-10-20T15:40:04.1453751Z     timeoutSeconds: 10
+2026-10-20T15:40:04.1453953Z   statefulSet:
+2026-10-20T15:40:04.1454147Z     annotations: {}
+2026-10-20T15:40:04.1454343Z     enabled: false
+2026-10-20T15:40:04.1454534Z     headless:
+2026-10-20T15:40:04.1454723Z       annotations: {}
+2026-10-20T15:40:04.1454935Z       gRPC:
+2026-10-20T15:40:04.1455122Z         enabled: false
+2026-10-20T15:40:04.1455339Z         servicePort: 10901
+2026-10-20T15:40:04.1455560Z       labels: {}
+2026-10-20T15:40:04.1455753Z       servicePort: 80
+2026-10-20T15:40:04.1455954Z     labels: {}
+2026-10-20T15:40:04.1456173Z     podManagementPolicy: OrderedReady
+2026-10-20T15:40:04.1456464Z     pvcDeleteOnStsDelete: false
+2026-10-20T15:40:04.1456722Z     pvcDeleteOnStsScale: false
+2026-10-20T15:40:04.1456963Z   storagePath: ""
+2026-10-20T15:40:04.1457174Z   strategy:
+2026-10-20T15:40:04.1457363Z     type: Recreate
+2026-10-20T15:40:04.1457575Z   tcpSocketProbeEnabled: false
+2026-10-20T15:40:04.1457843Z   terminationGracePeriodSeconds: 300
+2026-10-20T15:40:04.1458105Z   tolerations: []
+2026-10-20T15:40:04.1458325Z   topologySpreadConstraints: []
+2026-10-20T15:40:04.1458565Z   tsdb: {}
+2026-10-20T15:40:04.1458780Z   useExistingClusterRoleName: ""
+2026-10-20T15:40:04.1459032Z   verticalAutoscaler:
+2026-10-20T15:40:04.1459243Z     enabled: false
+2026-10-20T15:40:04.1459442Z serverFiles:
+2026-10-20T15:40:04.1459635Z   alerting_rules.yml: {}
+2026-10-20T15:40:04.1459852Z   alerts: {}
+2026-10-20T15:40:04.1460042Z   prometheus.yml:
+2026-10-20T15:40:04.1460241Z     rule_files:
+2026-10-20T15:40:04.1460458Z     - /etc/config/recording_rules.yml
+2026-10-20T15:40:04.1460730Z     - /etc/config/alerting_rules.yml
+2026-10-20T15:40:04.1461122Z     - /etc/config/rules
+2026-10-20T15:40:04.1461346Z     - /etc/config/alerts
+2026-10-20T15:40:04.1461814Z     scrape_configs:
+2026-10-20T15:40:04.1462034Z     - job_name: heart-disease-api
+2026-10-20T15:40:04.1462285Z       metrics_path: /metrics
+2026-10-20T15:40:04.1462511Z       static_configs:
+2026-10-20T15:40:04.1462707Z       - targets:
+2026-10-20T15:40:04.1462979Z         - heart-disease-api.default.svc.cluster.local:8000
+2026-10-20T15:40:04.1463316Z   recording_rules.yml: {}
+2026-10-20T15:40:04.1463532Z   rules: {}
+2026-10-20T15:40:04.1463714Z serviceAccounts:
+2026-10-20T15:40:04.1463909Z   server:
+2026-10-20T15:40:04.1464089Z     annotations: {}
+2026-10-20T15:40:04.1464282Z     create: true
+2026-10-20T15:40:04.1464475Z     name: ""
+2026-10-20T15:40:04.1464582Z 
+2026-10-20T15:40:04.1464662Z HOOKS:
+2026-10-20T15:40:04.1464842Z MANIFEST:
+2026-10-20T15:40:04.1465018Z ---
+2026-10-20T15:40:04.1465251Z # Source: prometheus/templates/serviceaccount.yaml
+2026-10-20T15:40:04.1465560Z apiVersion: v1
+2026-10-20T15:40:04.1465759Z kind: ServiceAccount
+2026-10-20T15:40:04.1465963Z metadata:
+2026-10-20T15:40:04.1466271Z   labels:
+2026-10-20T15:40:04.1466475Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1466755Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1467037Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1467323Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1467597Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1467875Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1468151Z   name: prometheus-server
+2026-10-20T15:40:04.1468380Z   namespace: monitoring
+2026-10-20T15:40:04.1468602Z   annotations:
+2026-10-20T15:40:04.1468789Z     {}
+2026-10-20T15:40:04.1468891Z 
+2026-10-20T15:40:04.1468964Z ---
+2026-10-20T15:40:04.1469159Z # Source: prometheus/templates/cm.yaml
+2026-10-20T15:40:04.1469417Z apiVersion: v1
+2026-10-20T15:40:04.1469609Z kind: ConfigMap
+2026-10-20T15:40:04.1469797Z metadata:
+2026-10-20T15:40:04.1469979Z   labels:
+2026-10-20T15:40:04.1470177Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1470453Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1470731Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1471015Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1471281Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1471854Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1472142Z   name: prometheus-server
+2026-10-20T15:40:04.1472370Z   namespace: monitoring
+2026-10-20T15:40:04.1472574Z data:
+2026-10-20T15:40:04.1472781Z   allow-snippet-annotations: "false"
+2026-10-20T15:40:04.1473049Z   alerting_rules.yml: |
+2026-10-20T15:40:04.1473262Z     {}
+2026-10-20T15:40:04.1473435Z   alerts: |
+2026-10-20T15:40:04.1473613Z     {}
+2026-10-20T15:40:04.1473792Z   prometheus.yml: |
+2026-10-20T15:40:04.1473991Z     global:
+2026-10-20T15:40:04.1474190Z       evaluation_interval: 15s
+2026-10-20T15:40:04.1474434Z       scrape_interval: 15s
+2026-10-20T15:40:04.1474667Z       scrape_timeout: 10s
+2026-10-20T15:40:04.1474883Z     scrape_configs:
+2026-10-20T15:40:04.1475112Z     - job_name: kubernetes-api-servers
+2026-10-20T15:40:04.1475482Z       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1475860Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1476104Z       - role: endpointslice
+2026-10-20T15:40:04.1476329Z       relabel_configs:
+2026-10-20T15:40:04.1476540Z       - action: keep
+2026-10-20T15:40:04.1476768Z         regex: default;kubernetes;https
+2026-10-20T15:40:04.1477038Z         source_labels:
+2026-10-20T15:40:04.1477265Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1477536Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1477837Z         - __meta_kubernetes_endpointslice_port_name
+2026-10-20T15:40:04.1478126Z       scheme: https
+2026-10-20T15:40:04.1478322Z       tls_config:
+2026-10-20T15:40:04.1478604Z         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1479082Z     - job_name: kubernetes-nodes
+2026-10-20T15:40:04.1479435Z       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1479814Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1480050Z       - role: node
+2026-10-20T15:40:04.1480251Z       relabel_configs:
+2026-10-20T15:40:04.1480463Z       - action: labelmap
+2026-10-20T15:40:04.1480717Z         regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1480995Z       scheme: https
+2026-10-20T15:40:04.1481200Z       tls_config:
+2026-10-20T15:40:04.1481689Z         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1482044Z         insecure_skip_verify: true
+2026-10-20T15:40:04.1482316Z     - job_name: kubernetes-nodes-cadvisor
+2026-10-20T15:40:04.1482688Z       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+2026-10-20T15:40:04.1483061Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1483289Z       - role: node
+2026-10-20T15:40:04.1483514Z       metrics_path: /metrics/cadvisor
+2026-10-20T15:40:04.1483773Z       relabel_configs:
+2026-10-20T15:40:04.1484114Z       - action: labelmap
+2026-10-20T15:40:04.1484360Z         regex: __meta_kubernetes_node_label_(.+)
+2026-10-20T15:40:04.1484639Z       - source_labels:
+2026-10-20T15:40:04.1484853Z         - __metrics_path__
+2026-10-20T15:40:04.1485088Z         target_label: metrics_path
+2026-10-20T15:40:04.1485333Z       scheme: https
+2026-10-20T15:40:04.1485537Z       tls_config:
+2026-10-20T15:40:04.1485804Z         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+2026-10-20T15:40:04.1486141Z         insecure_skip_verify: true
+2026-10-20T15:40:04.1486398Z     - job_name: kubernetes-pods
+2026-10-20T15:40:04.1486642Z       honor_labels: true
+2026-10-20T15:40:04.1486871Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1487098Z       - role: pod
+2026-10-20T15:40:04.1487302Z       relabel_configs:
+2026-10-20T15:40:04.1487515Z       - action: keep
+2026-10-20T15:40:04.1487729Z         regex: true
+2026-10-20T15:40:04.1487933Z         source_labels:
+2026-10-20T15:40:04.1488200Z         - __meta_kubernetes_pod_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1488521Z       - action: drop
+2026-10-20T15:40:04.1488724Z         regex: true
+2026-10-20T15:40:04.1488929Z         source_labels:
+2026-10-20T15:40:04.1489212Z         - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1489551Z       - action: replace
+2026-10-20T15:40:04.1489769Z         regex: (https?)
+2026-10-20T15:40:04.1489976Z         source_labels:
+2026-10-20T15:40:04.1490242Z         - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1490562Z         target_label: __scheme__
+2026-10-20T15:40:04.1490800Z       - action: replace
+2026-10-20T15:40:04.1491008Z         regex: (.+)
+2026-10-20T15:40:04.1491213Z         source_labels:
+2026-10-20T15:40:04.1491690Z         - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1492030Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1492293Z       - action: replace
+2026-10-20T15:40:04.1492575Z         regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1492895Z         replacement: '[$2]:$1'
+2026-10-20T15:40:04.1493131Z         source_labels:
+2026-10-20T15:40:04.1493400Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1493729Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1493986Z         target_label: __address__
+2026-10-20T15:40:04.1494232Z       - action: replace
+2026-10-20T15:40:04.1494466Z         regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1494736Z         replacement: $2:$1
+2026-10-20T15:40:04.1494957Z         source_labels:
+2026-10-20T15:40:04.1495222Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1495541Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1495793Z         target_label: __address__
+2026-10-20T15:40:04.1496037Z       - action: labelmap
+2026-10-20T15:40:04.1496473Z         regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1496843Z         replacement: __param_$1
+2026-10-20T15:40:04.1497092Z       - action: labelmap
+2026-10-20T15:40:04.1497342Z         regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1497624Z       - action: replace
+2026-10-20T15:40:04.1497835Z         source_labels:
+2026-10-20T15:40:04.1498063Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1498320Z         target_label: namespace
+2026-10-20T15:40:04.1498551Z       - action: replace
+2026-10-20T15:40:04.1498762Z         source_labels:
+2026-10-20T15:40:04.1498979Z         - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1499235Z         target_label: pod
+2026-10-20T15:40:04.1499459Z       - action: drop
+2026-10-20T15:40:04.1499706Z         regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1499990Z         source_labels:
+2026-10-20T15:40:04.1500208Z         - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1500462Z       - action: replace
+2026-10-20T15:40:04.1500674Z         source_labels:
+2026-10-20T15:40:04.1500898Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1501282Z         target_label: node
+2026-10-20T15:40:04.1501768Z     - job_name: kubernetes-pods-slow
+2026-10-20T15:40:04.1502044Z       honor_labels: true
+2026-10-20T15:40:04.1502273Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1502506Z       - role: pod
+2026-10-20T15:40:04.1502706Z       relabel_configs:
+2026-10-20T15:40:04.1502913Z       - action: keep
+2026-10-20T15:40:04.1503117Z         regex: true
+2026-10-20T15:40:04.1503324Z         source_labels:
+2026-10-20T15:40:04.1503607Z         - __meta_kubernetes_pod_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1503944Z       - action: replace
+2026-10-20T15:40:04.1504165Z         regex: (https?)
+2026-10-20T15:40:04.1504373Z         source_labels:
+2026-10-20T15:40:04.1504681Z         - __meta_kubernetes_pod_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1505009Z         target_label: __scheme__
+2026-10-20T15:40:04.1505259Z       - action: replace
+2026-10-20T15:40:04.1505466Z         regex: (.+)
+2026-10-20T15:40:04.1505664Z         source_labels:
+2026-10-20T15:40:04.1505937Z         - __meta_kubernetes_pod_annotation_prometheus_io_path
+2026-10-20T15:40:04.1506263Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1506519Z       - action: replace
+2026-10-20T15:40:04.1506796Z         regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
+2026-10-20T15:40:04.1507120Z         replacement: '[$2]:$1'
+2026-10-20T15:40:04.1507363Z         source_labels:
+2026-10-20T15:40:04.1507632Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1507957Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1508217Z         target_label: __address__
+2026-10-20T15:40:04.1508462Z       - action: replace
+2026-10-20T15:40:04.1508691Z         regex: (\d+);((([0-9]+?)(\.|$)){4})
+2026-10-20T15:40:04.1508958Z         replacement: $2:$1
+2026-10-20T15:40:04.1509186Z         source_labels:
+2026-10-20T15:40:04.1509452Z         - __meta_kubernetes_pod_annotation_prometheus_io_port
+2026-10-20T15:40:04.1509770Z         - __meta_kubernetes_pod_ip
+2026-10-20T15:40:04.1510028Z         target_label: __address__
+2026-10-20T15:40:04.1510269Z       - action: labelmap
+2026-10-20T15:40:04.1510577Z         regex: __meta_kubernetes_pod_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1510935Z         replacement: __param_$1
+2026-10-20T15:40:04.1511170Z       - action: labelmap
+2026-10-20T15:40:04.1511419Z         regex: __meta_kubernetes_pod_label_(.+)
+2026-10-20T15:40:04.1512006Z       - action: replace
+2026-10-20T15:40:04.1512220Z         source_labels:
+2026-10-20T15:40:04.1512451Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1512710Z         target_label: namespace
+2026-10-20T15:40:04.1512940Z       - action: replace
+2026-10-20T15:40:04.1513149Z         source_labels:
+2026-10-20T15:40:04.1513369Z         - __meta_kubernetes_pod_name
+2026-10-20T15:40:04.1513620Z         target_label: pod
+2026-10-20T15:40:04.1513979Z       - action: drop
+2026-10-20T15:40:04.1514231Z         regex: Pending|Succeeded|Failed|Completed
+2026-10-20T15:40:04.1514518Z         source_labels:
+2026-10-20T15:40:04.1514740Z         - __meta_kubernetes_pod_phase
+2026-10-20T15:40:04.1514995Z       - action: replace
+2026-10-20T15:40:04.1515203Z         source_labels:
+2026-10-20T15:40:04.1515426Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1515692Z         target_label: node
+2026-10-20T15:40:04.1515924Z       scrape_interval: 5m
+2026-10-20T15:40:04.1516145Z       scrape_timeout: 30s
+2026-10-20T15:40:04.1516398Z     - job_name: kubernetes-service-endpoints
+2026-10-20T15:40:04.1516693Z       honor_labels: true
+2026-10-20T15:40:04.1516919Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1517159Z       - role: endpointslice
+2026-10-20T15:40:04.1517385Z       relabel_configs:
+2026-10-20T15:40:04.1517597Z       - action: keep
+2026-10-20T15:40:04.1517800Z         regex: true
+2026-10-20T15:40:04.1517998Z         source_labels:
+2026-10-20T15:40:04.1518302Z         - __meta_kubernetes_service_annotation_prometheus_io_scrape
+2026-10-20T15:40:04.1518763Z       - action: drop
+2026-10-20T15:40:04.1518973Z         regex: true
+2026-10-20T15:40:04.1519185Z         source_labels:
+2026-10-20T15:40:04.1519479Z         - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1519836Z       - action: replace
+2026-10-20T15:40:04.1520053Z         regex: (https?)
+2026-10-20T15:40:04.1520272Z         source_labels:
+2026-10-20T15:40:04.1520553Z         - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1520889Z         target_label: __scheme__
+2026-10-20T15:40:04.1521146Z       - action: replace
+2026-10-20T15:40:04.1521354Z         regex: (.+)
+2026-10-20T15:40:04.1521772Z         source_labels:
+2026-10-20T15:40:04.1522053Z         - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1522392Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1522658Z       - action: replace
+2026-10-20T15:40:04.1522882Z         regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1523133Z         replacement: $1:$2
+2026-10-20T15:40:04.1523365Z         source_labels:
+2026-10-20T15:40:04.1523573Z         - __address__
+2026-10-20T15:40:04.1523859Z         - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1524185Z         target_label: __address__
+2026-10-20T15:40:04.1524433Z       - action: labelmap
+2026-10-20T15:40:04.1524765Z         regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1525142Z         replacement: __param_$1
+2026-10-20T15:40:04.1525386Z       - action: labelmap
+2026-10-20T15:40:04.1525639Z         regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1525940Z       - action: replace
+2026-10-20T15:40:04.1526152Z         source_labels:
+2026-10-20T15:40:04.1526380Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1526653Z         target_label: namespace
+2026-10-20T15:40:04.1526894Z       - action: replace
+2026-10-20T15:40:04.1527108Z         source_labels:
+2026-10-20T15:40:04.1527336Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1527623Z         target_label: service
+2026-10-20T15:40:04.1527857Z       - action: replace
+2026-10-20T15:40:04.1528067Z         source_labels:
+2026-10-20T15:40:04.1528299Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1528569Z         target_label: node
+2026-10-20T15:40:04.1528868Z     - job_name: kubernetes-service-endpoints-slow
+2026-10-20T15:40:04.1529182Z       honor_labels: true
+2026-10-20T15:40:04.1529411Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1529652Z       - role: endpointslice
+2026-10-20T15:40:04.1529884Z       relabel_configs:
+2026-10-20T15:40:04.1530102Z       - action: keep
+2026-10-20T15:40:04.1530311Z         regex: true
+2026-10-20T15:40:04.1530515Z         source_labels:
+2026-10-20T15:40:04.1530818Z         - __meta_kubernetes_service_annotation_prometheus_io_scrape_slow
+2026-10-20T15:40:04.1531300Z       - action: replace
+2026-10-20T15:40:04.1531757Z         regex: (https?)
+2026-10-20T15:40:04.1531976Z         source_labels:
+2026-10-20T15:40:04.1532267Z         - __meta_kubernetes_service_annotation_prometheus_io_scheme
+2026-10-20T15:40:04.1532613Z         target_label: __scheme__
+2026-10-20T15:40:04.1532855Z       - action: replace
+2026-10-20T15:40:04.1533071Z         regex: (.+)
+2026-10-20T15:40:04.1533271Z         source_labels:
+2026-10-20T15:40:04.1533547Z         - __meta_kubernetes_service_annotation_prometheus_io_path
+2026-10-20T15:40:04.1533892Z         target_label: __metrics_path__
+2026-10-20T15:40:04.1534155Z       - action: replace
+2026-10-20T15:40:04.1534372Z         regex: (.+?)(?::\d+)?;(\d+)
+2026-10-20T15:40:04.1534619Z         replacement: $1:$2
+2026-10-20T15:40:04.1534847Z         source_labels:
+2026-10-20T15:40:04.1535055Z         - __address__
+2026-10-20T15:40:04.1535332Z         - __meta_kubernetes_service_annotation_prometheus_io_port
+2026-10-20T15:40:04.1535667Z         target_label: __address__
+2026-10-20T15:40:04.1535917Z       - action: labelmap
+2026-10-20T15:40:04.1536243Z         regex: __meta_kubernetes_service_annotation_prometheus_io_param_(.+)
+2026-10-20T15:40:04.1536794Z         replacement: __param_$1
+2026-10-20T15:40:04.1537037Z       - action: labelmap
+2026-10-20T15:40:04.1537289Z         regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1537580Z       - action: replace
+2026-10-20T15:40:04.1537800Z         source_labels:
+2026-10-20T15:40:04.1538025Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1538291Z         target_label: namespace
+2026-10-20T15:40:04.1538534Z       - action: replace
+2026-10-20T15:40:04.1538742Z         source_labels:
+2026-10-20T15:40:04.1538968Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1539246Z         target_label: service
+2026-10-20T15:40:04.1539484Z       - action: replace
+2026-10-20T15:40:04.1539699Z         source_labels:
+2026-10-20T15:40:04.1539928Z         - __meta_kubernetes_pod_node_name
+2026-10-20T15:40:04.1540210Z         target_label: node
+2026-10-20T15:40:04.1540443Z       scrape_interval: 5m
+2026-10-20T15:40:04.1540673Z       scrape_timeout: 30s
+2026-10-20T15:40:04.1540926Z     - job_name: kubernetes-services
+2026-10-20T15:40:04.1541188Z       honor_labels: true
+2026-10-20T15:40:04.1541412Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1541893Z       - role: service
+2026-10-20T15:40:04.1542116Z       metrics_path: /probe
+2026-10-20T15:40:04.1542344Z       params:
+2026-10-20T15:40:04.1542539Z         module:
+2026-10-20T15:40:04.1542747Z         - http_2xx
+2026-10-20T15:40:04.1542955Z       relabel_configs:
+2026-10-20T15:40:04.1543168Z       - action: keep
+2026-10-20T15:40:04.1543379Z         regex: true
+2026-10-20T15:40:04.1543586Z         source_labels:
+2026-10-20T15:40:04.1543882Z         - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1544217Z       - source_labels:
+2026-10-20T15:40:04.1544432Z         - __address__
+2026-10-20T15:40:04.1544663Z         target_label: __param_target
+2026-10-20T15:40:04.1544940Z       - replacement: blackbox
+2026-10-20T15:40:04.1545202Z         target_label: __address__
+2026-10-20T15:40:04.1545457Z       - source_labels:
+2026-10-20T15:40:04.1545675Z         - __param_target
+2026-10-20T15:40:04.1545905Z         target_label: instance
+2026-10-20T15:40:04.1546155Z       - action: labelmap
+2026-10-20T15:40:04.1546412Z         regex: __meta_kubernetes_service_label_(.+)
+2026-10-20T15:40:04.1546707Z       - source_labels:
+2026-10-20T15:40:04.1546945Z         - __meta_kubernetes_namespace
+2026-10-20T15:40:04.1547217Z         target_label: namespace
+2026-10-20T15:40:04.1547458Z       - source_labels:
+2026-10-20T15:40:04.1547688Z         - __meta_kubernetes_service_name
+2026-10-20T15:40:04.1547967Z         target_label: service
+2026-10-20T15:40:04.1548216Z     - job_name: prometheus
+2026-10-20T15:40:04.1548458Z       static_configs:
+2026-10-20T15:40:04.1548680Z       - targets:
+2026-10-20T15:40:04.1548887Z         - localhost:9090
+2026-10-20T15:40:04.1549268Z     - job_name: prometheus-pushgateway
+2026-10-20T15:40:04.1549546Z       honor_labels: true
+2026-10-20T15:40:04.1549783Z       kubernetes_sd_configs:
+2026-10-20T15:40:04.1550022Z       - role: service
+2026-10-20T15:40:04.1550236Z       relabel_configs:
+2026-10-20T15:40:04.1550455Z       - action: keep
+2026-10-20T15:40:04.1550670Z         regex: pushgateway
+2026-10-20T15:40:04.1550891Z         source_labels:
+2026-10-20T15:40:04.1551175Z         - __meta_kubernetes_service_annotation_prometheus_io_probe
+2026-10-20T15:40:04.1551821Z     - job_name: heart-disease-api
+2026-10-20T15:40:04.1552089Z       metrics_path: /metrics
+2026-10-20T15:40:04.1552326Z       static_configs:
+2026-10-20T15:40:04.1552538Z       - targets:
+2026-10-20T15:40:04.1552811Z         - heart-disease-api.default.svc.cluster.local:8000
+2026-10-20T15:40:04.1553136Z     rule_files:
+2026-10-20T15:40:04.1553363Z     - /etc/config/recording_rules.yml
+2026-10-20T15:40:04.1553634Z     - /etc/config/alerting_rules.yml
+2026-10-20T15:40:04.1553898Z     - /etc/config/rules
+2026-10-20T15:40:04.1554129Z     - /etc/config/alerts
+2026-10-20T15:40:04.1554367Z   recording_rules.yml: |
+2026-10-20T15:40:04.1554801Z     {}
+2026-10-20T15:40:04.1555001Z   rules: |
+2026-10-20T15:40:04.1555191Z     {}
+2026-10-20T15:40:04.1555371Z ---
+2026-10-20T15:40:04.1555604Z # Source: prometheus/templates/clusterrole.yaml
+2026-10-20T15:40:04.1555940Z apiVersion: rbac.authorization.k8s.io/v1
+2026-10-20T15:40:04.1556229Z kind: ClusterRole
+2026-10-20T15:40:04.1556434Z metadata:
+2026-10-20T15:40:04.1556618Z   labels:
+2026-10-20T15:40:04.1556835Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1557138Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1557428Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1557724Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1558002Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1558282Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1558567Z   name: prometheus-server
+2026-10-20T15:40:04.1558805Z rules:
+2026-10-20T15:40:04.1558998Z   - apiGroups:
+2026-10-20T15:40:04.1559198Z       - ""
+2026-10-20T15:40:04.1559387Z     resources:
+2026-10-20T15:40:04.1559578Z       - nodes
+2026-10-20T15:40:04.1559780Z       - nodes/metrics
+2026-10-20T15:40:04.1559988Z       - services
+2026-10-20T15:40:04.1560191Z       - endpoints
+2026-10-20T15:40:04.1560388Z       - pods
+2026-10-20T15:40:04.1560577Z       - ingresses
+2026-10-20T15:40:04.1560779Z       - configmaps
+2026-10-20T15:40:04.1560972Z     verbs:
+2026-10-20T15:40:04.1561154Z       - get
+2026-10-20T15:40:04.1561335Z       - list
+2026-10-20T15:40:04.1561417Z       - watch
+2026-10-20T15:40:04.1561661Z   - apiGroups:
+2026-10-20T15:40:04.1561758Z       - "networking.k8s.io"
+2026-10-20T15:40:04.1561840Z     resources:
+2026-10-20T15:40:04.1561931Z       - ingresses/status
+2026-10-20T15:40:04.1562010Z       - ingresses
+2026-10-20T15:40:04.1562090Z     verbs:
+2026-10-20T15:40:04.1562172Z       - get
+2026-10-20T15:40:04.1562249Z       - list
+2026-10-20T15:40:04.1562335Z       - watch
+2026-10-20T15:40:04.1562416Z   - apiGroups:
+2026-10-20T15:40:04.1562503Z       - "discovery.k8s.io"
+2026-10-20T15:40:04.1562590Z     resources:
+2026-10-20T15:40:04.1562678Z       - endpointslices
+2026-10-20T15:40:04.1562750Z     verbs:
+2026-10-20T15:40:04.1562828Z       - get
+2026-10-20T15:40:04.1562906Z       - list
+2026-10-20T15:40:04.1563043Z       - watch
+2026-10-20T15:40:04.1563295Z   - nonResourceURLs:
+2026-10-20T15:40:04.1563425Z       - "/metrics"
+2026-10-20T15:40:04.1563570Z     verbs:
+2026-10-20T15:40:04.1563717Z       - get
+2026-10-20T15:40:04.1563723Z 
+2026-10-20T15:40:04.1563829Z ---
+2026-10-20T15:40:04.1564090Z # Source: prometheus/templates/clusterrolebinding.yaml
+2026-10-20T15:40:04.1564326Z apiVersion: rbac.authorization.k8s.io/v1
+2026-10-20T15:40:04.1564451Z kind: ClusterRoleBinding
+2026-10-20T15:40:04.1564603Z metadata:
+2026-10-20T15:40:04.1564731Z   labels:
+2026-10-20T15:40:04.1564912Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1565231Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1565415Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1565555Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1565711Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1565989Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1566118Z   name: prometheus-server
+2026-10-20T15:40:04.1566265Z subjects:
+2026-10-20T15:40:04.1566423Z   - kind: ServiceAccount
+2026-10-20T15:40:04.1566533Z     name: prometheus-server
+2026-10-20T15:40:04.1566756Z     namespace: monitoring
+2026-10-20T15:40:04.1566904Z roleRef:
+2026-10-20T15:40:04.1567042Z   apiGroup: rbac.authorization.k8s.io
+2026-10-20T15:40:04.1567194Z   kind: ClusterRole
+2026-10-20T15:40:04.1567387Z   name: prometheus-server
+2026-10-20T15:40:04.1567393Z 
+2026-10-20T15:40:04.1567546Z ---
+2026-10-20T15:40:04.1577114Z # Source: prometheus/templates/service.yaml
+2026-10-20T15:40:04.1577252Z apiVersion: v1
+2026-10-20T15:40:04.1577345Z kind: Service
+2026-10-20T15:40:04.1577433Z metadata:
+2026-10-20T15:40:04.1577513Z   labels:
+2026-10-20T15:40:04.1577627Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1577929Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1578047Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1578151Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1578263Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1578376Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1578474Z   name: prometheus-server
+2026-10-20T15:40:04.1578571Z   namespace: monitoring
+2026-10-20T15:40:04.1578652Z spec:
+2026-10-20T15:40:04.1578729Z   ports:
+2026-10-20T15:40:04.1578819Z     - name: http
+2026-10-20T15:40:04.1578902Z       port: 80
+2026-10-20T15:40:04.1578983Z       protocol: TCP
+2026-10-20T15:40:04.1579074Z       targetPort: 9090
+2026-10-20T15:40:04.1579157Z   selector:
+2026-10-20T15:40:04.1579266Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1579374Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1579489Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1579579Z   sessionAffinity: None
+2026-10-20T15:40:04.1579678Z   type: "ClusterIP"
+2026-10-20T15:40:04.1579756Z ---
+2026-10-20T15:40:04.1579866Z # Source: prometheus/templates/deploy.yaml
+2026-10-20T15:40:04.1579960Z apiVersion: apps/v1
+2026-10-20T15:40:04.1580048Z kind: Deployment
+2026-10-20T15:40:04.1580125Z metadata:
+2026-10-20T15:40:04.1580200Z   labels:
+2026-10-20T15:40:04.1580308Z     app.kubernetes.io/component: server
+2026-10-20T15:40:04.1580405Z     app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1580513Z     app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1580617Z     app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1580717Z     helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1580825Z     app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1580923Z   name: prometheus-server
+2026-10-20T15:40:04.1581008Z   namespace: monitoring
+2026-10-20T15:40:04.1581084Z spec:
+2026-10-20T15:40:04.1581167Z   strategy:
+2026-10-20T15:40:04.1581249Z     type: Recreate
+2026-10-20T15:40:04.1581337Z     rollingUpdate: null
+2026-10-20T15:40:04.1581421Z   selector:
+2026-10-20T15:40:04.1581676Z     matchLabels:
+2026-10-20T15:40:04.1581786Z       app.kubernetes.io/component: server
+2026-10-20T15:40:04.1581888Z       app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1582006Z       app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1582091Z   replicas: 1
+2026-10-20T15:40:04.1582187Z   revisionHistoryLimit: 10
+2026-10-20T15:40:04.1582270Z   template:
+2026-10-20T15:40:04.1582351Z     metadata:
+2026-10-20T15:40:04.1582431Z       annotations:
+2026-10-20T15:40:04.1582625Z         kubectl.kubernetes.io/default-container: prometheus-server
+2026-10-20T15:40:04.1582705Z       labels:
+2026-10-20T15:40:04.1582814Z         app.kubernetes.io/component: server
+2026-10-20T15:40:04.1582923Z         app.kubernetes.io/name: prometheus
+2026-10-20T15:40:04.1583040Z         app.kubernetes.io/instance: prometheus
+2026-10-20T15:40:04.1583265Z         app.kubernetes.io/version: v3.15.0
+2026-10-20T15:40:04.1583375Z         helm.sh/chart: prometheus-29.37.0
+2026-10-20T15:40:04.1583492Z         app.kubernetes.io/part-of: prometheus
+2026-10-20T15:40:04.1583567Z     spec:
+2026-10-20T15:40:04.1583665Z       enableServiceLinks: true
+2026-10-20T15:40:04.1583776Z       serviceAccountName: prometheus-server
+2026-10-20T15:40:04.1583856Z       containers:
+2026-10-20T15:40:04.1583994Z         - name: prometheus-server-configmap-reload
+2026-10-20T15:40:04.1584215Z           image: "quay.io/prometheus-operator/prometheus-config-reloader:v0.94.1"
+2026-10-20T15:40:04.1584325Z           imagePullPolicy: "IfNotPresent"
+2026-10-20T15:40:04.1584405Z           args:
+2026-10-20T15:40:04.1584508Z             - --watched-dir=/etc/config
+2026-10-20T15:40:04.1584607Z             - --listen-address=0.0.0.0:8080
+2026-10-20T15:40:04.1584806Z             - --reload-url=http://127.0.0.1:9090/-/reload
+2026-10-20T15:40:04.1584891Z           ports:
+2026-10-20T15:40:04.1584994Z             - containerPort: 8080
+2026-10-20T15:40:04.1585083Z               name: metrics
+2026-10-20T15:40:04.1585292Z           livenessProbe:
+2026-10-20T15:40:04.1585369Z             httpGet:
+2026-10-20T15:40:04.1585461Z               path: /healthz
+2026-10-20T15:40:04.1585548Z               port: metrics
+2026-10-20T15:40:04.1585631Z               scheme: HTTP
+2026-10-20T15:40:04.1585734Z             initialDelaySeconds: 2
+2026-10-20T15:40:04.1585829Z             periodSeconds: 10
+2026-10-20T15:40:04.1585915Z           readinessProbe:
+2026-10-20T15:40:04.1585996Z             httpGet:
+2026-10-20T15:40:04.1586085Z               path: /healthz
+2026-10-20T15:40:04.1586166Z               port: metrics
+2026-10-20T15:40:04.1586253Z               scheme: HTTP
+2026-10-20T15:40:04.1586346Z             periodSeconds: 10
+2026-10-20T15:40:04.1586428Z           volumeMounts:
+2026-10-20T15:40:04.1586525Z             - name: config-volume
+2026-10-20T15:40:04.1586631Z               mountPath: /etc/config
+2026-10-20T15:40:04.1586721Z               readOnly: true
+2026-10-20T15:40:04.1586726Z 
+2026-10-20T15:40:04.1586828Z         - name: prometheus-server
+2026-10-20T15:40:04.1586976Z           image: "quay.io/prometheus/prometheus:v3.15.0"
+2026-10-20T15:40:04.1587084Z           imagePullPolicy: "IfNotPresent"
+2026-10-20T15:40:04.1587167Z           args:
+2026-10-20T15:40:04.1587292Z             - --storage.tsdb.retention.time=15d
+2026-10-20T15:40:04.1587417Z             - --config.file=/etc/config/prometheus.yml
+2026-10-20T15:40:04.1587524Z             - --storage.tsdb.path=/data
+2026-10-20T15:40:04.1587699Z             - --web.console.libraries=/etc/prometheus/console_libraries
+2026-10-20T15:40:04.1587840Z             - --web.console.templates=/etc/prometheus/consoles
+2026-10-20T15:40:04.1587941Z             - --web.enable-lifecycle
+2026-10-20T15:40:04.1588026Z           ports:
+2026-10-20T15:40:04.1588121Z             - containerPort: 9090
+2026-10-20T15:40:04.1588218Z           readinessProbe:
+2026-10-20T15:40:04.1588306Z             httpGet:
+2026-10-20T15:40:04.1588394Z               path: /-/ready
+2026-10-20T15:40:04.1588485Z               port: 9090
+2026-10-20T15:40:04.1588576Z               scheme: HTTP
+2026-10-20T15:40:04.1588679Z             initialDelaySeconds: 30
+2026-10-20T15:40:04.1588769Z             periodSeconds: 5
+2026-10-20T15:40:04.1588859Z             timeoutSeconds: 4
+2026-10-20T15:40:04.1588949Z             failureThreshold: 3
+2026-10-20T15:40:04.1589042Z             successThreshold: 1
+2026-10-20T15:40:04.1589131Z           livenessProbe:
+2026-10-20T15:40:04.1589207Z             httpGet:
+2026-10-20T15:40:04.1589298Z               path: /-/healthy
+2026-10-20T15:40:04.1589384Z               port: 9090
+2026-10-20T15:40:04.1589465Z               scheme: HTTP
+2026-10-20T15:40:04.1589562Z             initialDelaySeconds: 30
+2026-10-20T15:40:04.1589655Z             periodSeconds: 15
+2026-10-20T15:40:04.1589743Z             timeoutSeconds: 10
+2026-10-20T15:40:04.1589926Z             failureThreshold: 3
+2026-10-20T15:40:04.1590023Z             successThreshold: 1
+2026-10-20T15:40:04.1590102Z           resources:
+2026-10-20T15:40:04.1590188Z             limits:
+2026-10-20T15:40:04.1590273Z               cpu: 500m
+2026-10-20T15:40:04.1590358Z               memory: 512Mi
+2026-10-20T15:40:04.1590442Z             requests:
+2026-10-20T15:40:04.1590520Z               cpu: 100m
+2026-10-20T15:40:04.1590605Z               memory: 256Mi
+2026-10-20T15:40:04.1590691Z           volumeMounts:
+2026-10-20T15:40:04.1590785Z             - name: config-volume
+2026-10-20T15:40:04.1590887Z               mountPath: /etc/config
+2026-10-20T15:40:04.1590988Z             - name: storage-volume
+2026-10-20T15:40:04.1591077Z               mountPath: /data
+2026-10-20T15:40:04.1591164Z               subPath: ""
+2026-10-20T15:40:04.1591268Z       dnsPolicy: ClusterFirst
+2026-10-20T15:40:04.1591356Z       securityContext:
+2026-10-20T15:40:04.1591442Z         fsGroup: 65534
+2026-10-20T15:40:04.1591801Z         runAsGroup: 65534
+2026-10-20T15:40:04.1591968Z         runAsNonRoot: true
+2026-10-20T15:40:04.1592061Z         runAsUser: 65534
+2026-10-20T15:40:04.1592317Z       terminationGracePeriodSeconds: 300
+2026-10-20T15:40:04.1592395Z       volumes:
+2026-10-20T15:40:04.1592491Z         - name: config-volume
+2026-10-20T15:40:04.1592572Z           configMap:
+2026-10-20T15:40:04.1592665Z             name: prometheus-server
+2026-10-20T15:40:04.1592757Z         - name: storage-volume
+2026-10-20T15:40:04.1592838Z           emptyDir:
+2026-10-20T15:40:04.1592911Z             {}
+2026-10-20T15:40:04.1592916Z 
+2026-10-20T15:40:04.1592920Z 
+2026-10-20T15:40:04.1592996Z NOTES:
+2026-10-20T15:40:04.1593294Z The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+2026-10-20T15:40:04.1593435Z prometheus-server.monitoring.svc.cluster.local
+2026-10-20T15:40:04.1593440Z 
+2026-10-20T15:40:04.1593448Z 
+2026-10-20T15:40:04.1593647Z Get the Prometheus server URL by running these commands in the same shell:
+2026-10-20T15:40:04.1594221Z   export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=prometheus,app.kubernetes.io/instance=prometheus" -o jsonpath="{.items[0].metadata.name}")
+2026-10-20T15:40:04.1594397Z   kubectl --namespace monitoring port-forward $POD_NAME 9090
+2026-10-20T15:40:04.1594524Z #################################################################################
+2026-10-20T15:40:04.1594729Z ######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+2026-10-20T15:40:04.1594896Z ######            the Server pod is terminated.                             #####
+2026-10-20T15:40:04.1595014Z #################################################################################
+2026-10-20T15:40:04.1595018Z 
+2026-10-20T15:40:04.1595021Z 
+2026-10-20T15:40:04.1595024Z 
+2026-10-20T15:40:04.1595031Z 
+2026-10-20T15:40:04.1595034Z 
+2026-10-20T15:40:04.1595166Z For more information on running Prometheus, visit:
+2026-10-20T15:40:04.1595265Z https://prometheus.io/
+2026-10-20T15:40:04.1623151Z ##[group]Run set -euo pipefail
+2026-10-20T15:40:04.1623310Z [36;1mset -euo pipefail[0m
+2026-10-20T15:40:04.1623438Z [36;1mhelm upgrade --install grafana \[0m
+2026-10-20T15:40:04.1623533Z [36;1m  grafana/grafana \[0m
+2026-10-20T15:40:04.1623633Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:40:04.1623773Z [36;1m  --values monitoring/grafana/values.yaml \[0m
+2026-10-20T15:40:04.1623857Z [36;1m  --wait \[0m
+2026-10-20T15:40:04.1623941Z [36;1m  --timeout 10m[0m
+2026-10-20T15:40:04.1686014Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:40:04.1686101Z env:
+2026-10-20T15:40:04.1686211Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:40:04.1686314Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:40:04.1686409Z   GKE_LOCATION: asia-south1
+2026-10-20T15:40:04.1686906Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:04.1687395Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:04.1687798Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:04.1687920Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688029Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688133Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688234Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688346Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:04.1688519Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:40:04.1688635Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:40:04.1689009Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:04.1689400Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:04.1689488Z ##[endgroup]
+2026-10-20T15:40:06.0782712Z level=WARN msg="this chart is deprecated"
+2026-10-20T15:40:15.7946922Z Release "grafana" has been upgraded. Happy Helming!
+2026-10-20T15:40:15.7947420Z NAME: grafana
+2026-10-20T15:40:15.7947735Z LAST DEPLOYED: Tue Oct 20 15:40:07 2026
+2026-10-20T15:40:15.7948142Z NAMESPACE: monitoring
+2026-10-20T15:40:15.7948461Z STATUS: deployed
+2026-10-20T15:40:15.7948750Z REVISION: 2
+2026-10-20T15:40:15.7949043Z DESCRIPTION: Upgrade complete
+2026-10-20T15:40:15.7949388Z NOTES:
+2026-10-20T15:40:15.7949706Z 1. Get your 'admin' user password by running:
+2026-10-20T15:40:15.7950008Z 
+2026-10-20T15:40:15.7950552Z    kubectl get secret --namespace monitoring grafana-admin -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+2026-10-20T15:40:15.7951235Z 
+2026-10-20T15:40:15.7951239Z 
+2026-10-20T15:40:15.7952044Z 2. The Grafana server can be accessed via port 80 on the following DNS name from within your cluster:
+2026-10-20T15:40:15.7952647Z 
+2026-10-20T15:40:15.7952817Z    grafana.monitoring.svc.cluster.local
+2026-10-20T15:40:15.7953116Z 
+2026-10-20T15:40:15.7953396Z    Get the Grafana URL to visit by running these commands in the same shell:
+2026-10-20T15:40:15.7954618Z      export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=grafana" -o jsonpath="{.items[0].metadata.name}")
+2026-10-20T15:40:15.7955776Z      kubectl --namespace monitoring port-forward $POD_NAME 3000
+2026-10-20T15:40:15.7956188Z 
+2026-10-20T15:40:15.7956456Z 3. Login with the password from step 1 and the username: admin
+2026-10-20T15:40:15.7957003Z #################################################################################
+2026-10-20T15:40:15.7957618Z ######   WARNING: Persistence is disabled!!! You will lose your data when   #####
+2026-10-20T15:40:15.7958291Z ######            the Grafana pod is terminated.                            #####
+2026-10-20T15:40:15.7959254Z #################################################################################
+2026-10-20T15:40:15.8001787Z ##[group]Run set -euo pipefail
+2026-10-20T15:40:15.8002164Z [36;1mset -euo pipefail[0m
+2026-10-20T15:40:15.8002531Z [36;1mkubectl create configmap heart-disease-api-dashboard \[0m
+2026-10-20T15:40:15.8002928Z [36;1m  --namespace monitoring \[0m
+2026-10-20T15:40:15.8003451Z [36;1m  --from-file=heart-disease-api.json=monitoring/grafana/dashboards/heart-disease-api.json \[0m
+2026-10-20T15:40:15.8004001Z [36;1m  --dry-run=client -o yaml \[0m
+2026-10-20T15:40:15.8004382Z [36;1m| kubectl label --local -f - grafana_dashboard=1 -o yaml \[0m
+2026-10-20T15:40:15.8004777Z [36;1m| kubectl apply -f -[0m
+2026-10-20T15:40:15.8066917Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:40:15.8067175Z env:
+2026-10-20T15:40:15.8067401Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:40:15.8067687Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:40:15.8067971Z   GKE_LOCATION: asia-south1
+2026-10-20T15:40:15.8068656Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:15.8069721Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:15.8070756Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:15.8071421Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072037Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072350Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072664Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8072967Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:15.8073360Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:40:15.8073770Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:40:15.8074397Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:15.8075332Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:15.8076122Z ##[endgroup]
+2026-10-20T15:40:17.5585916Z configmap/heart-disease-api-dashboard unchanged
+2026-10-20T15:40:17.5664535Z ##[group]Run set -euo pipefail
+2026-10-20T15:40:17.5665058Z [36;1mset -euo pipefail[0m
+2026-10-20T15:40:17.5665632Z [36;1mkubectl rollout status deployment/prometheus-server \[0m
+2026-10-20T15:40:17.5666298Z [36;1m  --namespace monitoring --timeout=5m[0m
+2026-10-20T15:40:17.5666901Z [36;1mkubectl rollout status deployment/grafana \[0m
+2026-10-20T15:40:17.5667522Z [36;1m  --namespace monitoring --timeout=5m[0m
+2026-10-20T15:40:17.5668120Z [36;1mkubectl get pods,services -n monitoring[0m
+2026-10-20T15:40:17.5668810Z [36;1mkubectl get configmap heart-disease-api-dashboard \[0m
+2026-10-20T15:40:17.5669448Z [36;1m  -n monitoring[0m
+2026-10-20T15:40:17.5741375Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:40:17.5741832Z env:
+2026-10-20T15:40:17.5742048Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:40:17.5742348Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:40:17.5742642Z   GKE_LOCATION: asia-south1
+2026-10-20T15:40:17.5743319Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:17.5744336Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:17.5745248Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:40:17.5745845Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746148Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746428Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746710Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5746993Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:40:17.5747347Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:40:17.5747735Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:40:17.5748310Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:17.5749133Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:40:17.5749694Z ##[endgroup]
+2026-10-20T15:40:19.0724450Z deployment "prometheus-server" successfully rolled out
+2026-10-20T15:40:20.5376526Z deployment "grafana" successfully rolled out
+2026-10-20T15:40:22.0090421Z NAME                                                   READY   STATUS    RESTARTS       AGE
+2026-10-20T15:40:22.0091360Z pod/grafana-6bd978c76f-88sfp                           2/2     Running   0              27m
+2026-10-20T15:40:22.0092529Z pod/prometheus-alertmanager-0                          2/2     Running   0              85m
+2026-10-20T15:40:22.0093574Z pod/prometheus-kube-state-metrics-7589577868-6qzvj     1/1     Running   0              69m
+2026-10-20T15:40:22.0094770Z pod/prometheus-prometheus-pushgateway-6755fcf8-j8s5q   1/1     Running   0              85m
+2026-10-20T15:40:22.0095919Z pod/prometheus-server-955f7f646-d9g8x                  2/2     Running   15 (38m ago)   85m
+2026-10-20T15:40:22.0100906Z 
+2026-10-20T15:40:22.0101627Z NAME                                          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+2026-10-20T15:40:22.0102683Z service/grafana                               ClusterIP   34.118.234.47    <none>        80/TCP     27m
+2026-10-20T15:40:22.0103318Z service/prometheus-alertmanager               ClusterIP   34.118.226.201   <none>        9093/TCP   85m
+2026-10-20T15:40:22.0104007Z service/prometheus-alertmanager-headless      ClusterIP   None             <none>        9093/TCP   85m
+2026-10-20T15:40:22.0104686Z service/prometheus-kube-state-metrics         ClusterIP   34.118.233.66    <none>        8080/TCP   85m
+2026-10-20T15:40:22.0105363Z service/prometheus-prometheus-node-exporter   ClusterIP   34.118.239.241   <none>        9100/TCP   85m
+2026-10-20T15:40:22.0106594Z service/prometheus-prometheus-pushgateway     ClusterIP   34.118.227.136   <none>        9091/TCP   85m
+2026-10-20T15:40:22.0107230Z service/prometheus-server                     ClusterIP   34.118.232.117   <none>        80/TCP     85m
+2026-10-20T15:40:23.2311881Z NAME                          DATA   AGE
+2026-10-20T15:40:23.2312562Z heart-disease-api-dashboard   1      26m
+2026-10-20T15:40:23.2442663Z Post job cleanup.
+2026-10-20T15:40:23.3335640Z Removed exported credentials at "/home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json".
+2026-10-20T15:40:23.3479252Z Post job cleanup.
+2026-10-20T15:40:23.4374375Z [command]/usr/bin/git version
+2026-10-20T15:40:23.4449816Z git version 2.55.0
+2026-10-20T15:40:23.4513340Z Temporarily overriding HOME='/home/runner/work/_temp/01813697-51f4-4888-b776-fc9dfa5adda7' before making global git config changes
+2026-10-20T15:40:23.4514872Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T15:40:23.4519397Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:40:23.4570390Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T15:40:23.4621125Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T15:40:23.4946819Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T15:40:23.4977775Z http.https://github.com/.extraheader
+2026-10-20T15:40:23.5004980Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-20T15:40:23.5054332Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T15:40:23.5328775Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T15:40:23.5371419Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T15:40:23.5789061Z Cleaning up orphan processes
+2026-10-20T15:40:23.6058293Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, azure/setup-helm@v4, google-github-actions/auth@v2, google-github-actions/get-gke-credentials@v2, google-github-actions/setup-gcloud@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

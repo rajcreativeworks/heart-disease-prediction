@@ -1,0 +1,29 @@
+﻿2026-10-20T15:10:56.0171310Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:56.0171633Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:56.0171911Z [36;1mif [ "$EVENT_NAME" = "workflow_run" ]; then[0m
+2026-10-20T15:10:56.0172218Z [36;1m  test -n "$PUBLISHED_SHA"[0m
+2026-10-20T15:10:56.0172541Z [36;1m  echo "tag=sha-${PUBLISHED_SHA}" >> "$GITHUB_OUTPUT"[0m
+2026-10-20T15:10:56.0172848Z [36;1melse[0m
+2026-10-20T15:10:56.0173072Z [36;1m  echo "tag=latest" >> "$GITHUB_OUTPUT"[0m
+2026-10-20T15:10:56.0173381Z [36;1mfi[0m
+2026-10-20T15:10:56.0203100Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:56.0203369Z env:
+2026-10-20T15:10:56.0203571Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:56.0203836Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:56.0204100Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:56.0204408Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:56.0205083Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0206311Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0207146Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0207705Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0207986Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0208408Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0208664Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0208928Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0209258Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:56.0209613Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:56.0210142Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0210911Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0211612Z   PUBLISHED_SHA: 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:56.0211925Z   EVENT_NAME: workflow_run
+2026-10-20T15:10:56.0212148Z ##[endgroup]

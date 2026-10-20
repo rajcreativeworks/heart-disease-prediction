@@ -1,0 +1,375 @@
+﻿2026-10-20T15:10:19.7819927Z Current runner version: '2.337.0'
+2026-10-20T15:10:19.7845488Z ##[group]Runner Image Provisioner
+2026-10-20T15:10:19.7846561Z Hosted Compute Agent
+2026-10-20T15:10:19.7847075Z Version: 20261015.610
+2026-10-20T15:10:19.7847707Z Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656
+2026-10-20T15:10:19.7848359Z Build Date: 2026-10-14T17:06:54Z
+2026-10-20T15:10:19.7849002Z Worker ID: {5e6bfdc0-b803-49ae-9245-80433f80e11b}
+2026-10-20T15:10:19.7849656Z Region: westus3
+2026-10-20T15:10:19.7850139Z Cloud: Azure
+2026-10-20T15:10:19.7850635Z ##[endgroup]
+2026-10-20T15:10:19.7852048Z ##[group]Operating System
+2026-10-20T15:10:19.7852674Z Ubuntu
+2026-10-20T15:10:19.7853155Z 24.04.5
+2026-10-20T15:10:19.7853612Z LTS
+2026-10-20T15:10:19.7854090Z ##[endgroup]
+2026-10-20T15:10:19.7854582Z ##[group]Runner Image
+2026-10-20T15:10:19.7855126Z Image: ubuntu-24.04
+2026-10-20T15:10:19.7855892Z Version: 20261018.339.1
+2026-10-20T15:10:19.7857144Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-20T15:10:19.7858601Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261018.339
+2026-10-20T15:10:19.7859511Z ##[endgroup]
+2026-10-20T15:10:19.7860559Z ##[group]GITHUB_TOKEN Permissions
+2026-10-20T15:10:19.7862440Z Contents: read
+2026-10-20T15:10:19.7863031Z Metadata: read
+2026-10-20T15:10:19.7863551Z ##[endgroup]
+2026-10-20T15:10:19.7865915Z Secret source: Actions
+2026-10-20T15:10:19.7866758Z Cache mode: read
+2026-10-20T15:10:19.7867419Z Prepare workflow directory
+2026-10-20T15:10:19.8263169Z Prepare all required actions
+2026-10-20T15:10:19.8311099Z Getting action download info
+2026-10-20T15:10:21.0749543Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-20T15:10:21.1590919Z Download action repository 'google-github-actions/auth@v2' (SHA:c200f3691d83b41bf9bbd8638997a462592937ed)
+2026-10-20T15:10:21.6688900Z Download action repository 'google-github-actions/setup-gcloud@v2' (SHA:e427ad8a34f8676edf47cf7d7925499adf3eb74f)
+2026-10-20T15:10:22.4311398Z Download action repository 'google-github-actions/get-gke-credentials@v2' (SHA:64bc7249bbcf78056bb92f14d3cedc2da193946c)
+2026-10-20T15:10:22.9687953Z Complete job name: deploy
+2026-10-20T15:10:23.0513016Z ##[group]Run actions/checkout@v4
+2026-10-20T15:10:23.0513697Z with:
+2026-10-20T15:10:23.0514070Z   ref: 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.0514573Z   repository: rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.0517763Z   token: ***
+2026-10-20T15:10:23.0518088Z   ssh-strict: true
+2026-10-20T15:10:23.0518428Z   ssh-user: git
+2026-10-20T15:10:23.0518765Z   persist-credentials: true
+2026-10-20T15:10:23.0519132Z   clean: true
+2026-10-20T15:10:23.0519486Z   sparse-checkout-cone-mode: true
+2026-10-20T15:10:23.0519877Z   fetch-depth: 1
+2026-10-20T15:10:23.0520203Z   fetch-tags: false
+2026-10-20T15:10:23.0520533Z   show-progress: true
+2026-10-20T15:10:23.0520863Z   lfs: false
+2026-10-20T15:10:23.0521178Z   submodules: false
+2026-10-20T15:10:23.0521557Z   set-safe-directory: true
+2026-10-20T15:10:23.0521948Z   allow-unsafe-pr-checkout: false
+2026-10-20T15:10:23.0522588Z env:
+2026-10-20T15:10:23.0522914Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:23.0523373Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:23.0523767Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:23.0524201Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.0524634Z ##[endgroup]
+2026-10-20T15:10:23.1545267Z Syncing repository: rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.1547293Z ##[group]Getting Git version info
+2026-10-20T15:10:23.1547951Z Working directory is '/home/runner/work/heart-disease-prediction/heart-disease-prediction'
+2026-10-20T15:10:23.1548814Z [command]/usr/bin/git version
+2026-10-20T15:10:23.1595311Z git version 2.55.0
+2026-10-20T15:10:23.1614998Z ##[endgroup]
+2026-10-20T15:10:23.1629614Z Temporarily overriding HOME='/home/runner/work/_temp/8aa25584-a5cc-4149-a576-de181ffe1999' before making global git config changes
+2026-10-20T15:10:23.1636281Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T15:10:23.1638111Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:10:23.1692166Z Deleting the contents of '/home/runner/work/heart-disease-prediction/heart-disease-prediction'
+2026-10-20T15:10:23.1696373Z ##[group]Initializing the repository
+2026-10-20T15:10:23.1700091Z [command]/usr/bin/git init /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:10:23.1788634Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-20T15:10:23.1791214Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-20T15:10:23.1792479Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-20T15:10:23.1793447Z hint: call:
+2026-10-20T15:10:23.1793973Z hint:
+2026-10-20T15:10:23.1794736Z hint: 	git config --global init.defaultBranch <name>
+2026-10-20T15:10:23.1795731Z hint:
+2026-10-20T15:10:23.1796482Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-20T15:10:23.1797733Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-20T15:10:23.1798691Z hint:
+2026-10-20T15:10:23.1799251Z hint: 	git branch -m <name>
+2026-10-20T15:10:23.1799871Z hint:
+2026-10-20T15:10:23.1800682Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-20T15:10:23.1802524Z Initialized empty Git repository in /home/runner/work/heart-disease-prediction/heart-disease-prediction/.git/
+2026-10-20T15:10:23.1805274Z [command]/usr/bin/git remote add origin https://github.com/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.1845000Z ##[endgroup]
+2026-10-20T15:10:23.1846250Z ##[group]Disabling automatic garbage collection
+2026-10-20T15:10:23.1848464Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-20T15:10:23.1877055Z ##[endgroup]
+2026-10-20T15:10:23.1878142Z ##[group]Setting up auth
+2026-10-20T15:10:23.1883530Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T15:10:23.1913715Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T15:10:23.2239889Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T15:10:23.2276097Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T15:10:23.2480328Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T15:10:23.2514961Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T15:10:23.2705797Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-20T15:10:23.2741759Z ##[endgroup]
+2026-10-20T15:10:23.2742823Z ##[group]Fetching the repository
+2026-10-20T15:10:23.2751219Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.7386790Z From https://github.com/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.7388198Z  * branch            8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4 -> FETCH_HEAD
+2026-10-20T15:10:23.7391239Z ##[endgroup]
+2026-10-20T15:10:23.7391940Z ##[group]Determining the checkout info
+2026-10-20T15:10:23.7397424Z ##[endgroup]
+2026-10-20T15:10:23.7401205Z [command]/usr/bin/git sparse-checkout disable
+2026-10-20T15:10:23.7455987Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-20T15:10:23.7484073Z ##[group]Checking out the ref
+2026-10-20T15:10:23.7489999Z [command]/usr/bin/git checkout --progress --force 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.7552153Z Note: switching to '8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4'.
+2026-10-20T15:10:23.7552900Z 
+2026-10-20T15:10:23.7556485Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-20T15:10:23.7557136Z changes and commit them, and you can discard any commits you make in this
+2026-10-20T15:10:23.7557609Z state without impacting any branches by switching back to a branch.
+2026-10-20T15:10:23.7557879Z 
+2026-10-20T15:10:23.7558083Z If you want to create a new branch to retain commits you create, you may
+2026-10-20T15:10:23.7558527Z do so (now or later) by using -c with the switch command. Example:
+2026-10-20T15:10:23.7558817Z 
+2026-10-20T15:10:23.7559000Z   git switch -c <new-branch-name>
+2026-10-20T15:10:23.7559276Z 
+2026-10-20T15:10:23.7559462Z Or undo this operation with:
+2026-10-20T15:10:23.7559729Z 
+2026-10-20T15:10:23.7559907Z   git switch -
+2026-10-20T15:10:23.7560129Z 
+2026-10-20T15:10:23.7560363Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-20T15:10:23.7560647Z 
+2026-10-20T15:10:23.7560769Z HEAD is now at 8f8c244 Modified
+2026-10-20T15:10:23.7561601Z ##[endgroup]
+2026-10-20T15:10:23.7599262Z [command]/usr/bin/git log -1 --format=%H
+2026-10-20T15:10:23.7623896Z 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:23.7881094Z ##[group]Run google-github-actions/auth@v2
+2026-10-20T15:10:23.7881417Z with:
+2026-10-20T15:10:23.7881924Z   workload_identity_provider: projects/119234187259/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+2026-10-20T15:10:23.7882621Z   service_account: github-gke-deployer@heart-risk-mlops.iam.gserviceaccount.com
+2026-10-20T15:10:23.7883027Z   create_credentials_file: true
+2026-10-20T15:10:23.7883279Z   export_environment_variables: true
+2026-10-20T15:10:23.7883545Z   universe: googleapis.com
+2026-10-20T15:10:23.7883812Z   cleanup_credentials: true
+2026-10-20T15:10:23.7884082Z   access_token_lifetime: 3600s
+2026-10-20T15:10:23.7884424Z   access_token_scopes: https://www.googleapis.com/auth/cloud-platform
+2026-10-20T15:10:23.7884786Z   id_token_include_email: false
+2026-10-20T15:10:23.7885013Z env:
+2026-10-20T15:10:23.7885203Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:23.7885450Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:23.7886073Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:23.7886376Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:23.7886688Z ##[endgroup]
+2026-10-20T15:10:24.1149099Z Created credentials file at "/home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json"
+2026-10-20T15:10:24.1931715Z ##[group]Run google-github-actions/setup-gcloud@v2
+2026-10-20T15:10:24.1932048Z with:
+2026-10-20T15:10:24.1932242Z   version: latest
+2026-10-20T15:10:24.1932833Z   skip_install: false
+2026-10-20T15:10:24.1933152Z   skip_tool_cache: false
+2026-10-20T15:10:24.1933499Z env:
+2026-10-20T15:10:24.1933831Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:24.1934246Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:24.1934703Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:24.1935025Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:24.1935910Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:24.1936838Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:24.1937730Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:24.1938285Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1938563Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1938853Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1939127Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1939551Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:24.1939829Z ##[endgroup]
+2026-10-20T15:10:24.9990106Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/ef5c513d-9710-438f-a9f2-852dbdb9f7e4 -f /home/runner/work/_temp/2a88680b-b584-4ff9-bdb5-6f58536a0fd9
+2026-10-20T15:10:39.5409142Z Successfully authenticated
+2026-10-20T15:10:39.5613932Z ##[group]Run google-github-actions/get-gke-credentials@v2
+2026-10-20T15:10:39.5614292Z with:
+2026-10-20T15:10:39.5614509Z   cluster_name: heart-disease-cluster
+2026-10-20T15:10:39.5614794Z   location: asia-south1
+2026-10-20T15:10:39.5615032Z   project_id: heart-risk-mlops
+2026-10-20T15:10:39.5615287Z   use_auth_provider: false
+2026-10-20T15:10:39.5615659Z   use_internal_ip: false
+2026-10-20T15:10:39.5615914Z   use_connect_gateway: false
+2026-10-20T15:10:39.5616157Z   use_dns_based_endpoint: false
+2026-10-20T15:10:39.5616395Z env:
+2026-10-20T15:10:39.5616598Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:39.5616874Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:39.5617182Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:39.5617501Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:39.5618178Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:39.5619136Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:39.5619971Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:39.5620531Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:39.5620816Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:39.5621086Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:39.5621345Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:39.5621611Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:39.5621954Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:39.5622306Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:39.5622590Z ##[endgroup]
+2026-10-20T15:10:41.5876499Z Successfully created and exported "KUBECONFIG" at: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:41.5975077Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:41.5975930Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:41.5976333Z [36;1mkubectl apply --dry-run=client -f k8s/deployment.yaml[0m
+2026-10-20T15:10:41.5976749Z [36;1mkubectl apply --dry-run=client -f k8s/service.yaml[0m
+2026-10-20T15:10:41.6091818Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:41.6092106Z env:
+2026-10-20T15:10:41.6092329Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:41.6092600Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:41.6092870Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:41.6093183Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:41.6093888Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:41.6094794Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:41.6095968Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:41.6096531Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6096829Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097101Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097379Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097640Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:41.6097977Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:41.6098335Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:41.6099075Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:41.6099842Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:41.6100367Z ##[endgroup]
+2026-10-20T15:10:49.2179072Z deployment.apps/heart-disease-api configured (dry run)
+2026-10-20T15:10:52.3402385Z service/heart-disease-api unchanged (dry run)
+2026-10-20T15:10:52.3471850Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:52.3472160Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:52.3472438Z [36;1mkubectl apply -f k8s/deployment.yaml[0m
+2026-10-20T15:10:52.3472749Z [36;1mkubectl apply -f k8s/service.yaml[0m
+2026-10-20T15:10:52.3503192Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:52.3503450Z env:
+2026-10-20T15:10:52.3503662Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:52.3503937Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:52.3504203Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:52.3504526Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:52.3505199Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:52.3506277Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:52.3507148Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:52.3507702Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3507988Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3508252Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3508515Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3508768Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:52.3509097Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:52.3509454Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:52.3509984Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:52.3510734Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:52.3511243Z ##[endgroup]
+2026-10-20T15:10:54.2487076Z deployment.apps/heart-disease-api configured
+2026-10-20T15:10:56.0098740Z service/heart-disease-api unchanged
+2026-10-20T15:10:56.0171323Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:56.0171636Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:56.0171914Z [36;1mif [ "$EVENT_NAME" = "workflow_run" ]; then[0m
+2026-10-20T15:10:56.0172224Z [36;1m  test -n "$PUBLISHED_SHA"[0m
+2026-10-20T15:10:56.0172544Z [36;1m  echo "tag=sha-${PUBLISHED_SHA}" >> "$GITHUB_OUTPUT"[0m
+2026-10-20T15:10:56.0172851Z [36;1melse[0m
+2026-10-20T15:10:56.0173086Z [36;1m  echo "tag=latest" >> "$GITHUB_OUTPUT"[0m
+2026-10-20T15:10:56.0173384Z [36;1mfi[0m
+2026-10-20T15:10:56.0203112Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:56.0203372Z env:
+2026-10-20T15:10:56.0203574Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:56.0203839Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:56.0204104Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:56.0204411Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:56.0205133Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0206314Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0207148Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0207708Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0207989Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0208410Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0208666Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0208930Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0209260Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:56.0209615Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:56.0210145Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0210921Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0211614Z   PUBLISHED_SHA: 8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:56.0211928Z   EVENT_NAME: workflow_run
+2026-10-20T15:10:56.0212150Z ##[endgroup]
+2026-10-20T15:10:56.0312686Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:56.0312990Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:56.0313297Z [36;1mkubectl set image deployment/heart-disease-api \[0m
+2026-10-20T15:10:56.0313651Z [36;1m  api="${IMAGE}:${IMAGE_TAG}"[0m
+2026-10-20T15:10:56.0342889Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:56.0343161Z env:
+2026-10-20T15:10:56.0343372Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:56.0343662Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:56.0343927Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:56.0344232Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:56.0344904Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0345993Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0346870Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:56.0347414Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0347707Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0347968Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0348226Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0348480Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:56.0348811Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:56.0349164Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:56.0349688Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0350446Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:56.0351018Z   IMAGE_TAG: sha-8f8c244f329183c5cbca2f0f46bd6de09e8cc6f4
+2026-10-20T15:10:56.0351332Z ##[endgroup]
+2026-10-20T15:10:57.3978529Z deployment.apps/heart-disease-api image updated
+2026-10-20T15:10:57.4056448Z ##[group]Run set -euo pipefail
+2026-10-20T15:10:57.4056955Z [36;1mset -euo pipefail[0m
+2026-10-20T15:10:57.4057513Z [36;1mkubectl rollout status deployment/heart-disease-api \[0m
+2026-10-20T15:10:57.4058130Z [36;1m  --timeout=5m[0m
+2026-10-20T15:10:57.4099356Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:10:57.4099618Z env:
+2026-10-20T15:10:57.4099826Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:10:57.4100098Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:10:57.4100366Z   GKE_LOCATION: asia-south1
+2026-10-20T15:10:57.4100673Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:10:57.4101346Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:57.4102269Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:57.4103264Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:10:57.4104349Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4104817Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4105246Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4105810Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4106240Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:10:57.4106569Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:10:57.4106923Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:10:57.4107450Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:57.4108215Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:10:57.4108723Z ##[endgroup]
+2026-10-20T15:10:58.9307049Z Waiting for deployment "heart-disease-api" rollout to finish: 1 old replicas are pending termination...
+2026-10-20T15:12:03.2826690Z Waiting for deployment "heart-disease-api" rollout to finish: 1 old replicas are pending termination...
+2026-10-20T15:12:03.4366281Z deployment "heart-disease-api" successfully rolled out
+2026-10-20T15:12:03.4450395Z ##[group]Run set -euo pipefail
+2026-10-20T15:12:03.4450870Z [36;1mset -euo pipefail[0m
+2026-10-20T15:12:03.4451364Z [36;1mkubectl get deployment heart-disease-api[0m
+2026-10-20T15:12:03.4451922Z [36;1mkubectl get pods -o wide[0m
+2026-10-20T15:12:03.4452378Z [36;1mkubectl get service heart-disease-api[0m
+2026-10-20T15:12:03.4487475Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:12:03.4487744Z env:
+2026-10-20T15:12:03.4487961Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:12:03.4488223Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:12:03.4488497Z   GKE_LOCATION: asia-south1
+2026-10-20T15:12:03.4488806Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:12:03.4489494Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:12:03.4490482Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:12:03.4491316Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:12:03.4491862Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492143Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492416Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492672Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492925Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4493251Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:12:03.4493609Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:12:03.4494128Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:12:03.4494882Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:12:03.4495395Z ##[endgroup]
+2026-10-20T15:12:04.4686973Z NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+2026-10-20T15:12:04.4710093Z heart-disease-api   1/1     1            1           108m
+2026-10-20T15:12:05.7368741Z NAME                                 READY   STATUS        RESTARTS   AGE   IP            NODE                                             NOMINATED NODE   READINESS GATES
+2026-10-20T15:12:05.7369884Z heart-disease-api-5c4f597c59-t4l4v   1/1     Terminating   0          29m   10.39.0.134   gk3-heart-disease-cluster-pool-1-7adcd5d2-x2zf   <none>           <none>
+2026-10-20T15:12:05.7371093Z heart-disease-api-cc5fdb786-z2npk    1/1     Terminating   0          71s   10.39.0.135   gk3-heart-disease-cluster-pool-1-7adcd5d2-x2zf   <none>           <none>
+2026-10-20T15:12:05.7372252Z heart-disease-api-cfc69697-2ftmg     1/1     Running       0          68s   10.39.0.196   gk3-heart-disease-cluster-pool-1-7c2891e5-v4sj   <none>           <none>
+2026-10-20T15:12:06.7597257Z NAME                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)           AGE
+2026-10-20T15:12:06.7598339Z heart-disease-api   ClusterIP   34.118.238.255   <none>        80/TCP,8000/TCP   108m
+2026-10-20T15:12:06.7721983Z Post job cleanup.
+2026-10-20T15:12:06.8577827Z Removed exported credentials at "/home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json".
+2026-10-20T15:12:06.8704852Z Post job cleanup.
+2026-10-20T15:12:06.9574601Z [command]/usr/bin/git version
+2026-10-20T15:12:06.9612739Z git version 2.55.0
+2026-10-20T15:12:06.9648622Z Temporarily overriding HOME='/home/runner/work/_temp/c0ecaee6-0fbc-4594-87c0-49079b446c75' before making global git config changes
+2026-10-20T15:12:06.9653408Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-20T15:12:06.9656748Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/heart-disease-prediction/heart-disease-prediction
+2026-10-20T15:12:06.9698573Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-20T15:12:06.9734730Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-20T15:12:06.9951072Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-20T15:12:06.9977996Z http.https://github.com/.extraheader
+2026-10-20T15:12:06.9990075Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-20T15:12:07.0023907Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-20T15:12:07.0231593Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-20T15:12:07.0263996Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-20T15:12:07.0650720Z Cleaning up orphan processes
+2026-10-20T15:12:07.0986843Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, google-github-actions/auth@v2, google-github-actions/get-gke-credentials@v2, google-github-actions/setup-gcloud@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,22 @@
+﻿2026-10-20T15:08:25.4770333Z ##[group]Run for i in $(seq 1 30); do
+2026-10-20T15:08:25.4770945Z [36;1mfor i in $(seq 1 30); do[0m
+2026-10-20T15:08:25.4771651Z [36;1m  if curl --fail --silent http://localhost:8000/health; then[0m
+2026-10-20T15:08:25.4772405Z [36;1m    echo "Health endpoint is responding."[0m
+2026-10-20T15:08:25.4772977Z [36;1m    exit 0[0m
+2026-10-20T15:08:25.4773368Z [36;1m  fi[0m
+2026-10-20T15:08:25.4773722Z [36;1m  sleep 2[0m
+2026-10-20T15:08:25.4774102Z [36;1mdone[0m
+2026-10-20T15:08:25.4774445Z [36;1m[0m
+2026-10-20T15:08:25.4774941Z [36;1mecho "Container health check failed. Container logs:"[0m
+2026-10-20T15:08:25.4775962Z [36;1mdocker logs heart-disease-mlops[0m
+2026-10-20T15:08:25.4776486Z [36;1mexit 1[0m
+2026-10-20T15:08:25.4851820Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:08:25.4852273Z env:
+2026-10-20T15:08:25.4852773Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.4853602Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:08:25.4854473Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.4855250Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.4856298Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:25.4857110Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:08:25.4857772Z ##[endgroup]
+2026-10-20T15:08:31.5347189Z {"status":"ok","version":"1.0.0"}Health endpoint is responding.

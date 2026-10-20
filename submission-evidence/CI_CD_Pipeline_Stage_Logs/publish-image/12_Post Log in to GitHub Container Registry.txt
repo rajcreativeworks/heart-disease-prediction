@@ -1,0 +1,10 @@
+﻿2026-10-20T15:10:05.7727927Z Post job cleanup.
+2026-10-20T15:10:06.1028160Z ##[group]Logout from ghcr.io
+2026-10-20T15:10:06.1050584Z (node:3521) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T15:10:06.1051675Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T15:10:06.1073108Z [command]/usr/bin/docker logout ghcr.io
+2026-10-20T15:10:06.1267678Z Removing login credentials for ghcr.io
+2026-10-20T15:10:06.1298033Z ##[endgroup]
+2026-10-20T15:10:06.1298750Z ##[group]Post cache
+2026-10-20T15:10:06.1299500Z State not set
+2026-10-20T15:10:06.1300449Z ##[endgroup]

@@ -1,0 +1,12 @@
+﻿2026-10-20T15:08:31.5378119Z ##[group]Run docker rm -f heart-disease-mlops || true
+2026-10-20T15:08:31.5378584Z [36;1mdocker rm -f heart-disease-mlops || true[0m
+2026-10-20T15:08:31.5429867Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:08:31.5430143Z env:
+2026-10-20T15:08:31.5430426Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:31.5430921Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T15:08:31.5431393Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:31.5431811Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:31.5432232Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T15:08:31.5432665Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T15:08:31.5433012Z ##[endgroup]
+2026-10-20T15:08:31.6819792Z heart-disease-mlops

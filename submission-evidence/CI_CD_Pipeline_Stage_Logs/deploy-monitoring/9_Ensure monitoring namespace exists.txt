@@ -1,0 +1,23 @@
+﻿2026-10-20T15:39:48.0048762Z ##[group]Run set -euo pipefail
+2026-10-20T15:39:48.0049124Z [36;1mset -euo pipefail[0m
+2026-10-20T15:39:48.0049441Z [36;1mkubectl create namespace monitoring \[0m
+2026-10-20T15:39:48.0049821Z [36;1m  --dry-run=client -o yaml | kubectl apply -f -[0m
+2026-10-20T15:39:48.0112955Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:39:48.0113242Z env:
+2026-10-20T15:39:48.0113473Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:39:48.0113780Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:39:48.0114094Z   GKE_LOCATION: asia-south1
+2026-10-20T15:39:48.0114787Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:48.0115924Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:48.0116954Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-e892f1d5e8619062.json
+2026-10-20T15:39:48.0117655Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0117983Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0118297Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0118596Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0118895Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:39:48.0119299Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:39:48.0119715Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:39:48.0120346Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:48.0121285Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-983203e343d6e1ba
+2026-10-20T15:39:48.0122157Z ##[endgroup]
+2026-10-20T15:39:49.7332955Z namespace/monitoring unchanged

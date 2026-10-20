@@ -1,0 +1,32 @@
+﻿2026-10-20T15:12:03.4450380Z ##[group]Run set -euo pipefail
+2026-10-20T15:12:03.4450866Z [36;1mset -euo pipefail[0m
+2026-10-20T15:12:03.4451358Z [36;1mkubectl get deployment heart-disease-api[0m
+2026-10-20T15:12:03.4451918Z [36;1mkubectl get pods -o wide[0m
+2026-10-20T15:12:03.4452374Z [36;1mkubectl get service heart-disease-api[0m
+2026-10-20T15:12:03.4487466Z shell: /usr/bin/bash -e {0}
+2026-10-20T15:12:03.4487741Z env:
+2026-10-20T15:12:03.4487958Z   PROJECT_ID: heart-risk-mlops
+2026-10-20T15:12:03.4488220Z   GKE_CLUSTER: heart-disease-cluster
+2026-10-20T15:12:03.4488494Z   GKE_LOCATION: asia-south1
+2026-10-20T15:12:03.4488803Z   IMAGE: ghcr.io/rajcreativeworks/heart-disease-prediction
+2026-10-20T15:12:03.4489484Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:12:03.4490446Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:12:03.4491313Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-creds-30f0712da6874d77.json
+2026-10-20T15:12:03.4491859Z   CLOUDSDK_CORE_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492141Z   CLOUDSDK_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492413Z   GCLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492670Z   GCP_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4492922Z   GOOGLE_CLOUD_PROJECT: heart-risk-mlops
+2026-10-20T15:12:03.4493249Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+2026-10-20T15:12:03.4493606Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+2026-10-20T15:12:03.4494125Z   KUBECONFIG: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:12:03.4494879Z   KUBE_CONFIG_PATH: /home/runner/work/heart-disease-prediction/heart-disease-prediction/gha-kubeconfig-01312b6ebaf0bbd7
+2026-10-20T15:12:03.4495393Z ##[endgroup]
+2026-10-20T15:12:04.4686888Z NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+2026-10-20T15:12:04.4710082Z heart-disease-api   1/1     1            1           108m
+2026-10-20T15:12:05.7368698Z NAME                                 READY   STATUS        RESTARTS   AGE   IP            NODE                                             NOMINATED NODE   READINESS GATES
+2026-10-20T15:12:05.7369868Z heart-disease-api-5c4f597c59-t4l4v   1/1     Terminating   0          29m   10.39.0.134   gk3-heart-disease-cluster-pool-1-7adcd5d2-x2zf   <none>           <none>
+2026-10-20T15:12:05.7371089Z heart-disease-api-cc5fdb786-z2npk    1/1     Terminating   0          71s   10.39.0.135   gk3-heart-disease-cluster-pool-1-7adcd5d2-x2zf   <none>           <none>
+2026-10-20T15:12:05.7372248Z heart-disease-api-cfc69697-2ftmg     1/1     Running       0          68s   10.39.0.196   gk3-heart-disease-cluster-pool-1-7c2891e5-v4sj   <none>           <none>
+2026-10-20T15:12:06.7597175Z NAME                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)           AGE
+2026-10-20T15:12:06.7598333Z heart-disease-api   ClusterIP   34.118.238.255   <none>        80/TCP,8000/TCP   108m
