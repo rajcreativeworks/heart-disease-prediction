@@ -12,6 +12,10 @@ prometheus-pushgateway:
   enabled: false
 
 server:
+  global:
+    scrape_interval: 15s
+    evaluation_interval: 15s
+    scrape_timeout: 10s
   persistentVolume:
     enabled: false
   resources:
@@ -24,15 +28,13 @@ server:
 
 serverFiles:
   prometheus.yml:
-    global:
-      scrape_interval: 15s
-      evaluation_interval: 15s
-    scrape_configs:
-      - job_name: prometheus
-        static_configs:
-          - targets:
-              - localhost:9090
+    rule_files:
+      - /etc/config/recording_rules.yml
+      - /etc/config/alerting_rules.yml
+      - /etc/config/rules
+      - /etc/config/alerts
 
+    scrape_configs:
       - job_name: heart-disease-api
         metrics_path: /metrics
         static_configs:
