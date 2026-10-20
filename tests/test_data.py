@@ -90,6 +90,7 @@ def test_fetch_dataset_logs_and_reraises_fetch_error(monkeypatch):
 
 def test_data_main_writes_fetched_frame(monkeypatch, tmp_path, capsys):
     output = tmp_path / "nested" / "dataset.csv"
+    monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(data, "fetch_dataset", valid_frame)
     monkeypatch.setattr("sys.argv", ["heart-data", "--output", str(output)])
 
@@ -103,6 +104,7 @@ def test_data_main_reraises_acquisition_error(monkeypatch, tmp_path):
     def fail_fetch():
         raise RuntimeError("offline")
 
+    monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(data, "fetch_dataset", fail_fetch)
     monkeypatch.setattr("sys.argv", ["heart-data", "--output", str(tmp_path / "data.csv")])
 

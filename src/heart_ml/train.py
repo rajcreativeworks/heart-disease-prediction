@@ -34,6 +34,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from heart_ml.data import FEATURES, TARGET, validate_frame
 from heart_ml.logging_config import configure_logging
+from heart_ml.path_utils import validate_output_path
 
 logger = logging.getLogger(__name__)
 NUMERIC = ["age", "trestbps", "chol", "thalach", "oldpeak"]
@@ -132,7 +133,7 @@ def train(data: str | Path, output: str | Path, tracking: bool = True,
         search.fit(x_train, y_train)
         final_model = search.best_estimator_
         test_metrics = calculate_metrics(final_model, x_test, y_test)
-        output_path = Path(output)
+        output_path = validate_output_path(output, Path.cwd())
         output_path.parent.mkdir(parents=True, exist_ok=True)
         joblib.dump(final_model, output_path)
         metadata = {

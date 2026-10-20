@@ -13,9 +13,10 @@ def valid_frame():
     return pd.DataFrame(rows)
 
 
-def test_generate_eda_writes_expected_artifacts(tmp_path):
+def test_generate_eda_writes_expected_artifacts(monkeypatch, tmp_path):
     source = tmp_path / "input.csv"
     output = tmp_path / "eda"
+    monkeypatch.chdir(tmp_path)
     valid_frame().to_csv(source, index=False)
 
     generate_eda(source, output)
@@ -39,6 +40,7 @@ def test_generate_eda_reraises_invalid_input(tmp_path):
 def test_eda_main_uses_cli_paths(monkeypatch, tmp_path):
     source = tmp_path / "input.csv"
     output = tmp_path / "cli-eda"
+    monkeypatch.chdir(tmp_path)
     valid_frame().to_csv(source, index=False)
     monkeypatch.setattr("sys.argv", ["heart-eda", "--input", str(source), "--output", str(output)])
 

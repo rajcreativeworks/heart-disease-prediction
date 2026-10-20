@@ -14,6 +14,7 @@ import seaborn as sns
 
 from heart_ml.data import FEATURES, TARGET, validate_frame
 from heart_ml.logging_config import configure_logging
+from heart_ml.path_utils import validate_output_path
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +24,7 @@ def generate_eda(input_path: str | Path, output_dir: str | Path) -> None:
     try:
         frame = pd.read_csv(input_path)
         validate_frame(frame)
-        out = Path(output_dir)
+        out = validate_output_path(output_dir, Path.cwd())
         out.mkdir(parents=True, exist_ok=True)
         frame.describe(include="all").transpose().to_csv(out / "summary_statistics.csv")
         frame.isna().sum().rename("missing_count").to_csv(out / "missingness.csv")
