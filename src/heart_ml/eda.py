@@ -6,6 +6,7 @@ import logging
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -26,7 +27,9 @@ def generate_eda(input_path: str | Path, output_dir: str | Path) -> None:
         out.mkdir(parents=True, exist_ok=True)
         frame.describe(include="all").transpose().to_csv(out / "summary_statistics.csv")
         frame.isna().sum().rename("missing_count").to_csv(out / "missingness.csv")
-        frame[TARGET].value_counts().sort_index().rename_axis("target").to_csv(out / "class_balance.csv")
+        frame[TARGET].value_counts().sort_index().rename_axis(
+            "target"
+        ).to_csv(out / "class_balance.csv")
         fig, ax = plt.subplots(figsize=(6, 4))
         sns.countplot(data=frame, x=TARGET, ax=ax)
         ax.set_title("Target class balance")

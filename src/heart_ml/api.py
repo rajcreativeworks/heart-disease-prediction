@@ -167,8 +167,12 @@ def predict(payload: PredictionInput, request: Request):
         confidence = float(max(probabilities))
         PREDICTIONS.labels(str(prediction)).inc()
         logger.info(
-            "event=prediction_complete request_id=%s prediction=%d confidence=%.4f model_version=%s",
-            request_id, prediction, confidence, MODEL_VERSION,
+            "event=prediction_complete request_id=%s "
+            "prediction=%d confidence=%.4f model_version=%s",
+            request_id,
+            prediction,
+            confidence,
+            MODEL_VERSION,
         )
         return PredictionOutput(
             prediction=prediction,
