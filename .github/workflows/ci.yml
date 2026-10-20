@@ -54,7 +54,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t heart-disease-mlops:test .
       
-       - name: Start Docker container
+      - name: Start Docker container
         run: |
           docker run -d \
             --name heart-disease-mlops \
