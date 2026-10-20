@@ -50,3 +50,31 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
+
+      - name: Build Docker image
+        run: docker build -t heart-disease-mlops:test .
+      
+       - name: Start Docker container
+        run: |
+          docker run -d \
+            --name heart-disease-mlops \
+            -p 8000:8000 \
+            heart-disease-mlops:test
+
+      - name: Test container health
+        run: |
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://localhost:8000/health; then
+              echo "Health endpoint is responding."
+              exit 0
+            fi
+            sleep 2
+          done
+
+          echo "Container health check failed. Container logs:"
+          docker logs heart-disease-mlops
+          exit 1
+
+      - name: Stop Docker container
+        if: always()
+        run: docker rm -f heart-disease-mlops || true
