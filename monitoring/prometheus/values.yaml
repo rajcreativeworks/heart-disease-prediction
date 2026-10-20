@@ -11,6 +11,7 @@ prometheus-node-exporter:
 prometheus-pushgateway:
   enabled: false
 
+
 server:
   global:
     scrape_interval: 15s
