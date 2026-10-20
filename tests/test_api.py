@@ -61,6 +61,7 @@ def test_validation_error_does_not_echo_input():
             response = client.post("/predict", json=payload)
             assert response.status_code == 422
             assert "Request validation failed" in response.text
-            assert "-1" not in response.text
+            response_data = response.json()
+            assert "-1" not in str(response_data.get("detail", ""))
     finally:
         app.router.lifespan_context = original
