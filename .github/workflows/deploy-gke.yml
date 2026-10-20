@@ -49,13 +49,13 @@ jobs:
 
       - name: Validate Kubernetes manifests
         run: |
-          kubectl apply --dry-run=client -f k8/deployment.yaml
-          kubectl apply --dry-run=client -f k8/service.yaml
+          kubectl apply --dry-run=client -f k8s/deployment.yaml
+          kubectl apply --dry-run=client -f k8s/service.yaml
 
       - name: Apply Kubernetes manifests
         run: |
-          kubectl apply -f k8/deployment.yaml
-          kubectl apply -f k8/service.yaml
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
 
       - name: Deploy the exact published image
         env:
